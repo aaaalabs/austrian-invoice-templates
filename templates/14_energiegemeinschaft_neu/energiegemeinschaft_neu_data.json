@@ -1,82 +1,136 @@
 {
   "eeg": {
-    "name": "Erneuerbare Energie Gemeinschaft Tirol",
-    "kurzname": "EEG Tirol",
-    "registrierung": "EEG-2024-TIR-089",
-    "strasse": "Energieweg 5",
+    "name": "Erneuerbare-Energie-Gemeinschaft Alpental",
+    "kurzname": "EEG Alpental",
+    "registrierung": "EEG-AT-2024-0158-TIR",
+    "strasse": "Energiecampus 12",
     "plz": "6020",
     "ort": "Innsbruck",
     "land": "Österreich",
-    "telefon": "+43 512 444555",
-    "email": "abrechnung@eeg-tirol.at", 
-    "web": "www.eeg-tirol.at",
-    "uid": "ATU44556677",
-    "econtrol_nummer": "EC-EEG-2024-4567",
-    "mitglieder_anzahl": 47,
-    "installierte_leistung_kwp": 850
+    "telefon": "+43 512 567890",
+    "email": "abrechnung@eeg-alpental.at", 
+    "web": "www.eeg-alpental.at",
+    "uid": "ATU78901234",
+    "econtrol_nummer": "EEG-AT-2024-0158-TIR",
+    "rechtsform": "Verein",
+    "mitglieder_anzahl": 67,
+    "installierte_leistung_kwp": 1450,
+    "konzessionsgebiet": "Innsbrucker Kommunalbetriebe AG"
   },
   "mitglied": {
-    "nummer": "EEG-M-0234",
-    "name": "Familie Energiespar",
-    "vorname": "Thomas",
-    "nachname": "Energiespar", 
-    "strasse": "Solarstraße 25",
+    "nummer": "EEG-ALT-2024-0089",
+    "name": "Mag. Dr. Elisabeth Nachhaltig",
+    "anschrift_zeile1": "Elisabeth Nachhaltig",
+    "strasse": "Photovoltaikgasse 47",
     "plz": "6020",
     "ort": "Innsbruck",
-    "beitrittsdatum": "01.01.2024",
-    "anlagentyp": "Verbraucher"
+    "beitrittsdatum": "15.03.2024",
+    "anlagentyp": "Verbraucher",
+    "zahlpunkt_id": "AT003300000000000000123456789012",
+    "smart_meter_nummer": "EDLA2024TIR567890123",
+    "vertragskontonummer": "EEG-VK-567890"
   },
   "rechnung": {
-    "nummer": "EEG-2025-Q2-234",
+    "nummer": "EEG-ALT-2025-Q3-0089",
     "datum": "28.08.2025",
-    "abrechnungszeitraum": "Q2/2025 (April - Juni 2025)",
-    "zahlungsziel": "27.09.2025"
+    "abrechnungszeitraum": "Q3/2025 (Juli - September 2025)",
+    "zahlungsziel": "27.09.2025",
+    "abrechnungsperiode_von": "01.07.2025",
+    "abrechnungsperiode_bis": "30.09.2025",
+    "messperiode_tage": 92
   },
   "energieabrechnung": {
-    "verbrauch_kwh": 1450,
-    "bezug_eeg_kwh": 1050,
-    "bezug_netz_kwh": 400,
-    "autarkiegrad_prozent": 72.4,
-    "co2_einsparung_kg": 420,
-    "tarif_eeg_cent_kwh": 12.5,
-    "tarif_netz_cent_kwh": 28.4,
-    "grundgebuehr_monatlich": 8.50
+    "gesamtverbrauch_kwh": 1820,
+    "bezug_eeg_kwh": 1285,
+    "bezug_netzbetreiber_kwh": 535,
+    "autarkiegrad_prozent": 70.6,
+    "co2_einsparung_kg": 578,
+    "eeg_tarif_cent_kwh": 11.8,
+    "netzstrom_tarif_cent_kwh": 29.2,
+    "grundpauschale_quartal": 24.00,
+    "netzentgelt_reduzierung_prozent": 28.5,
+    "energielenkungsabgabe_befreiung": true,
+    "oekostromfoerder_befreiung": true
   },
   "positionen": [
     {
-      "beschreibung": "Grundgebühr EEG-Mitgliedschaft (3 Monate)",
+      "beschreibung": "EEG-Grundgebühr Mitgliedschaft (3 Monate à 8,00 €)",
       "menge": 3,
-      "einzelpreis": 8.50,
-      "gesamt": 25.50,
-      "steuersatz": 20
+      "einzelpreis": 8.00,
+      "gesamt": 24.00,
+      "steuersatz": 20,
+      "leistungsart": "Grundversorgung",
+      "abrechnungsgrundlage": "Quartalspauschale"
     },
     {
-      "beschreibung": "Energiebezug aus Gemeinschaft (1.050 kWh à 0,125 €/kWh)",
-      "kwh": 1050,
-      "preis_pro_kwh": 0.125,
-      "gesamt": 131.25,
-      "steuersatz": 10
+      "beschreibung": "Energiebezug aus EEG-Erzeugung (1.285 kWh à 0,118 €/kWh)",
+      "kwh": 1285,
+      "preis_pro_kwh": 0.118,
+      "gesamt": 151.63,
+      "steuersatz": 20,
+      "leistungsart": "Energielieferung EEG",
+      "abrechnungsgrundlage": "Smart Meter Viertelstundenwerte"
     },
     {
-      "beschreibung": "Netzstrom-Bezug (400 kWh à 0,284 €/kWh)",
-      "kwh": 400,
-      "preis_pro_kwh": 0.284,
-      "gesamt": 113.60,
-      "steuersatz": 20
+      "beschreibung": "Netzbezug über DSO (535 kWh à 0,292 €/kWh)",
+      "kwh": 535,
+      "preis_pro_kwh": 0.292,
+      "gesamt": 156.22,
+      "steuersatz": 20,
+      "leistungsart": "Netzstrom-Lieferung",
+      "abrechnungsgrundlage": "Restenergiebedarf"
     },
     {
-      "beschreibung": "Verwaltungsgebühr EEG-Management",
+      "beschreibung": "EEG-Verwaltung und Energiemanagement",
       "menge": 1,
-      "einzelpreis": 15.00,
-      "gesamt": 15.00,
-      "steuersatz": 20
+      "einzelpreis": 18.50,
+      "gesamt": 18.50,
+      "steuersatz": 20,
+      "leistungsart": "Administrative Dienstleistung",
+      "abrechnungsgrundlage": "Pauschale Q3/2025"
+    },
+    {
+      "beschreibung": "Smart Meter Service und Datenbereitstellung",
+      "menge": 1,
+      "einzelpreis": 12.30,
+      "gesamt": 12.30,
+      "steuersatz": 20,
+      "leistungsart": "Technische Dienstleistung",
+      "abrechnungsgrundlage": "Quartalsgebühr DSO"
     }
   ],
+  "netzentgelte": {
+    "systemnutzungstarif": 4.95,
+    "netzverlustentgelt": 0.28,
+    "entgelt_messleistung": 2.10,
+    "reduzierung_eeg_anteil": -2.18,
+    "gesamt_netzentgelte": 5.15
+  },
+  "abgaben_steuern": {
+    "elektrizitaetsabgabe_standard": 0.015,
+    "elektrizitaetsabgabe_befreit_pv": 0.000,
+    "oekostromfoerderbeitrag_standard": 0.00975,
+    "oekostromfoerderbeitrag_befreit": 0.000,
+    "gebrauchsabgabe": 0.000
+  },
   "zusammenfassung": {
-    "summe_netto": 271.60,
-    "ust_10": 13.13,
-    "ust_20": 32.90,
-    "summe_brutto": 317.63,
-    "ersparnis_vs_vollpreis": 45.20
+    "summe_netto": 362.65,
+    "ust_20": 72.53,
+    "ust_10": 0.00,
+    "summe_brutto": 435.18,
+    "ersparnis_eeg_vs_vollpreis": 89.45,
+    "co2_vermeidungskosten": 12.50,
+    "lokale_wertschoepfung": 76.95
+  },
+  "technische_details": {
+    "obis_codes": {
+      "wirkenergie_bezug": "1.8.0",
+      "wirkenergie_lieferung": "2.8.0",
+      "momentanleistung": "16.7.0"
+    },
+    "messintervall": "15 Minuten",
+    "datenbereitstellung": "T+1 (24 Stunden)",
+    "kommunikationsprotokoll": "DLMS/COSEM",
+    "zertifizierung": "MID-konform nach EU 2014/32/EU"
   }
 }

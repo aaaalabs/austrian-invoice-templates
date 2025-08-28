@@ -1,174 +1,154 @@
-# Energiegemeinschaft NEU Template - Creation Guide
+# Energiegemeinschaft NEU Template - Professional Creation Guide
 
 ## Template Beschreibung
-Moderne Rechnungsvorlage für österreichische Erneuerbare-Energie-Gemeinschaften (EEG) nach ElWOG 2010, optimiert für nachhaltige Community-Energieversorgung mit Smart Metering Integration.
+Professionelle HTML-Rechnungsvorlage für österreichische Erneuerbare-Energie-Gemeinschaften (EEG) nach höchsten Industriestandards der Energiewirtschaft. Vollständige Compliance mit ElWOG 2010, E-Control Anforderungen und technischen Standards für business-grade Energieabrechnung.
 
 ## Zielgruppe
-- Erneuerbare-Energie-Gemeinschaften (EEG)
-- Bürgerenergiegemeinschaften
-- Regionale Energieversorger
-- Community Energy Projekte
-- Prosumer-Gemeinschaften
+- **Erneuerbare-Energie-Gemeinschaften (EEG)** nach §16a ElWOG 2010
+- **Bürgerenergiegemeinschaften (BEG)** mit Österreich-weiter Ausrichtung  
+- **Regionale Energieversorger** mit Community-Fokus
+- **Professional Service Provider** für EEG-Administration
+- **Energy Consultants** mit EEG-Spezialisierung
 
-## Kernfeatures
+## Professional Design Standards
 
-### 🌱 Nachhaltiges Design
-- Grünes Farbschema mit natürlichen Elementen
-- Community-orientierte Visualisierung
-- Organische Formen und Eco-Symbole
-- 100% Erneuerbar Zertifikat-Badge
+### 🎯 Energy Sector Documentation Design
+- **Minimales Farbschema**: Energieblau (#003366), Neutralgrau, Papierweiß
+- **Professional Typografie**: Arial/Helvetica für maximale Print-Kompatibilität
+- **Technical Layout**: ISO 14001/50001 Energiemanagement-Standards
+- **Print-Optimiert**: Perfekte A4-Darstellung in Schwarz-Weiß
+- **Business Credibility**: Indistinguishable von etablierten Energieversorgern
 
-### ⚡ EEG-Spezifische Abrechnungslogik
-- Gemeinschaftsenergie vs. Netzbezug Aufschlüsselung
-- Eigenverbrauchsquote und lokale Wertschöpfung
-- Dynamische Tarife nach Community-Modell
-- Transparente Kostenverteilung
+### ⚖️ Austrian Legal Compliance (ElWOG 2010)
+- **§16a ff EEG-Bestimmungen**: Vollständige regulatorische Konformität
+- **§16e Abs 3 Transparenzpflicht**: Separate Ausweisung EEG/Netzbezug
+- **E-Control Registrierung**: Korrekte Formatierung EEG-AT-YYYY-NNNN-LLL
+- **DSO-Integration**: Smart Meter Pflichten und Datenbereitstellung
+- **UStG §11 Compliance**: Alle 9 Pflichtangaben vollständig implementiert
 
-### 📊 Smart Metering Integration
-- OBIS-Codes und Zählpunkt-IDs
-- Echtzeitdaten-Verlinkung
-- QR-Codes für Portal-Zugang
-- Mobile App Integration
+## Technical Data Structure
 
-### 🏛️ Rechtskonforme EEG-Abrechnung
-- ElWOG 2010 §16a ff konform
-- E-Control Registrierungsnummern
-- DSGVO-konforme Datenverarbeitung
-- Transparente Mitgliederrechte
-
-## JSON-Struktur Highlights
-
-### EEG-Spezifische Felder
+### Enhanced EEG-Specific Fields
 ```json
 {
   "eeg": {
-    "registrierung": "EEG-2024-AT-0158",
-    "e_control_reg": "EEG-AT-2024-0158-TIR"
+    "name": "Erneuerbare-Energie-Gemeinschaft Alpental",
+    "registrierung": "EEG-AT-2024-0158-TIR",
+    "econtrol_nummer": "EEG-AT-2024-0158-TIR",
+    "rechtsform": "Verein",
+    "konzessionsgebiet": "Innsbrucker Kommunalbetriebe AG"
   },
   "mitglied": {
-    "mitgliedsnummer": "EEG-ALT-2024-0089",
-    "kategorie": "Verbraucher|Erzeuger|Prosumer",
-    "zahlpunkt_id": "AT003300000000000000123456789012"
+    "nummer": "EEG-ALT-2024-0089",
+    "zahlpunkt_id": "AT003300000000000000123456789012",
+    "smart_meter_nummer": "EDLA2024TIR567890123",
+    "anlagentyp": "Verbraucher|Erzeuger|Prosumer"
   },
-  "energiedaten": {
-    "eigenverbrauchsquote_prozent": 73.6,
-    "gemeinschaftsrabatt_prozent": 25.4,
-    "co2_vermieden_kg": 142
+  "energieabrechnung": {
+    "autarkiegrad_prozent": 70.6,
+    "netzentgelt_reduzierung_prozent": 28.5,
+    "energielenkungsabgabe_befreiung": true,
+    "oekostromfoerder_befreiung": true
   }
 }
 ```
 
-### Community-Transparenz
-- Gesamterzeugung und -verbrauch der Gemeinschaft
-- Selbstversorgungsgrad in Prozent
-- CO2-Vermeidung durch lokale Erzeugung
-- Regionale Wertschöpfung in Euro
+### Professional Administrative Documentation
+- **Technische Details**: OBIS-Codes, Smart Meter Nummern, MID-Konformität
+- **Regulatory Compliance**: E-Control Meldepflichten, DSO-Pflichten
+- **Financial Transparency**: Separate Netzentgelte, reduzierte Abgaben
+- **Technical Integration**: DLMS/COSEM Protokolle, Viertelstundenwerte
 
-## Rechtliche Besonderheiten
+## Austrian Energy Law Compliance Framework
 
-### ElWOG-Konformität
-- Energiegemeinschaften nach §16a ElWOG 2010
-- E-Control Registrierung erforderlich
-- Transparente Abrechnungsmodalitäten
-- Mitgliederrechte und -pflichten
+### ElWOG 2010 Implementation Requirements
+- **§16a EEG-Gründung**: Mindestens 2 Teilnehmer im DSO-Konzessionsgebiet
+- **§16b Rechtsform**: Verein, Genossenschaft oder Gesellschaft mit Rechtspersönlichkeit
+- **§16c Teilnahmekriterien**: Natürliche/juristische Personen, Gemeinden, KMU
+- **§16e Energiebilanz**: DSO-Pflicht für separate EEG/Netzbezug-Ausweisung
+- **§16f Administrative Pflichten**: E-Control Registrierung und jährliche Bestätigung
 
-### Steuerliche Behandlung
-- Umsatzsteuerpflicht auf Gemeinschaftsenergie
-- 20% USt auf alle Energielieferungen
-- Korrekte Ausweisung Netz- vs. Community-Bezug
+### Energy Community Incentive System (2025 Updates)
+- **Netzentgelt-Reduktion**: 28.5% für lokalen EEG-Anteil
+- **Ökostromförderbeitrag**: Kompletter Wegfall für EEG-Energie
+- **Elektrizitätsabgabe**: Befreiung für PV-Anlagen unter 25 kWp
+- **Systemnutzungstarif**: Reduzierte Tarife für lokale Energienutzung
 
-### Datenschutz
-- Smart Meter Daten DSGVO-konform
-- Einverständniserklärung für Datennutzung
-- Transparente Datenverarbeitung
+### Professional Invoice Structure Requirements
+- **Header Section**: Vollständige EEG-Bezeichnung mit E-Control Registrierung
+- **Member Information**: Eindeutige IDs, Zählpunkt-Referenzen, Anlagentyp
+- **Energy Balance Table**: Separierte EEG/Netzbezug-Darstellung nach §16e
+- **Technical Details**: Smart Meter Integration, OBIS-Codes, Messintervalle
+- **Legal Compliance**: UStG §11 vollständig, ElWOG-Referenzen, Datenschutz
 
-## Design-Elemente
+## Business-Grade Implementation Guidelines
 
-### Farbschema
-- **Primär**: Waldgrün (#2D5A32) - Nachhaltigkeit
-- **Sekundär**: Energiegelb (#E6B800) - Solarenergie  
-- **Akzent**: Wasserblau (#1976D2) - Wasserkraft
-- **Basis**: Naturweiß (#FAFAFA) - Reinheit
+### Industry-Standard Terminology Usage
+- **E-Control Austria**: Offizielle Regulierungsautorität-Terminologie
+- **DSO Integration**: Distribution System Operator Fachbegriffe
+- **Smart Metering**: OBIS-Code Standards und MID-Konformität  
+- **Energy Management**: Lastprofil, Viertelstundenwerte, Energiebilanzierung
+- **Legal References**: Exakte ElWOG/EAG Paragraphen-Zitierung
 
-### Typografie
-- **Headers**: Inter Bold - Modern und lesbar
-- **Body**: Source Sans Pro - Gut lesbar
-- **Data**: Roboto Mono - Präzise Zahlen
+### Professional Print Standards
+- **A4 Format**: 210x297mm mit 20mm Rändern für Businessdokumentation
+- **Monochrome Design**: Optimiert für kosteneffektives Schwarz-Weiß-Drucken
+- **Typography Hierarchy**: 16pt Überschriften, 11pt Body, 9pt Details
+- **Table Structure**: Klare Linien für technische Energiedaten-Darstellung
+- **Business Presentation**: Suitable for enterprise und government submissions
 
-### Icons & Symbole
-- Erneuerbare-Energie-Symbole (Solar, Wind, Wasser)
-- Community-Ikonen (Verbindungen, Sharing)
-- Nachhaltigkeits-Badges (CO2, Recycling)
-- Smart-Grid Visualisierungen
+## Quality Assurance Standards
 
-## Use Cases
+### Austrian Energy Sector Compliance
+- ✅ **ElWOG 2010 §16a ff**: Vollständige EEG-Gesetzeskonformität
+- ✅ **E-Control Standards**: Registrierung, Meldepflichten, Datenformate  
+- ✅ **UStG §11 Requirements**: Alle 9 Pflichtangaben business-konform
+- ✅ **Smart Meter Integration**: OBIS-Codes, MID-Konformität, DLMS/COSEM
+- ✅ **DSGVO Compliance**: Sichere Verarbeitung von Energiedaten
+- ✅ **Professional Presentation**: Energy sector business documentation standards
+- ✅ **Print Quality**: Perfect A4 formatting für alle Geschäftszwecke
 
-### 1. Bürgerenergiegemeinschaft
+## Technical Implementation Notes
+
+### Smart Meter Data Integration
+- **OBIS-Codes**: 1.8.0 (Wirkenergie Bezug), 2.8.0 (Lieferung), 16.7.0 (Momentanleistung)
+- **Data Intervals**: 15-Minuten Viertelstundenwerte für Energiemanagement
+- **Communication**: DLMS/COSEM Protocol für standardkonforme Datenübertragung
+- **Availability**: T+1 (24 Stunden) Abrechnungsdatenbereitstellung durch DSO
+
+### Regulatory Data Requirements
+- **E-Control Format**: EEG-AT-YYYY-NNNN-LLL Registrierungsnummern-Standard
+- **Austrian IBAN**: AT + 2 Prüfziffern + 5-stellige Bankleitzahl + 11 Kontonummer
+- **Tax Compliance**: 20% Regelsteuersatz, reduzierte Sätze wo gesetzlich möglich
+- **Documentation**: 7 Jahre Aufbewahrungspflicht nach österreichischer BAO
+
+## Professional Use Case Implementation
+
+### Enterprise EEG Administration
 ```json
 "eeg": {
-  "name": "BEG Sonnendorf",
-  "kategorie": "Bürgenenergiegemeinschaft"
+  "name": "EEG Industrie-Campus Salzburg",
+  "rechtsform": "GmbH & Co KG",
+  "geschaeftsbereich": "Industrial Energy Community"
 }
 ```
 
-### 2. Regionale EEG
+### Municipal Energy Communities
 ```json
 "eeg": {
-  "name": "Energieregion Alpental",
-  "kategorie": "Regionale Energiegemeinschaft"
+  "name": "Gemeinde-Energiegemeinschaft Grüntal",
+  "rechtsform": "Kommunalbetrieb",
+  "konzessionsgebiet": "Salzburg Netz GmbH"
 }
 ```
 
-### 3. Genossenschaftsmodell
+### Cooperative Energy Models
 ```json
 "eeg": {
-  "name": "Energie-Genossenschaft eG",
-  "rechtsform": "Genossenschaft"
+  "name": "Energiegenossenschaft Renewable Austria eGen",
+  "rechtsform": "Genossenschaft",
+  "mitgliederanzahl": 450
 }
 ```
 
-## Smart Features
-
-### QR-Code Integration
-- EPC-Payment für SEPA-Lastschrift
-- Portal-Login für Mitgliederbereich
-- App-Download Links
-- Community-Dashboard Zugang
-
-### Mobile-First Design
-- Responsive Layout für alle Geräte
-- Touch-optimierte Elemente
-- Schnelle Ladezeiten
-- Progressive Web App Kompatibilität
-
-### Community-Services
-- Energieberatung Terminbuchung
-- Mitgliederversammlung Reminder
-- Newsletter-Anmeldung
-- Social Community Links
-
-## Compliance Checklist
-
-- ✅ ElWOG 2010 §16a ff konform
-- ✅ UStG Pflichtangaben vollständig
-- ✅ E-Control Registrierung ausgewiesen
-- ✅ Smart Meter OBIS-Codes korrekt
-- ✅ DSGVO-konforme Datenverarbeitung
-- ✅ Transparente Preisaufschlüsselung
-- ✅ Community-Impact dokumentiert
-
-## Performance Metrics
-
-### Nachhaltigkeit
-- CO2-Einsparung pro Mitglied/Monat
-- Eigenverbrauchsquote der Gemeinschaft
-- Anteil erneuerbarer Energien
-- Regionale Wertschöpfung
-
-### Community
-- Mitgliederzufriedenheit
-- Portal-Nutzung und App-Downloads
-- Teilnahme an Veranstaltungen
-- Weiterempfehlungsrate
-
-Diese Vorlage unterstützt die österreichische Energiewende durch transparente, rechtskonforme und community-orientierte Abrechnungsgestaltung für Erneuerbare-Energie-Gemeinschaften.
+Diese professionelle Vorlage erfüllt höchste österreichische Energiewirtschaftsstandards und ist für reale Geschäftstransaktionen zwischen EEGs, Mitgliedern und Behörden vollständig geeignet.

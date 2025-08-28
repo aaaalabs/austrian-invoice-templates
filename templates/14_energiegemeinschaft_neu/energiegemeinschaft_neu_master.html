@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEG-Energieabrechnung - {{rechnung.nummer}}</title>
+    <style>
+        /* Professional Energy Sector Design - Print Optimized */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #2d3748;
+            background: #fefefe;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+        }
+        
+        /* Technical Documentation Layout */
+        .invoice-container {
+            width: 100%;
+            background: white;
+        }
+        
+        /* Professional Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #003366;
+        }
+        
+        .eeg-info {
+            flex: 1;
+        }
+        
+        .eeg-info h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8px;
+        }
+        
+        .eeg-info .registration {
+            font-size: 10pt;
+            color: #6b7280;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            line-height: 1.3;
+        }
+        
+        .logo-area {
+            width: 150px;
+            height: 60px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            font-size: 9pt;
+            color: #6b7280;
+        }
+        
+        /* Invoice Meta Information */
+        .invoice-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .meta-left, .meta-right {
+            width: 48%;
+        }
+        
+        .meta-title {
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8px;
+            font-size: 12pt;
+        }
+        
+        .member-info, .invoice-info {
+            background: #f8fafc;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .member-info p, .invoice-info p {
+            margin-bottom: 4px;
+        }
+        
+        .member-number {
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        /* Energy Balance Section */
+        .energy-balance {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .balance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .balance-card {
+            background: #f8fafc;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .balance-card .label {
+            font-size: 10pt;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+        
+        .balance-card .value {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .balance-card .unit {
+            font-size: 9pt;
+            color: #6b7280;
+        }
+        
+        /* Professional Table Styling */
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .invoice-table th {
+            background: #003366;
+            color: white;
+            font-weight: bold;
+            padding: 12px 8px;
+            text-align: left;
+            font-size: 10pt;
+        }
+        
+        .invoice-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 10pt;
+        }
+        
+        .invoice-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Summary Section */
+        .summary {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+        }
+        
+        .summary-table {
+            width: 300px;
+            border-collapse: collapse;
+        }
+        
+        .summary-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .summary-table .label {
+            font-weight: bold;
+        }
+        
+        .summary-table .total-row {
+            background: #003366;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Legal and Compliance Information */
+        .compliance-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .compliance-title {
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .compliance-text {
+            font-size: 9pt;
+            line-height: 1.3;
+            color: #4a5568;
+        }
+        
+        /* Payment Information */
+        .payment-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .payment-info {
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            font-size: 8pt;
+            text-align: center;
+            color: #6b7280;
+        }
+        
+        /* Technical Details */
+        .technical-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .tech-card {
+            background: #f8fafc;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .tech-title {
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8px;
+            font-size: 10pt;
+        }
+        
+        .tech-value {
+            font-size: 10pt;
+            margin-bottom: 4px;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 9pt;
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            body {
+                margin: 0;
+                padding: 20mm;
+                font-size: 10pt;
+            }
+            
+            .invoice-container {
+                page-break-inside: avoid;
+            }
+            
+            .balance-grid {
+                display: block;
+            }
+            
+            .balance-card {
+                margin-bottom: 10px;
+                display: inline-block;
+                width: 32%;
+                margin-right: 1%;
+            }
+            
+            .technical-details {
+                display: block;
+            }
+            
+            .tech-card {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Professional Header -->
+        <header class="header">
+            <div class="eeg-info">
+                <h1>{{eeg.name}}</h1>
+                <div class="registration">E-Control Registrierung: {{eeg.econtrol_nummer}}</div>
+                <div class="contact-info">
+                    {{eeg.strasse}}<br>
+                    {{eeg.plz}} {{eeg.ort}}, {{eeg.land}}<br>
+                    Tel: {{eeg.telefon}} | E-Mail: {{eeg.email}}<br>
+                    Web: {{eeg.web}}<br>
+                    {{#if eeg.uid}}UID: {{eeg.uid}}{{/if}}
+                </div>
+            </div>
+            <div class="logo-area">
+                <!-- Logo Placeholder -->
+                EEG Logo<br>150x60px
+            </div>
+        </header>
+
+        <!-- Invoice Meta Information -->
+        <div class="invoice-meta">
+            <div class="meta-left">
+                <div class="meta-title">Mitgliedsdaten</div>
+                <div class="member-info">
+                    <p><strong class="member-number">Mitglied-Nr.: {{mitglied.nummer}}</strong></p>
+                    <p>{{mitglied.name}}</p>
+                    <p>{{mitglied.strasse}}</p>
+                    <p>{{mitglied.plz}} {{mitglied.ort}}</p>
+                    <p>Anlagentyp: <strong>{{mitglied.anlagentyp}}</strong></p>
+                    <p>Beitritt: {{mitglied.beitrittsdatum}}</p>
+                </div>
+            </div>
+            <div class="meta-right">
+                <div class="meta-title">Abrechnungsdaten</div>
+                <div class="invoice-info">
+                    <p><strong>Rechnung Nr.: {{rechnung.nummer}}</strong></p>
+                    <p>Rechnungsdatum: {{rechnung.datum}}</p>
+                    <p>Abrechnungszeitraum: {{rechnung.abrechnungszeitraum}}</p>
+                    <p>Zahlbar bis: {{rechnung.zahlungsziel}}</p>
+                    <p>Zahlungsart: SEPA-Überweisung</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Energy Balance Overview -->
+        <section class="energy-balance">
+            <h2 class="section-title">Energiebilanz nach ElWOG §16e</h2>
+            <div class="balance-grid">
+                <div class="balance-card">
+                    <div class="label">Gesamtverbrauch</div>
+                    <div class="value">{{energieabrechnung.verbrauch_kwh}}</div>
+                    <div class="unit">kWh</div>
+                </div>
+                <div class="balance-card">
+                    <div class="label">EEG-Bezug</div>
+                    <div class="value">{{energieabrechnung.bezug_eeg_kwh}}</div>
+                    <div class="unit">kWh</div>
+                </div>
+                <div class="balance-card">
+                    <div class="label">Autarkiegrad</div>
+                    <div class="value">{{energieabrechnung.autarkiegrad_prozent}}</div>
+                    <div class="unit">%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Invoice Items -->
+        <section class="invoice-items">
+            <h2 class="section-title">Leistungen und Entgelte</h2>
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50%">Beschreibung</th>
+                        <th style="width: 15%">Menge</th>
+                        <th style="width: 15%">Einzelpreis</th>
+                        <th style="width: 10%">USt</th>
+                        <th style="width: 10%">Gesamt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each positionen}}
+                    <tr>
+                        <td>{{beschreibung}}</td>
+                        <td class="amount">
+                            {{#if kwh}}{{kwh}} kWh{{else}}{{#if menge}}{{menge}}{{/if}}{{/if}}
+                        </td>
+                        <td class="amount">
+                            {{#if preis_pro_kwh}}€ {{preis_pro_kwh}}{{else}}{{#if einzelpreis}}€ {{einzelpreis}}{{/if}}{{/if}}
+                        </td>
+                        <td class="amount">{{steuersatz}}%</td>
+                        <td class="amount">€ {{gesamt}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <table class="summary-table">
+                <tr>
+                    <td class="label">Summe netto:</td>
+                    <td class="amount">€ {{zusammenfassung.summe_netto}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Umsatzsteuer 10%:</td>
+                    <td class="amount">€ {{zusammenfassung.ust_10}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Umsatzsteuer 20%:</td>
+                    <td class="amount">€ {{zusammenfassung.ust_20}}</td>
+                </tr>
+                <tr class="total-row">
+                    <td class="label">Rechnungsbetrag:</td>
+                    <td class="amount">€ {{zusammenfassung.summe_brutto}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Technical Energy Details -->
+        <section class="technical-details">
+            <div class="tech-card">
+                <div class="tech-title">Smart Meter Daten</div>
+                <div class="tech-value">Zählpunkt-ID: AT0033000000000000001234567890</div>
+                <div class="tech-value">Ablesung: {{rechnung.datum}}</div>
+                <div class="tech-value">Messperiode: 15-Minuten Intervalle</div>
+                <div class="tech-value">Datenbereitstellung: T+1 (24h)</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">Nachhaltigkeits-Impact</div>
+                <div class="tech-value">CO2-Einsparung: {{energieabrechnung.co2_einsparung_kg}} kg</div>
+                <div class="tech-value">Lokale Wertschöpfung: €{{zusammenfassung.ersparnis_vs_vollpreis}}</div>
+                <div class="tech-value">EEG-Mitglieder: {{eeg.mitglieder_anzahl}}</div>
+                <div class="tech-value">Installierte Leistung: {{eeg.installierte_leistung_kwp}} kWp</div>
+            </div>
+        </section>
+
+        <!-- Compliance and Legal Information -->
+        <section class="compliance-section">
+            <div class="compliance-title">Rechtliche Hinweise nach ElWOG 2010</div>
+            <div class="compliance-text">
+                Diese Abrechnung erfolgt nach § 16a ff ElWOG 2010 für Erneuerbare-Energie-Gemeinschaften. 
+                Die separate Ausweisung von Gemeinschaftsenergie und Netzbezug entspricht § 16e Abs 3 ElWOG. 
+                Reduzierte Netzentgelte gelten für den lokalen EEG-Anteil gemäß aktueller E-Control Verordnung.
+                Energiegemeinschaft registriert bei E-Control Austria unter {{eeg.econtrol_nummer}}.
+            </div>
+        </section>
+
+        <!-- Payment Information -->
+        <div class="payment-section">
+            <div class="payment-info">
+                <div class="meta-title">Zahlungsinformationen</div>
+                <p><strong>IBAN:</strong> AT89 1234 5678 9012 3456</p>
+                <p><strong>BIC:</strong> BKAUATWW</p>
+                <p><strong>Bank:</strong> Bank Austria</p>
+                <p><strong>Verwendungszweck:</strong> {{rechnung.nummer}} {{mitglied.nummer}}</p>
+                <p><strong>Fällig:</strong> {{rechnung.zahlungsziel}}</p>
+            </div>
+            <div class="qr-code">
+                EPC-QR-Code<br>
+                für SEPA<br>
+                Überweisung<br>
+                100x100px
+            </div>
+        </div>
+
+        <!-- Professional Footer -->
+        <footer class="footer">
+            <p>{{eeg.name}} | E-Control Registrierung: {{eeg.econtrol_nummer}} | {{eeg.email}}</p>
+            <p>Diese Rechnung wurde elektronisch erstellt und ist ohne Unterschrift gültig.</p>
+            <p>Aufbewahrungspflicht: 7 Jahre nach Rechnungsstellung gemäß BAO.</p>
+        </footer>
+    </div>
+</body>
+</html>
