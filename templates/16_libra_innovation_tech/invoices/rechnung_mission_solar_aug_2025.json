@@ -1,0 +1,143 @@
+{
+  "firma": {
+    "name": "Libra Innovation FlexCo",
+    "claim": "Automatisierung ohne IT-Abteilung",
+    "strasse": "Adamgasse 23",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "telefon": "+43 (0) 660 1238172",
+    "email": "contact@libralab.ai",
+    "web": "https://libralab.ai",
+    "uid": "ATU74236828",
+    "firmenbuch": "FN503145w",
+    "gericht": "Landesgericht Innsbruck",
+    "geschaeftsfuehrer": "Thomas Seiger",
+    "iban": "LT 7032 5006 27125 26400",
+    "bic": "REVOLT21",
+    "bank": "Revolut Bank"
+  },
+  "rechnung": {
+    "nummer": "A1048",
+    "datum": "28.08.2025",
+    "betreff": "KI-gestützte Prozessdigitalisierung - August 2025",
+    "leistungszeitraum": "19.08.2025 - 28.08.2025",
+    "zahlungsfrist": "sofort nach Erhalt",
+    "faelligkeitsdatum": "bei Erhalt",
+    "ansprechpartner": "Thomas Seiger",
+    "projekt_referenz": "MS-KI-Transformation-2025-08"
+  },
+  "kunde": {
+    "name": "Mission Solar GmbH",
+    "ansprechpartner": "Corinna Schek",
+    "strasse": "Franz Fischer Straße 7a",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "email": "info@mission-solar.at",
+    "uid": "ATU79419425"
+  },
+  "projekt": {
+    "name": "KI-Transformation & Email-Automatisierung",
+    "typ": "Prozessdigitalisierung & Entwicklung",
+    "technologien": ["Make.com", "Claude API", "Notion", "Gmail API"],
+    "umfang": "Email-Draft-System Setup, Prozessanalyse, Workflow-Entwicklung",
+    "deliverables": ["Email-Automatisierung MVP", "Make.com Szenarien", "Dokumentation"]
+  },
+  "positionen": [
+    {
+      "pos": 1,
+      "kategorie": "Entwicklungsleistungen",
+      "beschreibung": "KI-gestützte Prozessdigitalisierung",
+      "details": "Entwicklung Email-Draft-Automatisierung, Make.com Integration, Workflow-Design, Testing mit echten Kundendaten (10 von 20 vereinbarten August-Stunden)",
+      "technische_specs": "Make.com Szenarien, Claude API Integration, Gmail Automation",
+      "zeitraum": "18.08.-31.08.2025",
+      "stunden": "10",
+      "abrechnungsart": "Anteilig Monatspauschale",
+      "einzelpreis": "50.00",
+      "gesamt": "500.00",
+      "steuersatz": "20"
+    },
+    {
+      "pos": 2,
+      "kategorie": "SaaS Development Tools",
+      "beschreibung": "Anteilige Software-Kosten (14 Tage)",
+      "details": "Claude Code Max, Fireflies.ai, Vercel Pro, Resend.com, Miro, iCloud+ - anteilig für 2 Wochen",
+      "technische_specs": "249€ monatlich / 2 = 124,45€",
+      "zeitraum": "18.08.-31.08.2025",
+      "stunden": "-",
+      "abrechnungsart": "Anteilig",
+      "einzelpreis": "-",
+      "gesamt": "124.45",
+      "steuersatz": "20"
+    },
+    {
+      "pos": 3,
+      "kategorie": "Reisekosten",
+      "beschreibung": "Fahrtkosten August",
+      "details": "Einzeltickets für Büropräsenz Mo-Mi (4,60€ × 2 Fahrten × 6 Tage) - Weiterverrechnung inkl. MwSt",
+      "technische_specs": "ÖBB Einzelfahrten Innsbruck, bereits inkl. 10% MwSt bezahlt",
+      "zeitraum": "18.08.-31.08.2025",
+      "stunden": "-",
+      "abrechnungsart": "Spesen",
+      "einzelpreis": "-",
+      "gesamt": "50.18",
+      "steuersatz": "10"
+    },
+    {
+      "pos": 4,
+      "kategorie": "Mobilitätspauschale",
+      "beschreibung": "Tirol Ticket Jahresabo",
+      "details": "Jahresticket für öffentliche Verkehrsmittel in Tirol zur Sicherstellung der Büropräsenz",
+      "technische_specs": "Gültigkeit: 09/2025 - 08/2026",
+      "zeitraum": "Jahresabo",
+      "stunden": "-",
+      "abrechnungsart": "Einmalig",
+      "einzelpreis": "-",
+      "gesamt": "536.36",
+      "steuersatz": "10"
+    }
+  ],
+  "zusammenfassung": {
+    "summe_positionen_20": "624.45",
+    "ust_20": "124.89",
+    "summe_positionen_10": "586.54",
+    "ust_10": "58.66",
+    "summe_positionen_0": "0.00",
+    "ust_0": "0.00",
+    "summe_netto": "1210.99",
+    "summe_ust_gesamt": "183.55",
+    "summe_brutto": "1394.54",
+    "waehrung": "EUR"
+  },
+  "zahlungsinfo": {
+    "zahlungsziel": "sofort nach Erhalt",
+    "faelligkeitsdatum": "bei Erhalt",
+    "iban": "LT 7032 5006 27125 26400",
+    "bic": "REVOLT21",
+    "bank": "Revolut Bank",
+    "verwendungszweck": "A1048 MS KI-Transformation",
+    "hinweis": "Betrag von Corinna Schek am 28.08.2025 freigegeben"
+  },
+  "zusatzinfo": {
+    "projektmanager": "Thomas Seiger",
+    "entwicklungszeit": "2 Wochen (10 Stunden von 20 vereinbarten August-Stunden)",
+    "technologie_stack": "Make.com No-Code Automation",
+    "erfolge": "Email-Draft-System funktionsfähig, erste Zeiteinsparungen messbar",
+    "naechste_schritte": "Optimierung basierend auf User-Feedback",
+    "compliance": "DSGVO-konforme Datenverarbeitung"
+  },
+  "kontakt": {
+    "rueckfragen": "Bei Rückfragen stehen wir selbstverständlich jederzeit gerne zur Verfügung.",
+    "ansprechpartner": "Thomas Seiger",
+    "direkt_telefon": "+43 (0) 660 1238172",
+    "direkt_email": "thomas@libralab.ai",
+    "support_email": "support@libralab.ai"
+  },
+  "notizen": {
+    "vereinbarung": "Abgestimmt mit Corinna Schek am 28.08.2025",
+    "besonderheiten": "Erste Rechnung nach Werkvertrag vom 18.08.2025",
+    "arbeitsmodell": "Mo-Mi Büropräsenz, Do-Fr flexibel",
+    "ergebnis_fokus": "Outcome-basierte Bewertung statt Zeiterfassung"
+  }
+}
