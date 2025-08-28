@@ -7,287 +7,231 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            background: #f8f9fa;
+            font-family: Arial, Helvetica, sans-serif; 
+            line-height: 1.4; 
+            color: #000; 
+            background: #fff;
         }
         .container { 
-            max-width: 800px; 
+            max-width: 210mm; 
             margin: 0 auto; 
             background: white; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
+            padding: 0;
         }
         
         /* Header */
         .header {
-            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
-            color: white;
-            padding: 2rem;
+            border-bottom: 2px solid #333;
+            padding: 1.5rem 0 1rem 0;
+            margin-bottom: 1rem;
         }
-        .shop-info { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .shop-name { font-size: 1.8rem; font-weight: bold; }
-        .shop-claim { font-size: 0.9rem; opacity: 0.9; }
-        .trustpilot { 
-            background: rgba(255,255,255,0.1); 
-            padding: 0.5rem 1rem; 
-            border-radius: 20px; 
-            font-size: 0.8rem; 
-            margin-top: 0.5rem;
+        .shop-info { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+        }
+        .shop-name { 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            color: #000;
+            margin-bottom: 0.3rem;
+        }
+        .shop-claim { 
+            font-size: 0.9rem; 
+            color: #666;
+            font-style: italic;
+        }
+        .company-details {
+            text-align: right;
+            font-size: 0.85rem;
+            line-height: 1.3;
         }
         
-        /* Action Buttons */
-        .action-buttons {
-            background: #f1f5f9;
-            padding: 1rem 2rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .btn {
-            padding: 0.6rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
-        }
-        .btn-primary { background: #3b82f6; color: white; }
-        .btn-primary:hover { background: #2563eb; }
-        .btn-secondary { background: #64748b; color: white; }
-        .btn-secondary:hover { background: #475569; }
-        .btn-success { background: #10b981; color: white; }
-        .btn-success:hover { background: #059669; }
-        
-        /* Order Info */
-        .order-header {
-            background: #fef3c7;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid #f59e0b;
-        }
-        .order-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #92400e;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .tracking-info {
-            margin-top: 1rem;
+        /* Invoice Info */
+        .invoice-header {
+            margin: 1.5rem 0;
             padding: 1rem;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 6px;
-            border: 1px solid #10b981;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+        .invoice-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+        .invoice-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 0.2rem;
+        }
+        .meta-label {
+            font-weight: 600;
         }
         
         /* Customer Info */
         .customer-section {
-            padding: 2rem;
+            margin: 1.5rem 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
-        .address-block h3 {
-            background: #e2e8f0;
-            padding: 0.7rem 1rem;
-            margin: -0.5rem -1rem 1rem -1rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
         .address-block {
-            padding: 0.5rem 1rem;
-            border-left: 3px solid #3b82f6;
-            background: #f8fafc;
+            border: 1px solid #ddd;
+            padding: 1rem;
+        }
+        .address-block h3 {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3rem;
+        }
+        .address-content {
+            line-height: 1.3;
+            font-size: 0.9rem;
         }
         
         /* Products */
         .products-section {
-            padding: 2rem;
+            margin: 2rem 0;
         }
         .section-title {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #3b82f6;
-            color: #1e40af;
-        }
-        .product-item {
-            display: grid;
-            grid-template-columns: 60px 1fr auto auto;
-            gap: 1rem;
-            padding: 1.5rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
             margin-bottom: 1rem;
-            background: #fafafa;
-            align-items: center;
+            color: #000;
         }
-        .product-image {
-            width: 60px;
-            height: 60px;
-            background: #e2e8f0;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            color: #64748b;
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
         }
-        .product-details h4 {
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
-            color: #1e40af;
+        .products-table th,
+        .products-table td {
+            border: 1px solid #ddd;
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.9rem;
         }
-        .product-meta {
+        .products-table th {
+            background: #f5f5f5;
+            font-weight: bold;
+            color: #000;
+        }
+        .products-table .qty-col,
+        .products-table .price-col,
+        .products-table .total-col {
+            text-align: right;
+            width: 80px;
+        }
+        .products-table .article-col {
+            width: 100px;
+        }
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        .product-details {
             font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 0.3rem;
-        }
-        .product-specs {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: #6b7280;
-        }
-        .stock-info {
-            background: #dcfce7;
-            color: #166534;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-        }
-        .sustainability-badge {
-            background: #22c55e;
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            margin-top: 0.5rem;
+            color: #666;
+            line-height: 1.2;
         }
         
         /* Summary */
         .summary-section {
-            background: #f8fafc;
-            padding: 2rem;
-            border-top: 1px solid #e2e8f0;
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
         }
-        .summary-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 0.5rem;
+        .summary-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        .summary-table {
+            width: 100%;
             max-width: 400px;
             margin-left: auto;
+            border-collapse: collapse;
         }
-        .summary-row {
-            display: contents;
+        .summary-table td {
+            padding: 0.4rem 0.8rem;
+            border-bottom: 1px dotted #ccc;
         }
         .summary-label {
             text-align: right;
-            padding: 0.3rem 1rem 0.3rem 0;
+            font-weight: normal;
         }
         .summary-value {
             text-align: right;
-            font-weight: 500;
-            padding: 0.3rem 0;
-        }
-        .total-row .summary-label,
-        .total-row .summary-value {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1e40af;
-            border-top: 2px solid #3b82f6;
-            padding-top: 1rem;
-            margin-top: 0.5rem;
-        }
-        
-        /* Sustainability */
-        .sustainability-section {
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            color: white;
-            padding: 1.5rem 2rem;
-        }
-        .sustainability-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .sustainability-item {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            border-radius: 6px;
-            text-align: center;
-        }
-        .sustainability-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-        
-        /* Return Section */
-        .return-section {
-            background: #fef3c7;
-            padding: 1.5rem 2rem;
-            border-top: 1px solid #fbbf24;
-        }
-        .return-qr {
+            font-weight: 600;
             width: 100px;
-            height: 100px;
-            background: white;
-            border: 2px solid #f59e0b;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            float: right;
-            margin-left: 1rem;
-            font-size: 0.8rem;
-            color: #92400e;
-            text-align: center;
+        }
+        .summary-total {
+            border-top: 2px solid #000;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
         
-        /* Cross-Selling */
-        .cross-sell-section {
-            padding: 1.5rem 2rem;
-            background: #f1f5f9;
-        }
-        .cross-sell-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .cross-sell-item {
-            background: white;
+        /* OSS Information */
+        .oss-section {
+            margin: 1.5rem 0;
             padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            text-align: center;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
         }
-        .cross-sell-price {
-            font-size: 1.1rem;
+        .oss-title {
             font-weight: bold;
-            color: #1e40af;
-            margin: 0.5rem 0;
+            margin-bottom: 0.5rem;
+            color: #000;
         }
-        .cross-sell-discount {
-            background: #dc2626;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
+        .oss-content {
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+        
+        /* Shipping & Return Information */
+        .shipping-return-section {
+            margin: 1.5rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .info-block {
+            border: 1px solid #ddd;
+            padding: 1rem;
+        }
+        .info-block h3 {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3rem;
+        }
+        .info-content {
+            font-size: 0.9rem;
+            line-height: 1.3;
         }
         
         /* Footer */
         .footer {
-            background: #1f2937;
-            color: #d1d5db;
-            padding: 2rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-top: 2px solid #333;
+            background: #f9f9f9;
         }
         .footer-grid {
             display: grid;
@@ -295,56 +239,39 @@
             gap: 2rem;
         }
         .footer-section h4 {
-            color: white;
+            color: #000;
             margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: bold;
         }
         .footer-section p,
-        .footer-section a {
-            font-size: 0.8rem;
-            color: #d1d5db;
-            text-decoration: none;
+        .footer-section div {
+            font-size: 0.85rem;
+            color: #333;
             line-height: 1.4;
+            margin: 0.2rem 0;
         }
-        .footer-section a:hover { color: white; }
         
-        /* Newsletter Banner */
-        .newsletter-banner {
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-        }
-        .newsletter-cta {
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .newsletter-cta:hover {
-            background: rgba(255,255,255,0.3);
+        /* Print Styles */
+        @media print {
+            body { background: white; }
+            .container { max-width: none; margin: 0; }
+            .no-print { display: none; }
         }
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .container { margin: 1rem; border-radius: 0; }
+            .container { padding: 1rem; }
             .customer-section { grid-template-columns: 1fr; gap: 1rem; }
-            .product-item { 
-                grid-template-columns: 1fr; 
-                text-align: center;
-                gap: 0.5rem;
-            }
-            .product-image { margin: 0 auto; }
-            .shop-info { text-align: center; }
-            .order-number { font-size: 1.5rem; justify-content: center; }
-            .action-buttons { justify-content: center; }
-            .return-qr { float: none; margin: 1rem auto 0; }
+            .shipping-return-section { grid-template-columns: 1fr; gap: 1rem; }
+            .shop-info { flex-direction: column; text-align: center; }
+            .company-details { text-align: center; margin-top: 1rem; }
+            .invoice-meta { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
+            .products-table { font-size: 0.8rem; }
+            .products-table .qty-col,
+            .products-table .price-col,
+            .products-table .total-col { width: 60px; }
         }
     </style>
 </head>

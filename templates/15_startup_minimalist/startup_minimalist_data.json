@@ -1,75 +1,177 @@
 {
-  "startup": {
-    "name": "TechFlow Innovations",
-    "tagline": "Building Tomorrow's Software Today",
-    "strasse": "Startup Campus 42",
-    "plz": "1030",
-    "ort": "Wien",
-    "land": "Österreich",
-    "telefon": "+43 1 890 4567",
-    "email": "invoices@techflow.dev",
-    "web": "techflow.dev",
-    "uid": "ATU33445566",
-    "github": "github.com/techflow-innovations",
-    "iban": "AT77 1904 3002 3456 7890",
-    "crypto_btc": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wh"
+  "company": {
+    "name": "DigitalCraft Solutions",
+    "tagline": "Innovative Software Engineering für den Mittelstand",
+    "address": {
+      "street": "Tech Quarter Vienna, Lassallestraße 7",
+      "postal_code": "1020",
+      "city": "Wien",
+      "country": "Österreich"
+    },
+    "contact": {
+      "phone": "+43 1 205 65 43",
+      "email": "office@digitalcraft.at",
+      "website": "www.digitalcraft.at"
+    },
+    "legal": {
+      "registration": "FN 512843 w",
+      "court": "Handelsgericht Wien",
+      "uid": "ATU 73 842 901",
+      "ceo": "Mag. Thomas Müller, Geschäftsführer",
+      "bank": "Erste Bank"
+    },
+    "banking": {
+      "bank": "Erste Bank Austria",
+      "iban": "AT61 2011 1000 0123 4567",
+      "bic": "GIBAATWWXXX"
+    },
+    "tech": {
+      "github": "github.com/digitalcraft-solutions",
+      "stack": ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS"],
+      "certifications": ["ISO 27001", "DSGVO-konform"]
+    }
   },
   "client": {
-    "company": "ScaleUp Ventures GmbH", 
-    "contact": "Sarah Founder",
-    "email": "sarah@scaleup-ventures.com",
-    "address": "Innovation Hub 100, 1020 Wien",
-    "uid": "ATU77889900",
-    "project": "MVP Development Phase 1"
+    "company_name": "InnovateNow Holding GmbH",
+    "contact_person": "Dr. Maria Schneider",
+    "position": "CTO & Technical Lead",
+    "email": "m.schneider@innovatenow.com",
+    "address": {
+      "street": "Mariahilfer Str. 123",
+      "postal_code": "1060", 
+      "city": "Wien",
+      "country": "Österreich"
+    },
+    "legal": {
+      "uid": "ATU 68 905 412"
+    },
+    "project": {
+      "name": "Digital Platform Modernization",
+      "phase": "Phase 2: Core Development",
+      "timeline": "Q3/Q4 2025"
+    }
   },
   "invoice": {
-    "number": "TF-2025-089",
+    "number": "DC-2025-0234",
     "date": "28.08.2025",
-    "period": "August 2025",
-    "due_date": "27.09.2025",
-    "sprint": "Sprint 8-10"
+    "service_date": "01.08.2025 - 31.08.2025",
+    "due_date": "11.09.2025",
+    "payment_terms": "14 Tage netto (2% Skonto bei Zahlung binnen 7 Tagen)",
+    "project_reference": "Projekt: Digital Platform Modernization"
   },
-  "services": [
+  "items": [
     {
-      "type": "development",
-      "description": "Frontend Development (React/TypeScript)",
-      "hours": 40,
-      "rate": 95.00,
-      "total": 3800.00,
-      "repo": "github.com/scaleup/frontend"
+      "position": 1,
+      "description": "Frontend-Entwicklung React 18 Application",
+      "detail": "Entwicklung der Benutzeroberfläche mit modernen React Hooks, TypeScript Integration, responsive Design für Desktop und Mobile",
+      "category": "Development",
+      "quantity": 48,
+      "unit": "Std",
+      "unit_price": "95,00",
+      "tax_rate": "20",
+      "net_amount": "4.560,00",
+      "repository": "github.com/innovatenow/frontend-v2"
     },
     {
-      "type": "development", 
-      "description": "Backend API Development (Node.js/PostgreSQL)",
-      "hours": 32,
-      "rate": 105.00,
-      "total": 3360.00,
-      "repo": "github.com/scaleup/api"
+      "position": 2,
+      "description": "Backend API-Entwicklung & Datenbankdesign",
+      "detail": "REST API mit Node.js/Express, PostgreSQL Datenbankdesign, JWT Authentication, API-Dokumentation mit OpenAPI 3.0",
+      "category": "Development",
+      "quantity": 40,
+      "unit": "Std",
+      "unit_price": "105,00",
+      "tax_rate": "20",
+      "net_amount": "4.200,00",
+      "repository": "github.com/innovatenow/api-platform"
     },
     {
-      "type": "devops",
-      "description": "CI/CD Pipeline & AWS Infrastructure",
-      "hours": 16,
-      "rate": 120.00,
-      "total": 1920.00,
-      "deliverable": "Automated deployment pipeline"
+      "position": 3,
+      "description": "DevOps & Cloud Infrastructure Setup",
+      "detail": "AWS Infrastructure mit Terraform, CI/CD Pipeline mit GitHub Actions, Docker Containerization, Monitoring Setup",
+      "category": "DevOps",
+      "quantity": 24,
+      "unit": "Std",
+      "unit_price": "120,00",
+      "tax_rate": "20",
+      "net_amount": "2.880,00",
+      "deliverable": "Vollautomatisierte Deployment-Pipeline"
     },
     {
-      "type": "consulting",
-      "description": "Technical Architecture Review",
-      "hours": 8,
-      "rate": 150.00,
-      "total": 1200.00,
-      "deliverable": "Architecture documentation"
+      "position": 4,
+      "description": "Technical Architecture Consulting",
+      "detail": "Architektur-Review, Skalierungskonzept, Security Audit, Performance-Optimierung, Best Practices Workshop",
+      "category": "Consulting",
+      "quantity": 16,
+      "unit": "Std",
+      "unit_price": "150,00",
+      "tax_rate": "20",
+      "net_amount": "2.400,00",
+      "deliverable": "Technical Architecture Documentation"
+    },
+    {
+      "position": 5,
+      "description": "Code Quality & Testing Setup",
+      "detail": "ESLint/Prettier Konfiguration, Jest Unit Tests, E2E Testing mit Cypress, Code Coverage Reports",
+      "category": "QA",
+      "quantity": 12,
+      "unit": "Std", 
+      "unit_price": "85,00",
+      "tax_rate": "20",
+      "net_amount": "1.020,00",
+      "deliverable": "Automated Testing Suite"
     }
   ],
-  "summary": {
-    "total_hours": 96,
-    "subtotal": 10280.00,
-    "startup_discount": 5,
-    "discount_amount": 514.00,
-    "net_total": 9766.00,
-    "vat_20": 1953.20,
-    "gross_total": 11719.20
+  "totals": {
+    "subtotal": "15.060,00",
+    "startup_discount_rate": "3",
+    "startup_discount_amount": "451,80",
+    "net_after_discount": "14.608,20",
+    "tax_breakdown": [
+      {
+        "rate": "20",
+        "base": "14.608,20", 
+        "tax": "2.921,64"
+      }
+    ],
+    "total": "17.529,84",
+    "early_payment_discount": "350,60",
+    "total_with_discount": "17.179,24"
+  },
+  "payment": {
+    "terms": "Zahlungsziel: 14 Tage ab Rechnungsdatum. Bei Zahlung binnen 7 Tagen 2% Skonto.",
+    "methods": [
+      "Banküberweisung (SEPA)",
+      "PayPal Business", 
+      "Stripe (Kreditkarte)",
+      "Digitale Rechnung via Link"
+    ],
+    "qr_enabled": true,
+    "invoice_url": "https://digitalcraft.at/invoice/DC-2025-0234"
+  },
+  "legal_notes": [
+    "Leistungen erbracht gemäß den Allgemeinen Geschäftsbedingungen der DigitalCraft Solutions GmbH",
+    "Erfüllungsort und Gerichtsstand ist Wien. Es gilt österreichisches Recht",
+    "DSGVO-konform: Ihre Daten werden ausschließlich zur Vertragsabwicklung verwendet", 
+    "Kleinunternehmerregelung nicht anwendbar - Umsatzsteuer wird gemäß UStG ausgewiesen",
+    "Alle entwickelten Software-Komponenten unterliegen den vereinbarten Lizenzbestimmungen",
+    "Bei Zahlungsverzug werden Verzugszinsen in Höhe von 9,2% p.a. verrechnet"
+  ],
+  "project_summary": {
+    "total_hours": 140,
+    "development_hours": 88,
+    "consulting_hours": 16,
+    "devops_hours": 24,
+    "qa_hours": 12,
+    "technologies_used": [
+      "React 18", "TypeScript", "Node.js", "PostgreSQL", 
+      "AWS", "Docker", "GitHub Actions", "Jest", "Cypress"
+    ],
+    "deliverables": [
+      "Moderne Web-Application mit React Frontend",
+      "Skalierbare REST API mit PostgreSQL Backend", 
+      "Vollautomatisierte CI/CD Pipeline auf AWS",
+      "Umfassende technische Dokumentation",
+      "Automated Testing Suite mit >85% Code Coverage"
+    ]
   }
 }

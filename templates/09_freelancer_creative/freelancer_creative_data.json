@@ -1,38 +1,47 @@
 {
-  "freelancer": {
-    "name": "Studio Kreativkopf",
-    "inhaber": "Lisa Designerin",
-    "tagline": "Visual Stories That Matter",
-    "strasse": "Kreativquartier 8/15",
-    "plz": "4020",
-    "ort": "Linz",
+  "studio": {
+    "name": "Brandwerk Studio",
+    "inhaber": "Mag. Elisabeth Grafeneder",
+    "tagline": "Strategic Brand Design & Visual Communication",
+    "strasse": "Landstraße 32/2/15",
+    "plz": "1030",
+    "ort": "Wien",
     "land": "Österreich",
-    "telefon": "+43 699 12345678",
-    "email": "hello@kreativkopf.at",
-    "web": "www.kreativkopf.at",
-    "instagram": "@studio.kreativkopf",
-    "behance": "behance.net/kreativkopf",
-    "uid": "ATU71234567",
-    "bank": "Bank Austria",
-    "iban": "AT12 1234 5678 9012 3456",
-    "bic": "BKAUATWW",
-    "awards": ["Red Dot Winner 2024", "ADC Bronze 2023"]
+    "telefon": "+43 1 234 56 78",
+    "email": "office@brandwerk-studio.at",
+    "web": "www.brandwerk-studio.at",
+    "portfolio_url": "www.brandwerk-studio.at/portfolio",
+    "linkedin_url": "linkedin.com/company/brandwerk-studio",
+    "uid": "ATU67542891",
+    "bank": "Erste Bank",
+    "iban": "AT61 2011 1297 3456 7890",
+    "bic": "GIBAATWWXXX",
+    "credentials": [
+      "ADC Austria Mitglied",
+      "WKO Fachgruppe Werbung",
+      "Certified Brand Consultant"
+    ]
   },
   "kunde": {
-    "firma": "StartUp Heroes GmbH",
-    "ansprechpartner": "Tom Founder",
-    "strasse": "Innovation Hub 42",
-    "plz": "4020",
-    "ort": "Linz",
-    "email": "tom@startup-heroes.com",
-    "projekt": "Brand Identity Relaunch"
+    "firma": "TechnoLogistics Solutions GmbH",
+    "ansprechpartner": "Dr. Martin Steininger",
+    "strasse": "Wirtschaftspark 15",
+    "plz": "1220",
+    "ort": "Wien",
+    "email": "m.steininger@technologistics.at"
+  },
+  "project": {
+    "name": "Corporate Identity Redesign & Brand Strategy",
+    "typ": "Brand Identity Development",
+    "branche": "Logistik & Supply Chain Management",
+    "phase": "Design Development & Implementation"
   },
   "rechnung": {
-    "nummer": "2025-KK-089",
+    "nummer": "RG-2025-0189",
     "datum": "28.08.2025",
-    "projekt_zeitraum": "15.07.2025 - 27.08.2025",
+    "projekt_zeitraum": "01.06.2025 - 25.08.2025",
     "zahlungsziel": "11.09.2025",
-    "brief_referenz": "Creative Brief v2.3 vom 10.07.2025"
+    "brief_referenz": "Projektauftrag TLS-CI-2025 vom 28.05.2025"
   },
   "leistungen": [
     {
