@@ -1,23 +1,25 @@
 {
   "firma": {
-    "name": "Mission Solar GmbH",
-    "claim": "Ihre Energiezukunft beginnt heute",
-    "strasse": "Solarstraße 24",
+    "name": "TechSolar Tirol GmbH",
+    "claim": "Professionelle Photovoltaik-Lösungen",
+    "strasse": "Industriestraße 47",
     "plz": "6020",
     "ort": "Innsbruck",
     "land": "Österreich",
-    "telefon": "+43 512 987654",
-    "email": "info@mission-solar.at",
-    "web": "www.mission-solar.at",
-    "uid": "ATU98765432",
-    "firmenbuch": "FN 987654x",
+    "telefon": "+43 512 890245",
+    "email": "office@techsolar-tirol.at",
+    "web": "www.techsolar-tirol.at",
+    "uid": "ATU67834521",
+    "firmenbuch": "FN 453891z",
     "gericht": "Landesgericht Innsbruck",
-    "geschaeftsfuehrer": "Bernhard Prokes",
-    "bank": "Raiffeisenbank Tirol",
-    "iban": "AT65 3600 0000 0123 4567",
-    "bic": "RZTIAT22",
-    "konzession": "PV-TEC-2024-0815",
-    "klimaaktiv_nr": "KA-2024-TIR-042"
+    "geschaeftsfuehrer": "Dipl.-Ing. Andreas Berger",
+    "bank": "Hypo Tirol Bank AG",
+    "iban": "AT48 5700 0000 0234 5678",
+    "bic": "HYPTAT22",
+    "konzession": "Elektrotechnik gem. GewO § 94 Z 21",
+    "klimaaktiv_nr": "KA-2024-TIR-089",
+    "elektrotechniker_zertifikat": "ÖVE-Zertifikat Nr. ET-2024-1547",
+    "pv_techniker_zertifikat": "TÜV Austria PV-Techniker Nr. PV-TEC-2024-0334"
   },
   "kunde": {
     "anrede": "Sehr geehrte Familie",
@@ -36,91 +38,116 @@
     "datum": "28.08.2025",
     "leistungszeitraum": "15.08.2025 - 27.08.2025",
     "zahlungsziel": "27.09.2025",
-    "betreff": "PV-Anlage 12 kWp mit KJUUBE Speichersystem"
+    "betreff": "PV-Anlage 12,5 kWp mit BYD Speichersystem - Technische Dokumentation"
   },
   "anlage": {
     "leistung_kwp": 12.5,
     "module_anzahl": 28,
-    "module_typ": "Jinko Tiger Neo 450Wp",
+    "module_typ": "Jinko Tiger Neo JKM450N-54HL4R-V",
+    "module_seriennummern": "JK450-2024-0847 bis JK450-2024-0874",
     "wechselrichter": "Fronius Symo Gen24 10.0 Plus",
-    "speicher": "KJUUBE Home 15 kWh",
-    "monitoring": "NTUITY Energy Manager Pro",
+    "wechselrichter_seriennummer": "FR-2024-456789",
+    "speicher": "BYD Battery-Box Premium HVS 15.36 kWh",
+    "speicher_seriennummer": "BYD-2024-334521",
+    "monitoring": "Fronius Solar.web + Smart Meter",
     "jahresertrag_kwh": 13750,
+    "performance_ratio": 84.2,
     "co2_einsparung_tonnen": 5.5,
+    "autarkie_prozent": 72,
     "amortisation_jahre": 7.8,
-    "netzanschluss_ref": "TINETZ-2025-4789"
+    "netzanschluss_ref": "TINETZ-2025-4789",
+    "zaehlpunkt_nr": "AT003600000000000123456789012",
+    "evu_anmeldung": "TINETZ Tiroler Netze GmbH",
+    "oemag_ref": "OeMAG-EIN-2025-089456"
   },
   "positionen": [
     {
       "kategorie": "module",
-      "beschreibung": "PV-Module Jinko Tiger Neo 450Wp, inkl. Montagesystem",
+      "beschreibung": "PV-Module Jinko Tiger Neo JKM450N-54HL4R-V, 450Wp monokristallin, inkl. K2 Systems Montagesystem",
+      "technische_daten": "Abmessungen: 2094×1038×35mm, Gewicht: 22.5kg, Efficiency: 21.6%",
+      "zertifizierung": "IEC 61215, IEC 61730, CE",
       "menge": 28,
       "einheit": "Stk",
-      "einzelpreis": 285.00,
-      "steuersatz": 0,
-      "gesamt": 7980.00
+      "einzelpreis": 295.00,
+      "steuersatz": 20,
+      "gesamt": 8260.00
     },
     {
       "kategorie": "wechselrichter",
-      "beschreibung": "Fronius Symo Gen24 10.0 Plus Hybrid-Wechselrichter",
+      "beschreibung": "Fronius Symo Gen24 10.0 Plus Hybrid-Wechselrichter mit Notstromfunktion",
+      "technische_daten": "MPP-Tracker: 2, AC-Ausgangsleistung: 10.000W, Wirkungsgrad: 97.8%",
+      "zertifizierung": "TÜV SÜD, CE, VDE-AR-N 4105, ÖVE/ÖNORM EN 62109",
       "menge": 1,
       "einheit": "Stk",
-      "einzelpreis": 2850.00,
-      "steuersatz": 0,
-      "gesamt": 2850.00
+      "einzelpreis": 2950.00,
+      "steuersatz": 20,
+      "gesamt": 2950.00
     },
     {
       "kategorie": "speicher",
-      "beschreibung": "KJUUBE Home 15 kWh Batteriespeicher",
+      "beschreibung": "BYD Battery-Box Premium HVS 15.36 kWh Hochvolt-Batteriespeicher",
+      "technische_daten": "Spannung: 150-750V, Kapazität: 15.36 kWh, Zyklen: >6000, IP55",
+      "zertifizierung": "CE, IEC 62619, UN38.3",
       "menge": 1,
       "einheit": "Set",
-      "einzelpreis": 8900.00,
-      "steuersatz": 0,
-      "gesamt": 8900.00
+      "einzelpreis": 8750.00,
+      "steuersatz": 20,
+      "gesamt": 8750.00
     },
     {
       "kategorie": "monitoring",
-      "beschreibung": "NTUITY Energy Manager Pro inkl. 5 Jahre Service",
+      "beschreibung": "Fronius Smart Meter 63A-3 + Solar.web Monitoring-Lösung, 10 Jahre Lizenz",
+      "technische_daten": "Messgenauigkeit Klasse 1, MID-zertifiziert, Modbus RTU",
+      "zertifizierung": "MID, CE, eichrechtskonform",
       "menge": 1,
-      "einheit": "Stk",
-      "einzelpreis": 1290.00,
-      "steuersatz": 0,
-      "gesamt": 1290.00
+      "einheit": "Set",
+      "einzelpreis": 890.00,
+      "steuersatz": 20,
+      "gesamt": 890.00
     },
     {
       "kategorie": "installation",
-      "beschreibung": "Montage, Installation und Inbetriebnahme",
+      "beschreibung": "Fachgerechte Montage, Installation und Inbetriebnahme durch zertifizierten Elektrotechniker",
+      "technische_daten": "Gerüststellung, Dacharbeiten, Verkabelung DC/AC, Inbetriebnahme-Protokoll",
+      "zertifizierung": "ÖVE-Zertifikat, gewerberechtliche Befugnis gem. GewO",
       "menge": 32,
       "einheit": "Std",
-      "einzelpreis": 85.00,
-      "steuersatz": 0,
-      "gesamt": 2720.00
+      "einzelpreis": 89.00,
+      "steuersatz": 20,
+      "gesamt": 2848.00
     },
     {
       "kategorie": "elektrik",
-      "beschreibung": "AC/DC Verkabelung, Sicherungen, Überspannungsschutz",
+      "beschreibung": "Elektrische Installation: AC/DC-Verkabelung, Hauptschalter, Überspannungsschutz Typ I+II",
+      "technische_daten": "6mm² DC-Kabel, 16A DC-Sicherungen, 40A B-Automat, Blitzschutz nach ÖVE",
+      "zertifizierung": "ÖVE/ÖNORM EN 60364, VDE 0100, CE",
       "menge": 1,
       "einheit": "pausch",
-      "einzelpreis": 1480.00,
-      "steuersatz": 0,
-      "gesamt": 1480.00
+      "einzelpreis": 1590.00,
+      "steuersatz": 20,
+      "gesamt": 1590.00
     },
     {
       "kategorie": "netzanschluss",
-      "beschreibung": "Netzanschluss-Koordination und Anmeldung OeMAG",
+      "beschreibung": "Netzanschluss-Koordination TINETZ, OeMAG-Anmeldung, behördliche Meldungen",
+      "technische_daten": "Anmeldung Netzbetreiber, OeMAG Förderanmeldung, Fertigstellungsanzeige",
+      "zertifizierung": "Befugte Fachkraft gem. Elektrotechnikgesetz",
       "menge": 1,
       "einheit": "pausch",
-      "einzelpreis": 380.00,
-      "steuersatz": 0,
-      "gesamt": 380.00
+      "einzelpreis": 420.00,
+      "steuersatz": 20,
+      "gesamt": 420.00
     }
   ],
   "zusammenfassung": {
-    "summe_netto": 25600.00,
-    "ust_0_hinweis": "Umsatzsteuerfrei gem. § 6 Abs. 1 Z 9 lit. c UStG (PV-Anlagen bis 35 kWp)",
-    "summe_brutto": 25600.00,
-    "anzahlung_erhalten": 5000.00,
-    "restzahlung": 20600.00
+    "summe_netto": 25708.00,
+    "ust_satz": 20,
+    "ust_betrag": 5141.60,
+    "ust_hinweis": "20% Umsatzsteuer gem. UStG - Vertrag nach 1. April 2025",
+    "summe_brutto": 30849.60,
+    "anzahlung_erhalten": 8000.00,
+    "restzahlung": 22849.60,
+    "uebergangsregelung_hinweis": "Bei Vertragsabschluss vor 7. März 2025 und Lieferung bis 31.12.2025 wäre 0% USt anwendbar"
   },
   "foerderung": {
     "bundesfoerderung": "EAG-Investitionszuschuss beantragt: ca. 2.850 €",

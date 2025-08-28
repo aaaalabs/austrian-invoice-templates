@@ -1,73 +1,158 @@
 {
   "verwaltung": {
-    "name": "Alpen Immobilien Verwaltung GmbH",
-    "strasse": "Immobilienstraße 50",
+    "name": "Alpen Immobilien Management GmbH",
+    "strasse": "Leopoldstraße 15/2",
     "plz": "6020",
     "ort": "Innsbruck", 
     "land": "Österreich",
-    "telefon": "+43 512 567890",
-    "email": "verwaltung@alpen-immobilien.at",
-    "web": "www.alpen-immobilien.at",
-    "uid": "ATU55667788",
-    "konzession": "Immobilientreuhänder-Berechtigung Nr. IT-2020-4567",
-    "iban": "AT88 2050 3033 0789 1234",
-    "treuhandkonto": "AT99 2050 3033 0999 9999"
+    "telefon": "+43 512 589 670",
+    "email": "office@alpen-immobilien-mgmt.at",
+    "web": "www.alpen-immobilien-mgmt.at",
+    "uid": "ATU68574123",
+    "konzession": "Immobilientreuhänder-Berechtigung Nr. IT-2024-5891",
+    "iban": "AT45 2050 3033 0123 4567",
+    "treuhandkonto": "AT77 2050 3033 0987 6543"
   },
   "objekt": {
     "bezeichnung": "Wohnanlage Alpenpanorama",
     "adresse": "Panoramaweg 12-18, 6020 Innsbruck",
+    "kataster": "KG Innsbruck, EZ 2847",
     "einheiten": 24,
     "baujahr": 2018,
-    "typ": "Mehrfamilienhaus"
+    "typ": "Mehrfamilienhaus",
+    "weg_nummer": "WEG-2018-4567",
+    "verwaltungsvertrag": "VV-2024-001",
+    "nutzflaeche": 1680,
+    "stellplaetze": 28
   },
   "eigentuemer": {
-    "name": "Immobilien Invest GmbH",
-    "ansprechpartner": "Mag. Peter Eigentümer",
-    "strasse": "Investmentstraße 100",
+    "name": "WEG Alpenpanorama",
+    "ansprechpartner": "Mag. Elisabeth Hausmann (Verwaltungsbeirat)",
+    "strasse": "c/o Alpen Immobilien Management",
     "plz": "6020",
     "ort": "Innsbruck",
-    "uid": "ATU99887766"
+    "uid": "ATU71234567",
+    "weg_register": "WEG-IBK-2018-4567"
   },
   "rechnung": {
-    "nummer": "IV-2025-3456",
+    "nummer": "VWA-2025-03456",
     "datum": "28.08.2025",
     "abrechnungszeitraum": "Q2/2025 (April - Juni 2025)",
-    "zahlungsziel": "27.09.2025"
+    "zahlungsziel": "27.09.2025",
+    "leistungsperiode": "01.04.2025 - 30.06.2025",
+    "verwalterjahr": "2025"
   },
   "leistungen": [
     {
-      "kategorie": "verwaltung",
-      "beschreibung": "Hausverwaltung Q2/2025 (24 Einheiten)",
-      "basis": "pauschal",
-      "betrag": 2400.00,
-      "steuersatz": 20
+      "kategorie": "hausverwaltung",
+      "beschreibung": "Grundverwaltung Q2/2025 (24 Wohneinheiten)",
+      "basis": "€100 je WE/Monat",
+      "einheiten": 24,
+      "monate": 3,
+      "betrag": 7200.00,
+      "betrag_brutto": 8640.00,
+      "steuersatz": 20,
+      "umlagefaehig": false,
+      "details": "Objektbetreuung, Buchhaltung, Korrespondenz, rechtliche Beratung"
+    },
+    {
+      "kategorie": "betriebskosten",
+      "beschreibung": "Heizungsanlagenwartung Zentralheizung",
+      "auftragnehmer": "Heizung & Sanitär Tirol GmbH",
+      "auftragsnummer": "HS-2025-8923",
+      "datum": "15.05.2025",
+      "betrag": 1480.00,
+      "betrag_brutto": 1776.00,
+      "steuersatz": 20,
+      "umlagefaehig": true,
+      "details": "Jahreswartung gem. ÖVGW-Richtlinien, Heizkessel-Inspektion, Brenner-Service"
+    },
+    {
+      "kategorie": "betriebskosten", 
+      "beschreibung": "Hausreinigung Stiegenhäuser und Gemeinschaftsflächen",
+      "auftragnehmer": "Professional Clean Services GmbH",
+      "auftragsnummer": "PCS-2025-1147",
+      "zeitraum": "April - Juni 2025",
+      "wochen": 13,
+      "betrag": 1690.00,
+      "betrag_brutto": 2028.00,
+      "steuersatz": 20,
+      "umlagefaehig": true,
+      "details": "Wöchentliche Grundreinigung, monatliche Fensterreinigung Stiegenhäuser"
+    },
+    {
+      "kategorie": "sonderverwaltung",
+      "beschreibung": "Mietinkasso und Nebenkostenabrechnungen",
+      "basis": "4% der Bruttomieteinnahmen",
+      "mieteinnahmen": 72000.00,
+      "prozentsatz": 4.0,
+      "betrag": 2880.00,
+      "betrag_brutto": 3456.00,
+      "steuersatz": 20,
+      "umlagefaehig": false,
+      "details": "Mieteinkasso, Mahnwesen, Erststellung Nebenkostenabrechnung, Neuvermietung"
     },
     {
       "kategorie": "instandhaltung",
-      "beschreibung": "Wartung Heizungsanlage",
-      "auftragnehmer": "Heizung Tirol GmbH",
-      "betrag": 850.00,
-      "steuersatz": 20
+      "beschreibung": "Reparatur Eingangstür Haus Nr. 14",
+      "auftragnehmer": "Schlosserei Alpine GmbH",
+      "auftragsnummer": "SA-2025-3421",
+      "datum": "08.06.2025",
+      "betrag": 385.00,
+      "betrag_brutto": 462.00,
+      "steuersatz": 20,
+      "umlagefaehig": true,
+      "details": "Austausch Türschließer, Justierung Schließmechanismus"
     },
     {
-      "kategorie": "reinigung",
-      "beschreibung": "Stiegenhaus-Reinigung (13 Wochen)",
-      "auftragnehmer": "Reinigungsservice Alpen",
-      "betrag": 1170.00,
-      "steuersatz": 20
-    },
-    {
-      "kategorie": "verwaltung",
-      "beschreibung": "Mietinkasso und Nebenkostenabrechnungen",
-      "basis": "5% der Mieteinnahmen",
-      "mieteinnahmen": 48000.00,
-      "betrag": 2400.00,
-      "steuersatz": 20
+      "kategorie": "betriebskosten",
+      "beschreibung": "Hausbetreuung und Objektüberwachung",
+      "auftragnehmer": "Hausbetreuung Inntal e.U.",
+      "zeitraum": "April - Juni 2025",
+      "stunden": 36,
+      "stundensatz": 28.50,
+      "betrag": 1026.00,
+      "betrag_brutto": 1231.20,
+      "steuersatz": 20,
+      "umlagefaehig": true,
+      "details": "Objektkontrolle, kleine Reparaturen, Grünflächenpflege, Winterdienst-Nacharbeiten"
     }
   ],
+  "ruecklagen": {
+    "stand_quartalsbeginn": 45670.00,
+    "zuwendungen": 7200.00,
+    "entnahmen": 1850.00,
+    "stand_quartalsende": 51020.00,
+    "soll_ruecklage": 50400.00,
+    "differenz": 620.00
+  },
   "zusammenfassung": {
-    "summe_netto": 6820.00,
-    "ust_20": 1364.00,
-    "summe_brutto": 8184.00
+    "hausverwaltung_netto": 7200.00,
+    "hausverwaltung_ust": 1440.00,
+    "hausverwaltung_brutto": 8640.00,
+    "betriebskosten_netto": 4581.00,
+    "betriebskosten_ust": 916.20,
+    "betriebskosten_brutto": 5497.20,
+    "sonderverwaltung_netto": 2880.00,
+    "sonderverwaltung_ust": 576.00,
+    "sonderverwaltung_brutto": 3456.00,
+    "summe_netto": 14661.00,
+    "summe_ust_20": 2932.20,
+    "summe_brutto": 17593.20,
+    "ruecklagenbeitrag": 7200.00,
+    "gesamtbetrag": 24793.20
+  },
+  "zahlungskonditionen": {
+    "zahlungsziel_tage": 30,
+    "skonto_tage": 14,
+    "skonto_prozent": 2.0,
+    "mahngebuehren": "€ 15,00 je Mahnstufe",
+    "verzugszinsen": "4% p.a. über Basiszinssatz"
+  },
+  "rechtliche_hinweise": {
+    "aufbewahrung_jahre": 22,
+    "rechtsgrundlagen": ["Immobilientreuhandgesetz (ITG)", "Wohnungseigentumsgesetz (WEG)", "Maklergesetz (MaklerG)"],
+    "dsgvo_hinweis": "Personenbezogene Daten werden DSGVO-konform verarbeitet",
+    "einspruchsfrist": "30 Tage ab Rechnungsdatum"
   }
 }

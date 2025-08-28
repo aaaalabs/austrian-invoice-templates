@@ -1,26 +1,26 @@
 {
   "hotel": {
-    "name": "Alpenresort Sonnblick ****S",
-    "slogan": {
-      "de": "Ihre Auszeit in den Tiroler Bergen",
-      "en": "Your retreat in the Tyrolean Alps",
-      "it": "Il vostro rifugio nelle Alpi tirolesi"
-    },
-    "strasse": "Panoramaweg 100",
-    "plz": "6100",
-    "ort": "Seefeld in Tirol",
+    "name": "Hotel Austria Professional ****",
+    "classification": "4-Sterne Superior Hotel",
+    "strasse": "Hauptstraße 15",
+    "plz": "6020",
+    "ort": "Innsbruck",
     "land": "Österreich",
-    "telefon": "+43 5212 12345",
-    "email": "info@sonnblick.tirol",
-    "web": "www.sonnblick.tirol",
-    "uid": "ATU67890123",
-    "firmenbuch": "FN 456789b",
-    "geschaeftsfuehrer": "Familie Hofer",
-    "bank": "Raiffeisen Seefeld",
-    "iban": "AT12 3456 7890 1234 5678",
-    "bic": "RZTIAT22456",
-    "guetesiegel": ["4 Sterne Superior", "Tiroler Wirtshaus", "klimaaktiv"],
-    "bewertung": "Booking.com 9.2 | TripAdvisor 4.5★ | Google 4.7★"
+    "telefon": "+43 512 123456",
+    "email": "accounting@hotel-austria.at",
+    "web": "www.hotel-austria.at",
+    "uid": "ATU12345678",
+    "firmenbuch": "FN 123456a",
+    "geschaeftsfuehrer": "Hotel Austria GmbH",
+    "bank": "Tiroler Sparkasse",
+    "iban": "AT48 2050 3033 0012 3456",
+    "bic": "SPIKAT22XXX",
+    "guetesiegel": [
+      "Austrian Hotel Stars Classification",
+      "Green Key Environmental Certificate",
+      "Safe Stay Certified"
+    ],
+    "bewertung": "HolidayCheck: 5.2/6 | Booking.com: 8.9/10 | Google: 4.6★"
   },
   "gast": {
     "anrede": {
@@ -28,115 +28,117 @@
       "en": "Dear Family",
       "it": "Gentile Famiglia"
     },
-    "nachname": "Rossi",
-    "strasse": "Via Roma 25",
-    "plz": "39100",
-    "ort": "Bozen",
-    "land": "Italien / Italy / Italia",
-    "email": "marco.rossi@email.it",
-    "sprache": "it"
+    "nachname": "Müller",
+    "strasse": "Berliner Straße 123",
+    "plz": "80331",
+    "ort": "München",
+    "land": "Deutschland / Germany / Germania",
+    "email": "m.mueller@company.de",
+    "sprache": "de"
   },
   "rechnung": {
-    "nummer": "2025-3847",
+    "nummer": "2025-HT-4721",
     "datum": "28.08.2025",
-    "anreise": "21.08.2025",
+    "anreise": "25.08.2025",
     "abreise": "28.08.2025",
-    "naechte": 7,
-    "personen": 4,
-    "zimmer": "201 + 203"
+    "naechte": 3,
+    "personen": 2,
+    "zimmer": "Superior Doppelzimmer 312",
+    "kategorie": "Superior",
+    "verpflegung": "Halbpension"
   },
   "leistungen": [
     {
-      "kategorie": "unterkunft",
+      "kategorie": "ACCOMMODATION",
       "beschreibung": {
-        "de": "Doppelzimmer Superior mit Balkon, Halbpension",
-        "en": "Superior double room with balcony, half board",
-        "it": "Camera doppia superior con balcone, mezza pensione"
+        "de": "Superior Doppelzimmer mit Balkon und Bergblick, Halbpension",
+        "en": "Superior double room with balcony and mountain view, half board",
+        "it": "Camera doppia superior con balcone e vista montagna, mezza pensione"
       },
       "einheit": {
         "de": "Nächte",
         "en": "Nights",
         "it": "Notti"
       },
-      "menge": 7,
-      "einzelpreis": 180.00,
-      "gesamt": 1260.00,
-      "ust_satz": 13
-    },
-    {
-      "kategorie": "unterkunft",
-      "beschreibung": {
-        "de": "Familienzimmer mit Bergblick, Halbpension (2 Kinder)",
-        "en": "Family room mountain view, half board (2 children)",
-        "it": "Camera famigliare vista montagna, mezza pensione (2 bambini)"
-      },
-      "einheit": {
-        "de": "Nächte",
-        "en": "Nights",
-        "it": "Notti"
-      },
-      "menge": 7,
-      "einzelpreis": 240.00,
-      "gesamt": 1680.00,
-      "ust_satz": 13
-    },
-    {
-      "kategorie": "verpflegung",
-      "beschreibung": {
-        "de": "Upgrade All-Inclusive (4 Personen × 7 Tage)",
-        "en": "All-Inclusive upgrade (4 persons × 7 days)",
-        "it": "Upgrade All-Inclusive (4 persone × 7 giorni)"
-      },
-      "einheit": {
-        "de": "Paket",
-        "en": "Package",
-        "it": "Pacchetto"
-      },
-      "menge": 1,
-      "einzelpreis": 420.00,
-      "gesamt": 420.00,
+      "menge": 3,
+      "einzelpreis": 145.00,
+      "gesamt": 435.00,
       "ust_satz": 10
     },
     {
-      "kategorie": "wellness",
+      "kategorie": "MEALS",
       "beschreibung": {
-        "de": "Alpenkräuter-Massage 50 Min. (2×)",
-        "en": "Alpine herbs massage 50 min (2×)",
-        "it": "Massaggio alle erbe alpine 50 min (2×)"
+        "de": "Frühstücksbuffet inkl. regionaler Spezialitäten (2 Personen × 3 Tage)",
+        "en": "Breakfast buffet incl. regional specialties (2 persons × 3 days)",
+        "it": "Buffet colazione incl. specialità regionali (2 persone × 3 giorni)"
       },
       "einheit": {
-        "de": "Behandlung",
-        "en": "Treatment",
-        "it": "Trattamento"
+        "de": "Portion",
+        "en": "Portion",
+        "it": "Porzione"
       },
-      "menge": 2,
-      "einzelpreis": 85.00,
-      "gesamt": 170.00,
-      "ust_satz": 20
-    },
-    {
-      "kategorie": "sonstiges",
-      "beschreibung": {
-        "de": "Tages-Skipässe Seefeld (2 Erw. + 2 Kinder)",
-        "en": "Day ski passes Seefeld (2 adults + 2 children)",
-        "it": "Skipass giornalieri Seefeld (2 adulti + 2 bambini)"
-      },
-      "einheit": {
-        "de": "Tag",
-        "en": "Day",
-        "it": "Giorno"
-      },
-      "menge": 3,
-      "einzelpreis": 186.00,
-      "gesamt": 558.00,
+      "menge": 6,
+      "einzelpreis": 18.50,
+      "gesamt": 111.00,
       "ust_satz": 13
     },
     {
-      "kategorie": "minibar",
+      "kategorie": "MEALS",
       "beschreibung": {
-        "de": "Minibar-Verbrauch",
-        "en": "Minibar consumption",
-        "it": "Consumo minibar"
+        "de": "Abendmenü 3-Gang (2 Personen × 2 Abende)",
+        "en": "3-course dinner menu (2 persons × 2 evenings)",
+        "it": "Menu cena 3 portate (2 persone × 2 sere)"
+      },
+      "einheit": {
+        "de": "Menü",
+        "en": "Menu",
+        "it": "Menu"
+      },
+      "menge": 4,
+      "einzelpreis": 32.00,
+      "gesamt": 128.00,
+      "ust_satz": 13
+    },
+    {
+      "kategorie": "WELLNESS",
+      "beschreibung": {
+        "de": "Wellnessbereich-Zugang (Sauna, Pool, Fitnessraum)",
+        "en": "Wellness area access (sauna, pool, fitness room)",
+        "it": "Accesso area wellness (sauna, piscina, palestra)"
+      },
+      "einheit": {
+        "de": "Person/Tag",
+        "en": "Person/Day",
+        "it": "Persona/Giorno"
+      },
+      "menge": 6,
+      "einzelpreis": 15.00,
+      "gesamt": 90.00,
+      "ust_satz": 20
+    },
+    {
+      "kategorie": "SERVICES",
+      "beschreibung": {
+        "de": "Parkplatz Tiefgarage (pro Nacht)",
+        "en": "Underground parking (per night)",
+        "it": "Parcheggio sotterraneo (per notte)"
+      },
+      "einheit": {
+        "de": "Nacht",
+        "en": "Night",
+        "it": "Notte"
+      },
+      "menge": 3,
+      "einzelpreis": 18.00,
+      "gesamt": 54.00,
+      "ust_satz": 20
+    },
+    {
+      "kategorie": "BEVERAGES",
+      "beschreibung": {
+        "de": "Minibar-Konsumation (Getränke und Snacks)",
+        "en": "Minibar consumption (beverages and snacks)",
+        "it": "Consumo minibar (bevande e snack)"
       },
       "einheit": {
         "de": "Gesamt",
@@ -144,63 +146,63 @@
         "it": "Totale"
       },
       "menge": 1,
-      "einzelpreis": 67.50,
-      "gesamt": 67.50,
+      "einzelpreis": 28.50,
+      "gesamt": 28.50,
       "ust_satz": 20
     },
     {
-      "kategorie": "parken",
+      "kategorie": "SERVICES",
       "beschreibung": {
-        "de": "Garagenplatz",
-        "en": "Garage parking",
-        "it": "Posto auto in garage"
+        "de": "Concierge Service - Restaurantreservierung und Ticketbuchung",
+        "en": "Concierge service - restaurant reservation and ticket booking",
+        "it": "Servizio concierge - prenotazione ristorante e biglietti"
       },
       "einheit": {
-        "de": "Nächte",
-        "en": "Nights",
-        "it": "Notti"
+        "de": "Service",
+        "en": "Service",
+        "it": "Servizio"
       },
-      "menge": 7,
-      "einzelpreis": 15.00,
-      "gesamt": 105.00,
+      "menge": 2,
+      "einzelpreis": 12.00,
+      "gesamt": 24.00,
       "ust_satz": 20
     }
   ],
   "ortstaxe": {
     "beschreibung": {
-      "de": "Ortstaxe Seefeld (2,50€ pro Person/Nacht ab 15 Jahren)",
-      "en": "Local tax Seefeld (€2.50 per person/night from 15 years)",
-      "it": "Tassa di soggiorno Seefeld (2,50€ per persona/notte dai 15 anni)"
+      "de": "Ortstaxe Innsbruck (€ 2.80 pro Person/Nacht ab 15 Jahren)",
+      "en": "Local tourism tax Innsbruck (€ 2.80 per person/night from 15 years)",
+      "it": "Tassa di soggiorno Innsbruck (€ 2.80 per persona/notte dai 15 anni)"
     },
     "personen": 2,
-    "naechte": 7,
-    "betrag_pro": 2.50,
-    "gesamt": 35.00,
+    "naechte": 3,
+    "betrag_pro": 2.80,
+    "gesamt": 16.80,
     "ust_frei": true
   },
   "zusammenfassung": {
-    "unterkunft_netto": 2940.00,
-    "verpflegung_netto": 420.00,
-    "sonstiges_netto": 900.50,
-    "summe_netto": 4260.50,
-    "ust_10": 42.00,
-    "ust_13": 499.40,
-    "ust_20": 68.50,
-    "summe_ust": 609.90,
-    "summe_brutto": 4870.40,
-    "ortstaxe": 35.00,
-    "gesamtbetrag": 4905.40,
-    "anzahlung_geleistet": 500.00,
-    "zu_zahlen": 4405.40
+    "unterkunft_netto": 435.00,
+    "verpflegung_netto": 239.00,
+    "sonstiges_netto": 196.50,
+    "summe_netto": 870.50,
+    "ust_10": 43.50,
+    "ust_13": 31.07,
+    "ust_20": 39.30,
+    "summe_ust": 113.87,
+    "summe_brutto": 984.37,
+    "ortstaxe": 16.80,
+    "gesamtbetrag": 1001.17,
+    "anzahlung_geleistet": 300.00,
+    "zu_zahlen": 701.17
   },
   "zusatztext": {
-    "de": "Vielen Dank für Ihren Aufenthalt! Wir freuen uns auf ein Wiedersehen in den Tiroler Bergen.",
-    "en": "Thank you for your stay! We look forward to welcoming you back to the Tyrolean Alps.",
-    "it": "Grazie per il vostro soggiorno! Non vediamo l'ora di rivedervi nelle Alpi tirolesi."
+    "de": "Vielen Dank für Ihren Aufenthalt bei uns. Wir freuen uns auf Ihren nächsten Besuch!",
+    "en": "Thank you for staying with us. We look forward to your next visit!",
+    "it": "Grazie per aver soggiornato con noi. Non vediamo l'ora della vostra prossima visita!"
   },
   "storno": {
-    "de": "Stornobedingungen gemäß ÖHVB: bis 3 Monate vor Anreise kostenlos, bis 1 Monat 40%, bis 1 Woche 70%, danach 90%",
-    "en": "Cancellation according to ÖHVB: free until 3 months before arrival, until 1 month 40%, until 1 week 70%, thereafter 90%",
-    "it": "Condizioni di cancellazione secondo ÖHVB: gratuito fino a 3 mesi prima, fino a 1 mese 40%, fino a 1 settimana 70%, poi 90%"
+    "de": "Stornobedingungen gemäß ÖHVB 2006: Bis 30 Tage vor Anreise kostenfrei, bis 14 Tage 40%, bis 7 Tage 70%, danach 90% des Zimmerpreises. Bei No-Show 100%.",
+    "en": "Cancellation policy according to ÖHVB 2006: Free until 30 days before arrival, until 14 days 40%, until 7 days 70%, thereafter 90% of room rate. No-show 100%.",
+    "it": "Condizioni di cancellazione secondo ÖHVB 2006: Gratuito fino a 30 giorni prima, fino a 14 giorni 40%, fino a 7 giorni 70%, poi 90% del prezzo camera. No-show 100%."
   }
 }

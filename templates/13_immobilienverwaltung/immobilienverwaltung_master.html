@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{verwaltung.name}} - Verwaltungsabrechnung {{rechnung.nummer}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #2c3e50;
+            background: white;
+        }
+
+        .invoice-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            min-height: 297mm;
+            background: white;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1B365D;
+        }
+
+        .company-info {
+            flex: 1;
+        }
+
+        .company-logo {
+            width: 150px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1B365D;
+            margin-bottom: 8px;
+        }
+
+        .company-details {
+            font-size: 10pt;
+            line-height: 1.3;
+            color: #555;
+        }
+
+        .credentials {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-left: 4px solid #1B365D;
+            font-size: 9pt;
+        }
+
+        .credentials strong {
+            color: #1B365D;
+        }
+
+        /* Invoice Title */
+        .invoice-title {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+        }
+
+        .invoice-title h1 {
+            font-size: 20pt;
+            color: #1B365D;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .invoice-subtitle {
+            font-size: 12pt;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        /* Property and Client Information */
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 30px;
+        }
+
+        .info-box {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background: #fdfdfd;
+        }
+
+        .info-box h3 {
+            font-size: 12pt;
+            color: #1B365D;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #1B365D;
+            padding-bottom: 5px;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+            font-size: 10pt;
+        }
+
+        .info-box .highlight {
+            font-weight: bold;
+            color: #1B365D;
+        }
+
+        /* Invoice Details */
+        .invoice-details {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 15px;
+            background: #1B365D;
+            color: white;
+        }
+
+        .invoice-details div {
+            text-align: center;
+        }
+
+        .invoice-details .label {
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .invoice-details .value {
+            font-size: 11pt;
+            font-weight: bold;
+        }
+
+        /* Services Table */
+        .services-section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            color: #1B365D;
+            margin: 25px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #1B365D;
+            padding-bottom: 5px;
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 10pt;
+        }
+
+        .services-table th {
+            background: #1B365D;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 9pt;
+        }
+
+        .services-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .services-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .services-table tr:hover {
+            background: #f0f8ff;
+        }
+
+        .category-header {
+            background: #e8f1f8 !important;
+            font-weight: bold;
+            color: #1B365D;
+            font-style: italic;
+        }
+
+        .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .description {
+            max-width: 200px;
+        }
+
+        .service-details {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            margin: 30px 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .summary-table {
+            width: 350px;
+            border-collapse: collapse;
+            font-size: 11pt;
+        }
+
+        .summary-table td {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .summary-table .label {
+            background: #f8f9fa;
+            font-weight: bold;
+            text-align: left;
+            color: #1B365D;
+        }
+
+        .summary-table .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            background: white;
+        }
+
+        .summary-table .total-row {
+            background: #1B365D;
+            color: white;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+
+        /* Legal and Payment Information */
+        .payment-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+        }
+
+        .payment-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .payment-box {
+            flex: 1;
+        }
+
+        .payment-box h4 {
+            font-size: 11pt;
+            color: #1B365D;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .payment-box p {
+            font-size: 10pt;
+            margin: 5px 0;
+        }
+
+        .bank-info {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        /* EPC QR Code Section */
+        .qr-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            margin: 10px auto;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9pt;
+            color: #666;
+        }
+
+        /* Legal Footer */
+        .legal-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 8pt;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        .legal-notice {
+            margin: 10px 0;
+            padding: 8px;
+            background: #fffbf0;
+            border-left: 3px solid #ffc107;
+        }
+
+        .legal-notice strong {
+            color: #856404;
+        }
+
+        /* Contact Information */
+        .contact-footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: #1B365D;
+            color: white;
+            text-align: center;
+            font-size: 9pt;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            
+            .invoice-container {
+                margin: 0;
+                padding: 10mm;
+                max-width: none;
+            }
+            
+            .header {
+                margin-bottom: 20px;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* Accessibility and Mobile */
+        @media (max-width: 768px) {
+            .info-section {
+                flex-direction: column;
+            }
+            
+            .payment-info {
+                flex-direction: column;
+            }
+            
+            .invoice-details {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="company-info">
+                <img src="media/logo_rectangle.png" alt="{{verwaltung.name}} Logo" class="company-logo">
+                <div class="company-name">{{verwaltung.name}}</div>
+                <div class="company-details">
+                    {{verwaltung.strasse}}<br>
+                    {{verwaltung.plz}} {{verwaltung.ort}}, {{verwaltung.land}}<br>
+                    Tel: {{verwaltung.telefon}}<br>
+                    E-Mail: {{verwaltung.email}}<br>
+                    Web: {{verwaltung.web}}<br>
+                    UID: {{verwaltung.uid}}
+                </div>
+                <div class="credentials">
+                    <strong>{{verwaltung.konzession}}</strong><br>
+                    ÖVI-Mitglied | WKO Fachgruppe Immobilien-Treuhänder<br>
+                    Berufshaftpflichtversicherung: Uniqa, Police Nr. BH-2024-7890123
+                </div>
+            </div>
+        </header>
+
+        <!-- Invoice Title -->
+        <div class="invoice-title">
+            <h1>Verwaltungsabrechnung</h1>
+            <div class="invoice-subtitle">Objektverwaltung & Betriebskostenabrechnung</div>
+            <div class="invoice-subtitle">{{rechnung.abrechnungszeitraum}}</div>
+        </div>
+
+        <!-- Property and Client Information -->
+        <section class="info-section">
+            <div class="info-box">
+                <h3>Verwaltungsobjekt</h3>
+                <p><span class="highlight">{{objekt.bezeichnung}}</span></p>
+                <p>{{objekt.adresse}}</p>
+                <p>{{objekt.einheiten}} Wohneinheiten | Baujahr {{objekt.baujahr}}</p>
+                <p>Objekttyp: {{objekt.typ}}</p>
+                <p><strong>Verwaltungsvertrag Nr.:</strong> VV-{{rechnung.nummer}}</p>
+            </div>
+            <div class="info-box">
+                <h3>Eigentumsgemeinschaft</h3>
+                <p><span class="highlight">{{eigentuemer.name}}</span></p>
+                <p>{{eigentuemer.ansprechpartner}}</p>
+                <p>{{eigentuemer.strasse}}</p>
+                <p>{{eigentuemer.plz}} {{eigentuemer.ort}}</p>
+                <p><strong>UID:</strong> {{eigentuemer.uid}}</p>
+            </div>
+        </section>
+
+        <!-- Invoice Details -->
+        <section class="invoice-details">
+            <div>
+                <div class="label">Rechnungs-Nr.</div>
+                <div class="value">{{rechnung.nummer}}</div>
+            </div>
+            <div>
+                <div class="label">Rechnungsdatum</div>
+                <div class="value">{{rechnung.datum}}</div>
+            </div>
+            <div>
+                <div class="label">Abrechnungszeitraum</div>
+                <div class="value">{{rechnung.abrechnungszeitraum}}</div>
+            </div>
+            <div>
+                <div class="label">Fälligkeitsdatum</div>
+                <div class="value">{{rechnung.zahlungsziel}}</div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <h2 class="section-title">Verwaltungsleistungen & Betriebskosten</h2>
+            
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">Leistungsbeschreibung</th>
+                        <th style="width: 15%;">Kategorie</th>
+                        <th style="width: 15%;">Grundlage</th>
+                        <th style="width: 12%;">Nettobetrag</th>
+                        <th style="width: 8%;">USt</th>
+                        <th style="width: 10%;">Bruttobetrag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Hausverwaltung Kategorie -->
+                    <tr class="category-header">
+                        <td colspan="6">HAUSVERWALTUNG</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>{{leistungen.0.beschreibung}}</strong>
+                            <div class="service-details">
+                                Grundverwaltung nach Verwaltungsvertrag vom 01.01.2024<br>
+                                Inkl. Buchhaltung, Korrespondenz, Eigentümerversammlung
+                            </div>
+                        </td>
+                        <td>{{leistungen.0.kategorie}}</td>
+                        <td>{{leistungen.0.basis}}</td>
+                        <td class="amount">€ {{leistungen.0.betrag}}</td>
+                        <td class="amount">{{leistungen.0.steuersatz}}%</td>
+                        <td class="amount">€ {{leistungen.0.betrag_brutto}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <strong>{{leistungen.3.beschreibung}}</strong>
+                            <div class="service-details">
+                                Berechnung auf Basis der Bruttomieteinnahmen Q2/2025<br>
+                                Inkl. Mahnwesen, Neuvermietung, Vertragsabwicklung
+                            </div>
+                        </td>
+                        <td>{{leistungen.3.kategorie}}</td>
+                        <td>{{leistungen.3.basis}}</td>
+                        <td class="amount">€ {{leistungen.3.betrag}}</td>
+                        <td class="amount">{{leistungen.3.steuersatz}}%</td>
+                        <td class="amount">€ {{leistungen.3.betrag_brutto}}</td>
+                    </tr>
+
+                    <!-- Betriebskosten Kategorie -->
+                    <tr class="category-header">
+                        <td colspan="6">BETRIEBSKOSTEN & INSTANDHALTUNG</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>{{leistungen.1.beschreibung}}</strong>
+                            <div class="service-details">
+                                Auftragnehmer: {{leistungen.1.auftragnehmer}}<br>
+                                Wartung gemäß ÖVGW-Richtlinien, jährliche Inspektion
+                            </div>
+                        </td>
+                        <td>{{leistungen.1.kategorie}}</td>
+                        <td>nach Aufwand</td>
+                        <td class="amount">€ {{leistungen.1.betrag}}</td>
+                        <td class="amount">{{leistungen.1.steuersatz}}%</td>
+                        <td class="amount">€ {{leistungen.1.betrag_brutto}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <strong>{{leistungen.2.beschreibung}}</strong>
+                            <div class="service-details">
+                                Auftragnehmer: {{leistungen.2.auftragnehmer}}<br>
+                                Wöchentliche Reinigung, Sonderreinigungen inkl.
+                            </div>
+                        </td>
+                        <td>{{leistungen.2.kategorie}}</td>
+                        <td>Wochen à €90</td>
+                        <td class="amount">€ {{leistungen.2.betrag}}</td>
+                        <td class="amount">{{leistungen.2.steuersatz}}%</td>
+                        <td class="amount">€ {{leistungen.2.betrag_brutto}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="summary-section">
+            <table class="summary-table">
+                <tr>
+                    <td class="label">Zwischensumme Netto:</td>
+                    <td class="amount">€ {{zusammenfassung.summe_netto}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Umsatzsteuer 20%:</td>
+                    <td class="amount">€ {{zusammenfassung.ust_20}}</td>
+                </tr>
+                <tr class="total-row">
+                    <td>RECHNUNGSBETRAG:</td>
+                    <td class="amount">€ {{zusammenfassung.summe_brutto}}</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Payment Information -->
+        <section class="payment-section">
+            <div class="payment-info">
+                <div class="payment-box">
+                    <h4>Zahlungsinformationen</h4>
+                    <p><strong>Zahlungsziel:</strong> 30 Tage netto</p>
+                    <p><strong>Fällig am:</strong> {{rechnung.zahlungsziel}}</p>
+                    <p><strong>Geschäftskonto:</strong></p>
+                    <p class="bank-info">
+                        IBAN: {{verwaltung.iban}}<br>
+                        BIC: BKAUATWW<br>
+                        Bank Austria
+                    </p>
+                </div>
+                <div class="payment-box">
+                    <h4>Treuhandkonto Information</h4>
+                    <p><strong>Kautionsverwaltung:</strong></p>
+                    <p class="bank-info">
+                        IBAN: {{verwaltung.treuhandkonto}}<br>
+                        BIC: BKAUATWW<br>
+                        Bank Austria Treuhand
+                    </p>
+                    <p><em>Verzinsung: 0,125% p.a. (Basiszinssatz OeNB)</em></p>
+                </div>
+                <div class="qr-section">
+                    <div class="qr-code">
+                        EPC-QR Code<br>
+                        für SEPA-<br>
+                        Überweisung
+                    </div>
+                    <p style="font-size: 8pt;">QR-Code scannen für automatische Überweisung</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Footer -->
+        <footer class="legal-footer">
+            <div class="legal-notice">
+                <strong>Aufbewahrungspflicht:</strong> Diese Rechnung ist gemäß Immobilienrecht 22 Jahre aufzubewahren. 
+                Elektronische Archivierung erfolgt DSGVO-konform auf EU-Servern.
+            </div>
+            
+            <p>
+                <strong>Rechtliche Grundlagen:</strong> Verwaltungstätigkeit erfolgt nach Immobilientreuhandgesetz (ITG) 
+                und Wohnungseigentumsgesetz (WEG). Bei Rückfragen wenden Sie sich an unseren zuständigen Verwalter.
+            </p>
+            
+            <p>
+                <strong>Datenschutz:</strong> Personenbezogene Daten werden gemäß DSGVO verarbeitet. 
+                Unsere Datenschutzerklärung finden Sie unter {{verwaltung.web}}/datenschutz
+            </p>
+        </footer>
+
+        <!-- Contact Footer -->
+        <div class="contact-footer">
+            <p>
+                <strong>Ihr Ansprechpartner:</strong> Mag. Thomas Verwalter, gepr. Immobilientreuhänder |
+                Tel: {{verwaltung.telefon}} | E-Mail: {{verwaltung.email}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
