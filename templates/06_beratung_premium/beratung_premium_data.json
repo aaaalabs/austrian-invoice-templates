@@ -1,0 +1,154 @@
+{
+  "firma": {
+    "name": "Strategic Excellence Partners GmbH",
+    "claim": "Transforming Vision into Value",
+    "strasse": "Ringstraße 1",
+    "plz": "1010",
+    "ort": "Wien",
+    "land": "Österreich",
+    "telefon": "+43 1 890 1234",
+    "email": "office@strategic-excellence.at",
+    "web": "www.strategic-excellence.at",
+    "uid": "ATU69258147",
+    "firmenbuch": "FN 123789x",
+    "gericht": "Handelsgericht Wien",
+    "geschaeftsfuehrer": "Mag. Dr. Andreas Berater, CMC",
+    "bank": "Bank Austria",
+    "iban": "AT45 1200 0100 1234 5678",
+    "bic": "BKAUATWW",
+    "cmc_nummer": "CMC-AT-2020-4567",
+    "iso": "ISO 20700:2017 certified",
+    "versicherung": "Berufshaftpflicht: Zürich Versicherung, Pol.Nr. BH-2024-789456",
+    "wko": "Fachgruppe UBIT - Unternehmensberatung, Buchhaltung und IT"
+  },
+  "kunde": {
+    "firma": "Global Industries AG",
+    "vorstand": "Mag. Christina Vorstand",
+    "abteilung": "Executive Board",
+    "strasse": "Industriezeile 500",
+    "plz": "4020",
+    "ort": "Linz",
+    "land": "Österreich",
+    "uid": "ATU58741236",
+    "rahmenvertrag": "RV-2024-0089 vom 15.01.2024"
+  },
+  "rechnung": {
+    "nummer": "SEP-2025-00234",
+    "datum": "28.08.2025",
+    "leistungszeitraum": "01.07.2025 - 31.08.2025",
+    "zahlungsziel": "27.09.2025",
+    "betreff": "Strategieprojekt 'Future Excellence 2030' - Phase 2",
+    "projektleiter": "Dr. Michael Senior Partner"
+  },
+  "executive_summary": {
+    "projektziel": "Entwicklung und Implementierung einer digitalen Transformationsstrategie zur Steigerung der operativen Effizienz um 30% bis 2027",
+    "hauptergebnisse": [
+      "Digitalisierungs-Roadmap mit 47 priorisierten Initiativen",
+      "Organisationsdesign für agile Arbeitsweise",
+      "Change Management Konzept für 1.200 Mitarbeiter",
+      "Quick-Win Identifikation mit 2.3M€ Einsparpotential"
+    ],
+    "value_delivered": "Prognostizierter ROI: 450% über 3 Jahre",
+    "next_steps": "Implementierungsbegleitung Phase 3 ab Oktober 2025"
+  },
+  "positionen": [
+    {
+      "phase": "Analyse & Diagnose",
+      "beschreibung": "Ist-Analyse, Prozessaufnahme, Benchmarking",
+      "berater": "Senior Partner",
+      "tage": 8,
+      "tagessatz": 2400.00,
+      "gesamt": 19200.00
+    },
+    {
+      "phase": "Strategieentwicklung",
+      "beschreibung": "Strategieworkshops, Szenarioplanung, Roadmap-Entwicklung",
+      "berater": "Senior Partner",
+      "tage": 12,
+      "tagessatz": 2400.00,
+      "gesamt": 28800.00
+    },
+    {
+      "phase": "Konzeption",
+      "beschreibung": "Detailkonzepte, Business Cases, Implementierungsplan",
+      "berater": "Principal Consultant",
+      "tage": 15,
+      "tagessatz": 1800.00,
+      "gesamt": 27000.00
+    },
+    {
+      "phase": "Change Management",
+      "beschreibung": "Stakeholder-Management, Kommunikationskonzept, Training-Design",
+      "berater": "Senior Consultant",
+      "tage": 10,
+      "tagessatz": 1400.00,
+      "gesamt": 14000.00
+    },
+    {
+      "phase": "Projektmanagement",
+      "beschreibung": "Projektleitung, Steering Committee, Dokumentation",
+      "berater": "Senior Consultant",
+      "tage": 8,
+      "tagessatz": 1400.00,
+      "gesamt": 11200.00
+    },
+    {
+      "phase": "Reisezeiten",
+      "beschreibung": "Reisezeiten Wien-Linz (50% des Tagessatzes)",
+      "berater": "Verschiedene",
+      "tage": 6,
+      "tagessatz": 900.00,
+      "gesamt": 5400.00
+    }
+  ],
+  "spesen": [
+    {
+      "beschreibung": "Bahnfahrten Wien-Linz Business Class",
+      "anzahl": 18,
+      "einzelpreis": 78.00,
+      "gesamt": 1404.00
+    },
+    {
+      "beschreibung": "Hotelübernachtungen Linz",
+      "anzahl": 12,
+      "einzelpreis": 145.00,
+      "gesamt": 1740.00
+    },
+    {
+      "beschreibung": "Verpflegungspauschale",
+      "anzahl": 12,
+      "einzelpreis": 26.40,
+      "gesamt": 316.80
+    },
+    {
+      "beschreibung": "Workshopmaterialien und Catering",
+      "anzahl": 1,
+      "einzelpreis": 1250.00,
+      "gesamt": 1250.00
+    }
+  ],
+  "erfolgshonorar": {
+    "vereinbart": true,
+    "beschreibung": "Erfolgshonorar bei Erreichung der Kosteneinsparung >2M€ im ersten Jahr",
+    "prozentsatz": 5,
+    "maximalbetrag": 50000.00,
+    "faelligkeit": "Nach Nachweis Q2/2026",
+    "status": "Noch nicht fällig"
+  },
+  "zusammenfassung": {
+    "beratungshonorare": 105600.00,
+    "spesen": 4710.80,
+    "zwischensumme": 110310.80,
+    "rabatt_prozent": 5,
+    "rabatt_betrag": 5515.54,
+    "summe_netto": 104795.26,
+    "ust_20": 20959.05,
+    "summe_brutto": 125754.31
+  },
+  "zusatzinfo": {
+    "vertraulichkeit": "Alle Projektergebnisse unterliegen strengster Vertraulichkeit gemäß NDA vom 10.01.2024",
+    "ip_rechte": "Sämtliche Verwertungsrechte an den Arbeitsergebnissen gehen nach vollständiger Zahlung an den Auftraggeber über",
+    "haftung": "Die Haftung ist auf die Höhe des Beratungshonorars beschränkt, soweit gesetzlich zulässig",
+    "referenzen": "Benchmark-Daten basieren auf unserer Studie 'Digital Excellence 2025' mit n=127 Unternehmen"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "restaurant": {
+    "name": "Gasthof zur Goldenen Gams",
+    "kategorie": "Traditioneller Tiroler Gasthof",
+    "strasse": "Dorfstraße 15",
+    "plz": "6100",
+    "ort": "Seefeld in Tirol",
+    "land": "Österreich",
+    "telefon": "+43 5212 98765",
+    "email": "info@goldene-gams.at",
+    "web": "www.goldene-gams.at",
+    "uid": "ATU87654321",
+    "firmenbuch": "FN 789123x",
+    "geschaeftsfuehrer": "Familie Wirtshausbesitzer",
+    "bank": "Raiffeisen Seefeld",
+    "iban": "AT98 3456 7890 2345 6789",
+    "bic": "RZTIAT22456",
+    "konzession": "Gastgewerbeberechtigung GZ-2020/1234",
+    "registrierkasse": "RK-2025-4567-GOLD",
+    "oeffnungszeiten": "Täglich 11:00-22:00 | Küche bis 21:30",
+    "sterne": "3 Sterne - Tiroler Wirtshaus"
+  },
+  "kunde": {
+    "typ": "unternehmen",
+    "firma": "Alpine Business Solutions GmbH",
+    "ansprechpartner": "Herr Mag. Stefan Geschäftsführer",
+    "strasse": "Businesspark 25",
+    "plz": "6020", 
+    "ort": "Innsbruck",
+    "uid": "ATU98765432",
+    "bewirtungsbeleg": true,
+    "kostenstelle": "Kundenbetreuung"
+  },
+  "rechnung": {
+    "nummer": "GG-2025-1847",
+    "datum": "28.08.2025",
+    "bewirtungsdatum": "26.08.2025",
+    "uhrzeit": "19:30",
+    "tisch": "12 (Stubenbereich)",
+    "personen": 6,
+    "kellner": "Maria S.",
+    "zahlungsziel": "14.09.2025",
+    "anlass": "Geschäftsessen - Kundenbetreuung"
+  },
+  "positionen": [
+    {
+      "kategorie": "vorspeisen",
+      "bezeichnung": "Tiroler Speckplatte mit Schüttelbrot",
+      "menge": 2,
+      "einzelpreis": 12.50,
+      "steuersatz": 10,
+      "gesamt": 25.00,
+      "allergene": ["Gluten", "Sellerie"]
+    },
+    {
+      "kategorie": "vorspeisen", 
+      "bezeichnung": "Kürbiscremesuppe mit Kernöl",
+      "menge": 4,
+      "einzelpreis": 7.80,
+      "steuersatz": 10,
+      "gesamt": 31.20,
+      "allergene": ["Sellerie"]
+    },
+    {
+      "kategorie": "hauptspeisen",
+      "bezeichnung": "Wiener Schnitzel vom Kalb mit Petersilienkartoffeln",
+      "menge": 3,
+      "einzelpreis": 24.50,
+      "steuersatz": 10,
+      "gesamt": 73.50,
+      "allergene": ["Gluten", "Ei"]
+    },
+    {
+      "kategorie": "hauptspeisen",
+      "bezeichnung": "Zander-Filet auf Ratatouille-Gemüse",
+      "menge": 2,
+      "einzelpreis": 19.80,
+      "steuersatz": 10,
+      "gesamt": 39.60,
+      "allergene": ["Fisch"]
+    },
+    {
+      "kategorie": "hauptspeisen",
+      "bezeichnung": "Hirschgulasch mit Spätzle und Rotkraut",
+      "menge": 1,
+      "einzelpreis": 22.00,
+      "steuersatz": 10,
+      "gesamt": 22.00,
+      "allergene": ["Gluten"]
+    },
+    {
+      "kategorie": "getraenke",
+      "bezeichnung": "Mineralwasser still 0,75l",
+      "menge": 3,
+      "einzelpreis": 4.20,
+      "steuersatz": 10,
+      "gesamt": 12.60
+    },
+    {
+      "kategorie": "getraenke",
+      "bezeichnung": "Grüner Veltliner 0,25l",
+      "menge": 4,
+      "einzelpreis": 6.80,
+      "steuersatz": 20,
+      "gesamt": 27.20
+    },
+    {
+      "kategorie": "getraenke", 
+      "bezeichnung": "Bier vom Fass 0,5l",
+      "menge": 2,
+      "einzelpreis": 4.50,
+      "steuersatz": 20,
+      "gesamt": 9.00
+    },
+    {
+      "kategorie": "dessert",
+      "bezeichnung": "Apfelstrudel hausgemacht mit Vanillesauce",
+      "menge": 4,
+      "einzelpreis": 8.90,
+      "steuersatz": 10,
+      "gesamt": 35.60,
+      "allergene": ["Gluten", "Milch", "Ei"]
+    },
+    {
+      "kategorie": "service",
+      "bezeichnung": "Bedienungszuschlag (optional)",
+      "menge": 1,
+      "einzelpreis": 0.00,
+      "steuersatz": 20,
+      "gesamt": 0.00
+    }
+  ],
+  "zusammenfassung": {
+    "speisen_getraenke_10": 240.50,
+    "alkohol_service_20": 36.20,
+    "summe_netto": 276.70,
+    "ust_10": 24.05,
+    "ust_20": 7.24,
+    "summe_ust": 31.29,
+    "summe_brutto": 307.99,
+    "trinkgeld_empfehlung": "15% ≈ 46,20 €",
+    "zahlungsart": "Rechnung"
+  },
+  "bewirtungsbeleg": {
+    "anlass": "Geschäftsessen mit Kunden der Alpine Business Solutions GmbH",
+    "teilnehmer": "6 Personen",
+    "geschaeftszweck": "Besprechung neuer Kooperationsmöglichkeiten",
+    "besteuerung": "Bewirtungskosten 70% abzugsfähig gem. § 20 Abs 1 Z 3 EStG"
+  },
+  "zusatzinfo": {
+    "allergene_hinweis": "Alle Allergene-Informationen erhalten Sie auf Anfrage beim Service-Personal",
+    "qualitaet": "Regionale Zutaten aus Tirol | Bio-zertifizierte Produkte wo möglich",
+    "wko": "Mitglied der WKO Tirol - Fachgruppe Gastronomie",
+    "hygiene": "HACCP-zertifiziert | Lebensmittelhygiene-Schulung aktuell"
+  }
+}

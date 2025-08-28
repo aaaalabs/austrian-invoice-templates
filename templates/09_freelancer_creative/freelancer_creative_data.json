@@ -1,0 +1,185 @@
+{
+  "freelancer": {
+    "name": "Studio Kreativkopf",
+    "inhaber": "Lisa Designerin",
+    "tagline": "Visual Stories That Matter",
+    "strasse": "Kreativquartier 8/15",
+    "plz": "4020",
+    "ort": "Linz",
+    "land": "Österreich",
+    "telefon": "+43 699 12345678",
+    "email": "hello@kreativkopf.at",
+    "web": "www.kreativkopf.at",
+    "instagram": "@studio.kreativkopf",
+    "behance": "behance.net/kreativkopf",
+    "uid": "ATU71234567",
+    "bank": "Bank Austria",
+    "iban": "AT12 1234 5678 9012 3456",
+    "bic": "BKAUATWW",
+    "awards": ["Red Dot Winner 2024", "ADC Bronze 2023"]
+  },
+  "kunde": {
+    "firma": "StartUp Heroes GmbH",
+    "ansprechpartner": "Tom Founder",
+    "strasse": "Innovation Hub 42",
+    "plz": "4020",
+    "ort": "Linz",
+    "email": "tom@startup-heroes.com",
+    "projekt": "Brand Identity Relaunch"
+  },
+  "rechnung": {
+    "nummer": "2025-KK-089",
+    "datum": "28.08.2025",
+    "projekt_zeitraum": "15.07.2025 - 27.08.2025",
+    "zahlungsziel": "11.09.2025",
+    "brief_referenz": "Creative Brief v2.3 vom 10.07.2025"
+  },
+  "leistungen": [
+    {
+      "phase": "Discovery & Strategy",
+      "items": [
+        {
+          "beschreibung": "Brand Workshop & Stakeholder Interviews",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 1200.00,
+          "gesamt": 1200.00
+        },
+        {
+          "beschreibung": "Competitor Analysis & Mood Boarding",
+          "einheit": "Stunden",
+          "menge": 8,
+          "einzelpreis": 95.00,
+          "gesamt": 760.00
+        }
+      ]
+    },
+    {
+      "phase": "Design Development",
+      "items": [
+        {
+          "beschreibung": "Logo Design - 3 Konzepte + 2 Überarbeitungsrunden",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 2400.00,
+          "gesamt": 2400.00
+        },
+        {
+          "beschreibung": "Color Palette & Typography System",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 800.00,
+          "gesamt": 800.00
+        },
+        {
+          "beschreibung": "Brand Pattern & Graphic Elements",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 600.00,
+          "gesamt": 600.00
+        }
+      ]
+    },
+    {
+      "phase": "Application Design",
+      "items": [
+        {
+          "beschreibung": "Business Cards & Stationery",
+          "einheit": "Set",
+          "menge": 1,
+          "einzelpreis": 450.00,
+          "gesamt": 450.00
+        },
+        {
+          "beschreibung": "Social Media Templates (12 Designs)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 960.00,
+          "gesamt": 960.00
+        },
+        {
+          "beschreibung": "Website UI Kit (Desktop + Mobile)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 1800.00,
+          "gesamt": 1800.00
+        },
+        {
+          "beschreibung": "Presentation Template (20 Slides)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 650.00,
+          "gesamt": 650.00
+        }
+      ]
+    },
+    {
+      "phase": "Brand Guidelines",
+      "items": [
+        {
+          "beschreibung": "Brand Manual (40 Pages PDF)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 1200.00,
+          "gesamt": 1200.00
+        }
+      ]
+    },
+    {
+      "phase": "Extras",
+      "items": [
+        {
+          "beschreibung": "Rush Delivery Surcharge (2 weeks faster)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 500.00,
+          "gesamt": 500.00
+        },
+        {
+          "beschreibung": "Extended Usage Rights (Unlimited, All Media)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 800.00,
+          "gesamt": 800.00
+        }
+      ]
+    }
+  ],
+  "zusammenfassung": {
+    "subtotal_discovery": 1960.00,
+    "subtotal_design": 3800.00,
+    "subtotal_application": 3860.00,
+    "subtotal_guidelines": 1200.00,
+    "subtotal_extras": 1300.00,
+    "rabatt_beschreibung": "Early Bird Discount 10%",
+    "rabatt_prozent": 10,
+    "rabatt_betrag": 1212.00,
+    "summe_netto": 10908.00,
+    "ust_20": 2181.60,
+    "summe_brutto": 13089.60
+  },
+  "nutzungsrechte": {
+    "umfang": "Exklusive, unbeschränkte Nutzungsrechte für alle Medien und Länder",
+    "dauer": "Zeitlich unbegrenzt",
+    "bearbeitung": "Bearbeitungsrecht eingeschlossen",
+    "weitergabe": "Weitergabe an Tochtergesellschaften erlaubt",
+    "archivierung": "Ursprungsdateien verbleiben bei Studio Kreativkopf für Portfolio"
+  },
+  "lieferung": {
+    "methode": "WeTransfer Link + Google Drive Backup",
+    "dateien": [
+      "Logo (AI, EPS, SVG, PNG, JPG)",
+      "Brand Guidelines (PDF, 40 Seiten)",
+      "Social Media Templates (PSD, Canva)",
+      "UI Kit (Figma, Sketch)",
+      "Presentation (PPTX, KEY, Google Slides)",
+      "Font Files (OTF, TTF, WOFF2)"
+    ],
+    "link": "https://we.tl/t-aBcDeF1234",
+    "passwort": "StartUp2025!"
+  },
+  "testimonial": {
+    "quote": "Lisa hat unsere Vision perfekt in ein visuelles Konzept übersetzt. Absolut empfehlenswert!",
+    "author": "Sarah Chen, CEO TechStart (vorheriges Projekt)"
+  }
+}

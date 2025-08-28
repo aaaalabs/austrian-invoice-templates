@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Consulting Invoice {{rechnung.nummer}} - {{firma.name}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #fff;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 3cm;
+        }
+        
+        .premium-header {
+            position: relative;
+            padding: 3rem 0;
+            border-bottom: 3px solid #D4AF37;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .premium-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(212,175,55,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .company-branding h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .company-branding .tagline {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #f0f0f0;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .company-details {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .company-details p {
+            margin-bottom: 0.3rem;
+            color: #e0e0e0;
+        }
+        
+        .credentials {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.85rem;
+            color: #D4AF37;
+        }
+        
+        .invoice-header {
+            text-align: right;
+        }
+        
+        .invoice-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .invoice-type {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            margin-bottom: 1rem;
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, #f8f6f0 0%, #faf8f2 100%);
+            border: 1px solid #D4AF37;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .executive-summary::before {
+            content: '📊';
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+        
+        .executive-summary h2 {
+            font-family: 'Playfair Display', serif;
+            color: #2c2c2c;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .project-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .value-highlight {
+            background: #D4AF37;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .results-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .results-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .results-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        .client-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        
+        .address-block h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c2c2c;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .invoice-details {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .detail-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f6f0;
+            border-radius: 6px;
+        }
+        
+        .detail-item label {
+            display: block;
+            font-weight: 600;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .detail-item span {
+            font-size: 1.1rem;
+            color: #2c2c2c;
+        }
+        
+        .consulting-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .consulting-table th {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .consulting-table th:first-child {
+            border-radius: 12px 0 0 0;
+        }
+        
+        .consulting-table th:last-child {
+            border-radius: 0 12px 0 0;
+        }
+        
+        .consulting-table td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        
+        .consulting-table .phase-name {
+            font-weight: 600;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
+        
+        .consulting-table .consultant-level {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .consulting-table .amount {
+            text-align: right;
+            font-weight: 600;
+            color: #2c2c2c;
+            font-size: 1.05rem;
+        }
+        
+        .expenses-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f6f0;
+            border-radius: 12px;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .expenses-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+        }
+        
+        .expenses-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .expenses-table th {
+            background: #e8e6e0;
+            color: #2c2c2c;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .expenses-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .success-fee {
+            background: linear-gradient(135deg, #fff8e1 0%, #f3e5ab 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .success-fee h3 {
+            font-family: 'Playfair Display', serif;
+            color: #B8860B;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success-fee .fee-details {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 2px solid #D4AF37;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-row.subtotal {
+            border-top: 2px solid #ccc;
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+        
+        .summary-row.total {
+            border-top: 3px solid #D4AF37;
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c2c2c;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .legal-section {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #D4AF37;
+            margin: 3rem 0;
+        }
+        
+        .legal-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+        }
+        
+        .legal-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-item strong {
+            color: #D4AF37;
+        }
+        
+        .signature-section {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid #D4AF37;
+        }
+        
+        .signature-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .signature-line {
+            border-top: 2px solid #ccc;
+            padding-top: 1rem;
+            text-align: center;
+        }
+        
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: #2c2c2c;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer .premium-badge {
+            background: #D4AF37;
+            color: #2c2c2c;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        @media print {
+            body {
+                padding: 1cm;
+                background: white;
+            }
+            .premium-header::after {
+                display: none;
+            }
+            .executive-summary {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .invoice-header {
+                text-align: center;
+            }
+            
+            .project-info,
+            .client-info,
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .signature-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="premium-header">
+        <div class="header-content">
+            <div class="company-branding">
+                <h1>{{firma.name}}</h1>
+                <div class="tagline">{{firma.claim}}</div>
+                <div class="company-details">
+                    <p>{{firma.strasse}}, {{firma.plz}} {{firma.ort}}</p>
+                    <p>Tel: {{firma.telefon}} | Email: {{firma.email}}</p>
+                    <p>Web: {{firma.web}} | UID: {{firma.uid}}</p>
+                    <p>{{firma.firmenbuch}}, {{firma.gericht}}</p>
+                    <div class="credentials">
+                        <p>{{firma.cmc_nummer}} | {{firma.iso}}</p>
+                        <p>{{firma.wko}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="invoice-header">
+                <div class="invoice-number">{{rechnung.nummer}}</div>
+                <div class="invoice-type">STRATEGIC CONSULTING INVOICE</div>
+                <p>{{rechnung.datum}}</p>
+                <p>Projektleitung: {{rechnung.projektleiter}}</p>
+            </div>
+        </div>
+    </header>
+    
+    <section class="executive-summary">
+        <h2>Executive Project Summary</h2>
+        <div class="project-info">
+            <div>
+                <h4>Projektziel:</h4>
+                <p>{{executive_summary.projektziel}}</p>
+            </div>
+            <div class="value-highlight">
+                {{executive_summary.value_delivered}}
+            </div>
+        </div>
+        
+        <h4>Hauptergebnisse:</h4>
+        <ul class="results-list">
+            {{#each executive_summary.hauptergebnisse}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <strong>Next Steps:</strong> {{executive_summary.next_steps}}
+        </div>
+    </section>
+    
+    <section class="client-info">
+        <div class="address-block">
+            <h3>Auftraggeber</h3>
+            <p><strong>{{kunde.firma}}</strong></p>
+            <p>{{kunde.vorstand}} ({{kunde.abteilung}})</p>
+            <p>{{kunde.strasse}}</p>
+            <p>{{kunde.plz}} {{kunde.ort}}</p>
+            <p>UID: {{kunde.uid}}</p>
+            <p><strong>Rahmenvertrag:</strong> {{kunde.rahmenvertrag}}</p>
+        </div>
+        <div class="address-block">
+            <h3>Berater</h3>
+            <p><strong>{{firma.name}}</strong></p>
+            <p>Geschäftsführer: {{firma.geschaeftsfuehrer}}</p>
+            <p>{{firma.strasse}}</p>
+            <p>{{firma.plz}} {{firma.ort}}</p>
+            <p>{{firma.versicherung}}</p>
+        </div>
+    </section>
+    
+    <div class="invoice-details">
+        <div class="details-grid">
+            <div class="detail-item">
+                <label>Rechnungsnummer:</label>
+                <span>{{rechnung.nummer}}</span>
+            </div>
+            <div class="detail-item">
+                <label>Leistungszeitraum:</label>
+                <span>{{rechnung.leistungszeitraum}}</span>
+            </div>
+            <div class="detail-item">
+                <label>Zahlungsziel:</label>
+                <span>{{rechnung.zahlungsziel}}</span>
+            </div>
+        </div>
+    </div>
+    
+    <table class="consulting-table">
+        <thead>
+            <tr>
+                <th>Projektphase</th>
+                <th>Beschreibung</th>
+                <th>Berater</th>
+                <th>Tage</th>
+                <th>Tagessatz</th>
+                <th>Gesamt</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each positionen}}
+            <tr>
+                <td>
+                    <div class="phase-name">{{phase}}</div>
+                </td>
+                <td>{{beschreibung}}</td>
+                <td>
+                    <div class="consultant-level">{{berater}}</div>
+                </td>
+                <td>{{tage}}</td>
+                <td class="amount">€ {{tagessatz}}</td>
+                <td class="amount">€ {{gesamt}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    
+    <section class="expenses-section">
+        <h3>📋 Spesen & Nebenkosten</h3>
+        <table class="expenses-table">
+            <thead>
+                <tr>
+                    <th>Beschreibung</th>
+                    <th>Anzahl</th>
+                    <th>Einzelpreis</th>
+                    <th>Gesamt</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each spesen}}
+                <tr>
+                    <td>{{beschreibung}}</td>
+                    <td>{{anzahl}}</td>
+                    <td class="amount">€ {{einzelpreis}}</td>
+                    <td class="amount">€ {{gesamt}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+    
+    {{#if erfolgshonorar.vereinbart}}
+    <section class="success-fee">
+        <h3>🎯 Erfolgshonorar</h3>
+        <p>{{erfolgshonorar.beschreibung}}</p>
+        <div class="fee-details">
+            <p><strong>Prozentsatz:</strong> {{erfolgshonorar.prozentsatz}}% | <strong>Maximum:</strong> € {{erfolgshonorar.maximalbetrag}}</p>
+            <p><strong>Fälligkeit:</strong> {{erfolgshonorar.faelligkeit}}</p>
+            <p><strong>Status:</strong> {{erfolgshonorar.status}}</p>
+        </div>
+    </section>
+    {{/if}}
+    
+    <section class="summary-section">
+        <div class="summary-row">
+            <span>Beratungshonorare:</span>
+            <span>€ {{zusammenfassung.beratungshonorare}}</span>
+        </div>
+        <div class="summary-row">
+            <span>Spesen & Nebenkosten:</span>
+            <span>€ {{zusammenfassung.spesen}}</span>
+        </div>
+        <div class="summary-row subtotal">
+            <span>Zwischensumme:</span>
+            <span>€ {{zusammenfassung.zwischensumme}}</span>
+        </div>
+        <div class="summary-row">
+            <span>Mengenrabatt ({{zusammenfassung.rabatt_prozent}}%):</span>
+            <span>- € {{zusammenfassung.rabatt_betrag}}</span>
+        </div>
+        <div class="summary-row">
+            <span>Netto-Betrag:</span>
+            <span>€ {{zusammenfassung.summe_netto}}</span>
+        </div>
+        <div class="summary-row">
+            <span>Umsatzsteuer (20%):</span>
+            <span>€ {{zusammenfassung.ust_20}}</span>
+        </div>
+        <div class="summary-row total">
+            <span>Rechnungsbetrag:</span>
+            <span>€ {{zusammenfassung.summe_brutto}}</span>
+        </div>
+    </section>
+    
+    <section class="legal-section">
+        <h3>🛡️ Rechtliche Hinweise</h3>
+        <div class="legal-item">
+            <strong>Vertraulichkeit:</strong> {{zusatzinfo.vertraulichkeit}}
+        </div>
+        <div class="legal-item">
+            <strong>Geistiges Eigentum:</strong> {{zusatzinfo.ip_rechte}}
+        </div>
+        <div class="legal-item">
+            <strong>Haftungsbeschränkung:</strong> {{zusatzinfo.haftung}}
+        </div>
+        <div class="legal-item">
+            <strong>Benchmark-Referenzen:</strong> {{zusatzinfo.referenzen}}
+        </div>
+    </section>
+    
+    <div class="signature-section">
+        <p>Zahlbar innerhalb 30 Tagen netto. Bank: {{firma.bank}} | IBAN: {{firma.iban}} | BIC: {{firma.bic}}</p>
+        
+        <div class="signature-block">
+            <div class="signature-line">
+                <strong>Strategic Excellence Partners GmbH</strong><br>
+                {{firma.geschaeftsfuehrer}}
+            </div>
+            <div class="signature-line">
+                <strong>{{kunde.firma}}</strong><br>
+                {{kunde.vorstand}}
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="premium-badge">PREMIUM CONSULTING SERVICES</div>
+        <p>{{firma.name}} | {{firma.web}} | {{firma.email}}</p>
+        <p>Transforming Vision into Value - Excellence in Strategic Consulting</p>
+    </footer>
+</body>
+</html>

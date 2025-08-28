@@ -1,0 +1,63 @@
+{
+  "firma": {
+    "name": "Anna Kreativ",
+    "bezeichnung": "Grafikdesign & Illustration",
+    "strasse": "Künstlergasse 7",
+    "plz": "5020",
+    "ort": "Salzburg",
+    "land": "Österreich",
+    "telefon": "+43 664 1234567",
+    "email": "hallo@anna-kreativ.at",
+    "web": "www.anna-kreativ.at",
+    "bank": "Salzburger Sparkasse",
+    "iban": "AT98 2040 4000 1234 5678",
+    "bic": "SBGSAT2SXXX",
+    "kleinunternehmer": true,
+    "instagram": "@annakreativ.design"
+  },
+  "kunde": {
+    "firma": "Café Zeitlos",
+    "ansprechpartner": "Hr. Michael Bauer",
+    "strasse": "Getreidegasse 15",
+    "plz": "5020",
+    "ort": "Salzburg"
+  },
+  "rechnung": {
+    "nummer": "2025-018",
+    "datum": "28.08.2025",
+    "zahlungsziel": "11.09.2025",
+    "betreff": "Logo-Design und Geschäftsausstattung"
+  },
+  "positionen": [
+    {
+      "beschreibung": "Logo-Design inkl. 3 Entwürfe und 2 Überarbeitungsrunden",
+      "betrag": 850.00
+    },
+    {
+      "beschreibung": "Visitenkarten-Design (Vorder- und Rückseite)",
+      "betrag": 250.00
+    },
+    {
+      "beschreibung": "Briefpapier und Kuvert-Design",
+      "betrag": 200.00
+    },
+    {
+      "beschreibung": "Social Media Template-Set (5 Vorlagen)",
+      "betrag": 300.00
+    },
+    {
+      "beschreibung": "Farbpalette und Schriftarten-Guide (PDF)",
+      "betrag": 150.00
+    }
+  ],
+  "zusammenfassung": {
+    "gesamt": 1750.00,
+    "kleinunternehmer_hinweis": "Gemäß § 6 Abs. 1 Z 27 UStG enthält der Rechnungsbetrag keine Umsatzsteuer.",
+    "zahlungsziel_text": "14 Tage netto"
+  },
+  "persoenlich": {
+    "dankesnachricht": "Vielen Dank für das Vertrauen in meine Arbeit! Es war mir eine Freude, die visuelle Identität für das Café Zeitlos zu gestalten.",
+    "unterschrift": "Anna",
+    "ps": "P.S. Gerne unterstütze ich Sie auch bei der Druckabwicklung - sprechen Sie mich einfach an!"
+  }
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechnung {{invoice.number}} - {{company.name}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1E293B;
+            background: #FFFFFF;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .company-info h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2563EB;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-tagline {
+            font-size: 14px;
+            color: #64748B;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .company-details {
+            font-size: 12px;
+            color: #64748B;
+            line-height: 1.5;
+        }
+
+        .invoice-meta {
+            text-align: right;
+            min-width: 200px;
+        }
+
+        .invoice-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1E293B;
+            margin-bottom: 12px;
+        }
+
+        .invoice-details {
+            font-size: 12px;
+            color: #64748B;
+            line-height: 1.8;
+        }
+
+        .invoice-number {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2563EB;
+        }
+
+        /* Client Section */
+        .client-section {
+            margin-bottom: 40px;
+        }
+
+        .client-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .client-info {
+            background: #F8FAFC;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2563EB;
+        }
+
+        .client-company {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E293B;
+            margin-bottom: 4px;
+        }
+
+        .client-contact {
+            font-size: 14px;
+            color: #64748B;
+            margin-bottom: 8px;
+        }
+
+        .client-address {
+            font-size: 12px;
+            color: #64748B;
+            line-height: 1.5;
+        }
+
+        /* Services Table */
+        .services-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E293B;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2563EB;
+            display: inline-block;
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .services-table th {
+            background: #F8FAFC;
+            padding: 12px 8px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .services-table td {
+            padding: 16px 8px;
+            border-bottom: 1px solid #F1F5F9;
+            font-size: 13px;
+        }
+
+        .service-description {
+            font-weight: 500;
+            color: #1E293B;
+            margin-bottom: 4px;
+        }
+
+        .service-detail {
+            font-size: 12px;
+            color: #64748B;
+            line-height: 1.4;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .amount {
+            font-weight: 600;
+            color: #1E293B;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: #E0E7FF;
+            color: #3730A3;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* Totals */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .totals-table {
+            min-width: 300px;
+            border-collapse: collapse;
+        }
+
+        .totals-table td {
+            padding: 8px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .totals-table .total-row td {
+            border-top: 2px solid #2563EB;
+            border-bottom: 2px solid #2563EB;
+            font-weight: 600;
+            font-size: 16px;
+            color: #10B981;
+            padding: 12px 16px;
+        }
+
+        .total-label {
+            color: #64748B;
+        }
+
+        .total-amount {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: #F8FAFC;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #10B981;
+        }
+
+        .payment-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E293B;
+            margin-bottom: 12px;
+        }
+
+        .payment-terms {
+            font-size: 13px;
+            color: #64748B;
+            margin-bottom: 16px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .payment-method {
+            background: white;
+            border: 1px solid #E2E8F0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #64748B;
+        }
+
+        .bank-details {
+            background: white;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .bank-details h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1E293B;
+            margin-bottom: 8px;
+        }
+
+        .bank-info {
+            font-size: 12px;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid #E2E8F0;
+            padding-top: 24px;
+            margin-top: 40px;
+        }
+
+        .legal-notes {
+            font-size: 11px;
+            color: #64748B;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .legal-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .legal-notes li {
+            margin-bottom: 6px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .legal-notes li:before {
+            content: "•";
+            color: #2563EB;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .company-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #94A3B8;
+            padding-top: 20px;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .digital-note {
+            font-style: italic;
+        }
+
+        /* Print Styles */
+        @media print {
+            .container {
+                padding: 20px 0;
+            }
+            
+            .services-table {
+                page-break-inside: avoid;
+            }
+            
+            .totals-section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .invoice-meta {
+                text-align: left;
+                min-width: auto;
+            }
+
+            .services-table {
+                font-size: 12px;
+            }
+
+            .services-table th,
+            .services-table td {
+                padding: 8px 4px;
+            }
+
+            .totals-section {
+                justify-content: stretch;
+            }
+
+            .totals-table {
+                min-width: 100%;
+            }
+
+            .company-footer {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .payment-methods {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="company-info">
+                <h1>{{company.name}}</h1>
+                <div class="company-tagline">{{company.tagline}}</div>
+                <div class="company-details">
+                    {{company.address.street}}, {{company.address.postal_code}} {{company.address.city}}<br>
+                    {{company.contact.email}} | {{company.contact.phone}}<br>
+                    {{company.legal.registration}} | {{company.legal.uid}}
+                </div>
+            </div>
+            <div class="invoice-meta">
+                <div class="invoice-title">Rechnung</div>
+                <div class="invoice-details">
+                    <div class="invoice-number">{{invoice.number}}</div>
+                    <div>Rechnungsdatum: {{invoice.date}}</div>
+                    <div>Fälligkeitsdatum: {{invoice.due_date}}</div>
+                    <div>Leistungszeitraum: {{invoice.service_date}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Information -->
+        <div class="client-section">
+            <div class="client-label">Rechnungsempfänger</div>
+            <div class="client-info">
+                <div class="client-company">{{client.company_name}}</div>
+                <div class="client-contact">{{client.contact_person}} | {{client.position}}</div>
+                <div class="client-address">
+                    {{client.address.street}}<br>
+                    {{client.address.postal_code}} {{client.address.city}}, {{client.address.country}}
+                    {{#if client.legal.uid}}<br>UID: {{client.legal.uid}}{{/if}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="services-section">
+            <div class="section-title">Leistungen</div>
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th width="5%">Pos.</th>
+                        <th width="45%">Beschreibung</th>
+                        <th width="10%">Menge</th>
+                        <th width="15%">Einzelpreis</th>
+                        <th width="10%">MwSt.</th>
+                        <th width="15%">Betrag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each items}}
+                    <tr>
+                        <td>{{position}}</td>
+                        <td>
+                            <div class="service-description">{{description}}</div>
+                            <div class="service-detail">{{detail}}</div>
+                            <div class="category-tag">{{category}}</div>
+                        </td>
+                        <td>{{quantity}} {{unit}}</td>
+                        <td class="text-right">€ {{unit_price}}</td>
+                        <td class="text-right">{{tax_rate}}%</td>
+                        <td class="text-right amount">€ {{net_amount}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Totals -->
+        <div class="totals-section">
+            <table class="totals-table">
+                <tbody>
+                    <tr>
+                        <td class="total-label">Nettobetrag:</td>
+                        <td class="total-amount">€ {{totals.subtotal}}</td>
+                    </tr>
+                    {{#each totals.tax_breakdown}}
+                    <tr>
+                        <td class="total-label">MwSt. {{rate}}%:</td>
+                        <td class="total-amount">€ {{tax}}</td>
+                    </tr>
+                    {{/each}}
+                    <tr class="total-row">
+                        <td class="total-label"><strong>Gesamtbetrag:</strong></td>
+                        <td class="total-amount"><strong>€ {{totals.total}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Payment Information -->
+        <div class="payment-section">
+            <div class="payment-title">Zahlungsinformationen</div>
+            <div class="payment-terms">{{payment.terms}}</div>
+            
+            <div class="payment-methods">
+                {{#each payment.methods}}
+                <div class="payment-method">{{this}}</div>
+                {{/each}}
+            </div>
+
+            <div class="bank-details">
+                <h4>Bankverbindung</h4>
+                <div class="bank-info">
+                    {{company.banking.bank}}<br>
+                    IBAN: {{company.banking.iban}}<br>
+                    BIC: {{company.banking.bic}}<br>
+                    <strong>Verwendungszweck: {{invoice.number}}</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="legal-notes">
+                <ul>
+                    {{#each legal_notes}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="company-footer">
+                <div>
+                    {{company.name}} | {{company.legal.ceo}}<br>
+                    {{company.legal.registration}}, {{company.legal.court}}
+                </div>
+                <div class="digital-note">
+                    Diese Rechnung wurde digital erstellt und ist ohne Unterschrift gültig.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{
+  "firma": {
+    "name": "Mission Solar GmbH",
+    "claim": "Ihre Energiezukunft beginnt heute",
+    "strasse": "Solarstraße 24",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "telefon": "+43 512 987654",
+    "email": "info@mission-solar.at",
+    "web": "www.mission-solar.at",
+    "uid": "ATU98765432",
+    "firmenbuch": "FN 987654x",
+    "gericht": "Landesgericht Innsbruck",
+    "geschaeftsfuehrer": "Bernhard Prokes",
+    "bank": "Raiffeisenbank Tirol",
+    "iban": "AT65 3600 0000 0123 4567",
+    "bic": "RZTIAT22",
+    "konzession": "PV-TEC-2024-0815",
+    "klimaaktiv_nr": "KA-2024-TIR-042"
+  },
+  "kunde": {
+    "anrede": "Sehr geehrte Familie",
+    "titel": "",
+    "vorname": "",
+    "nachname": "Schneider",
+    "firma": "",
+    "strasse": "Bergweg 15",
+    "plz": "6072",
+    "ort": "Lans",
+    "uid": "",
+    "anlagenstandort": "Bergweg 15, 6072 Lans"
+  },
+  "rechnung": {
+    "nummer": "RE-2025-00247",
+    "datum": "28.08.2025",
+    "leistungszeitraum": "15.08.2025 - 27.08.2025",
+    "zahlungsziel": "27.09.2025",
+    "betreff": "PV-Anlage 12 kWp mit KJUUBE Speichersystem"
+  },
+  "anlage": {
+    "leistung_kwp": 12.5,
+    "module_anzahl": 28,
+    "module_typ": "Jinko Tiger Neo 450Wp",
+    "wechselrichter": "Fronius Symo Gen24 10.0 Plus",
+    "speicher": "KJUUBE Home 15 kWh",
+    "monitoring": "NTUITY Energy Manager Pro",
+    "jahresertrag_kwh": 13750,
+    "co2_einsparung_tonnen": 5.5,
+    "amortisation_jahre": 7.8,
+    "netzanschluss_ref": "TINETZ-2025-4789"
+  },
+  "positionen": [
+    {
+      "kategorie": "module",
+      "beschreibung": "PV-Module Jinko Tiger Neo 450Wp, inkl. Montagesystem",
+      "menge": 28,
+      "einheit": "Stk",
+      "einzelpreis": 285.00,
+      "steuersatz": 0,
+      "gesamt": 7980.00
+    },
+    {
+      "kategorie": "wechselrichter",
+      "beschreibung": "Fronius Symo Gen24 10.0 Plus Hybrid-Wechselrichter",
+      "menge": 1,
+      "einheit": "Stk",
+      "einzelpreis": 2850.00,
+      "steuersatz": 0,
+      "gesamt": 2850.00
+    },
+    {
+      "kategorie": "speicher",
+      "beschreibung": "KJUUBE Home 15 kWh Batteriespeicher",
+      "menge": 1,
+      "einheit": "Set",
+      "einzelpreis": 8900.00,
+      "steuersatz": 0,
+      "gesamt": 8900.00
+    },
+    {
+      "kategorie": "monitoring",
+      "beschreibung": "NTUITY Energy Manager Pro inkl. 5 Jahre Service",
+      "menge": 1,
+      "einheit": "Stk",
+      "einzelpreis": 1290.00,
+      "steuersatz": 0,
+      "gesamt": 1290.00
+    },
+    {
+      "kategorie": "installation",
+      "beschreibung": "Montage, Installation und Inbetriebnahme",
+      "menge": 32,
+      "einheit": "Std",
+      "einzelpreis": 85.00,
+      "steuersatz": 0,
+      "gesamt": 2720.00
+    },
+    {
+      "kategorie": "elektrik",
+      "beschreibung": "AC/DC Verkabelung, Sicherungen, Überspannungsschutz",
+      "menge": 1,
+      "einheit": "pausch",
+      "einzelpreis": 1480.00,
+      "steuersatz": 0,
+      "gesamt": 1480.00
+    },
+    {
+      "kategorie": "netzanschluss",
+      "beschreibung": "Netzanschluss-Koordination und Anmeldung OeMAG",
+      "menge": 1,
+      "einheit": "pausch",
+      "einzelpreis": 380.00,
+      "steuersatz": 0,
+      "gesamt": 380.00
+    }
+  ],
+  "zusammenfassung": {
+    "summe_netto": 25600.00,
+    "ust_0_hinweis": "Umsatzsteuerfrei gem. § 6 Abs. 1 Z 9 lit. c UStG (PV-Anlagen bis 35 kWp)",
+    "summe_brutto": 25600.00,
+    "anzahlung_erhalten": 5000.00,
+    "restzahlung": 20600.00
+  },
+  "foerderung": {
+    "bundesfoerderung": "EAG-Investitionszuschuss beantragt: ca. 2.850 €",
+    "landesfoerderung": "Land Tirol Solarbonus: ca. 1.500 €",
+    "gemeindefoerderung": "Gemeinde Lans PV-Förderung: 500 €",
+    "gesamt_foerderung": 4850.00,
+    "investition_nach_foerderung": 20750.00
+  },
+  "zusatzinfo": {
+    "garantie": "25 Jahre Leistungsgarantie auf Module, 10 Jahre auf Wechselrichter, 10 Jahre auf KJUUBE Speicher",
+    "wartung": "Jährliche Wartung empfohlen - Servicevertrag auf Anfrage",
+    "versicherung": "PV-Versicherungsschutz über Tiroler Versicherung vermittelbar",
+    "qr_payment": "GENERATE_EPC_QR_CODE_HERE",
+    "umwelt": "Ihre Anlage spart jährlich 5,5 Tonnen CO2 - das entspricht 275 Bäumen!"
+  }
+}

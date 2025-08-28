@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechnung {{rechnung.nummer}} - {{firma.name}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .invoice-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Header with Solar Gradient */
+        .header {
+            background: linear-gradient(135deg, #FFB800 0%, #003D7A 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '☀️';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+        }
+
+        .company-info h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .company-claim {
+            font-style: italic;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 30px;
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .company-details, .customer-details {
+            flex: 1;
+        }
+
+        .customer-details {
+            margin-left: 50px;
+        }
+
+        .section-title {
+            color: #003D7A;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #FFB800;
+            padding-bottom: 5px;
+        }
+
+        .invoice-meta {
+            background: linear-gradient(45deg, #FFB800, #FFC930);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            color: #003D7A;
+            font-weight: bold;
+        }
+
+        .invoice-meta h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        /* Solar System Highlights */
+        .solar-highlights {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4f1f4 100%);
+            border-left: 5px solid #FFB800;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .highlight-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #003D7A;
+        }
+
+        .highlight-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Position Table */
+        .positions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .positions-table th {
+            background: linear-gradient(135deg, #003D7A, #004D8A);
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .positions-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .positions-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .category-module { border-left: 4px solid #4CAF50; }
+        .category-wechselrichter { border-left: 4px solid #2196F3; }
+        .category-speicher { border-left: 4px solid #FF9800; }
+        .category-monitoring { border-left: 4px solid #9C27B0; }
+        .category-installation { border-left: 4px solid #607D8B; }
+        .category-elektrik { border-left: 4px solid #795548; }
+        .category-netzanschluss { border-left: 4px solid #E91E63; }
+
+        /* Förderung Section */
+        .foerderung-section {
+            background: linear-gradient(135deg, #e8f8e8, #d0f0d0);
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .foerderung-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .foerderung-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        /* Summary */
+        .summary {
+            background: #003D7A;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .summary-total {
+            font-size: 1.4em;
+            font-weight: bold;
+            border-top: 2px solid #FFB800;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .tax-note {
+            background: #FFB800;
+            color: #003D7A;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Environmental Impact */
+        .environmental-impact {
+            background: linear-gradient(135deg, #81C784, #4CAF50);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .environmental-impact h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            border-top: 3px solid #FFB800;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .footer-section h4 {
+            color: #003D7A;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #003D7A;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .qr-code-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; }
+            .invoice-container { 
+                box-shadow: none; 
+                margin: 0;
+                max-width: none;
+            }
+            .footer { page-break-inside: avoid; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .invoice-header { flex-direction: column; }
+            .customer-details { margin-left: 0; margin-top: 20px; }
+            .meta-grid { grid-template-columns: 1fr; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .foerderung-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Header with Solar Gradient -->
+        <div class="header">
+            <div class="company-info">
+                <h1>{{firma.name}}</h1>
+                <div class="company-claim">{{firma.claim}}</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Company and Customer Info -->
+            <div class="invoice-header">
+                <div class="company-details">
+                    <div class="section-title">Rechnungssteller</div>
+                    <strong>{{firma.name}}</strong><br>
+                    {{firma.strasse}}<br>
+                    {{firma.plz}} {{firma.ort}}<br>
+                    {{firma.land}}<br><br>
+                    
+                    Tel: {{firma.telefon}}<br>
+                    E-Mail: {{firma.email}}<br>
+                    Web: {{firma.web}}<br><br>
+                    
+                    UID: {{firma.uid}}<br>
+                    FB-Nr: {{firma.firmenbuch}}<br>
+                    {{firma.gericht}}<br>
+                    GF: {{firma.geschaeftsfuehrer}}<br><br>
+                    
+                    Konzession: {{firma.konzession}}<br>
+                    Klimaaktiv Partner: {{firma.klimaaktiv_nr}}
+                </div>
+
+                <div class="customer-details">
+                    <div class="section-title">Rechnungsempfänger</div>
+                    {{kunde.anrede}} {{kunde.nachname}}<br>
+                    {{kunde.strasse}}<br>
+                    {{kunde.plz}} {{kunde.ort}}<br><br>
+                    
+                    <strong>Anlagenstandort:</strong><br>
+                    {{kunde.anlagenstandort}}
+                </div>
+            </div>
+
+            <!-- Invoice Metadata -->
+            <div class="invoice-meta">
+                <h2>{{rechnung.betreff}}</h2>
+                <div class="meta-grid">
+                    <div><strong>Rechnungsnummer:</strong> {{rechnung.nummer}}</div>
+                    <div><strong>Rechnungsdatum:</strong> {{rechnung.datum}}</div>
+                    <div><strong>Leistungszeitraum:</strong> {{rechnung.leistungszeitraum}}</div>
+                    <div><strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}</div>
+                </div>
+            </div>
+
+            <!-- Solar System Highlights -->
+            <div class="solar-highlights">
+                <h3 style="color: #003D7A; margin-bottom: 15px;">🔆 Ihre Solar-Anlage im Überblick</h3>
+                <div class="highlight-grid">
+                    <div class="highlight-item">
+                        <div class="highlight-number">{{anlage.leistung_kwp}} kWp</div>
+                        <div class="highlight-label">Anlagenleistung</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">{{anlage.jahresertrag_kwh}}</div>
+                        <div class="highlight-label">kWh/Jahr Ertrag</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">{{anlage.co2_einsparung_tonnen}}t</div>
+                        <div class="highlight-label">CO₂-Einsparung/Jahr</div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 15px; color: #003D7A;">
+                    <strong>Amortisationszeit: {{anlage.amortisation_jahre}} Jahre</strong> | 
+                    <strong>Netzanschluss-Ref.: {{anlage.netzanschluss_ref}}</strong>
+                </div>
+            </div>
+
+            <!-- Positions Table -->
+            <table class="positions-table">
+                <thead>
+                    <tr>
+                        <th>Beschreibung</th>
+                        <th style="text-align: center;">Menge</th>
+                        <th style="text-align: center;">Einheit</th>
+                        <th style="text-align: right;">Einzelpreis €</th>
+                        <th style="text-align: right;">Gesamt €</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each positionen}}
+                    <tr class="category-{{kategorie}}">
+                        <td><strong>{{beschreibung}}</strong></td>
+                        <td style="text-align: center;">{{menge}}</td>
+                        <td style="text-align: center;">{{einheit}}</td>
+                        <td style="text-align: right;">{{einzelpreis}}</td>
+                        <td style="text-align: right;"><strong>{{gesamt}}</strong></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <!-- Förderung Section -->
+            <div class="foerderung-section">
+                <h3 style="color: #2E7D32;">💰 Förderungen & Finanzierung</h3>
+                <div class="foerderung-grid">
+                    <div class="foerderung-item">
+                        <strong>Bundesförderung</strong><br>
+                        {{foerderung.bundesfoerderung}}
+                    </div>
+                    <div class="foerderung-item">
+                        <strong>Landesförderung</strong><br>
+                        {{foerderung.landesfoerderung}}
+                    </div>
+                    <div class="foerderung-item">
+                        <strong>Gemeindeförderung</strong><br>
+                        {{foerderung.gemeindefoerderung}}
+                    </div>
+                    <div class="foerderung-item">
+                        <strong>Gesamtförderung</strong><br>
+                        <span style="font-size: 1.2em; color: #2E7D32;">€ {{foerderung.gesamt_foerderung}}</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 20px; padding: 15px; background: white; border-radius: 6px;">
+                    <strong style="color: #2E7D32; font-size: 1.2em;">
+                        Ihre Netto-Investition nach Förderung: € {{foerderung.investition_nach_foerderung}}
+                    </strong>
+                </div>
+            </div>
+
+            <!-- Tax Notice -->
+            <div class="tax-note">
+                {{zusammenfassung.ust_0_hinweis}}
+            </div>
+
+            <!-- Summary -->
+            <div class="summary">
+                <h3 style="margin-bottom: 15px;">Rechnungssumme</h3>
+                <div class="summary-row">
+                    <span>Summe netto:</span>
+                    <span>€ {{zusammenfassung.summe_netto}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Umsatzsteuer (0%):</span>
+                    <span>€ 0,00</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Rechnungsbetrag:</span>
+                    <span>€ {{zusammenfassung.summe_brutto}}</span>
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #FFB800;">
+                    <div class="summary-row">
+                        <span>Bereits erhalten (Anzahlung):</span>
+                        <span>€ {{zusammenfassung.anzahlung_erhalten}}</span>
+                    </div>
+                    <div class="summary-row" style="font-size: 1.2em;">
+                        <span><strong>Restzahlung:</strong></span>
+                        <span><strong>€ {{zusammenfassung.restzahlung}}</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environmental Impact -->
+            <div class="environmental-impact">
+                <h3>🌱 Ihr Beitrag zum Umweltschutz</h3>
+                <p>{{zusatzinfo.umwelt}}</p>
+                <p style="margin-top: 10px; font-style: italic;">Lokale Wertschöpfung in Tirol • Klimaaktiv Partner</p>
+            </div>
+
+            <!-- QR Code Payment -->
+            <div class="qr-code-section">
+                <h4 style="color: #003D7A;">Schnelle Zahlung per QR-Code</h4>
+                <div style="margin: 15px 0;">
+                    <div style="width: 150px; height: 150px; border: 2px solid #ccc; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+                        QR-Code für<br>Sofortüberweisung<br><small>(EPC-Standard)</small>
+                    </div>
+                </div>
+                <p><strong>IBAN:</strong> {{firma.iban}} | <strong>BIC:</strong> {{firma.bic}}</p>
+            </div>
+
+            <!-- Additional Information -->
+            <div style="margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="color: #003D7A; margin-bottom: 15px;">Zusätzliche Informationen</h4>
+                <p><strong>Garantie:</strong> {{zusatzinfo.garantie}}</p>
+                <p><strong>Wartung:</strong> {{zusatzinfo.wartung}}</p>
+                <p><strong>Versicherung:</strong> {{zusatzinfo.versicherung}}</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Bankverbindung</h4>
+                    {{firma.bank}}<br>
+                    IBAN: {{firma.iban}}<br>
+                    BIC: {{firma.bic}}
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">Li</a>
+                        <a href="#" class="social-icon">📷</a>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 0.9em;">
+                        Bewerten Sie uns auf Google!<br>
+                        Newsletter: {{firma.email}}
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Powered by renewable energy</h4>
+                    <p style="font-size: 0.9em; color: #666;">
+                        Empfehlungsprogramm:<br>
+                        500€ für jeden neuen Kunden!
+                    </p>
+                    <p style="margin-top: 10px; font-style: italic; color: #003D7A;">
+                        Sonnige Grüße aus Tirol!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

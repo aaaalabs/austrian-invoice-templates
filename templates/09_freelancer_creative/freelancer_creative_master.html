@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechnung {{rechnung.nummer}} - {{freelancer.name}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2a2a2a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .invoice-container {
+            max-width: 21cm;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .invoice-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+        }
+        
+        .creative-header {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .creative-header::after {
+            content: '✨';
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .studio-branding h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4ecdc4;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .studio-branding .tagline {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+        
+        .studio-contact {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .studio-contact p {
+            margin-bottom: 0.3rem;
+            color: #cbd5e0;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #81e6d9;
+        }
+        
+        .awards {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(78, 205, 196, 0.3);
+        }
+        
+        .award-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            color: #4ecdc4;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+        
+        .invoice-meta {
+            text-align: right;
+        }
+        
+        .invoice-number {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .invoice-date {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin-top: 0.5rem;
+        }
+        
+        .project-banner {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .project-banner::before {
+            content: '🎨';
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
+        
+        .project-title {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-period {
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .main-content {
+            padding: 3rem;
+        }
+        
+        .client-info {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #4ecdc4;
+        }
+        
+        .client-info h2 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .phase-section {
+            margin: 3rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .phase-header {
+            padding: 1.5rem 2rem;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .phase-discovery { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .phase-design { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .phase-application { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .phase-guidelines { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .phase-extras { background: linear-gradient(135deg, #fa709a, #fee140); }
+        
+        .phase-items {
+            background: white;
+            padding: 0;
+        }
+        
+        .service-item {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            align-items: center;
+        }
+        
+        .service-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-description {
+            font-weight: 500;
+        }
+        
+        .service-unit {
+            color: #718096;
+            text-align: center;
+        }
+        
+        .service-price {
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        .usage-rights {
+            background: #fff5f5;
+            border: 2px solid #fed7d7;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .usage-rights h3 {
+            color: #c53030;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .delivery-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .delivery-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .file-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .file-item {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .transfer-info {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .summary-section {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            border-left: 5px solid #4ecdc4;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .summary-row:last-child {
+            border-bottom: 2px solid #2d3748;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #2d3748;
+        }
+        
+        .discount-row {
+            color: #38a169;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .footer h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: #4ecdc4;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .payment-info h4 {
+            color: #4ecdc4;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .invoice-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .creative-header::after,
+            .project-banner::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .service-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                text-align: left;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Creative Header -->
+        <header class="creative-header">
+            <div class="header-content">
+                <div class="studio-branding">
+                    <h1>{{freelancer.name}}</h1>
+                    <p class="tagline">{{freelancer.tagline}}</p>
+                    <div class="studio-contact">
+                        <p><strong>{{freelancer.inhaber}}</strong></p>
+                        <p>{{freelancer.strasse}}</p>
+                        <p>{{freelancer.plz}} {{freelancer.ort}}, {{freelancer.land}}</p>
+                        <p>📧 {{freelancer.email}}</p>
+                        <p>📱 {{freelancer.telefon}}</p>
+                        <p>🌐 {{freelancer.web}}</p>
+                        
+                        <div class="social-links">
+                            <a href="https://{{freelancer.behance}}" target="_blank">Behance</a>
+                            <a href="https://instagram.com/{{freelancer.instagram}}" target="_blank">Instagram</a>
+                        </div>
+                        
+                        <div class="awards">
+                            {{#each freelancer.awards}}
+                                <span class="award-badge">{{this}}</span>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="invoice-meta">
+                    <div class="invoice-number">{{rechnung.nummer}}</div>
+                    <div class="invoice-date">{{rechnung.datum}}</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Project Banner -->
+        <div class="project-banner">
+            <h2 class="project-title">{{kunde.projekt}}</h2>
+            <p class="project-period">{{rechnung.projekt_zeitraum}}</p>
+        </div>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Client Information -->
+            <section class="client-info">
+                <h2>📋 Projekt für</h2>
+                <p><strong>{{kunde.firma}}</strong></p>
+                <p>{{kunde.ansprechpartner}}</p>
+                <p>{{kunde.strasse}}</p>
+                <p>{{kunde.plz}} {{kunde.ort}}</p>
+                <p>{{kunde.email}}</p>
+                <p><strong>Creative Brief:</strong> {{rechnung.brief_referenz}}</p>
+            </section>
+            
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <p class="testimonial-text">{{testimonial.quote}}</p>
+                <p class="testimonial-author">— {{testimonial.author}}</p>
+            </div>
+            
+            <!-- Services by Phase -->
+            {{#each leistungen}}
+            <section class="phase-section">
+                <div class="phase-header phase-{{@index}}">
+                    {{phase}}
+                </div>
+                <div class="phase-items">
+                    {{#each items}}
+                    <div class="service-item">
+                        <div class="service-description">{{beschreibung}}</div>
+                        <div class="service-unit">{{menge}} {{einheit}}</div>
+                        <div class="service-price">€{{einzelpreis}}</div>
+                        <div class="service-price"><strong>€{{gesamt}}</strong></div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/each}}
+            
+            <!-- Usage Rights -->
+            <section class="usage-rights">
+                <h3>📜 Nutzungsrechte & Lizenzen</h3>
+                <div class="rights-grid">
+                    <div>
+                        <strong>Umfang:</strong><br>
+                        {{nutzungsrechte.umfang}}
+                    </div>
+                    <div>
+                        <strong>Dauer:</strong><br>
+                        {{nutzungsrechte.dauer}}
+                    </div>
+                    <div>
+                        <strong>Bearbeitung:</strong><br>
+                        {{nutzungsrechte.bearbeitung}}
+                    </div>
+                    <div>
+                        <strong>Weitergabe:</strong><br>
+                        {{nutzungsrechte.weitergabe}}
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    {{nutzungsrechte.archivierung}}
+                </p>
+            </section>
+            
+            <!-- Delivery Information -->
+            <section class="delivery-section">
+                <h3>📦 Dateilieferung</h3>
+                <p><strong>Methode:</strong> {{lieferung.methode}}</p>
+                <p><strong>Download:</strong> <a href="{{lieferung.link}}" style="color: #81e6d9;">{{lieferung.link}}</a></p>
+                <p><strong>Passwort:</strong> {{lieferung.passwort}}</p>
+                
+                <div class="file-list">
+                    {{#each lieferung.dateien}}
+                        <div class="file-item">{{this}}</div>
+                    {{/each}}
+                </div>
+            </section>
+            
+            <!-- Summary -->
+            <section class="summary-section">
+                <h3>💰 Rechnungssumme</h3>
+                
+                <div class="summary-row">
+                    <span>Discovery & Strategy</span>
+                    <span>€{{zusammenfassung.subtotal_discovery}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Design Development</span>
+                    <span>€{{zusammenfassung.subtotal_design}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Application Design</span>
+                    <span>€{{zusammenfassung.subtotal_application}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Brand Guidelines</span>
+                    <span>€{{zusammenfassung.subtotal_guidelines}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Extras</span>
+                    <span>€{{zusammenfassung.subtotal_extras}}</span>
+                </div>
+                <div class="summary-row discount-row">
+                    <span>{{zusammenfassung.rabatt_beschreibung}} (-{{zusammenfassung.rabatt_prozent}}%)</span>
+                    <span>-€{{zusammenfassung.rabatt_betrag}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Nettosumme</span>
+                    <span>€{{zusammenfassung.summe_netto}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>USt 20%</span>
+                    <span>€{{zusammenfassung.ust_20}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Gesamtbetrag</span>
+                    <span>€{{zusammenfassung.summe_brutto}}</span>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <h3>Thank you! 🙏</h3>
+            <div class="footer-content">
+                <div class="payment-info">
+                    <h4>💳 Zahlungsdetails</h4>
+                    <p>{{freelancer.bank}}</p>
+                    <p>IBAN: {{freelancer.iban}}</p>
+                    <p>BIC: {{freelancer.bic}}</p>
+                    <p><strong>Fällig bis: {{rechnung.zahlungsziel}}</strong></p>
+                </div>
+                
+                <div class="tax-info">
+                    <h4>🏛️ Steuerliche Angaben</h4>
+                    <p>UID: {{freelancer.uid}}</p>
+                    <p>Kleinunternehmer gem. §6 UStG</p>
+                </div>
+                
+                <div class="follow-up">
+                    <h4>✨ Stay Connected</h4>
+                    <p>Follow our work:</p>
+                    <p>{{freelancer.instagram}}</p>
+                    <p>Portfolio case study coming soon!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+{
+  "firma": {
+    "name": "Alpine Consulting GmbH",
+    "strasse": "Europastraße 1",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich / Austria",
+    "telefon": "+43 512 123456",
+    "email": "office@alpine-consulting.eu",
+    "web": "www.alpine-consulting.eu",
+    "uid": "ATU12345678",
+    "eori": "ATEOS1234567890",
+    "firmenbuch": "FN 123456a",
+    "gericht": "Landesgericht Innsbruck",
+    "bank_name": "UniCredit Bank Austria",
+    "iban": "AT12 1200 0123 4567 8901",
+    "bic": "BKAUATWW",
+    "bank_name_int": "HSBC Continental Europe",
+    "iban_int": "FR76 3000 6000 0112 3456 7890 189",
+    "bic_int": "HSBCFRPP"
+  },
+  "kunde": {
+    "firma": "TechVentures B.V.",
+    "strasse": "Keizersgracht 555",
+    "plz": "1017 DR",
+    "ort": "Amsterdam",
+    "land": "Niederlande / Netherlands",
+    "uid": "NL123456789B01",
+    "vies_check": "Valid as of 28.08.2025",
+    "ansprechpartner": "Ms. Eva van den Berg",
+    "email": "eva@techventures.nl"
+  },
+  "rechnung": {
+    "nummer": "EU-2025-00089",
+    "datum": "28.08.2025",
+    "leistungsdatum": "01.08.2025 - 31.08.2025",
+    "leistungsort": "Amsterdam, Netherlands (§3a UStG)",
+    "zahlungsziel": "27.09.2025",
+    "betreff": "Strategic Consulting Services - August 2025",
+    "sprache": "DE/EN"
+  },
+  "positionen": [
+    {
+      "beschreibung_de": "Strategieberatung Markteintritt DACH-Region",
+      "beschreibung_en": "Strategic consulting market entry DACH region",
+      "einheit": "Tage/Days",
+      "menge": 8,
+      "tagessatz": 1500.00,
+      "gesamt": 12000.00
+    },
+    {
+      "beschreibung_de": "Wettbewerbsanalyse und Marktforschung",
+      "beschreibung_en": "Competitive analysis and market research",
+      "einheit": "Tage/Days",
+      "menge": 5,
+      "tagessatz": 1500.00,
+      "gesamt": 7500.00
+    },
+    {
+      "beschreibung_de": "Workshop Facilitation (vor Ort in Amsterdam)",
+      "beschreibung_en": "Workshop Facilitation (on-site Amsterdam)",
+      "einheit": "Tage/Days",
+      "menge": 2,
+      "tagessatz": 1800.00,
+      "gesamt": 3600.00
+    },
+    {
+      "beschreibung_de": "Reisekosten (Flug INN-AMS, 2 Übernachtungen)",
+      "beschreibung_en": "Travel expenses (Flight INN-AMS, 2 nights)",
+      "einheit": "pausch",
+      "menge": 1,
+      "tagessatz": 850.00,
+      "gesamt": 850.00
+    }
+  ],
+  "zusammenfassung": {
+    "summe_netto": 23950.00,
+    "reverse_charge_text_de": "Steuerschuldnerschaft des Leistungsempfängers gem. Art. 196 MwStSystRL",
+    "reverse_charge_text_en": "Reverse charge - VAT to be paid by recipient according to Art. 196 VAT Directive",
+    "keine_ust": true,
+    "summe_zu_zahlen": 23950.00,
+    "waehrung": "EUR"
+  },
+  "compliance": {
+    "vies_validierung": "UID-validation performed via VIES on 28.08.2025 - Status: Valid",
+    "leistungsort_erklaerung_de": "Der Ort der sonstigen Leistung bestimmt sich nach § 3a UStG nach dem Empfängerortprinzip.",
+    "leistungsort_erklaerung_en": "Place of supply determined according to § 3a UStG based on recipient location principle.",
+    "b2b_nachweis": "Business customer status verified through valid VAT ID and commercial register extract.",
+    "dokumentation": "All compliance documents archived under reference EU-2025-00089-DOCS"
+  },
+  "zusatz": {
+    "naechste_schritte_de": "Abschlussbericht wird bis 15.09.2025 übermittelt.",
+    "naechste_schritte_en": "Final report will be delivered by September 15, 2025.",
+    "agb": "Es gelten unsere AGB unter www.alpine-consulting.eu/agb",
+    "gerichtsstand": "Gerichtsstand ist Innsbruck, Österreich / Place of jurisdiction is Innsbruck, Austria"
+  }
+}

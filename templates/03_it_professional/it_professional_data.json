@@ -1,0 +1,141 @@
+{
+  "firma": {
+    "name": "CodeCraft Solutions GmbH",
+    "tagline": "Enterprise Software Excellence",
+    "strasse": "Techpark 42",
+    "plz": "1030",
+    "ort": "Wien",
+    "land": "Österreich",
+    "telefon": "+43 1 234 5678",
+    "email": "invoice@codecraft.at",
+    "web": "www.codecraft.at",
+    "uid": "ATU74185296",
+    "firmenbuch": "FN 123456b",
+    "gericht": "Handelsgericht Wien",
+    "geschaeftsfuehrer": "DI Thomas Entwickler",
+    "bank": "Erste Bank",
+    "iban": "AT61 1904 3002 3457 3201",
+    "bic": "GIBAATWWXXX",
+    "iso27001": "ISO/IEC 27001:2013 Cert# AT-2024-1847",
+    "crypto_btc": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wh",
+    "crypto_eth": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F"
+  },
+  "kunde": {
+    "firma": "Innovation Hub GmbH",
+    "ansprechpartner": "Mag. Sandra Müller",
+    "abteilung": "Digital Transformation",
+    "strasse": "Zukunftsweg 100",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "uid": "ATU55588844",
+    "projekt_ref": "PRJ-2025-0142",
+    "kostenstelle": "IT-4200"
+  },
+  "rechnung": {
+    "nummer": "IT-2025-00389",
+    "datum": "28.08.2025",
+    "leistungszeitraum": "01.08.2025 - 31.08.2025",
+    "zahlungsziel": "27.09.2025",
+    "betreff": "Entwicklung Customer Portal - Phase 2",
+    "sla_level": "Gold",
+    "contract_ref": "MSA-2024-1122"
+  },
+  "positionen": [
+    {
+      "phase": "Backend Development",
+      "tickets": ["JIRA-4521", "JIRA-4522", "JIRA-4545"],
+      "beschreibung": "API Development - REST Endpoints für User Management",
+      "entwickler": "Senior Developer",
+      "stunden": 48,
+      "stundensatz": 120.00,
+      "remote_onsite": "remote",
+      "technologien": ["Node.js", "PostgreSQL", "Docker"],
+      "gesamt": 5760.00
+    },
+    {
+      "phase": "Frontend Development",
+      "tickets": ["JIRA-4530", "JIRA-4531"],
+      "beschreibung": "React Components für Dashboard und Reporting",
+      "entwickler": "Senior Developer",
+      "stunden": 36,
+      "stundensatz": 120.00,
+      "remote_onsite": "remote",
+      "technologien": ["React", "TypeScript", "TailwindCSS"],
+      "gesamt": 4320.00
+    },
+    {
+      "phase": "DevOps",
+      "tickets": ["JIRA-4550"],
+      "beschreibung": "CI/CD Pipeline Setup mit GitHub Actions",
+      "entwickler": "DevOps Engineer",
+      "stunden": 16,
+      "stundensatz": 130.00,
+      "remote_onsite": "remote",
+      "technologien": ["GitHub Actions", "Kubernetes", "AWS"],
+      "gesamt": 2080.00
+    },
+    {
+      "phase": "Consulting",
+      "tickets": ["JIRA-4500"],
+      "beschreibung": "Architecture Review und Security Audit",
+      "entwickler": "Solution Architect",
+      "stunden": 8,
+      "stundensatz": 150.00,
+      "remote_onsite": "onsite",
+      "technologien": ["Security", "Architecture"],
+      "gesamt": 1200.00
+    },
+    {
+      "phase": "Project Management",
+      "tickets": ["PM-AUG-01"],
+      "beschreibung": "Sprint Planning, Daily Standups, Retrospective",
+      "entwickler": "Project Manager",
+      "stunden": 12,
+      "stundensatz": 95.00,
+      "remote_onsite": "hybrid",
+      "technologien": ["Scrum", "JIRA"],
+      "gesamt": 1140.00
+    },
+    {
+      "phase": "Testing/QA",
+      "tickets": ["QA-2025-08"],
+      "beschreibung": "Automated Testing, E2E Tests, Performance Testing",
+      "entwickler": "QA Engineer",
+      "stunden": 24,
+      "stundensatz": 85.00,
+      "remote_onsite": "remote",
+      "technologien": ["Jest", "Cypress", "JMeter"],
+      "gesamt": 2040.00
+    }
+  ],
+  "zusammenfassung": {
+    "stunden_gesamt": 144,
+    "stunden_remote": 124,
+    "stunden_onsite": 8,
+    "stunden_hybrid": 12,
+    "summe_netto": 16540.00,
+    "reverse_charge": false,
+    "ust_satz": 20,
+    "ust_betrag": 3308.00,
+    "summe_brutto": 19848.00
+  },
+  "change_requests": [
+    {
+      "cr_nummer": "CR-2025-018",
+      "beschreibung": "Additional OAuth2 Provider Integration",
+      "genehmigt_von": "S. Müller",
+      "datum": "15.08.2025",
+      "zusatz_stunden": 8,
+      "status": "completed"
+    }
+  ],
+  "zusatzinfo": {
+    "sla_response": "Gold SLA: 2h Response Time, 99.9% Uptime",
+    "git_repos": ["github.com/customer/portal-backend", "github.com/customer/portal-frontend"],
+    "deployment": "Production deployment scheduled for 05.09.2025",
+    "nda": "Covered under NDA-2024-0055",
+    "dsgvo": "All data processing according to GDPR/DSGVO requirements",
+    "next_sprint": "Sprint 15 starts 01.09.2025"
+  }
+}

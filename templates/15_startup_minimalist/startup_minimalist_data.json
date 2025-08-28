@@ -1,0 +1,75 @@
+{
+  "startup": {
+    "name": "TechFlow Innovations",
+    "tagline": "Building Tomorrow's Software Today",
+    "strasse": "Startup Campus 42",
+    "plz": "1030",
+    "ort": "Wien",
+    "land": "Österreich",
+    "telefon": "+43 1 890 4567",
+    "email": "invoices@techflow.dev",
+    "web": "techflow.dev",
+    "uid": "ATU33445566",
+    "github": "github.com/techflow-innovations",
+    "iban": "AT77 1904 3002 3456 7890",
+    "crypto_btc": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wh"
+  },
+  "client": {
+    "company": "ScaleUp Ventures GmbH", 
+    "contact": "Sarah Founder",
+    "email": "sarah@scaleup-ventures.com",
+    "address": "Innovation Hub 100, 1020 Wien",
+    "uid": "ATU77889900",
+    "project": "MVP Development Phase 1"
+  },
+  "invoice": {
+    "number": "TF-2025-089",
+    "date": "28.08.2025",
+    "period": "August 2025",
+    "due_date": "27.09.2025",
+    "sprint": "Sprint 8-10"
+  },
+  "services": [
+    {
+      "type": "development",
+      "description": "Frontend Development (React/TypeScript)",
+      "hours": 40,
+      "rate": 95.00,
+      "total": 3800.00,
+      "repo": "github.com/scaleup/frontend"
+    },
+    {
+      "type": "development", 
+      "description": "Backend API Development (Node.js/PostgreSQL)",
+      "hours": 32,
+      "rate": 105.00,
+      "total": 3360.00,
+      "repo": "github.com/scaleup/api"
+    },
+    {
+      "type": "devops",
+      "description": "CI/CD Pipeline & AWS Infrastructure",
+      "hours": 16,
+      "rate": 120.00,
+      "total": 1920.00,
+      "deliverable": "Automated deployment pipeline"
+    },
+    {
+      "type": "consulting",
+      "description": "Technical Architecture Review",
+      "hours": 8,
+      "rate": 150.00,
+      "total": 1200.00,
+      "deliverable": "Architecture documentation"
+    }
+  ],
+  "summary": {
+    "total_hours": 96,
+    "subtotal": 10280.00,
+    "startup_discount": 5,
+    "discount_amount": 514.00,
+    "net_total": 9766.00,
+    "vat_20": 1953.20,
+    "gross_total": 11719.20
+  }
+}

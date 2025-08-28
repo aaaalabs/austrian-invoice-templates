@@ -1,0 +1,181 @@
+{
+  "shop": {
+    "name": "AlpenStyle Online GmbH",
+    "claim": "Tiroler Qualität - Direkt zu Ihnen",
+    "strasse": "E-Commerce Park 10",
+    "plz": "6063",
+    "ort": "Rum bei Innsbruck",
+    "land": "Österreich",
+    "telefon": "+43 512 987654",
+    "email": "service@alpenstyle.at",
+    "web": "www.alpenstyle.at",
+    "uid": "ATU74123698",
+    "eori": "ATEOS7412369800",
+    "oss_nummer": "EU372012345",
+    "firmenbuch": "FN 478965s",
+    "bank": "Erste Bank",
+    "iban": "AT55 2011 1234 5678 9012",
+    "bic": "GIBAATWWXXX",
+    "trustpilot": "4.8/5.0 (2,847 Bewertungen)",
+    "gütesiegel": ["Österreichisches E-Commerce Gütezeichen", "Trusted Shops"]
+  },
+  "kunde": {
+    "kundennummer": "K-458796",
+    "anrede": "Frau",
+    "vorname": "Julia",
+    "nachname": "Bergmann",
+    "email": "julia.bergmann@email.de",
+    "telefon": "+49 170 1234567",
+    "rechnungsadresse": {
+      "strasse": "Hauptstraße 42",
+      "plz": "80331",
+      "ort": "München",
+      "land": "Deutschland"
+    },
+    "lieferadresse": {
+      "empfaenger": "Julia Bergmann",
+      "strasse": "Hauptstraße 42",
+      "plz": "80331",
+      "ort": "München",
+      "land": "Deutschland"
+    },
+    "newsletter": false,
+    "kundenkonto": true
+  },
+  "bestellung": {
+    "bestellnummer": "AS-2025-98745",
+    "bestelldatum": "26.08.2025 14:23",
+    "rechnungsnummer": "RE-2025-45789",
+    "rechnungsdatum": "28.08.2025",
+    "zahlungsart": "PayPal",
+    "zahlungsstatus": "Bezahlt",
+    "versandart": "DHL Express",
+    "tracking": "12345678901234",
+    "voraussichtliche_lieferung": "30.08.2025"
+  },
+  "artikel": [
+    {
+      "bild": "product_001_thumb.jpg",
+      "artikelnummer": "TRA-425",
+      "ean": "9001234567890",
+      "bezeichnung": "Tiroler Wanderrucksack 'Gipfelstürmer' 45L",
+      "farbe": "Alpingrün",
+      "groesse": "L",
+      "menge": 1,
+      "einzelpreis": 189.90,
+      "rabatt_prozent": 20,
+      "rabatt_betrag": 37.98,
+      "zwischensumme": 151.92,
+      "steuersatz": 20,
+      "lagerbestand": "Verfügbar",
+      "herkunft": "Handgefertigt in Tirol"
+    },
+    {
+      "bild": "product_002_thumb.jpg",
+      "artikelnummer": "JAC-782",
+      "ean": "9001234567891",
+      "bezeichnung": "Merino-Wolljacke 'Alpenwärme'",
+      "farbe": "Naturgrau",
+      "groesse": "M",
+      "menge": 1,
+      "einzelpreis": 129.00,
+      "rabatt_prozent": 0,
+      "rabatt_betrag": 0,
+      "zwischensumme": 129.00,
+      "steuersatz": 20,
+      "lagerbestand": "Nur noch 3 Stück",
+      "herkunft": "100% Tiroler Bergschaf-Wolle"
+    },
+    {
+      "bild": "product_003_thumb.jpg",
+      "artikelnummer": "SOC-234",
+      "ean": "9001234567892",
+      "bezeichnung": "Wandersocken 'Bergfex' 3er Pack",
+      "farbe": "Anthrazit",
+      "groesse": "39-42",
+      "menge": 2,
+      "einzelpreis": 24.90,
+      "rabatt_prozent": 0,
+      "rabatt_betrag": 0,
+      "zwischensumme": 49.80,
+      "steuersatz": 20,
+      "lagerbestand": "Verfügbar",
+      "herkunft": "Produziert in Österreich"
+    },
+    {
+      "bild": "gift_wrap.jpg",
+      "artikelnummer": "GIFT-01",
+      "ean": "",
+      "bezeichnung": "Geschenkverpackung Premium",
+      "farbe": "",
+      "groesse": "",
+      "menge": 1,
+      "einzelpreis": 4.90,
+      "rabatt_prozent": 0,
+      "rabatt_betrag": 0,
+      "zwischensumme": 4.90,
+      "steuersatz": 20,
+      "lagerbestand": "",
+      "herkunft": "Recyceltes Papier"
+    }
+  ],
+  "gutschein": {
+    "code": "SOMMER2025",
+    "beschreibung": "Sommeraktion -20% auf Wanderrucksäcke",
+    "wert": 37.98
+  },
+  "versand": {
+    "bezeichnung": "DHL Express (1-2 Werktage)",
+    "kosten": 9.90,
+    "steuersatz": 20,
+    "kostenlos_ab": 99.00,
+    "tracking_url": "https://www.dhl.de/track?trackingNumber=12345678901234"
+  },
+  "zusammenfassung": {
+    "warenwert": 373.70,
+    "rabatte_gesamt": 37.98,
+    "zwischensumme": 335.72,
+    "versandkosten": 9.90,
+    "summe_netto": 288.02,
+    "ust_20_de": 57.60,
+    "summe_brutto": 345.62
+  },
+  "oss_hinweis": {
+    "text": "Die Umsatzsteuer wird gemäß One-Stop-Shop-Verfahren (OSS) für Deutschland (20%) abgeführt.",
+    "registrierung": "OSS-Registrierungsnummer: EU372012345"
+  },
+  "sustainability": {
+    "co2_footprint": "2.3 kg CO₂",
+    "kompensation": "Klimaneutral durch Aufforstungsprojekt in Tirol",
+    "verpackung": "100% recyclebar, plastikfrei",
+    "versand": "DHL GoGreen klimaneutraler Versand"
+  },
+  "retoure": {
+    "frist": "30 Tage Rückgaberecht",
+    "portal_link": "https://www.alpenstyle.at/retoure",
+    "label_qr": "GENERATE_RETURN_QR_HERE",
+    "hinweis": "Einfache Rücksendung über unser Online-Portal. QR-Code scannen oder Link nutzen."
+  },
+  "cross_selling": [
+    {
+      "artikelnummer": "CAP-567",
+      "bezeichnung": "Wanderhut 'Sonnenschutz'",
+      "preis": 39.90,
+      "rabatt": "Nur für Sie: -15% mit Code KUNDE15"
+    },
+    {
+      "artikelnummer": "FLA-890",
+      "bezeichnung": "Edelstahl-Trinkflasche 1L",
+      "preis": 29.90,
+      "rabatt": "Bundle-Preis: -10% bei Kombination"
+    }
+  ],
+  "kundenservice": {
+    "hotline": "+43 512 987654",
+    "zeiten": "Mo-Fr 9-18 Uhr, Sa 9-14 Uhr",
+    "chat": "Live-Chat auf www.alpenstyle.at",
+    "email": "service@alpenstyle.at",
+    "bewertung": "Bewerten Sie uns auf Trustpilot!",
+    "newsletter_hinweis": "10% Rabatt bei Newsletter-Anmeldung auf Ihre nächste Bestellung"
+  }
+}

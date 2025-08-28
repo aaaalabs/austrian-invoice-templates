@@ -1,0 +1,73 @@
+{
+  "verwaltung": {
+    "name": "Alpen Immobilien Verwaltung GmbH",
+    "strasse": "Immobilienstraße 50",
+    "plz": "6020",
+    "ort": "Innsbruck", 
+    "land": "Österreich",
+    "telefon": "+43 512 567890",
+    "email": "verwaltung@alpen-immobilien.at",
+    "web": "www.alpen-immobilien.at",
+    "uid": "ATU55667788",
+    "konzession": "Immobilientreuhänder-Berechtigung Nr. IT-2020-4567",
+    "iban": "AT88 2050 3033 0789 1234",
+    "treuhandkonto": "AT99 2050 3033 0999 9999"
+  },
+  "objekt": {
+    "bezeichnung": "Wohnanlage Alpenpanorama",
+    "adresse": "Panoramaweg 12-18, 6020 Innsbruck",
+    "einheiten": 24,
+    "baujahr": 2018,
+    "typ": "Mehrfamilienhaus"
+  },
+  "eigentuemer": {
+    "name": "Immobilien Invest GmbH",
+    "ansprechpartner": "Mag. Peter Eigentümer",
+    "strasse": "Investmentstraße 100",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "uid": "ATU99887766"
+  },
+  "rechnung": {
+    "nummer": "IV-2025-3456",
+    "datum": "28.08.2025",
+    "abrechnungszeitraum": "Q2/2025 (April - Juni 2025)",
+    "zahlungsziel": "27.09.2025"
+  },
+  "leistungen": [
+    {
+      "kategorie": "verwaltung",
+      "beschreibung": "Hausverwaltung Q2/2025 (24 Einheiten)",
+      "basis": "pauschal",
+      "betrag": 2400.00,
+      "steuersatz": 20
+    },
+    {
+      "kategorie": "instandhaltung",
+      "beschreibung": "Wartung Heizungsanlage",
+      "auftragnehmer": "Heizung Tirol GmbH",
+      "betrag": 850.00,
+      "steuersatz": 20
+    },
+    {
+      "kategorie": "reinigung",
+      "beschreibung": "Stiegenhaus-Reinigung (13 Wochen)",
+      "auftragnehmer": "Reinigungsservice Alpen",
+      "betrag": 1170.00,
+      "steuersatz": 20
+    },
+    {
+      "kategorie": "verwaltung",
+      "beschreibung": "Mietinkasso und Nebenkostenabrechnungen",
+      "basis": "5% der Mieteinnahmen",
+      "mieteinnahmen": 48000.00,
+      "betrag": 2400.00,
+      "steuersatz": 20
+    }
+  ],
+  "zusammenfassung": {
+    "summe_netto": 6820.00,
+    "ust_20": 1364.00,
+    "summe_brutto": 8184.00
+  }
+}

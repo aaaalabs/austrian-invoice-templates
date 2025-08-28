@@ -1,0 +1,173 @@
+{
+  "firma": {
+    "name": "Bau-Meister Tirol GmbH",
+    "zusatz": "Ihr Partner für nachhaltiges Bauen",
+    "strasse": "Gewerbestraße 25",
+    "plz": "6060",
+    "ort": "Hall in Tirol",
+    "land": "Österreich",
+    "telefon": "+43 5223 45678",
+    "email": "office@baumeister-tirol.at",
+    "web": "www.baumeister-tirol.at",
+    "uid": "ATU65432109",
+    "firmenbuch": "FN 234567m",
+    "gericht": "Landesgericht Innsbruck",
+    "geschaeftsfuehrer": "Ing. Franz Baumeister",
+    "bank": "Volksbank Tirol",
+    "iban": "AT77 4239 0000 0123 4567",
+    "bic": "VBOEATWWINN",
+    "konzession": "Baumeister-Konzession GZ 2020/1234"
+  },
+  "bauherr": {
+    "firma": "Wohnbau Tirol GmbH",
+    "vertreter": "DI Maria Planer",
+    "strasse": "Südtiroler Platz 8",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "uid": "ATU12378945"
+  },
+  "architekt": {
+    "buero": "Architektur Alpen ZT GmbH",
+    "kontakt": "Arch. DI Johann Modern"
+  },
+  "projekt": {
+    "bezeichnung": "Mehrfamilienhaus 'Sonnengarten' - 12 WE",
+    "bauadresse": "Sonnenstraße 45, 6020 Innsbruck",
+    "auftragsnummer": "2024-BWH-089",
+    "auftragsdatum": "15.03.2024",
+    "auftragssumme": 1850000.00,
+    "baubeginn": "01.05.2024",
+    "fertigstellung_plan": "30.11.2025"
+  },
+  "abschlagsrechnung": {
+    "nummer": "AR-2025-00456",
+    "teilrechnung_nr": 8,
+    "datum": "28.08.2025",
+    "leistungszeitraum": "01.08.2025 - 31.08.2025",
+    "leistungsstand_prozent": 42.5,
+    "zahlungsziel_tage": 21,
+    "zahlungsziel_datum": "18.09.2025",
+    "prueffrist": "gem. § 16 Abs 1 Z 1 VOB: 21 Tage"
+  },
+  "leistungen_aktuell": [
+    {
+      "position": "02.01",
+      "beschreibung": "Erdarbeiten - Baugrube",
+      "menge_gesamt": 2400,
+      "einheit": "m³",
+      "menge_periode": 0,
+      "prozent_fertig": 100,
+      "einzelpreis": 45.00,
+      "gesamtpreis": 108000.00,
+      "periode_betrag": 0
+    },
+    {
+      "position": "03.01",
+      "beschreibung": "Fundamentplatte Stahlbeton C25/30",
+      "menge_gesamt": 450,
+      "einheit": "m³",
+      "menge_periode": 180,
+      "prozent_fertig": 100,
+      "einzelpreis": 380.00,
+      "gesamtpreis": 171000.00,
+      "periode_betrag": 68400.00
+    },
+    {
+      "position": "04.02",
+      "beschreibung": "Außenwände Stahlbeton C25/30",
+      "menge_gesamt": 820,
+      "einheit": "m³",
+      "menge_periode": 220,
+      "prozent_fertig": 65,
+      "einzelpreis": 420.00,
+      "gesamtpreis": 344400.00,
+      "periode_betrag": 92400.00
+    },
+    {
+      "position": "04.03",
+      "beschreibung": "Decken Stahlbeton C25/30",
+      "menge_gesamt": 380,
+      "einheit": "m³",
+      "menge_periode": 95,
+      "prozent_fertig": 25,
+      "einzelpreis": 450.00,
+      "gesamtpreis": 171000.00,
+      "periode_betrag": 42750.00
+    },
+    {
+      "position": "05.01",
+      "beschreibung": "Mauerwerk Außenwände EG-3.OG",
+      "menge_gesamt": 1840,
+      "einheit": "m²",
+      "menge_periode": 460,
+      "prozent_fertig": 25,
+      "einzelpreis": 125.00,
+      "gesamtpreis": 230000.00,
+      "periode_betrag": 57500.00
+    },
+    {
+      "position": "05.02",
+      "beschreibung": "Mauerwerk Innenwände tragend",
+      "menge_gesamt": 920,
+      "einheit": "m²",
+      "menge_periode": 184,
+      "prozent_fertig": 20,
+      "einzelpreis": 95.00,
+      "gesamtpreis": 87400.00,
+      "periode_betrag": 17480.00
+    }
+  ],
+  "abrechnung_kumuliert": {
+    "auftragssumme_netto": 1850000.00,
+    "nachtraege_genehmigt": [
+      {
+        "nr": "N01",
+        "beschreibung": "Bodenaustausch wegen Altlasten",
+        "betrag": 45000.00
+      },
+      {
+        "nr": "N02",
+        "beschreibung": "Zusätzliche Tiefgaragenstellplätze",
+        "betrag": 68000.00
+      }
+    ],
+    "nachtraege_summe": 113000.00,
+    "auftragssumme_gesamt": 1963000.00,
+    "bisherige_abschlaege": [
+      {"nr": 1, "betrag": 95000.00},
+      {"nr": 2, "betrag": 142000.00},
+      {"nr": 3, "betrag": 168000.00},
+      {"nr": 4, "betrag": 156000.00},
+      {"nr": 5, "betrag": 162000.00},
+      {"nr": 6, "betrag": 145000.00},
+      {"nr": 7, "betrag": 158000.00}
+    ],
+    "bisherige_summe": 1026000.00,
+    "aktuelle_leistung": 278530.00,
+    "gesamt_geleistet": 1304530.00,
+    "leistungsstand_prozent": 66.46,
+    "verbleibende_leistung": 658470.00
+  },
+  "einbehalte": {
+    "haftrücklass_prozent": 10,
+    "haftrücklass_betrag": 27853.00,
+    "deckungsrücklass_prozent": 2,
+    "deckungsrücklass_betrag": 5570.60,
+    "buak_zuschlag_prozent": 1.95,
+    "buak_zuschlag_betrag": 5431.34,
+    "sicherheitseinbehalt_gesamt": 33423.60
+  },
+  "zusammenfassung": {
+    "leistung_periode_netto": 278530.00,
+    "abzgl_sicherheitseinbehalt": 33423.60,
+    "zwischensumme": 245106.40,
+    "ust_20": 49021.28,
+    "abschlagssumme_brutto": 294127.68
+  },
+  "hinweise": {
+    "prueffrist": "Die Prüf- und Zahlungsfrist beträgt gemäß § 16 Abs 1 Z 1 VOB 21 Tage ab Rechnungseingang",
+    "vorbehalt": "Alle Maße und Mengen unter Vorbehalt der örtlichen Aufnahme",
+    "gewaehrleistung": "Gewährleistungsfrist 3 Jahre gemäß ÖNORM B 2110",
+    "sicherstellung": "Sicherheitseinbehalt kann durch Bankgarantie abgelöst werden"
+  }
+}

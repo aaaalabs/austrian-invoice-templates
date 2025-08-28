@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice {{rechnung.nummer}} - {{firma.name}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #fff;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+        }
+        
+        .eu-header {
+            background: linear-gradient(135deg, #003d82 0%, #0056b3 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .eu-header::before {
+            content: '🇪🇺';
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .company-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .company-info .subtitle {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .company-info p {
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .invoice-number {
+            text-align: right;
+        }
+        
+        .invoice-number h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .invoice-number p {
+            opacity: 0.9;
+        }
+        
+        .language-switcher {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 0 0 8px 8px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .addresses-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .address-block h3 {
+            color: #003d82;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .address-block .flag {
+            font-size: 1.2rem;
+        }
+        
+        .address-block p {
+            margin-bottom: 0.25rem;
+        }
+        
+        .uid-info {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .uid-info strong {
+            color: #1565c0;
+        }
+        
+        .invoice-details {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .invoice-details h3 {
+            color: #003d82;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .detail-item label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .detail-item span {
+            color: #212529;
+        }
+        
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .items-table th {
+            background: #003d82;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .items-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .items-table .bilingual {
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+        
+        .items-table .amount {
+            text-align: right;
+            font-weight: 600;
+            color: #28a745;
+        }
+        
+        .reverse-charge-notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .reverse-charge-notice h4 {
+            color: #856404;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .reverse-charge-notice .bilingual {
+            margin-bottom: 1rem;
+        }
+        
+        .reverse-charge-notice .legal-ref {
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .summary-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+        }
+        
+        .summary-row.total {
+            border-top: 2px solid #003d82;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #003d82;
+        }
+        
+        .compliance-section {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin-bottom: 2rem;
+        }
+        
+        .compliance-section h4 {
+            color: #155724;
+            margin-bottom: 1rem;
+        }
+        
+        .compliance-item {
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .compliance-item strong {
+            color: #155724;
+        }
+        
+        .payment-section {
+            background: #f1f8ff;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #0056b3;
+        }
+        
+        .payment-section h3 {
+            color: #0056b3;
+            margin-bottom: 1.5rem;
+        }
+        
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .bank-info {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        .bank-info h5 {
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #dee2e6;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .footer .eu-compliance {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        
+        @media print {
+            body { padding: 1cm; }
+            .eu-header::before { display: none; }
+            .compliance-section { page-break-inside: avoid; }
+        }
+        
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .header-content { flex-direction: column; gap: 1rem; }
+            .addresses-section { grid-template-columns: 1fr; }
+            .details-grid, .payment-grid { grid-template-columns: 1fr; }
+            .invoice-number { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <header class="eu-header">
+        <div class="header-content">
+            <div class="company-info">
+                <h1>{{firma.name}}</h1>
+                <div class="subtitle">International Business Consulting</div>
+                <p>{{firma.strasse}}, {{firma.plz}} {{firma.ort}}</p>
+                <p>{{firma.land}}</p>
+                <p>Tel: {{firma.telefon}} | Email: {{firma.email}}</p>
+                <p>UID: {{firma.uid}} | EORI: {{firma.eori}}</p>
+            </div>
+            <div class="invoice-number">
+                <h2>{{rechnung.nummer}}</h2>
+                <p>Invoice / Rechnung</p>
+                <p>{{rechnung.datum}}</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="language-switcher">
+        🇩🇪 Deutsch | 🇬🇧 English | Sprache / Language: {{rechnung.sprache}}
+    </div>
+    
+    <section class="addresses-section">
+        <div class="address-block">
+            <h3><span class="flag">🇳🇱</span> Rechnungsempfänger / Recipient</h3>
+            <p><strong>{{kunde.firma}}</strong></p>
+            <p>{{kunde.ansprechpartner}}</p>
+            <p>{{kunde.strasse}}</p>
+            <p>{{kunde.plz}} {{kunde.ort}}</p>
+            <p>{{kunde.land}}</p>
+            <div class="uid-info">
+                <strong>VAT ID:</strong> {{kunde.uid}}<br>
+                <strong>VIES Status:</strong> {{kunde.vies_check}}
+            </div>
+        </div>
+        <div class="address-block">
+            <h3><span class="flag">🇦🇹</span> Leistungserbringer / Supplier</h3>
+            <p><strong>{{firma.name}}</strong></p>
+            <p>{{firma.strasse}}</p>
+            <p>{{firma.plz}} {{firma.ort}}</p>
+            <p>{{firma.land}}</p>
+            <div class="uid-info">
+                <strong>UID:</strong> {{firma.uid}}<br>
+                <strong>Firmenbuch:</strong> {{firma.firmenbuch}}<br>
+                <strong>Gericht:</strong> {{firma.gericht}}
+            </div>
+        </div>
+    </section>
+    
+    <div class="invoice-details">
+        <h3>{{rechnung.betreff}}</h3>
+        <div class="details-grid">
+            <div class="detail-item">
+                <label>Rechnungsdatum / Invoice Date:</label>
+                <span>{{rechnung.datum}}</span>
+            </div>
+            <div class="detail-item">
+                <label>Leistungszeitraum / Service Period:</label>
+                <span>{{rechnung.leistungsdatum}}</span>
+            </div>
+            <div class="detail-item">
+                <label>Leistungsort / Place of Supply:</label>
+                <span>{{rechnung.leistungsort}}</span>
+            </div>
+            <div class="detail-item">
+                <label>Zahlungsziel / Payment Due:</label>
+                <span>{{rechnung.zahlungsziel}}</span>
+            </div>
+        </div>
+    </div>
+    
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th>Leistungsbeschreibung / Service Description</th>
+                <th>Einheit / Unit</th>
+                <th>Menge / Qty</th>
+                <th>Tagessatz / Daily Rate</th>
+                <th>Gesamt / Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each positionen}}
+            <tr>
+                <td>
+                    <div>{{beschreibung_de}}</div>
+                    <div class="bilingual">{{beschreibung_en}}</div>
+                </td>
+                <td>{{einheit}}</td>
+                <td>{{menge}}</td>
+                <td class="amount">€ {{tagessatz}}</td>
+                <td class="amount">€ {{gesamt}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    
+    <div class="reverse-charge-notice">
+        <h4>⚠️ Reverse Charge Procedure / Steuerschuldnerschaft</h4>
+        <div class="bilingual">
+            <p><strong>🇩🇪</strong> {{zusammenfassung.reverse_charge_text_de}}</p>
+            <p><strong>🇬🇧</strong> {{zusammenfassung.reverse_charge_text_en}}</p>
+        </div>
+        <div class="legal-ref">
+            Reference: Art. 196 VAT Directive 2006/112/EC | § 3a UStG
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <div class="summary-row">
+            <span>Netto-Betrag / Net Amount:</span>
+            <span>€ {{zusammenfassung.summe_netto}}</span>
+        </div>
+        <div class="summary-row">
+            <span>Umsatzsteuer / VAT (Reverse Charge):</span>
+            <span>€ 0,00</span>
+        </div>
+        <div class="summary-row total">
+            <span>Gesamtbetrag / Total Amount:</span>
+            <span>€ {{zusammenfassung.summe_zu_zahlen}}</span>
+        </div>
+    </div>
+    
+    <div class="compliance-section">
+        <h4>📋 Compliance Documentation / Compliance-Dokumentation</h4>
+        <div class="compliance-item">
+            <strong>VIES Validation:</strong> {{compliance.vies_validierung}}
+        </div>
+        <div class="compliance-item">
+            <strong>Leistungsort / Place of Supply:</strong><br>
+            🇩🇪 {{compliance.leistungsort_erklaerung_de}}<br>
+            🇬🇧 {{compliance.leistungsort_erklaerung_en}}
+        </div>
+        <div class="compliance-item">
+            <strong>B2B Status:</strong> {{compliance.b2b_nachweis}}
+        </div>
+        <div class="compliance-item">
+            <strong>Documentation:</strong> {{compliance.dokumentation}}
+        </div>
+    </div>
+    
+    <div class="payment-section">
+        <h3>💳 Zahlungsinformationen / Payment Information</h3>
+        <div class="payment-grid">
+            <div class="bank-info">
+                <h5>🇦🇹 Domestic (SEPA)</h5>
+                <p><strong>Bank:</strong> {{firma.bank_name}}</p>
+                <p><strong>IBAN:</strong> {{firma.iban}}</p>
+                <p><strong>BIC:</strong> {{firma.bic}}</p>
+            </div>
+            <div class="bank-info">
+                <h5>🌍 International</h5>
+                <p><strong>Bank:</strong> {{firma.bank_name_int}}</p>
+                <p><strong>IBAN:</strong> {{firma.iban_int}}</p>
+                <p><strong>BIC/SWIFT:</strong> {{firma.bic_int}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>{{zusatz.naechste_schritte_de}} / {{zusatz.naechste_schritte_en}}</p>
+        <p>{{zusatz.agb}} | {{zusatz.gerichtsstand}}</p>
+        
+        <div class="eu-compliance">
+            <strong>🇪🇺 EU Compliance:</strong> This invoice complies with EU VAT Directive 2006/112/EC and Austrian UStG regulations.
+            Cross-border B2B service with valid VAT IDs - Reverse Charge applies.
+        </div>
+    </div>
+</body>
+</html>

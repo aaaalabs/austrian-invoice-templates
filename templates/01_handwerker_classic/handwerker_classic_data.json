@@ -1,0 +1,100 @@
+{
+  "firma": {
+    "name": "Elektro Huber GmbH",
+    "zusatz": "Ihr Meisterbetrieb seit 1985",
+    "strasse": "Handwerkerstraße 12",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "telefon": "+43 512 123456",
+    "email": "office@elektro-huber.at",
+    "web": "www.elektro-huber.at",
+    "uid": "ATU12345678",
+    "firmenbuch": "FN 123456a",
+    "gericht": "Landesgericht Innsbruck",
+    "geschaeftsfuehrer": "Johann Huber",
+    "bank": "Tiroler Sparkasse",
+    "iban": "AT12 2050 3033 0152 3006",
+    "bic": "SPIHAT22XXX"
+  },
+  "kunde": {
+    "anrede": "Sehr geehrte",
+    "titel": "",
+    "vorname": "Maria",
+    "nachname": "Berger",
+    "firma": "",
+    "strasse": "Hauptplatz 7",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "uid": ""
+  },
+  "rechnung": {
+    "nummer": "RE-2025-00142",
+    "datum": "15.03.2025",
+    "leistungszeitraum": "01.03.2025 - 14.03.2025",
+    "zahlungsziel": "14.04.2025",
+    "betreff": "Elektroinstallation Wohnungsrenovierung"
+  },
+  "positionen": [
+    {
+      "typ": "material",
+      "beschreibung": "Sicherungskasten ABB 3-reihig",
+      "menge": 1,
+      "einheit": "Stk",
+      "einzelpreis": 285.50,
+      "steuersatz": 20,
+      "gesamt": 285.50
+    },
+    {
+      "typ": "material",
+      "beschreibung": "NYM-J 3x1,5 mm² Kabel",
+      "menge": 120,
+      "einheit": "m",
+      "einzelpreis": 1.85,
+      "steuersatz": 20,
+      "gesamt": 222.00
+    },
+    {
+      "typ": "arbeit",
+      "beschreibung": "Elektroinstallation durch Meister",
+      "menge": 16,
+      "einheit": "Std",
+      "einzelpreis": 78.00,
+      "steuersatz": 20,
+      "gesamt": 1248.00
+    },
+    {
+      "typ": "arbeit",
+      "beschreibung": "Elektroinstallation durch Geselle",
+      "menge": 24,
+      "einheit": "Std",
+      "einzelpreis": 62.00,
+      "steuersatz": 20,
+      "gesamt": 1488.00
+    },
+    {
+      "typ": "fahrt",
+      "beschreibung": "Fahrtkostenpauschale Innsbruck",
+      "menge": 4,
+      "einheit": "Fahrten",
+      "einzelpreis": 25.00,
+      "steuersatz": 20,
+      "gesamt": 100.00
+    }
+  ],
+  "zusammenfassung": {
+    "material_netto": 507.50,
+    "arbeit_netto": 2736.00,
+    "fahrt_netto": 100.00,
+    "summe_netto": 3343.50,
+    "ust_20": 668.70,
+    "summe_brutto": 4012.20,
+    "skonto_betrag": 80.24,
+    "skonto_endbetrag": 3931.96
+  },
+  "zusatzinfo": {
+    "handwerkerbonus": "Hinweis: Die Arbeitskosten (2.736,00 €) können gemäß § 35a EStG als Handwerkerleistungen steuerlich geltend gemacht werden.",
+    "gewaehrleistung": "Auf unsere Leistungen gewähren wir 2 Jahre Gewährleistung gemäß österreichischem Recht.",
+    "wko": "Mitglied der WKO Tirol - Landesinnung der Elektrotechniker"
+  }
+}

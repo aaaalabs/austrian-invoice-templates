@@ -1,0 +1,206 @@
+{
+  "hotel": {
+    "name": "Alpenresort Sonnblick ****S",
+    "slogan": {
+      "de": "Ihre Auszeit in den Tiroler Bergen",
+      "en": "Your retreat in the Tyrolean Alps",
+      "it": "Il vostro rifugio nelle Alpi tirolesi"
+    },
+    "strasse": "Panoramaweg 100",
+    "plz": "6100",
+    "ort": "Seefeld in Tirol",
+    "land": "Österreich",
+    "telefon": "+43 5212 12345",
+    "email": "info@sonnblick.tirol",
+    "web": "www.sonnblick.tirol",
+    "uid": "ATU67890123",
+    "firmenbuch": "FN 456789b",
+    "geschaeftsfuehrer": "Familie Hofer",
+    "bank": "Raiffeisen Seefeld",
+    "iban": "AT12 3456 7890 1234 5678",
+    "bic": "RZTIAT22456",
+    "guetesiegel": ["4 Sterne Superior", "Tiroler Wirtshaus", "klimaaktiv"],
+    "bewertung": "Booking.com 9.2 | TripAdvisor 4.5★ | Google 4.7★"
+  },
+  "gast": {
+    "anrede": {
+      "de": "Sehr geehrte Familie",
+      "en": "Dear Family",
+      "it": "Gentile Famiglia"
+    },
+    "nachname": "Rossi",
+    "strasse": "Via Roma 25",
+    "plz": "39100",
+    "ort": "Bozen",
+    "land": "Italien / Italy / Italia",
+    "email": "marco.rossi@email.it",
+    "sprache": "it"
+  },
+  "rechnung": {
+    "nummer": "2025-3847",
+    "datum": "28.08.2025",
+    "anreise": "21.08.2025",
+    "abreise": "28.08.2025",
+    "naechte": 7,
+    "personen": 4,
+    "zimmer": "201 + 203"
+  },
+  "leistungen": [
+    {
+      "kategorie": "unterkunft",
+      "beschreibung": {
+        "de": "Doppelzimmer Superior mit Balkon, Halbpension",
+        "en": "Superior double room with balcony, half board",
+        "it": "Camera doppia superior con balcone, mezza pensione"
+      },
+      "einheit": {
+        "de": "Nächte",
+        "en": "Nights",
+        "it": "Notti"
+      },
+      "menge": 7,
+      "einzelpreis": 180.00,
+      "gesamt": 1260.00,
+      "ust_satz": 13
+    },
+    {
+      "kategorie": "unterkunft",
+      "beschreibung": {
+        "de": "Familienzimmer mit Bergblick, Halbpension (2 Kinder)",
+        "en": "Family room mountain view, half board (2 children)",
+        "it": "Camera famigliare vista montagna, mezza pensione (2 bambini)"
+      },
+      "einheit": {
+        "de": "Nächte",
+        "en": "Nights",
+        "it": "Notti"
+      },
+      "menge": 7,
+      "einzelpreis": 240.00,
+      "gesamt": 1680.00,
+      "ust_satz": 13
+    },
+    {
+      "kategorie": "verpflegung",
+      "beschreibung": {
+        "de": "Upgrade All-Inclusive (4 Personen × 7 Tage)",
+        "en": "All-Inclusive upgrade (4 persons × 7 days)",
+        "it": "Upgrade All-Inclusive (4 persone × 7 giorni)"
+      },
+      "einheit": {
+        "de": "Paket",
+        "en": "Package",
+        "it": "Pacchetto"
+      },
+      "menge": 1,
+      "einzelpreis": 420.00,
+      "gesamt": 420.00,
+      "ust_satz": 10
+    },
+    {
+      "kategorie": "wellness",
+      "beschreibung": {
+        "de": "Alpenkräuter-Massage 50 Min. (2×)",
+        "en": "Alpine herbs massage 50 min (2×)",
+        "it": "Massaggio alle erbe alpine 50 min (2×)"
+      },
+      "einheit": {
+        "de": "Behandlung",
+        "en": "Treatment",
+        "it": "Trattamento"
+      },
+      "menge": 2,
+      "einzelpreis": 85.00,
+      "gesamt": 170.00,
+      "ust_satz": 20
+    },
+    {
+      "kategorie": "sonstiges",
+      "beschreibung": {
+        "de": "Tages-Skipässe Seefeld (2 Erw. + 2 Kinder)",
+        "en": "Day ski passes Seefeld (2 adults + 2 children)",
+        "it": "Skipass giornalieri Seefeld (2 adulti + 2 bambini)"
+      },
+      "einheit": {
+        "de": "Tag",
+        "en": "Day",
+        "it": "Giorno"
+      },
+      "menge": 3,
+      "einzelpreis": 186.00,
+      "gesamt": 558.00,
+      "ust_satz": 13
+    },
+    {
+      "kategorie": "minibar",
+      "beschreibung": {
+        "de": "Minibar-Verbrauch",
+        "en": "Minibar consumption",
+        "it": "Consumo minibar"
+      },
+      "einheit": {
+        "de": "Gesamt",
+        "en": "Total",
+        "it": "Totale"
+      },
+      "menge": 1,
+      "einzelpreis": 67.50,
+      "gesamt": 67.50,
+      "ust_satz": 20
+    },
+    {
+      "kategorie": "parken",
+      "beschreibung": {
+        "de": "Garagenplatz",
+        "en": "Garage parking",
+        "it": "Posto auto in garage"
+      },
+      "einheit": {
+        "de": "Nächte",
+        "en": "Nights",
+        "it": "Notti"
+      },
+      "menge": 7,
+      "einzelpreis": 15.00,
+      "gesamt": 105.00,
+      "ust_satz": 20
+    }
+  ],
+  "ortstaxe": {
+    "beschreibung": {
+      "de": "Ortstaxe Seefeld (2,50€ pro Person/Nacht ab 15 Jahren)",
+      "en": "Local tax Seefeld (€2.50 per person/night from 15 years)",
+      "it": "Tassa di soggiorno Seefeld (2,50€ per persona/notte dai 15 anni)"
+    },
+    "personen": 2,
+    "naechte": 7,
+    "betrag_pro": 2.50,
+    "gesamt": 35.00,
+    "ust_frei": true
+  },
+  "zusammenfassung": {
+    "unterkunft_netto": 2940.00,
+    "verpflegung_netto": 420.00,
+    "sonstiges_netto": 900.50,
+    "summe_netto": 4260.50,
+    "ust_10": 42.00,
+    "ust_13": 499.40,
+    "ust_20": 68.50,
+    "summe_ust": 609.90,
+    "summe_brutto": 4870.40,
+    "ortstaxe": 35.00,
+    "gesamtbetrag": 4905.40,
+    "anzahlung_geleistet": 500.00,
+    "zu_zahlen": 4405.40
+  },
+  "zusatztext": {
+    "de": "Vielen Dank für Ihren Aufenthalt! Wir freuen uns auf ein Wiedersehen in den Tiroler Bergen.",
+    "en": "Thank you for your stay! We look forward to welcoming you back to the Tyrolean Alps.",
+    "it": "Grazie per il vostro soggiorno! Non vediamo l'ora di rivedervi nelle Alpi tirolesi."
+  },
+  "storno": {
+    "de": "Stornobedingungen gemäß ÖHVB: bis 3 Monate vor Anreise kostenlos, bis 1 Monat 40%, bis 1 Woche 70%, danach 90%",
+    "en": "Cancellation according to ÖHVB: free until 3 months before arrival, until 1 month 40%, until 1 week 70%, thereafter 90%",
+    "it": "Condizioni di cancellazione secondo ÖHVB: gratuito fino a 3 mesi prima, fino a 1 mese 40%, fino a 1 settimana 70%, poi 90%"
+  }
+}

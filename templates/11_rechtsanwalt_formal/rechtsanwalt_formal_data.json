@@ -1,0 +1,191 @@
+{
+  "kanzlei": {
+    "name": "Dr. Maximilian Recht & Partner",
+    "zusatz": "Rechtsanwälte - Attorneys at Law",
+    "strasse": "Justizplatz 1",
+    "plz": "1010",
+    "ort": "Wien",
+    "land": "Österreich",
+    "telefon": "+43 1 234 5678",
+    "fax": "+43 1 234 5679",
+    "email": "office@recht-partner.at",
+    "web": "www.recht-partner.at",
+    "uid": "ATU12345678",
+    "rak_nummer": "R 123456",
+    "treuhandkonto": {
+      "bank": "BAWAG P.S.K.",
+      "iban": "AT12 1400 0123 4567 8901",
+      "bic": "BAWAATWW",
+      "lautend": "RA Dr. Maximilian Recht - Anderkonto"
+    },
+    "hauptkonto": {
+      "bank": "Erste Bank",
+      "iban": "AT65 2011 1234 5678 9012",
+      "bic": "GIBAATWWXXX"
+    },
+    "haftpflicht": "HDI Versicherung AG, Pol.Nr. BH-2024-RA-4567"
+  },
+  "mandant": {
+    "anrede": "Sehr geehrter Herr",
+    "titel": "Mag.",
+    "vorname": "Andreas",
+    "nachname": "Unternehmer",
+    "firma": "Unternehmer Holding GmbH",
+    "position": "Geschäftsführer",
+    "strasse": "Businesspark 100",
+    "plz": "4020",
+    "ort": "Linz",
+    "land": "Österreich",
+    "uid": "ATU98765432"
+  },
+  "honorarnote": {
+    "nummer": "HN-2025-0789",
+    "datum": "28.08.2025",
+    "aktenzeichen": "AZ 2024/1234-MR",
+    "leistungszeitraum": "01.03.2024 - 31.07.2025",
+    "zahlungsziel": "14 Tage",
+    "faellig": "11.09.2025",
+    "betreff": "Rechtssache Unternehmer GmbH ./. Konkurrent AG"
+  },
+  "verfahren": {
+    "gericht": "Handelsgericht Wien",
+    "geschaeftszahl": "56 Cg 123/24",
+    "streitwert": 250000.00,
+    "verfahrensart": "Zivilprozess",
+    "erfolg": "Vollständiger Prozesserfolg - Urteil vom 15.07.2025"
+  },
+  "leistungen": [
+    {
+      "kategorie": "Gerichtliche Vertretung",
+      "positionen": [
+        {
+          "tp": "TP 3A",
+          "beschreibung": "Klage",
+          "basis": 5817.00,
+          "einheitssatz": 1.2,
+          "betrag": 6980.40
+        },
+        {
+          "tp": "TP 3A",
+          "beschreibung": "Klagebeantwortung",
+          "basis": 5817.00,
+          "einheitssatz": 1.2,
+          "betrag": 6980.40
+        },
+        {
+          "tp": "TP 3A",
+          "beschreibung": "Vorbereitung Verhandlung (3 Verhandlungen)",
+          "basis": 2908.50,
+          "einheitssatz": 3.6,
+          "betrag": 10470.60
+        },
+        {
+          "tp": "TP 3A",
+          "beschreibung": "Streitverhandlung (3 × 4 Stunden)",
+          "basis": 1745.10,
+          "einheitssatz": 14.4,
+          "betrag": 25129.44
+        }
+      ]
+    },
+    {
+      "kategorie": "Außergerichtliche Vertretung",
+      "positionen": [
+        {
+          "tp": "Pauschale",
+          "beschreibung": "Vertragsgestaltung und Verhandlungen",
+          "basis": 0,
+          "einheitssatz": 0,
+          "betrag": 8500.00
+        },
+        {
+          "tp": "TP 5",
+          "beschreibung": "Rechtsauskunft und Beratung",
+          "basis": 450.00,
+          "einheitssatz": 6,
+          "betrag": 2700.00
+        },
+        {
+          "tp": "TP 7",
+          "beschreibung": "Teilnahme an Besprechungen (8 Stunden)",
+          "basis": 120.00,
+          "einheitssatz": 8,
+          "betrag": 960.00
+        }
+      ]
+    },
+    {
+      "kategorie": "Barauslagen",
+      "positionen": [
+        {
+          "beschreibung": "Gerichtsgebühren (Pauschalgebühr)",
+          "betrag": 5639.00
+        },
+        {
+          "beschreibung": "Sachverständigengebühr Dr. Gutachter",
+          "betrag": 3500.00
+        },
+        {
+          "beschreibung": "Zeugengebühren",
+          "betrag": 245.60
+        },
+        {
+          "beschreibung": "Beglaubigte Übersetzungen (EN-DE)",
+          "betrag": 780.00
+        },
+        {
+          "beschreibung": "Grundbuchs- und Firmenbuchauszüge",
+          "betrag": 186.00
+        },
+        {
+          "beschreibung": "ERV-Gebühren",
+          "betrag": 48.50
+        },
+        {
+          "beschreibung": "Kopien (2.450 Seiten à € 0,50)",
+          "betrag": 1225.00
+        },
+        {
+          "beschreibung": "Porto und Zustellkosten",
+          "betrag": 89.30
+        }
+      ]
+    },
+    {
+      "kategorie": "Reisekosten",
+      "positionen": [
+        {
+          "beschreibung": "Fahrtkosten Wien-Linz (3 × 368 km à € 0,42)",
+          "betrag": 463.68
+        },
+        {
+          "beschreibung": "Tagesgebühren (3 Tage à € 35,10)",
+          "betrag": 105.30
+        }
+      ]
+    }
+  ],
+  "zusammenfassung": {
+    "honorar_gerichtlich": 49560.84,
+    "honorar_aussergerichtlich": 12160.00,
+    "zwischensumme_honorar": 61720.84,
+    "barauslagen": 11713.40,
+    "reisekosten": 568.98,
+    "summe_netto": 74003.22,
+    "ust_20": 14800.64,
+    "summe_brutto": 88803.86,
+    "gegnerischer_kostenersatz": 45000.00,
+    "vom_mandanten_zu_tragen": 43803.86
+  },
+  "kostenersatz": {
+    "hinweis": "Dem Mandanten wurde vom Gegner ein Kostenersatz in Höhe von EUR 45.000,00 zugesprochen. Dieser Betrag wurde bereits in Abzug gebracht.",
+    "zahlungseingang": "Der Kostenersatz wurde am 20.08.2025 auf unserem Treuhandkonto vereinnahmt."
+  },
+  "hinweise": {
+    "faelligkeit": "Wir ersuchen um Überweisung des offenen Betrages binnen 14 Tagen auf unser Hauptkonto.",
+    "vorbehalt": "Diese Honorarnote wurde nach bestem Wissen erstellt. Ergänzungen bleiben vorbehalten.",
+    "verschwiegenheit": "Sämtliche Informationen unterliegen der anwaltlichen Verschwiegenheitspflicht.",
+    "verjaehrung": "Honoraransprüche verjähren nach § 1486 Z 1 ABGB binnen drei Jahren.",
+    "beschwerde": "Beschwerden können bei der Rechtsanwaltskammer Wien eingebracht werden."
+  }
+}
