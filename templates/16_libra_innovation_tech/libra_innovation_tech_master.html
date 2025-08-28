@@ -298,6 +298,80 @@
             letter-spacing: 0.5px;
         }
 
+        .payment-terms-compact {
+            margin-bottom: 20px;
+        }
+
+        .payment-terms-compact h4 {
+            color: #2c4657;
+            font-size: 12pt;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .payment-terms-compact p {
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+
+        .bank-qr-row {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .bank-info-compact {
+            flex: 1;
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .bank-info-compact h4 {
+            color: #2c4657;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+
+        .iban-compact {
+            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+            font-size: 10pt;
+            white-space: nowrap;
+            letter-spacing: 0.8px;
+            background: #f8fafc;
+            padding: 6px 10px;
+            border-radius: 4px;
+            margin: 6px 0 4px 0;
+        }
+
+        .bic-compact {
+            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+            font-size: 10pt;
+            color: #6b7280;
+        }
+
+        .qr-payment-compact {
+            text-align: center;
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .qr-payment-compact img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 8px;
+        }
+
+        .qr-label-compact {
+            font-size: 9pt;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
         /* Stacked Layout for Better Hierarchy */
         .payment-container {
             display: flex;
@@ -535,8 +609,9 @@
         @media print {
             body {
                 margin: 0;
-                padding: 15mm;
-                font-size: 10pt;
+                padding: 10mm;
+                font-size: 9pt;
+                max-width: 750px !important;
             }
             
             .invoice-badge {
@@ -555,6 +630,38 @@
                 background: #2c4657 !important;
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
+            }
+            
+            .services-table {
+                font-size: 9pt !important;
+            }
+            
+            .services-table th,
+            .services-table td {
+                padding: 8px 6px !important;
+            }
+            
+            .iban-compact {
+                font-size: 9pt !important;
+                letter-spacing: 0.3px !important;
+                word-spacing: 1px !important;
+            }
+            
+            .bank-qr-row {
+                gap: 15px !important;
+            }
+            
+            .qr-payment-compact {
+                min-width: 120px !important;
+            }
+            
+            .payment-section {
+                padding: 20px !important;
+            }
+            
+            .header {
+                margin-bottom: 25px !important;
+                padding-bottom: 15px !important;
             }
         }
 
@@ -722,37 +829,22 @@
             <div class="payment-title">Zahlungsinformationen</div>
             
             <div class="payment-container">
-                <!-- Primary: Amount & Due Date -->
-                <div class="payment-amount-card">
-                    <div class="payment-amount-label">Rechnungsbetrag</div>
-                    <div class="payment-amount-value">€ {{zusammenfassung.summe_brutto}}</div>
-                    <div class="payment-due-date">Fällig am {{zahlungsinfo.faelligkeitsdatum}}</div>
+                <!-- Compact: Payment Terms -->
+                <div class="payment-terms-compact">
+                    <h4>Zahlungsbedingungen</h4>
+                    <p><strong>Zahlungsziel:</strong> {{zahlungsinfo.zahlungsziel}} | <strong>Fällig:</strong> {{zahlungsinfo.faelligkeitsdatum}} | <strong>Verwendungszweck:</strong> {{zahlungsinfo.verwendungszweck}}</p>
                 </div>
 
-                <!-- Secondary: Payment Terms & Bank Details -->
-                <div class="payment-details-grid">
-                    <div class="payment-terms">
-                        <h4>Zahlungsbedingungen</h4>
-                        <p><strong>Zahlungsziel:</strong> {{zahlungsinfo.zahlungsziel}}</p>
-                        <p><strong>Fälligkeitsdatum:</strong> {{zahlungsinfo.faelligkeitsdatum}}</p>
-                        <p><strong>Verwendungszweck:</strong> {{zahlungsinfo.verwendungszweck}}</p>
+                <!-- Bank & QR in one row -->
+                <div class="bank-qr-row">
+                    <div class="bank-info-compact">
+                        <h4>{{zahlungsinfo.bank}}</h4>
+                        <div class="iban-compact">IBAN: {{zahlungsinfo.iban}}</div>
+                        <div class="bic-compact">BIC: {{zahlungsinfo.bic}}</div>
                     </div>
-                    
-                    <div class="bank-info">
-                        <h4>Bankverbindung</h4>
-                        <div class="bank-name">{{zahlungsinfo.bank}}</div>
-                        <div class="bank-details">
-                            <span class="iban-display">IBAN: {{zahlungsinfo.iban}}</span>
-                            <span class="bic-display">BIC: {{zahlungsinfo.bic}}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tertiary: QR Payment Option -->
-                <div class="qr-payment-section">
-                    <div class="qr-payment-card">
-                        <img src="./media/qr_payment.png" alt="QR Code für Instant Payment">
-                        <div class="qr-label">QR-Code scannen<br>für Instant Payment</div>
+                    <div class="qr-payment-compact">
+                        <img src="./media/qr_payment.png" alt="QR Code für Sofort-Zahlung">
+                        <div class="qr-label-compact">QR-Code scannen<br>für Instant Payment</div>
                     </div>
                 </div>
             </div>

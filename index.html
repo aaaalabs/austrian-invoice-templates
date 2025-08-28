@@ -382,6 +382,58 @@
             font-weight: 600;
             letter-spacing: 0;                  /* Traditional spacing */
         }
+
+        /* Legal Disclaimer - Austrian Business Standard */
+        .legal-disclaimer {
+            background: var(--business-white);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            margin: 3rem 1rem 2rem 1rem;
+            border-radius: 0px;                  /* Conservative square corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .legal-disclaimer h3 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .disclaimer-content {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .disclaimer-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .disclaimer-list {
+            margin: 1rem 0 1rem 1.5rem;
+            padding-left: 0;
+        }
+
+        .disclaimer-list li {
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        .disclaimer-footer {
+            background: var(--business-background);
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .disclaimer-footer small {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -937,6 +989,31 @@
             <p>Alle Vorlagen können mit dem <code>/image_generation/</code> System professionelle Logos, Icons und Wasserzeichen generieren lassen. 
             Nutzen Sie OpenAI's gpt-image-1 für hochqualitative, branchen-spezifische Medien-Assets.</p>
         </div>
+
+        <div class="legal-disclaimer">
+            <h3>Rechtlicher Haftungsausschluss</h3>
+            <div class="disclaimer-content">
+                <p><strong>Wichtiger Hinweis zur rechtlichen Verwendung:</strong></p>
+                
+                <p>Die bereitgestellten Rechnungsvorlagen dienen ausschließlich als Orientierungshilfe und Ausgangsbasis für die Erstellung eigener Geschäftsdokumente. Obwohl diese Vorlagen nach bestem Wissen und unter Berücksichtigung der aktuell geltenden österreichischen Rechtslage (UStG §11) erstellt wurden, übernehmen wir keine Haftung für:</p>
+                
+                <ul class="disclaimer-list">
+                    <li><strong>Rechtliche Vollständigkeit:</strong> Änderungen der österreichischen Steuergesetzgebung, EU-Richtlinien oder Rechtsprechung</li>
+                    <li><strong>Branchenspezifische Anforderungen:</strong> Besondere rechtliche Bestimmungen einzelner Wirtschaftszweige</li>
+                    <li><strong>Individuelle Rechtsberatung:</strong> Unternehmens- oder steuerrechtliche Einzelfallprüfungen</li>
+                    <li><strong>Finanzamts-Akzeptanz:</strong> Anerkennung durch österreichische Steuerbehörden im Einzelfall</li>
+                    <li><strong>Schäden oder Nachteile:</strong> Die aus der Verwendung dieser Vorlagen entstehen können</li>
+                </ul>
+                
+                <p><strong>Ausdrückliche Empfehlung:</strong> Vor der Verwendung in Ihrem Unternehmen sollten Sie diese Vorlagen von einem österreichischen Steuerberater, Wirtschaftsprüfer oder Rechtsanwalt auf Ihre spezifischen Anforderungen hin überprüfen lassen.</p>
+                
+                <p><strong>Keine Rechtsberatung:</strong> Diese Vorlagen stellen keine Rechts-, Steuer- oder Unternehmensberatung dar. Für verbindliche Auskünfte wenden Sie sich an qualifizierte Fachkräfte oder die österreichischen Finanzbehörden.</p>
+                
+                <div class="disclaimer-footer">
+                    <p><small><strong>Stand der Rechtslage:</strong> August 2025 | <strong>Geltungsbereich:</strong> Republik Österreich | <strong>Grundlage:</strong> UStG idF BGBl. I Nr. 45/2025</small></p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -946,6 +1023,10 @@
             <p style="margin-top: 1rem; opacity: 0.8;">
                 <strong>UStG §11 konform</strong> • <strong>Alle Branchen</strong> • <strong>AI-powered</strong> • <strong>Druckoptimiert</strong>
             </p>
+            
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.2); font-size: 0.85rem; opacity: 0.7;">
+                <p>© 2025 Libra Innovation FlexCo • <a href="mailto:kontakt@libralab.ai" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">kontakt@libralab.ai</a> • <a href="https://libralab.ai" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;" target="_blank">libralab.ai</a></p>
+            </div>
         </div>
     </footer>
 
