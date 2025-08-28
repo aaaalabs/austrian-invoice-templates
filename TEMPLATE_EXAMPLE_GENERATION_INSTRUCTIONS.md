@@ -54,14 +54,34 @@ Process templates in business impact priority:
 ### Available Assets per Template
 Each template directory contains `/media/` folder with:
 - **`icon.png`** (64x64px) - Company/service icon
-- **`logo.png`** (150x60px) - Professional business logo  
+- **`logo.png`** (150x60px) - Professional business logo on transparent background
 - **`watermark.png`** (300x300px) - Subtle background watermark
+- **`qr.png`** (200x200px) - EPC-QR Code for SEPA payment automation
+
+### Mock Business Style Guide Requirements
+Each template requires a complete mock business identity with detailed style guide specifications:
+
+#### Visual Identity Framework
+- **Primary Brand Colors**: 2-3 professional colors with hex codes
+- **Typography**: Professional font hierarchy (Primary, Secondary, Body)
+- **Logo Concept**: Industry-appropriate symbol with business name integration
+- **Brand Personality**: 3-5 descriptive words defining business character
+- **Industry Standards**: Sector-specific design conventions and expectations
+
+#### Logo Design Specifications
+- **Format**: PNG with transparent background (mandatory)
+- **Dimensions**: 150x60px optimized for invoice headers
+- **Style**: Professional, scalable, print-compatible
+- **Colors**: Maximum 2-3 colors, black/white fallback compatible
+- **Typography**: Business name in readable, professional font
+- **Symbol**: Industry-appropriate icon/symbol integration
 
 ### Integration Guidelines
 
 **Logo Placement:**
 - Primary header position for company branding
 - Professional sizing maintaining aspect ratio
+- **MANDATORY**: Transparent background PNG format
 - High-quality rendering for print compatibility
 - Only integrate if template design accommodates logos
 
@@ -70,6 +90,14 @@ Each template directory contains `/media/` folder with:
 - Professional accent elements
 - Navigation or section markers
 - Maintain 64x64px sizing for consistency
+
+**EPC-QR Code Integration:**
+- **Austrian SEPA Standard**: EPC-QR codes following European Payment Council specifications
+- **Placement**: Payment section of invoice, typically bottom right
+- **Size**: 200x200px square format for optimal scanning
+- **Data Integration**: Automatic population from JSON data (IBAN, amount, reference)
+- **Compliance**: ISO 20022 SEPA Credit Transfer format
+- **Print Quality**: High contrast black/white for reliable scanning
 
 **Watermark Application:**
 - **CRITICAL**: Only use if template is specifically designed for watermarks
@@ -82,6 +110,7 @@ Each template directory contains `/media/` folder with:
 2. **Print compatibility** - All assets must work in black/white printing
 3. **Template design integrity** - Only integrate where template structure supports it
 4. **Austrian business standards** - Conservative, professional asset usage
+5. **Payment automation** - EPC-QR codes must follow Austrian banking standards
 
 ## Data Population Requirements
 
@@ -185,6 +214,128 @@ Each example must demonstrate:
 - Digital-native service categories
 - Investment-grade documentation standards
 
+## Template-Specific Style Guide & Media Requirements
+
+### Template 1: Handwerker Classic - Tiroler Tradition
+**Mock Business Identity: "Elektrotechnik Huber & Söhne GmbH"**
+- **Brand Colors**: Tirol Blue (#003366), Craftsman Orange (#CC6600), Professional Gray (#4A4A4A)
+- **Logo Concept**: Alpine mountain peak with electrical bolt, company name in traditional serif font
+- **Brand Personality**: Traditional, Reliable, Experienced, Alpine Heritage, Professional Craftsmanship
+- **EPC-QR**: Generated from IBAN AT58 3200 0000 1234 5678, amount from invoice total
+- **Industry Standards**: Conservative Tiroler business design, WKO membership display
+
+### Template 2: Solar/PV Modern - Mission Solar Style
+**Mock Business Identity: "TechSolar Tirol GmbH"**
+- **Brand Colors**: Solar Blue (#2C5F7A), Energy Orange (#E65100), Technical Gray (#4A4A4A)
+- **Logo Concept**: Stylized solar panel array with sun rays, modern sans-serif typography
+- **Brand Personality**: Innovative, Sustainable, Technical Excellence, Future-Oriented, Professional
+- **EPC-QR**: Generated from IBAN AT91 2011 1000 0123 4567, amount from invoice total
+- **Industry Standards**: Clean technical design, certification badges, performance metrics
+
+### Template 3: IT-Dienstleister Professional
+**Mock Business Identity: "TechConsult Austria GmbH"**
+- **Brand Colors**: Professional Blue (#0066CC), Code Gray (#2C3E50), Success Green (#27AE60)
+- **Logo Concept**: Abstract network nodes with company initials, clean modern font
+- **Brand Personality**: Technical Expertise, Reliable, Modern, Professional, Solution-Oriented
+- **EPC-QR**: Generated from IBAN AT14 2011 1000 0234 5678, amount from invoice total
+- **Industry Standards**: Minimal technical design, security compliance badges, SLA indicators
+
+### Template 4: Kleinunternehmer Minimal
+**Mock Business Identity: "Steuerberatung Barbara Mayer"**
+- **Brand Colors**: Professional Navy (#1E3A8A), Trustworthy Gray (#374151), Clean White (#FFFFFF)
+- **Logo Concept**: Simple initials "BM" with clean line, professional serif font
+- **Brand Personality**: Trustworthy, Simple, Professional, Personal, Reliable
+- **EPC-QR**: Generated from IBAN AT76 3200 0000 0345 6789, amount from invoice total
+- **Industry Standards**: Minimal clean design, legal compliance emphasis, personal touch
+
+### Template 5: B2B Reverse Charge EU
+**Mock Business Identity: "Strategia Business Consulting GmbH"**
+- **Brand Colors**: Corporate Navy (#003366), International Blue (#1E40AF), Professional Gray (#6B7280)
+- **Logo Concept**: Abstract compass or directional arrow, sophisticated sans-serif
+- **Brand Personality**: International, Strategic, Professional, Authoritative, Cross-Border
+- **EPC-QR**: Generated from IBAN AT23 2011 1000 0456 7890, amount from invoice total
+- **Industry Standards**: Formal international business design, compliance badges, multi-language
+
+### Template 6: Beratung Premium
+**Mock Business Identity: "Premium Strategy Partners GmbH"**
+- **Brand Colors**: Executive Navy (#1E2B4F), Premium Gold (#B8860B), Sophisticated Gray (#4B5563)
+- **Logo Concept**: Abstract diamond or shield with premium typography
+- **Brand Personality**: Premium, Executive, Strategic Excellence, Authoritative, High-Value
+- **EPC-QR**: Generated from IBAN AT67 1200 0000 0567 8901, amount from invoice total
+- **Industry Standards**: Executive presentation, premium materials, ROI emphasis
+
+### Template 7: Tourismus Dreisprachig
+**Mock Business Identity: "Hotel Austria Professional ****"**
+- **Brand Colors**: Alpine Green (#047857), Hospitality Gold (#D97706), Professional Navy (#1E3A8A)
+- **Logo Concept**: Stylized mountain range with stars, elegant hospitality font
+- **Brand Personality**: International, Hospitable, Professional, Alpine Excellence, Multilingual
+- **EPC-QR**: Generated from IBAN AT89 2011 1000 0678 9012, amount from invoice total
+- **Industry Standards**: International hospitality design, 4-star quality, multilingual presentation
+
+### Template 8: Bau & VOB Abschlagsrechnung
+**Mock Business Identity: "ALPINE BAU GmbH"**
+- **Brand Colors**: Construction Blue (#1E3A8A), Safety Orange (#EA580C), Industrial Gray (#374151)
+- **Logo Concept**: Stylized building/crane silhouette, bold industrial font
+- **Brand Personality**: Solid, Professional, Technical Excellence, Reliable, Project-Focused
+- **EPC-QR**: Generated from IBAN AT12 3200 0000 0789 0123, amount from invoice total
+- **Industry Standards**: Technical documentation style, ÖNORM compliance, project emphasis
+
+### Template 9: Freelancer Creative
+**Mock Business Identity: "Brandwerk Studio"**
+- **Brand Colors**: Creative Teal (#0891B2), Design Orange (#EA580C), Professional Charcoal (#374151)
+- **Logo Concept**: Abstract creative symbol (pen/brush) with modern typography
+- **Brand Personality**: Creative Excellence, Professional, Innovative, Brand-Focused, Artistic
+- **EPC-QR**: Generated from IBAN AT34 1200 0000 0890 1234, amount from invoice total
+- **Industry Standards**: Creative but professional design, portfolio emphasis, IP rights focus
+
+### Template 10: E-Commerce Modern
+**Mock Business Identity: "Austrian Digital Commerce GmbH"**
+- **Brand Colors**: E-commerce Blue (#1E40AF), Digital Orange (#EA580C), Modern Gray (#6B7280)
+- **Logo Concept**: Abstract shopping/digital symbol, modern sans-serif
+- **Brand Personality**: Digital-Native, Professional, Efficient, Customer-Focused, Modern
+- **EPC-QR**: Generated from IBAN AT56 2011 1000 0901 2345, amount from invoice total
+- **Industry Standards**: Clean modern design, B2B focus, international commerce ready
+
+### Template 11: Rechtsanwalt Formal
+**Mock Business Identity: "Kanzlei Dr. Andreas Weber & Partner"**
+- **Brand Colors**: Legal Navy (#1E2B4F), Formal Gray (#374151), Authority Gold (#B8860B)
+- **Logo Concept**: Scales of justice or classical column, traditional serif font
+- **Brand Personality**: Authoritative, Traditional, Professional Excellence, Formal, Trustworthy
+- **EPC-QR**: Generated from IBAN AT78 1200 0000 1012 3456, amount from invoice total
+- **Industry Standards**: Formal legal design, Bar Association compliance, court-ready presentation
+
+### Template 12: Gastgewerbe Restaurant
+**Mock Business Identity: "Restaurant Alpenhof GmbH"**
+- **Brand Colors**: Gastronomy Green (#047857), Hospitality Gold (#D97706), Professional Navy (#1E3A8A)
+- **Logo Concept**: Stylized Alpine house with culinary element, traditional hospitality font
+- **Brand Personality**: Traditional Hospitality, Quality Focused, Alpine Heritage, Professional Service
+- **EPC-QR**: Generated from IBAN AT90 3200 0000 1123 4567, amount from invoice total
+- **Industry Standards**: Traditional hospitality design, business meal compliance, tax complexity
+
+### Template 13: Immobilienverwaltung
+**Mock Business Identity: "Alpenimmobilien Verwaltung GmbH"**
+- **Brand Colors**: Property Blue (#1E40AF), Trust Gray (#374151), Stability Green (#047857)
+- **Logo Concept**: Abstract building/key symbol, professional sans-serif
+- **Brand Personality**: Trustworthy, Professional, Stable, Property-Focused, Long-term Oriented
+- **EPC-QR**: Generated from IBAN AT13 1200 0000 1234 5678, amount from invoice total
+- **Industry Standards**: Conservative property industry design, long-term focus, compliance emphasis
+
+### Template 14: Energiegemeinschaft NEU
+**Mock Business Identity: "Energiegemeinschaft Alpenland"**
+- **Brand Colors**: Energy Green (#059669), Technical Blue (#1E40AF), Sustainable Gray (#6B7280)
+- **Logo Concept**: Abstract energy/community symbol, modern technical font
+- **Brand Personality**: Sustainable, Community-Oriented, Technical, Forward-Thinking, Collaborative
+- **EPC-QR**: Generated from IBAN AT35 2011 1000 1345 6789, amount from invoice total
+- **Industry Standards**: Clean energy sector design, regulatory compliance, community focus
+
+### Template 15: Startup Minimalist
+**Mock Business Identity: "DigitalCraft Solutions"**
+- **Brand Colors**: Tech Blue (#2563EB), Success Green (#10B981), Modern Gray (#6B7280)
+- **Logo Concept**: Abstract geometric/code symbol, ultra-modern sans-serif
+- **Brand Personality**: Innovative, Minimal, Tech-Native, Professional, Growth-Oriented
+- **EPC-QR**: Generated from IBAN AT57 1200 0000 1456 7890, amount from invoice total
+- **Industry Standards**: Ultra-minimal design, tech startup aesthetic, investment-ready presentation
+
 ## Quality Standards
 
 ### Professional Presentation
@@ -222,10 +373,32 @@ For each template, generate:
 ├── {template}_data.json            (existing - realistic data)
 ├── {template}_create.md            (existing - creation guide)
 └── /media/
-    ├── icon.png                    (existing - 64x64px)
-    ├── logo.png                    (existing - 150x60px)
-    └── watermark.png               (existing - 300x300px)
+    ├── icon.png                    (existing/NEW - 64x64px)
+    ├── logo.png                    (NEW - 150x60px transparent PNG)
+    ├── watermark.png               (existing/NEW - 300x300px)
+    └── qr.png                      (NEW - 200x200px EPC-QR Code)
 ```
+
+### EPC-QR Code Generation Requirements
+Each template requires a functional EPC-QR code that enables automatic SEPA payment:
+
+**Technical Specifications:**
+- **Format**: PNG, 200x200px, high contrast black/white
+- **Standard**: ISO 20022 SEPA Credit Transfer, European Payment Council specification
+- **Data Elements**: Service Tag (BCD), Version (002), Character Set (1), Identification (SCT), BIC, Beneficiary Name, IBAN, Amount (EUR), Purpose, Remittance Information
+- **Error Correction**: Level M (15% recovery capability)
+
+**Austrian Banking Integration:**
+- **IBAN Format**: AT + 2 check digits + 5-digit bank code + 11-digit account number
+- **BIC Codes**: Austrian bank BIC codes (e.g., RLNWATWW for Raiffeisen, GIBAATWW for BAWAG)
+- **Amount Formatting**: EUR amounts with 2 decimal places, period as decimal separator
+- **Reference Format**: Invoice number as remittance information
+
+**Template-Specific QR Data:**
+- Use the IBAN specified in each template's style guide section above
+- Populate amount from the invoice total in the JSON data
+- Include invoice number as remittance reference
+- Use the mock business name as beneficiary
 
 ### Naming Conventions
 - **Consistent naming**: `{template}_example.html` format
