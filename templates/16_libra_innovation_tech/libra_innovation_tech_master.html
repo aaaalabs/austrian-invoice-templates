@@ -300,8 +300,29 @@
 
         .payment-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr auto;
             gap: 20px;
+            align-items: start;
+        }
+
+        .qr-payment {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .qr-payment img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 8px;
+        }
+
+        .qr-payment .qr-label {
+            font-size: 9pt;
+            color: #6b7280;
+            font-weight: 500;
         }
 
         .payment-details p {
@@ -566,6 +587,10 @@
                     <p><strong>{{zahlungsinfo.bank}}</strong></p>
                     <p>IBAN: {{zahlungsinfo.iban}}</p>
                     <p>BIC: {{zahlungsinfo.bic}}</p>
+                </div>
+                <div class="qr-payment">
+                    <img src="../media/qr_payment.png" alt="EPC QR Code für Sofort-Überweisung">
+                    <div class="qr-label">QR Code scannen<br>für Sofort-Zahlung</div>
                 </div>
             </div>
         </section>

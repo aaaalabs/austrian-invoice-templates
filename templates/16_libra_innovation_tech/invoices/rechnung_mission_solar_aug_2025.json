@@ -49,13 +49,13 @@
       "pos": 1,
       "kategorie": "Entwicklungsleistungen",
       "beschreibung": "KI-gestützte Prozessdigitalisierung",
-      "details": "Entwicklung Email-Draft-Automatisierung, Make.com Integration, Workflow-Design, Testing mit echten Kundendaten (10 von 20 vereinbarten August-Stunden)",
+      "details": "Entwicklung Email-Draft-Automatisierung, Make.com Integration, Workflow-Design, Testing mit echten Kundendaten (20 von 20 vereinbarten August-Stunden)",
       "technische_specs": "Make.com Szenarien, Claude API Integration, Gmail Automation",
       "zeitraum": "18.08.-31.08.2025",
-      "stunden": "10",
+      "stunden": "20",
       "abrechnungsart": "Anteilig Monatspauschale",
       "einzelpreis": "50.00",
-      "gesamt": "500.00",
+      "gesamt": "1000.00",
       "steuersatz": "20"
     },
     {
@@ -79,14 +79,14 @@
       "technische_specs": "ÖBB Einzelfahrten Innsbruck, bereits inkl. 10% MwSt bezahlt",
       "zeitraum": "18.08.-31.08.2025",
       "stunden": "-",
-      "abrechnungsart": "Spesen",
+      "abrechnungsart": "Kostenersatz",
       "einzelpreis": "-",
       "gesamt": "50.18",
       "steuersatz": "10"
     },
     {
       "pos": 4,
-      "kategorie": "Mobilitätspauschale",
+      "kategorie": "Aufwandspauschale",
       "beschreibung": "Tirol Ticket Jahresabo",
       "details": "Jahresticket für öffentliche Verkehrsmittel in Tirol zur Sicherstellung der Büropräsenz",
       "technische_specs": "Gültigkeit: 09/2025 - 08/2026",
@@ -99,15 +99,15 @@
     }
   ],
   "zusammenfassung": {
-    "summe_positionen_20": "624.45",
-    "ust_20": "124.89",
+    "summe_positionen_20": "1124.45",
+    "ust_20": "224.89",
     "summe_positionen_10": "586.54",
     "ust_10": "58.66",
     "summe_positionen_0": "0.00",
     "ust_0": "0.00",
-    "summe_netto": "1210.99",
-    "summe_ust_gesamt": "183.55",
-    "summe_brutto": "1394.54",
+    "summe_netto": "1710.99",
+    "summe_ust_gesamt": "283.55",
+    "summe_brutto": "1994.54",
     "waehrung": "EUR"
   },
   "zahlungsinfo": {
@@ -121,11 +121,11 @@
   },
   "zusatzinfo": {
     "projektmanager": "Thomas Seiger",
-    "entwicklungszeit": "2 Wochen (10 Stunden von 20 vereinbarten August-Stunden)",
+    "entwicklungszeit": "2 Wochen (20 Stunden - alle vereinbarten August-Stunden)",
     "technologie_stack": "Make.com No-Code Automation",
     "erfolge": "Email-Draft-System funktionsfähig, erste Zeiteinsparungen messbar",
     "naechste_schritte": "Optimierung basierend auf User-Feedback",
-    "compliance": "DSGVO-konforme Datenverarbeitung"
+    "compliance": ""
   },
   "kontakt": {
     "rueckfragen": "Bei Rückfragen stehen wir selbstverständlich jederzeit gerne zur Verfügung.",

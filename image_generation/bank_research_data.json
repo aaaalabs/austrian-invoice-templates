@@ -1,0 +1,206 @@
+{
+  "erste_bank": {
+    "title": "Erste Bank – Das modernste Banking Österreichs | Erste Bank",
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(48, 48, 48)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 0, 238)"
+    ],
+    "fonts": [
+      "Inter, sans-serif"
+    ],
+    "layout": {
+      "maxWidth": "none",
+      "padding": "0px",
+      "margin": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "24px"
+    },
+    "header": {
+      "backgroundColor": "rgb(40, 112, 237)",
+      "height": "127px",
+      "padding": "0px",
+      "borderBottom": "0px none rgb(255, 255, 255)",
+      "position": "static",
+      "boxShadow": "rgba(11, 31, 66, 0.14) 0px 4px 14px 2px"
+    },
+    "buttons": [
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.35)",
+        "borderRadius": "0px",
+        "border": "0px none rgba(255, 255, 255, 0.35)",
+        "padding": "12px 10px",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.35)",
+        "borderRadius": "0px",
+        "border": "0px none rgba(255, 255, 255, 0.35)",
+        "padding": "12px 10px",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        "color": "rgb(48, 48, 48)",
+        "borderRadius": "4px",
+        "border": "0px none rgb(48, 48, 48)",
+        "padding": "0px 8px",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "padding": "0px",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "padding": "0px",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "textTransform": "none"
+      }
+    ],
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "meta": {
+      "description": "Das modernste Banking Österreichs: Girokonto und Internetbanking, Sparen und Kredit, Anlegen und Vorsorgen – bei der Erste Bank finden Sie alles für Ihr Geldleben.",
+      "keywords": ""
+    },
+    "bank_info": {
+      "name": "Erste Bank",
+      "url": "https://www.erstebank.at",
+      "description": "Österreichs größte Bank, traditionell und vertrauenswürdig"
+    },
+    "research_date": "2025-08-28T14:57:03.676657",
+    "screenshot_path": "/Users/libra/GitHub/_quicks/_invoices/image_generation/bank_research_erste_bank.png"
+  },
+  "raiffeisen": {
+    "title": "Raiffeisen » Unser Angebot für Privatkund:innen",
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(244, 244, 244)",
+      "rgb(51, 51, 51)",
+      "rgb(255, 255, 255)",
+      "rgb(102, 102, 102)",
+      "rgb(97, 97, 97)",
+      "rgb(251, 243, 21)"
+    ],
+    "fonts": [
+      "open-sans, Helvetica, Arial, sans-serif"
+    ],
+    "layout": {
+      "maxWidth": "none",
+      "padding": "0px",
+      "margin": "0px",
+      "backgroundColor": "rgb(244, 244, 244)",
+      "fontFamily": "open-sans, Helvetica, Arial, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "21px"
+    },
+    "header": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": "158px",
+      "padding": "0px",
+      "borderBottom": "0px none rgb(51, 51, 51)",
+      "position": "absolute",
+      "boxShadow": "none"
+    },
+    "buttons": [
+      {
+        "backgroundColor": "rgb(97, 97, 97)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "padding": "15px",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "padding": "1px 0px 1px 36px",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(102, 102, 102)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(102, 102, 102)",
+        "padding": "8px 0px",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "padding": "16px 30px",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      },
+      {
+        "backgroundColor": "rgb(97, 97, 97)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "padding": "15px",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "textTransform": "none"
+      }
+    ],
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "meta": {
+      "description": "Erleben Sie Banking neu mit Raiffeisen und profitieren Sie von den innovativen Angeboten im digitalen Bereich.",
+      "keywords": "Privatkunden"
+    },
+    "bank_info": {
+      "name": "Raiffeisen Bank",
+      "url": "https://www.raiffeisen.at",
+      "description": "Genossenschaftsbank mit regionalem Fokus"
+    },
+    "research_date": "2025-08-28T14:57:09.443724",
+    "screenshot_path": "/Users/libra/GitHub/_quicks/_invoices/image_generation/bank_research_raiffeisen.png"
+  },
+  "bank_austria": {
+    "error": "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.bankaustria.at/\nCall log:\n  - navigating to \"https://www.bankaustria.at/\", waiting until \"networkidle\"\n",
+    "bank_info": {
+      "name": "Bank Austria (UniCredit)",
+      "url": "https://www.bankaustria.at",
+      "description": "Internationale Bank mit österreichischen Wurzeln"
+    },
+    "research_date": "2025-08-28T14:57:11.752441"
+  }
+}
