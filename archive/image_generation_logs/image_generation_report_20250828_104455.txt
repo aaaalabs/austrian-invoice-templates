@@ -1,0 +1,27 @@
+
+🎯 Austrian Invoice Template Image Generation Report
+============================================================
+
+📊 Summary Statistics:
+   Total images: 3
+   ✅ Successful: 0
+   ❌ Failed: 3
+   🎯 Success rate: 0.0%
+   
+⏱️  Timing:
+   Total time: 2.1 seconds
+   Average per image: 0.7 seconds
+   
+📁 Generated Files by Template:
+
+   Template 01: Handwerker Classic
+      ❌ logo: FAILED - Failed to generate image: Error code: 400 - {'error': {'message': "Unknown parameter: 'response_format'.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': 'unknown_parameter'}}
+      ❌ icon: FAILED - Failed to generate image: Error code: 400 - {'error': {'message': "Unknown parameter: 'response_format'.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': 'unknown_parameter'}}
+      ❌ watermark: FAILED - Failed to generate image: Error code: 400 - {'error': {'message': "Unknown parameter: 'response_format'.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': 'unknown_parameter'}}
+
+❌ Failed Generations:
+   Template 01 logo: Failed to generate image: Error code: 400 - {'error': {'message': "Unknown parameter: 'response_format'.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': 'unknown_parameter'}}
+   Template 01 icon: Failed to generate image: Error code: 400 - {'error': {'message': "Unknown parameter: 'response_format'.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': 'unknown_parameter'}}
+   Template 01 watermark: Failed to generate image: Error code: 400 - {'error': {'message': "Unknown parameter: 'response_format'.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': 'unknown_parameter'}}
+
+🕐 Generated at: 2025-08-28 10:44:55

@@ -1,0 +1,22 @@
+
+🎯 Austrian Invoice Template Image Generation Report
+============================================================
+
+📊 Summary Statistics:
+   Total images: 3
+   ✅ Successful: 3
+   ❌ Failed: 0
+   🎯 Success rate: 100.0%
+   
+⏱️  Timing:
+   Total time: 114.1 seconds
+   Average per image: 38.0 seconds
+   
+📁 Generated Files by Template:
+
+   Template 01: Handwerker Classic
+      ✅ logo: /Users/libra/GitHub/_quicks/_invoices/templates/01_handwerker_classic/media/logo_rectangle.png
+      ✅ icon: /Users/libra/GitHub/_quicks/_invoices/templates/01_handwerker_classic/media/icon_square.png
+      ✅ watermark: /Users/libra/GitHub/_quicks/_invoices/templates/01_handwerker_classic/media/watermark.png
+
+🕐 Generated at: 2025-08-28 12:22:19

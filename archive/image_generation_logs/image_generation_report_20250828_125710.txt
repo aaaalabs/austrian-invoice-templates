@@ -1,0 +1,29 @@
+
+🎯 Austrian Invoice Template Image Generation Report
+============================================================
+
+📊 Summary Statistics:
+   Total images: 4
+   ✅ Successful: 4
+   ❌ Failed: 0
+   🎯 Success rate: 100.0%
+   
+⏱️  Timing:
+   Total time: 185.0 seconds
+   Average per image: 46.3 seconds
+   
+📁 Generated Files by Template:
+
+   Template 01: Handwerker Classic
+      ✅ logo: /Users/libra/GitHub/_quicks/_invoices/templates/01_handwerker_classic/media/logo_rectangle.png
+
+   Template 11: Rechtsanwalt Formal
+      ✅ watermark: /Users/libra/GitHub/_quicks/_invoices/templates/11_rechtsanwalt_formal/media/watermark.png
+
+   Template 12: Gastgewerbe Restaurant
+      ✅ logo: /Users/libra/GitHub/_quicks/_invoices/templates/12_gastgewerbe_restaurant/media/logo_rectangle.png
+
+   Template 13: Immobilienverwaltung
+      ✅ logo: /Users/libra/GitHub/_quicks/_invoices/templates/13_immobilienverwaltung/media/logo_rectangle.png
+
+🕐 Generated at: 2025-08-28 12:57:10

@@ -1,0 +1,29 @@
+
+🎯 Austrian Invoice Template Image Generation Report
+============================================================
+
+📊 Summary Statistics:
+   Total images: 4
+   ✅ Successful: 4
+   ❌ Failed: 0
+   🎯 Success rate: 100.0%
+   
+⏱️  Timing:
+   Total time: 0.4 seconds
+   Average per image: 0.1 seconds
+   
+📁 Generated Files by Template:
+
+   Template 01: Handwerker Classic
+      ✅ logo: FAILED - None
+
+   Template 11: Rechtsanwalt Formal
+      ✅ watermark: FAILED - None
+
+   Template 12: Gastgewerbe Restaurant
+      ✅ logo: FAILED - None
+
+   Template 13: Immobilienverwaltung
+      ✅ logo: FAILED - None
+
+🕐 Generated at: 2025-08-28 12:47:27
