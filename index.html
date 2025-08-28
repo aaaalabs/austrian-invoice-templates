@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Österreichische Rechnungsvorlagen - Professional Invoice Templates</title>
+    <style>
+        :root {
+            /* Conservative Austrian Business Document Colors */
+            --business-primary: rgb(51, 51, 51);       /* Professional Dark Gray */
+            --business-secondary: rgb(102, 102, 102);  /* Medium Gray */
+            --business-accent: rgb(25, 60, 120);       /* Conservative Dark Blue */
+            --business-background: rgb(248, 248, 248); /* Very Light Gray */
+            --business-white: rgb(255, 255, 255);      /* Clean White */
+            --business-border: rgb(204, 204, 204);     /* Light Border */
+            --business-text: rgb(51, 51, 51);          /* Dark Text */
+            --business-text-light: rgb(102, 102, 102); /* Light Text */
+            --business-light-gray: rgb(242, 242, 242); /* Very Light Background */
+            
+            /* Applied Colors */
+            --primary: var(--business-accent);
+            --background: var(--business-background);
+            --text-primary: var(--business-text);
+            --text-secondary: var(--business-text-light);
+            --border: var(--business-border);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Traditional Austrian Business Typography */
+            font-family: Arial, Helvetica, sans-serif;  /* Conservative Business Standard */
+            font-size: 16px;
+            line-height: 1.5;                   /* Professional Line Height */
+            color: var(--text-primary);
+            background: var(--background);
+            min-height: 100vh;
+        }
+
+        .header {
+            /* Conservative Austrian Business Header */
+            background: var(--business-white);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-bottom: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle professional shadow */
+        }
+
+        .container {
+            /* Austrian Banking Container Standards */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .main-title {
+            /* Traditional Austrian Business Typography */
+            font-family: Arial, Helvetica, sans-serif;  /* Conservative Business Standard */
+            font-size: 2.5rem;
+            font-weight: 700;                   /* Strong Professional Weight */
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0;                  /* Traditional spacing */
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 400;                   /* Banking Standard Weight */
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            /* Austrian Banking Card Style */
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--business-white);
+            border-radius: 0px;                 /* Banking: No rounded corners */
+            border: 1px solid var(--border);
+            box-shadow: rgba(11, 31, 66, 0.08) 0px 2px 8px 1px; /* Subtle banking shadow */
+        }
+
+        .stat-number {
+            font-family: Arial, Helvetica, sans-serif;     /* Banking Typography */
+            font-size: 1.8rem;
+            font-weight: 600;                   /* Banking Weight */
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+            font-weight: 400;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.5rem;                         /* Banking: More compact spacing */
+            margin: 2rem 0 3rem 0;
+            padding: 0 1rem;
+        }
+
+        .template-card {
+            /* Austrian Banking Card Design */
+            background: var(--business-white);
+            border-radius: 0px;                  /* Banking: Square corners */
+            overflow: hidden;
+            box-shadow: rgba(11, 31, 66, 0.14) 0px 4px 14px 2px; /* Erste Bank Shadow */
+            transition: box-shadow 0.2s ease;   /* Banking: Subtle transitions */
+            border: 1px solid var(--border);
+        }
+
+        .template-card:hover {
+            /* Banking: Conservative hover effect */
+            box-shadow: rgba(11, 31, 66, 0.20) 0px 6px 20px 4px;
+            transform: none;                     /* Banking: No dramatic movements */
+        }
+
+        .template-thumbnail {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            object-position: top;               /* Load from top-to-bottom to preserve header */
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: opacity 0.2s ease;     /* Banking: Subtle image transitions */
+        }
+
+        .template-thumbnail:hover {
+            opacity: 0.95;                      /* Banking: Subtle hover feedback */
+        }
+
+        .template-content {
+            padding: 1.5rem;
+        }
+
+        .template-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .template-title {
+            /* Austrian Banking Heading Style */
+            font-family: Arial, Helvetica, sans-serif;     /* Erste Bank Typography */
+            font-size: 1.3rem;
+            font-weight: 600;                   /* Banking Professional Weight */
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .template-number {
+            /* Banking Badge Style - Conservative Design */
+            background: var(--primary);
+            color: var(--business-white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0px;                 /* Banking: Square corners */
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .template-industry {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .template-description {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .template-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-tag {
+            /* Austrian Banking Tag Style - Conservative & Professional */
+            background: var(--business-light-gray);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 0px;                 /* Banking: Square corners */
+            font-size: 0.8rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        .template-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            /* Austrian Banking Button Design - Based on Research */
+            padding: 0.75rem 1.5rem;           /* Banking Standard Padding */
+            border: none;
+            border-radius: 0px;                /* Banking: No rounded corners */
+            font-size: 0.9rem;
+            font-weight: 600;                  /* Banking: Semi-bold weight */
+            font-family: Arial, Helvetica, sans-serif;    /* Banking Typography */
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease; /* Banking: Conservative transitions */
+            text-transform: none;               /* Banking: Natural case */
+        }
+
+        .btn-primary {
+            /* Austrian Banking Primary Button - HIGH CONTRAST */
+            background: var(--primary);
+            color: var(--business-white);       /* White text for maximum contrast */
+            border: 1px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            /* Banking: Conservative hover with better contrast */
+            background: rgb(20, 45, 90);       /* Darker blue for hover */
+            border-color: rgb(20, 45, 90);
+            color: var(--business-white);      /* Maintain white text */
+            transform: none;
+        }
+
+        .btn-secondary {
+            /* Austrian Banking Secondary Button - Conservative Style */
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--business-light-gray);
+            border-color: var(--primary);
+            color: var(--primary);              /* Ensure text stays readable */
+        }
+
+        .footer {
+            /* Austrian Banking Footer */
+            background: var(--primary);
+            color: var(--business-white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .legal-note {
+            /* Austrian Banking Notice Style - Conservative Design */
+            background: var(--business-white);
+            border: 1px solid var(--primary);
+            border-radius: 0px;                 /* Banking: Square corners */
+            padding: 1.5rem;
+            margin: 2rem 1rem;
+            text-align: center;
+            box-shadow: rgba(11, 31, 66, 0.08) 0px 2px 8px 1px;
+        }
+
+        .legal-note h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .templates-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .template-actions {
+                flex-direction: column;
+            }
+        }
+
+        .highlight {
+            /* Austrian Banking Highlight - Raiffeisen Yellow Accent */
+            background: linear-gradient(120deg, var(--accent) 0%, transparent 100%);
+            background-size: 100% 3px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+        }
+
+        /* Austrian Banking Professional Enhancement */
+        .banking-accent {
+            position: relative;
+        }
+
+        .banking-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);          /* Raiffeisen Yellow Accent */
+        }
+
+        /* Traditional Austrian Business Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Arial, Helvetica, sans-serif;  /* Conservative Business Standard */
+            font-weight: 600;
+            letter-spacing: 0;                  /* Traditional spacing */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="main-title">Österreichische Rechnungsvorlagen</h1>
+                <p class="subtitle">Professional Invoice Templates for Austrian Businesses</p>
+                <p>Rechtskonforme HTML-Vorlagen nach österreichischem UStG §11 mit AI-generierter Anpassung</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Branchenvorlagen</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">UStG §11 konform</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">A4</div>
+                        <div class="stat-label">Druckoptimiert</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">AI</div>
+                        <div class="stat-label">KI-generiert</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="legal-note banking-accent">
+            <h3>Rechtliche Compliance</h3>
+            <p>Alle Vorlagen entsprechen dem österreichischen Umsatzsteuergesetz (UStG §11) und enthalten die neun Pflichtangaben für rechtskonforme Rechnungsstellung.</p>
+        </div>
+
+        <div class="templates-grid">
+            <!-- Template 01: Handwerker Classic -->
+            <div class="template-card">
+                <img src="templates/screenshots/handwerker_classic_example.png" 
+                     alt="Handwerker Classic Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/handwerker_classic_example.png', 'Handwerker Classic - Elektrotechnik')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Handwerker Classic</h3>
+                            <p class="template-industry">Elektrotechnik & Traditionelles Handwerk</p>
+                        </div>
+                        <span class="template-number">01</span>
+                    </div>
+                    <p class="template-description">
+                        Traditionelle Rechnungsvorlage für österreichische Meisterbetriebe. Ideal für Elektriker, Installateure und klassische Handwerksbetriebe mit Smart-Home Integration.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">Meisterbetrieb</span>
+                        <span class="feature-tag">WKO Tirol</span>
+                        <span class="feature-tag">Handwerkerbonus</span>
+                        <span class="feature-tag">Smart-Home</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/01_handwerker_classic/handwerker_classic_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/01_handwerker_classic/handwerker_classic_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 02: Solar PV Modern -->
+            <div class="template-card">
+                <img src="templates/screenshots/solar_pv_modern_example.png" 
+                     alt="Solar PV Modern Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/solar_pv_modern_example.png', 'Solar PV Modern - Photovoltaik')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Solar PV Modern</h3>
+                            <p class="template-industry">Photovoltaik & Erneuerbare Energien</p>
+                        </div>
+                        <span class="template-number">02</span>
+                    </div>
+                    <p class="template-description">
+                        Moderne Vorlage für Solarunternehmen mit technischer Dokumentation. Perfekt für PV-Anlagen, Speichersysteme und nachhaltige Energielösungen.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">klimaaktiv</span>
+                        <span class="feature-tag">TÜV Austria</span>
+                        <span class="feature-tag">ÖVE-Zertifikat</span>
+                        <span class="feature-tag">BYD Speicher</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/02_solar_pv_modern/solar_pv_modern_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/02_solar_pv_modern/solar_pv_modern_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 03: IT Professional -->
+            <div class="template-card">
+                <img src="templates/screenshots/it_professional_example.png" 
+                     alt="IT Professional Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/it_professional_example.png', 'IT Professional - Software Development')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">IT Professional</h3>
+                            <p class="template-industry">Software Development & IT Consulting</p>
+                        </div>
+                        <span class="template-number">03</span>
+                    </div>
+                    <p class="template-description">
+                        Enterprise-grade Vorlage für IT-Dienstleister. Speziell für Softwareentwicklung, Systemarchitektur und digitale Transformation.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">ISO 27001</span>
+                        <span class="feature-tag">Agile/Scrum</span>
+                        <span class="feature-tag">DevOps</span>
+                        <span class="feature-tag">Enterprise</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/03_it_professional/it_professional_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/03_it_professional/it_professional_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 04: Kleinunternehmer Minimal -->
+            <div class="template-card">
+                <img src="templates/screenshots/kleinunternehmer_minimal_example.png" 
+                     alt="Kleinunternehmer Minimal Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/kleinunternehmer_minimal_example.png', 'Kleinunternehmer Minimal')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Kleinunternehmer Minimal</h3>
+                            <p class="template-industry">Steuerberatung & Kleinbetriebe</p>
+                        </div>
+                        <span class="template-number">04</span>
+                    </div>
+                    <p class="template-description">
+                        Einfache, persönliche Vorlage für Kleinunternehmer unter €55.000 Jahresumsatz. Perfekt für Steuerberater, Freelancer und kleine Dienstleister.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">Kleinunternehmer</span>
+                        <span class="feature-tag">€55.000 Schwelle</span>
+                        <span class="feature-tag">Persönlich</span>
+                        <span class="feature-tag">Umsatzsteuerfrei</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/04_kleinunternehmer_minimal/kleinunternehmer_minimal_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/04_kleinunternehmer_minimal/kleinunternehmer_minimal_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 05: B2B Reverse Charge -->
+            <div class="template-card">
+                <img src="templates/screenshots/b2b_reverse_charge_example.png" 
+                     alt="B2B Reverse Charge Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/b2b_reverse_charge_example.png', 'B2B Reverse Charge EU')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">B2B Reverse Charge EU</h3>
+                            <p class="template-industry">Grenzüberschreitende EU-Geschäfte</p>
+                        </div>
+                        <span class="template-number">05</span>
+                    </div>
+                    <p class="template-description">
+                        Professionelle Vorlage für EU-weite B2B-Dienstleistungen mit Reverse-Charge-Verfahren. VIES-validiert und mehrsprachig (DE/EN).
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">Reverse Charge</span>
+                        <span class="feature-tag">VIES-Validierung</span>
+                        <span class="feature-tag">EU B2B</span>
+                        <span class="feature-tag">DE/EN</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/05_b2b_reverse_charge/b2b_reverse_charge_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/05_b2b_reverse_charge/b2b_reverse_charge_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 06: Beratung Premium -->
+            <div class="template-card">
+                <img src="templates/screenshots/beratung_premium_example.png" 
+                     alt="Beratung Premium Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/beratung_premium_example.png', 'Beratung Premium - Management Consulting')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Beratung Premium</h3>
+                            <p class="template-industry">Management Consulting & Strategieberatung</p>
+                        </div>
+                        <span class="template-number">06</span>
+                    </div>
+                    <p class="template-description">
+                        Hochwertige Executive-Vorlage für Unternehmensberatung. Für strategische Projekte, digitale Transformation und Management-Consulting.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">Executive Level</span>
+                        <span class="feature-tag">ISO 20700</span>
+                        <span class="feature-tag">CMC Certified</span>
+                        <span class="feature-tag">€2M Haftung</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/06_beratung_premium/beratung_premium_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/06_beratung_premium/beratung_premium_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 07: Tourismus Dreisprachig -->
+            <div class="template-card">
+                <img src="templates/screenshots/tourismus_dreisprachig_example.png" 
+                     alt="Tourismus Dreisprachig Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/tourismus_dreisprachig_example.png', 'Tourismus Dreisprachig - Hotel')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Tourismus Dreisprachig</h3>
+                            <p class="template-industry">Hotellerie & Tourismus (DE/EN/IT)</p>
+                        </div>
+                        <span class="template-number">07</span>
+                    </div>
+                    <p class="template-description">
+                        4-Sterne Superior Hotel-Vorlage mit drei Sprachen. Ideal für Tiroler Tourismusbetriebe mit internationaler Kundschaft.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">DE/EN/IT</span>
+                        <span class="feature-tag">4★ Superior</span>
+                        <span class="feature-tag">Green Key</span>
+                        <span class="feature-tag">Ortstaxe</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/07_tourismus_dreisprachig/tourismus_dreisprachig_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/07_tourismus_dreisprachig/tourismus_dreisprachig_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 08: Bau VOB Abschlag -->
+            <div class="template-card">
+                <img src="templates/screenshots/bau_vob_abschlag_example.png" 
+                     alt="Bau VOB Abschlag Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/bau_vob_abschlag_example.png', 'Bau VOB Abschlag')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Bau VOB Abschlag</h3>
+                            <p class="template-industry">Baugewerbe & Teilrechnungen</p>
+                        </div>
+                        <span class="template-number">08</span>
+                    </div>
+                    <p class="template-description">
+                        Spezialisierte Baugewerbe-Vorlage nach ÖNORM B 2110 mit Abschlagsrechnungen. Für Großprojekte und mehrstufige Bauvorhaben.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">ÖNORM B 2110</span>
+                        <span class="feature-tag">Abschlagsrechnung</span>
+                        <span class="feature-tag">Haftrücklass</span>
+                        <span class="feature-tag">Baumeister</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/08_bau_vob_abschlag/bau_vob_abschlag_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/08_bau_vob_abschlag/bau_vob_abschlag_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 09: Freelancer Creative -->
+            <div class="template-card">
+                <img src="templates/screenshots/freelancer_creative_example.png" 
+                     alt="Freelancer Creative Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/freelancer_creative_example.png', 'Freelancer Creative - Brand Design')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Freelancer Creative</h3>
+                            <p class="template-industry">Brand Design & Visual Communication</p>
+                        </div>
+                        <span class="template-number">09</span>
+                    </div>
+                    <p class="template-description">
+                        Kreative Designstudio-Vorlage mit professioneller Brand-Identity-Entwicklung. Für Grafiker, Designer und Creative Agencies.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">ADC Austria</span>
+                        <span class="feature-tag">Brand Strategy</span>
+                        <span class="feature-tag">Nutzungsrechte</span>
+                        <span class="feature-tag">Portfolio</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/09_freelancer_creative/freelancer_creative_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/09_freelancer_creative/freelancer_creative_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 10: E-Commerce Modern -->
+            <div class="template-card">
+                <img src="templates/screenshots/ecommerce_modern_example.png" 
+                     alt="E-Commerce Modern Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/ecommerce_modern_example.png', 'E-Commerce Modern')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">E-Commerce Modern</h3>
+                            <p class="template-industry">Online-Handel & B2B E-Commerce</p>
+                        </div>
+                        <span class="template-number">10</span>
+                    </div>
+                    <p class="template-description">
+                        Moderne E-Commerce-Vorlage für B2B-Tech-Handel. Mit OSS-Verfahren, Cross-Selling und professionellem Kundenservice.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">OSS-Verfahren</span>
+                        <span class="feature-tag">Trusted Shops</span>
+                        <span class="feature-tag">B2B Portal</span>
+                        <span class="feature-tag">Tracking</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/10_ecommerce_modern/ecommerce_modern_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/10_ecommerce_modern/ecommerce_modern_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 11: Rechtsanwalt Formal -->
+            <div class="template-card">
+                <img src="templates/screenshots/rechtsanwalt_formal_example.png" 
+                     alt="Rechtsanwalt Formal Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/rechtsanwalt_formal_example.png', 'Rechtsanwalt Formal')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Rechtsanwalt Formal</h3>
+                            <p class="template-industry">Anwaltskanzlei & Rechtsdienste</p>
+                        </div>
+                        <span class="template-number">11</span>
+                    </div>
+                    <p class="template-description">
+                        Formal-juristische Honorarnote nach RATG. Für Anwaltskanzleien mit gerichtlicher und außergerichtlicher Vertretung.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">RATG konform</span>
+                        <span class="feature-tag">RAK Wien</span>
+                        <span class="feature-tag">€2.18M Haftung</span>
+                        <span class="feature-tag">Kostenersatz</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/11_rechtsanwalt_formal/rechtsanwalt_formal_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/11_rechtsanwalt_formal/rechtsanwalt_formal_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 12: Gastgewerbe Restaurant -->
+            <div class="template-card">
+                <img src="templates/screenshots/gastgewerbe_restaurant_example.png" 
+                     alt="Gastgewerbe Restaurant Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/gastgewerbe_restaurant_example.png', 'Gastgewerbe Restaurant')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Gastgewerbe Restaurant</h3>
+                            <p class="template-industry">Gehobene Gastronomie & Bewirtung</p>
+                        </div>
+                        <span class="template-number">12</span>
+                    </div>
+                    <p class="template-description">
+                        Elegante Gastronomie-Vorlage für gehobene Restaurants. Mit Allergenkennzeichnung, Bewirtungsbelegen und WKO-Compliance.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">HACCP</span>
+                        <span class="feature-tag">Allergene</span>
+                        <span class="feature-tag">Bewirtung</span>
+                        <span class="feature-tag">WKO Gastronomie</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/12_gastgewerbe_restaurant/gastgewerbe_restaurant_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/12_gastgewerbe_restaurant/gastgewerbe_restaurant_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 13: Immobilienverwaltung -->
+            <div class="template-card">
+                <img src="templates/screenshots/immobilienverwaltung_example.png" 
+                     alt="Immobilienverwaltung Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/immobilienverwaltung_example.png', 'Immobilienverwaltung')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Immobilienverwaltung</h3>
+                            <p class="template-industry">Hausverwaltung & WEG-Administration</p>
+                        </div>
+                        <span class="template-number">13</span>
+                    </div>
+                    <p class="template-description">
+                        Professionelle WEG-Verwaltungsvorlage mit Betriebskosten, Rücklagen und Umlageschlüsseln. ITG-konform mit 22-jähriger Aufbewahrung.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">WEG-Verwaltung</span>
+                        <span class="feature-tag">ITG konform</span>
+                        <span class="feature-tag">Betriebskosten</span>
+                        <span class="feature-tag">22 Jahre</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/13_immobilienverwaltung/immobilienverwaltung_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/13_immobilienverwaltung/immobilienverwaltung_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 14: Energiegemeinschaft -->
+            <div class="template-card">
+                <img src="templates/screenshots/energiegemeinschaft_neu_example.png" 
+                     alt="Energiegemeinschaft Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/energiegemeinschaft_neu_example.png', 'Energiegemeinschaft EEG')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Energiegemeinschaft</h3>
+                            <p class="template-industry">Erneuerbare Energiegemeinschaft (EEG)</p>
+                        </div>
+                        <span class="template-number">14</span>
+                    </div>
+                    <p class="template-description">
+                        Moderne EEG-Abrechnungsvorlage für lokale Energiegemeinschaften. Mit Smart-Meter-Daten und CO₂-Bilanzierung.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">E-Control</span>
+                        <span class="feature-tag">Smart Meter</span>
+                        <span class="feature-tag">CO₂-Einsparung</span>
+                        <span class="feature-tag">Community</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/14_energiegemeinschaft_neu/energiegemeinschaft_neu_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/14_energiegemeinschaft_neu/energiegemeinschaft_neu_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 15: Startup Minimalist -->
+            <div class="template-card">
+                <img src="templates/screenshots/startup_minimalist_example.png" 
+                     alt="Startup Minimalist Template" 
+                     class="template-thumbnail" 
+                     onclick="openModal('templates/screenshots/startup_minimalist_example.png', 'Startup Minimalist')">
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title">Startup Minimalist</h3>
+                            <p class="template-industry">Tech Startups & Digital Services</p>
+                        </div>
+                        <span class="template-number">15</span>
+                    </div>
+                    <p class="template-description">
+                        Minimalistische Tech-Startup-Vorlage mit modernem Clean Design. Für Softwareentwicklung und digitale Innovationen.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">Clean Code</span>
+                        <span class="feature-tag">ISO 27001</span>
+                        <span class="feature-tag">DSGVO</span>
+                        <span class="feature-tag">GitHub</span>
+                    </div>
+                    <div class="template-actions">
+                        <a href="templates/15_startup_minimalist/startup_minimalist_example.html" class="btn btn-primary" target="_blank">
+                            HTML ansehen
+                        </a>
+                        <a href="templates/15_startup_minimalist/startup_minimalist_example.pdf" class="btn btn-secondary" target="_blank">
+                            PDF herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legal-note banking-accent">
+            <h3>Media Assets & AI-Generierung</h3>
+            <p>Alle Vorlagen können mit dem <code>/image_generation/</code> System professionelle Logos, Icons und Wasserzeichen generieren lassen. 
+            Nutzen Sie OpenAI's gpt-image-1 für hochqualitative, branchen-spezifische Medien-Assets.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>Made for Austrian Business</h3>
+            <p>Entwickelt mit tiefem Verständnis für österreichische Geschäftsanforderungen und Steuerrecht.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">
+                <strong>UStG §11 konform</strong> • <strong>Alle Branchen</strong> • <strong>AI-powered</strong> • <strong>Druckoptimiert</strong>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal für Vollbild-Preview -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Template Vorschau</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <img id="modalImage" src="" alt="" class="modal-image">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc, title) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalTitle.textContent = title;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add loading animation for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.template-thumbnail');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                img.style.opacity = '0.7';
+                img.style.transition = 'opacity 0.3s';
+            });
+        });
+
+        // Add click tracking (optional)
+        function trackClick(templateNumber, action) {
+            console.log(`Template ${templateNumber}: ${action} clicked`);
+            // Add analytics tracking here if needed
+        }
+
+        // Enhance buttons with tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const card = this.closest('.template-card');
+                    const templateNumber = card.querySelector('.template-number').textContent;
+                    const action = this.textContent.includes('HTML') ? 'HTML' : 'PDF';
+                    trackClick(templateNumber, action);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
