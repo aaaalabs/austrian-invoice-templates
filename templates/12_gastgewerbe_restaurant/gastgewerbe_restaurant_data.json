@@ -1,156 +1,138 @@
 {
   "restaurant": {
-    "name": "Gasthof zur Goldenen Gams",
-    "kategorie": "Traditioneller Tiroler Gasthof",
-    "strasse": "Dorfstraße 15",
-    "plz": "6100",
-    "ort": "Seefeld in Tirol",
+    "name": "Restaurant Alpenhof GmbH",
+    "kategorie": "Gehobene Gastronomie",
+    "strasse": "Hauptstraße 42",
+    "plz": "6020",
+    "ort": "Innsbruck",
     "land": "Österreich",
-    "telefon": "+43 5212 98765",
-    "email": "info@goldene-gams.at",
-    "web": "www.goldene-gams.at",
-    "uid": "ATU87654321",
-    "firmenbuch": "FN 789123x",
-    "geschaeftsfuehrer": "Familie Wirtshausbesitzer",
-    "bank": "Raiffeisen Seefeld",
-    "iban": "AT98 3456 7890 2345 6789",
-    "bic": "RZTIAT22456",
-    "konzession": "Gastgewerbeberechtigung GZ-2020/1234",
-    "registrierkasse": "RK-2025-4567-GOLD",
-    "oeffnungszeiten": "Täglich 11:00-22:00 | Küche bis 21:30",
-    "sterne": "3 Sterne - Tiroler Wirtshaus"
+    "telefon": "+43 512 567890",
+    "email": "office@restaurant-alpenhof.at",
+    "web": "www.restaurant-alpenhof.at",
+    "uid": "ATU67890123",
+    "firmenbuch": "FN 456789b",
+    "geschaeftsfuehrer": "Mag. Thomas Gastner, MSc",
+    "bank": "Bank Austria",
+    "iban": "AT61 1200 0100 1234 5678",
+    "bic": "BKAUATWW",
+    "konzession": "Gastgewerbekonzession Nr. GK-2019-5678",
+    "registrierkasse": "RKSV-AT-U67890123-001",
+    "oeffnungszeiten": "Di-Sa 12:00-14:30, 18:00-22:00",
+    "kategorie_wko": "Gastronomie - Speiserestaurant"
   },
   "kunde": {
     "typ": "unternehmen",
-    "firma": "Alpine Business Solutions GmbH",
-    "ansprechpartner": "Herr Mag. Stefan Geschäftsführer",
-    "strasse": "Businesspark 25",
+    "firma": "TechConsult Austria GmbH",
+    "ansprechpartner": "Dr. Maria Schneider, MBA",
+    "strasse": "Technologiepark 15",
     "plz": "6020", 
     "ort": "Innsbruck",
-    "uid": "ATU98765432",
+    "uid": "ATU12345678",
     "bewirtungsbeleg": true,
-    "kostenstelle": "Kundenbetreuung"
+    "kostenstelle": "Geschäftsentwicklung"
   },
   "rechnung": {
-    "nummer": "GG-2025-1847",
+    "nummer": "ALH-2025-2847",
     "datum": "28.08.2025",
     "bewirtungsdatum": "26.08.2025",
-    "uhrzeit": "19:30",
-    "tisch": "12 (Stubenbereich)",
-    "personen": 6,
-    "kellner": "Maria S.",
-    "zahlungsziel": "14.09.2025",
-    "anlass": "Geschäftsessen - Kundenbetreuung"
+    "uhrzeit": "19:15",
+    "tisch": "Separee 3",
+    "personen": 4,
+    "kellner": "Sabine M.",
+    "zahlungsziel": "11.09.2025",
+    "anlass": "Geschäftsessen - Partnerverhandlungen"
   },
   "positionen": [
     {
       "kategorie": "vorspeisen",
-      "bezeichnung": "Tiroler Speckplatte mit Schüttelbrot",
+      "bezeichnung": "Carpaccio von der Tiroler Weidegans mit Pinienkernen",
       "menge": 2,
-      "einzelpreis": 12.50,
+      "einzelpreis": 16.50,
       "steuersatz": 10,
-      "gesamt": 25.00,
-      "allergene": ["Gluten", "Sellerie"]
+      "gesamt": 33.00,
+      "allergene": ["Schalenfrüchte"]
     },
     {
       "kategorie": "vorspeisen", 
-      "bezeichnung": "Kürbiscremesuppe mit Kernöl",
-      "menge": 4,
-      "einzelpreis": 7.80,
+      "bezeichnung": "Kürbiscremesuppe mit geröstetem Kürbiskernöl",
+      "menge": 2,
+      "einzelpreis": 9.50,
       "steuersatz": 10,
-      "gesamt": 31.20,
-      "allergene": ["Sellerie"]
+      "gesamt": 19.00,
+      "allergene": ["Sellerie", "Milch"]
     },
     {
       "kategorie": "hauptspeisen",
-      "bezeichnung": "Wiener Schnitzel vom Kalb mit Petersilienkartoffeln",
-      "menge": 3,
-      "einzelpreis": 24.50,
+      "bezeichnung": "Kalbsschnitzel Wiener Art mit Petersilienkartoffeln",
+      "menge": 2,
+      "einzelpreis": 28.50,
       "steuersatz": 10,
-      "gesamt": 73.50,
+      "gesamt": 57.00,
       "allergene": ["Gluten", "Ei"]
     },
     {
       "kategorie": "hauptspeisen",
-      "bezeichnung": "Zander-Filet auf Ratatouille-Gemüse",
+      "bezeichnung": "Saibling-Filet auf Lauch-Risotto mit Kräuteröl",
       "menge": 2,
-      "einzelpreis": 19.80,
+      "einzelpreis": 26.80,
       "steuersatz": 10,
-      "gesamt": 39.60,
-      "allergene": ["Fisch"]
-    },
-    {
-      "kategorie": "hauptspeisen",
-      "bezeichnung": "Hirschgulasch mit Spätzle und Rotkraut",
-      "menge": 1,
-      "einzelpreis": 22.00,
-      "steuersatz": 10,
-      "gesamt": 22.00,
-      "allergene": ["Gluten"]
+      "gesamt": 53.60,
+      "allergene": ["Fisch", "Milch"]
     },
     {
       "kategorie": "getraenke",
-      "bezeichnung": "Mineralwasser still 0,75l",
+      "bezeichnung": "Mineralwasser Aqua Alpina still 0,75l",
+      "menge": 2,
+      "einzelpreis": 5.20,
+      "steuersatz": 10,
+      "gesamt": 10.40
+    },
+    {
+      "kategorie": "getraenke",
+      "bezeichnung": "Grüner Veltliner Weingut Mantler 0,25l",
       "menge": 3,
-      "einzelpreis": 4.20,
-      "steuersatz": 10,
-      "gesamt": 12.60
-    },
-    {
-      "kategorie": "getraenke",
-      "bezeichnung": "Grüner Veltliner 0,25l",
-      "menge": 4,
-      "einzelpreis": 6.80,
+      "einzelpreis": 8.90,
       "steuersatz": 20,
-      "gesamt": 27.20
+      "gesamt": 26.70
     },
     {
       "kategorie": "getraenke", 
-      "bezeichnung": "Bier vom Fass 0,5l",
-      "menge": 2,
-      "einzelpreis": 4.50,
-      "steuersatz": 20,
-      "gesamt": 9.00
+      "bezeichnung": "Espresso doppelt",
+      "menge": 4,
+      "einzelpreis": 3.50,
+      "steuersatz": 10,
+      "gesamt": 14.00
     },
     {
       "kategorie": "dessert",
-      "bezeichnung": "Apfelstrudel hausgemacht mit Vanillesauce",
-      "menge": 4,
-      "einzelpreis": 8.90,
+      "bezeichnung": "Schokoladentartelette mit Himbeercoulis",
+      "menge": 2,
+      "einzelpreis": 12.50,
       "steuersatz": 10,
-      "gesamt": 35.60,
-      "allergene": ["Gluten", "Milch", "Ei"]
-    },
-    {
-      "kategorie": "service",
-      "bezeichnung": "Bedienungszuschlag (optional)",
-      "menge": 1,
-      "einzelpreis": 0.00,
-      "steuersatz": 20,
-      "gesamt": 0.00
+      "gesamt": 25.00,
+      "allergene": ["Gluten", "Milch", "Ei", "Schalenfrüchte"]
     }
   ],
   "zusammenfassung": {
-    "speisen_getraenke_10": 240.50,
-    "alkohol_service_20": 36.20,
-    "summe_netto": 276.70,
-    "ust_10": 24.05,
-    "ust_20": 7.24,
-    "summe_ust": 31.29,
-    "summe_brutto": 307.99,
-    "trinkgeld_empfehlung": "15% ≈ 46,20 €",
-    "zahlungsart": "Rechnung"
+    "speisen_getraenke_10": 212.00,
+    "alkohol_service_20": 26.70,
+    "summe_netto": 238.70,
+    "ust_10": 21.20,
+    "ust_20": 5.34,
+    "summe_ust": 26.54,
+    "summe_brutto": 265.24,
+    "zahlungsart": "Überweisung"
   },
   "bewirtungsbeleg": {
-    "anlass": "Geschäftsessen mit Kunden der Alpine Business Solutions GmbH",
-    "teilnehmer": "6 Personen",
-    "geschaeftszweck": "Besprechung neuer Kooperationsmöglichkeiten",
-    "besteuerung": "Bewirtungskosten 70% abzugsfähig gem. § 20 Abs 1 Z 3 EStG"
+    "anlass": "Geschäftsessen - Vertragsverhandlungen neue Technologiepartnerschaft",
+    "teilnehmer": "4 Personen (2 TechConsult Austria, 2 Restaurant Alpenhof)",
+    "geschaeftszweck": "Verhandlung strategische Partnerschaft im IT-Bereich und Digitalisierungsprojekte",
+    "besteuerung": "Bewirtungskosten 50% steuerlich abzugsfähig gem. EStG"
   },
   "zusatzinfo": {
-    "allergene_hinweis": "Alle Allergene-Informationen erhalten Sie auf Anfrage beim Service-Personal",
-    "qualitaet": "Regionale Zutaten aus Tirol | Bio-zertifizierte Produkte wo möglich",
-    "wko": "Mitglied der WKO Tirol - Fachgruppe Gastronomie",
-    "hygiene": "HACCP-zertifiziert | Lebensmittelhygiene-Schulung aktuell"
+    "allergene_hinweis": "Detaillierte Allergen-Informationen verfügbar bei Servicepersonal und auf www.restaurant-alpenhof.at/allergene",
+    "qualitaet": "Regionale Produkte aus Tirol und Österreich | Bio-Austria zertifizierte Zutaten | Nachhaltige Gastronomie",
+    "wko": "Wirtschaftskammer Tirol - Fachgruppe Gastronomie | Mitgliedsnummer: 123456789",
+    "hygiene": "HACCP-System zertifiziert | Hygieneschulung gem. LMSVG | Zertifikat-Nr: HYG-2024-567"
   }
 }

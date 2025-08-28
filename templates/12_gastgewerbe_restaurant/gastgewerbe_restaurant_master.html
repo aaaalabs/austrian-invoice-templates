@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rechnung {{rechnung.nummer}} - {{restaurant.name}}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: 'Georgia', serif; 
-            font-size: 11pt; 
+            font-family: Arial, sans-serif; 
+            font-size: 10pt; 
             line-height: 1.4; 
-            color: #333; 
+            color: #000; 
             background: #fff;
         }
         .container { 
@@ -19,178 +18,199 @@
             min-height: 297mm; 
             margin: 0 auto; 
             padding: 20mm; 
-            background: linear-gradient(135deg, #FFF8DC 0%, #FFFFFF 100%);
+            background: #fff;
         }
         
         /* Header */
         .header { 
-            background: linear-gradient(135deg, #722F37 0%, #8B4513 100%);
-            color: white; 
-            padding: 20px; 
-            border-radius: 10px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
             margin-bottom: 25px;
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 150px; height: 80px;
-            background-image: url('./media/logo_rectangle.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: top right;
-            opacity: 0.9;
+        .restaurant-info-left {
+            flex: 1;
         }
         .restaurant-name { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 24pt; 
-            font-weight: 600; 
-            margin-bottom: 5px;
-        }
-        .restaurant-tagline { 
-            font-family: 'Dancing Script', cursive; 
             font-size: 14pt; 
-            margin-bottom: 15px;
-            opacity: 0.9;
+            font-weight: bold; 
+            margin-bottom: 8px;
         }
-        .restaurant-info { font-size: 10pt; line-height: 1.4; }
-        .stars { color: #FFD700; font-size: 12pt; margin-top: 5px; }
+        .restaurant-details { 
+            font-size: 9pt; 
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .restaurant-legal { 
+            font-size: 8pt; 
+            line-height: 1.3; 
+            color: #333;
+        }
+        .logo-area {
+            width: 120px;
+            height: 60px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: #666;
+            background: #f9f9f9;
+        }
         
         /* Invoice Details */
         .invoice-section { 
             display: flex; 
             justify-content: space-between; 
-            margin: 25px 0;
-            background: #FFF8DC;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #722F37;
+            margin: 25px 0 35px 0;
+            border-top: 1px solid #000;
+            padding-top: 15px;
         }
         .customer-info h3 { 
-            color: #722F37; 
-            font-family: 'Playfair Display', serif;
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 10px; 
+            text-transform: uppercase;
+        }
+        .customer-details {
+            font-size: 9pt;
+            line-height: 1.3;
+        }
+        .invoice-meta { 
+            text-align: right; 
+            min-width: 200px; 
+        }
+        .invoice-number { 
+            font-size: 14pt; 
+            font-weight: bold; 
             margin-bottom: 10px; 
         }
-        .invoice-meta { text-align: right; min-width: 200px; }
-        .invoice-number { 
-            font-size: 18pt; 
-            font-weight: bold; 
-            color: #722F37; 
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 10px; 
+        .invoice-details {
+            font-size: 9pt;
+            line-height: 1.4;
         }
         
-        /* Menu Items */
-        .menu-section { margin: 20px 0; }
-        .menu-category { 
-            background: #722F37; 
-            color: white; 
-            padding: 8px 15px; 
-            font-family: 'Playfair Display', serif;
-            font-size: 12pt; 
-            font-weight: 600;
-            border-radius: 5px 5px 0 0;
-            margin-top: 15px;
+        /* Service Items Table */
+        .service-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0;
+            font-size: 9pt;
         }
-        .menu-items { 
-            background: #FEFEFE; 
-            border: 1px solid #722F37; 
-            border-top: none;
-            border-radius: 0 0 5px 5px;
-        }
-        .menu-item { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            padding: 10px 15px; 
-            border-bottom: 1px solid #F0F0F0; 
-            font-size: 10pt;
-        }
-        .menu-item:last-child { border-bottom: none; }
-        .item-details { flex: 1; }
-        .item-name { font-weight: bold; margin-bottom: 2px; }
-        .item-description { color: #666; font-size: 9pt; font-style: italic; }
-        .item-allergens { color: #999; font-size: 8pt; }
-        .item-pricing { 
-            text-align: right; 
-            min-width: 120px; 
+        .service-table th { 
+            background: #f0f0f0; 
+            border: 1px solid #000; 
+            padding: 8px; 
+            text-align: left;
             font-weight: bold;
+            font-size: 8pt;
         }
-        .quantity { color: #722F37; margin-right: 10px; }
+        .service-table td { 
+            border: 1px solid #000; 
+            padding: 6px 8px; 
+            vertical-align: top;
+        }
+        .service-category-header {
+            background: #e0e0e0;
+            font-weight: bold;
+            font-size: 9pt;
+        }
+        .item-description { 
+            font-size: 8pt; 
+            color: #333; 
+            margin-top: 2px;
+        }
+        .allergen-info { 
+            font-size: 7pt; 
+            color: #666; 
+            font-style: italic;
+        }
+        .text-right { text-align: right; }
+        .text-center { text-align: center; }
         
         /* Summary */
         .summary { 
-            margin-top: 25px; 
-            background: #FFF8DC;
-            padding: 20px;
-            border-radius: 8px;
-            border: 2px solid #722F37;
+            margin-top: 30px; 
+            border-top: 2px solid #000;
+            padding-top: 15px;
         }
-        .summary-table { width: 100%; font-size: 11pt; }
-        .summary-table td { padding: 8px; }
-        .summary-table .category-total { 
-            background: #F5F5DC; 
+        .summary-table { 
+            width: 100%; 
+            border-collapse: collapse;
+            font-size: 9pt; 
+        }
+        .summary-table td { 
+            padding: 6px 8px; 
+            border-bottom: 1px solid #ccc;
+        }
+        .summary-table .subtotal-row { 
+            border-top: 1px solid #000;
             font-weight: bold;
-            border-top: 1px solid #722F37;
         }
-        .summary-table .final-total { 
-            background: #722F37; 
-            color: white; 
+        .summary-table .total-row { 
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
             font-weight: bold; 
-            font-size: 12pt;
-        }
-        .tip-suggestion { 
-            text-align: center; 
-            margin-top: 10px; 
-            font-style: italic; 
-            color: #666;
+            font-size: 10pt;
+            background: #f0f0f0;
         }
         
         /* Business Meal Section */
         .business-meal { 
-            margin: 20px 0; 
+            margin: 25px 0; 
             padding: 15px; 
-            background: #F0F8FF; 
-            border-left: 4px solid #722F37;
-            border-radius: 5px;
+            border: 1px solid #000;
+            background: #f9f9f9;
         }
         .business-meal h4 { 
-            color: #722F37; 
-            font-family: 'Playfair Display', serif;
+            font-size: 10pt;
+            font-weight: bold;
             margin-bottom: 10px; 
+            text-transform: uppercase;
+        }
+        .business-meal-content {
+            font-size: 9pt;
+            line-height: 1.3;
+        }
+        .business-meal-content p {
+            margin-bottom: 5px;
         }
         
         /* Footer */
         .footer { 
-            margin-top: 30px; 
-            text-align: center; 
-            font-size: 9pt; 
-            color: #666;
-            border-top: 2px solid #722F37;
+            margin-top: 40px; 
+            border-top: 1px solid #000;
             padding-top: 15px;
+            font-size: 8pt; 
+            line-height: 1.3;
         }
-        .footer-highlight { 
-            background: #722F37; 
-            color: white; 
-            padding: 10px; 
-            border-radius: 5px; 
-            margin: 10px 0;
+        .footer-section {
+            margin-bottom: 12px;
+        }
+        .footer-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .payment-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .payment-details, .terms {
+            flex: 1;
+        }
+        .payment-details {
+            margin-right: 20px;
         }
         
         /* Print styles */
         @media print {
             .container { margin: 0; padding: 15mm; }
-            body { print-color-adjust: exact; }
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .invoice-section { flex-direction: column; }
-            .invoice-meta { text-align: left; margin-top: 15px; }
-            .menu-item { flex-direction: column; align-items: flex-start; }
-            .item-pricing { margin-top: 5px; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .logo-area { border: 1px solid #000; }
         }
     </style>
 </head>
@@ -198,182 +218,247 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div class="restaurant-name">{{restaurant.name}}</div>
-            <div class="restaurant-tagline">{{restaurant.kategorie}}</div>
-            <div class="restaurant-info">
-                {{restaurant.strasse}} • {{restaurant.plz}} {{restaurant.ort}}<br>
-                Tel: {{restaurant.telefon}} • {{restaurant.email}}<br>
-                {{restaurant.oeffnungszeiten}}
+            <div class="restaurant-info-left">
+                <div class="restaurant-name">{{restaurant.name}}</div>
+                <div class="restaurant-details">
+                    {{restaurant.strasse}}<br>
+                    {{restaurant.plz}} {{restaurant.ort}}, {{restaurant.land}}<br>
+                    Tel: {{restaurant.telefon}}<br>
+                    E-Mail: {{restaurant.email}}<br>
+                    Web: {{restaurant.web}}
+                </div>
+                <div class="restaurant-legal">
+                    UID: {{restaurant.uid}} | FB: {{restaurant.firmenbuch}}<br>
+                    Geschäftsführung: {{restaurant.geschaeftsfuehrer}}<br>
+                    Konzession: {{restaurant.konzession}}<br>
+                    Registrierkasse: {{restaurant.registrierkasse}}
+                </div>
             </div>
-            <div class="stars">{{restaurant.sterne}} ★★★</div>
+            <div class="logo-area">
+                [Logo]
+            </div>
         </div>
         
         <!-- Invoice Info -->
         <div class="invoice-section">
             <div class="customer-info">
-                <h3>🍽️ Bewirtungsbeleg</h3>
-                <strong>{{kunde.firma}}</strong><br>
-                Ansprechpartner: {{kunde.ansprechpartner}}<br>
-                {{kunde.strasse}}<br>
-                {{kunde.plz}} {{kunde.ort}}<br>
-                UID: {{kunde.uid}}
+                <h3>Kunde / Customer</h3>
+                <div class="customer-details">
+                    {{kunde.firma}}<br>
+                    {{kunde.ansprechpartner}}<br>
+                    {{kunde.strasse}}<br>
+                    {{kunde.plz}} {{kunde.ort}}<br>
+                    UID: {{kunde.uid}}
+                </div>
             </div>
             <div class="invoice-meta">
-                <div class="invoice-number">{{rechnung.nummer}}</div>
-                <strong>Datum:</strong> {{rechnung.datum}}<br>
-                <strong>Bewirtung:</strong> {{rechnung.bewirtungsdatum}} um {{rechnung.uhrzeit}}<br>
-                <strong>Tisch:</strong> {{rechnung.tisch}}<br>
-                <strong>Personen:</strong> {{rechnung.personen}}<br>
-                <strong>Service:</strong> {{rechnung.kellner}}<br>
-                <strong>Anlass:</strong> {{rechnung.anlass}}
+                <div class="invoice-number">RECHNUNG {{rechnung.nummer}}</div>
+                <div class="invoice-details">
+                    <strong>Rechnungsdatum:</strong> {{rechnung.datum}}<br>
+                    <strong>Bewirtungsdatum:</strong> {{rechnung.bewirtungsdatum}}<br>
+                    <strong>Uhrzeit:</strong> {{rechnung.uhrzeit}}<br>
+                    <strong>Tisch/Bereich:</strong> {{rechnung.tisch}}<br>
+                    <strong>Anzahl Personen:</strong> {{rechnung.personen}}<br>
+                    <strong>Bedienung:</strong> {{rechnung.kellner}}<br>
+                    <strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}
+                </div>
             </div>
         </div>
         
-        <!-- Menu Items by Category -->
-        <div class="menu-section">
-            <!-- Vorspeisen -->
-            <div class="menu-category">🥗 Vorspeisen</div>
-            <div class="menu-items">
+        <!-- Service Items Table -->
+        <table class="service-table">
+            <thead>
+                <tr>
+                    <th style="width: 8%">Pos.</th>
+                    <th style="width: 52%">Bezeichnung / Description</th>
+                    <th style="width: 8%">Menge</th>
+                    <th style="width: 12%">Einzelpreis</th>
+                    <th style="width: 8%">USt %</th>
+                    <th style="width: 12%">Gesamt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Vorspeisen / Appetizers -->
+                <tr class="service-category-header">
+                    <td colspan="6"><strong>VORSPEISEN / APPETIZERS</strong></td>
+                </tr>
                 {{#each positionen}}
                 {{#if (eq this.kategorie "vorspeisen")}}
-                <div class="menu-item">
-                    <div class="item-details">
-                        <div class="item-name">{{this.bezeichnung}}</div>
-                        {{#if this.allergene}}<div class="item-allergens">Allergene: {{join this.allergene ", "}}</div>{{/if}}
-                    </div>
-                    <div class="item-pricing">
-                        <span class="quantity">{{this.menge}}×</span>
-                        {{this.einzelpreis}},00 € = <strong>{{this.gesamt}},00 €</strong>
-                    </div>
-                </div>
+                <tr>
+                    <td class="text-center">{{@index}}</td>
+                    <td>
+                        <strong>{{this.bezeichnung}}</strong>
+                        {{#if this.allergene}}
+                        <div class="allergen-info">Allergene: {{join this.allergene ", "}}</div>
+                        {{/if}}
+                    </td>
+                    <td class="text-center">{{this.menge}}</td>
+                    <td class="text-right">{{this.einzelpreis}} €</td>
+                    <td class="text-center">{{this.steuersatz}}%</td>
+                    <td class="text-right"><strong>{{this.gesamt}} €</strong></td>
+                </tr>
                 {{/if}}
                 {{/each}}
-            </div>
-            
-            <!-- Hauptspeisen -->
-            <div class="menu-category">🍖 Hauptspeisen</div>
-            <div class="menu-items">
+                
+                <!-- Hauptspeisen / Main Courses -->
+                <tr class="service-category-header">
+                    <td colspan="6"><strong>HAUPTSPEISEN / MAIN COURSES</strong></td>
+                </tr>
                 {{#each positionen}}
                 {{#if (eq this.kategorie "hauptspeisen")}}
-                <div class="menu-item">
-                    <div class="item-details">
-                        <div class="item-name">{{this.bezeichnung}}</div>
-                        {{#if this.allergene}}<div class="item-allergens">Allergene: {{join this.allergene ", "}}</div>{{/if}}
-                    </div>
-                    <div class="item-pricing">
-                        <span class="quantity">{{this.menge}}×</span>
-                        {{this.einzelpreis}},00 € = <strong>{{this.gesamt}},00 €</strong>
-                    </div>
-                </div>
+                <tr>
+                    <td class="text-center">{{@index}}</td>
+                    <td>
+                        <strong>{{this.bezeichnung}}</strong>
+                        {{#if this.allergene}}
+                        <div class="allergen-info">Allergene: {{join this.allergene ", "}}</div>
+                        {{/if}}
+                    </td>
+                    <td class="text-center">{{this.menge}}</td>
+                    <td class="text-right">{{this.einzelpreis}} €</td>
+                    <td class="text-center">{{this.steuersatz}}%</td>
+                    <td class="text-right"><strong>{{this.gesamt}} €</strong></td>
+                </tr>
                 {{/if}}
                 {{/each}}
-            </div>
-            
-            <!-- Getränke -->
-            <div class="menu-category">🍷 Getränke</div>
-            <div class="menu-items">
+                
+                <!-- Getränke / Beverages -->
+                <tr class="service-category-header">
+                    <td colspan="6"><strong>GETRÄNKE / BEVERAGES</strong></td>
+                </tr>
                 {{#each positionen}}
                 {{#if (eq this.kategorie "getraenke")}}
-                <div class="menu-item">
-                    <div class="item-details">
-                        <div class="item-name">{{this.bezeichnung}}</div>
-                    </div>
-                    <div class="item-pricing">
-                        <span class="quantity">{{this.menge}}×</span>
-                        {{this.einzelpreis}},00 € = <strong>{{this.gesamt}},00 €</strong>
-                    </div>
-                </div>
+                <tr>
+                    <td class="text-center">{{@index}}</td>
+                    <td><strong>{{this.bezeichnung}}</strong></td>
+                    <td class="text-center">{{this.menge}}</td>
+                    <td class="text-right">{{this.einzelpreis}} €</td>
+                    <td class="text-center">{{this.steuersatz}}%</td>
+                    <td class="text-right"><strong>{{this.gesamt}} €</strong></td>
+                </tr>
                 {{/if}}
                 {{/each}}
-            </div>
-            
-            <!-- Desserts -->
-            <div class="menu-category">🍰 Desserts</div>
-            <div class="menu-items">
+                
+                <!-- Desserts -->
+                <tr class="service-category-header">
+                    <td colspan="6"><strong>DESSERTS</strong></td>
+                </tr>
                 {{#each positionen}}
                 {{#if (eq this.kategorie "dessert")}}
-                <div class="menu-item">
-                    <div class="item-details">
-                        <div class="item-name">{{this.bezeichnung}}</div>
-                        {{#if this.allergene}}<div class="item-allergens">Allergene: {{join this.allergene ", "}}</div>{{/if}}
-                    </div>
-                    <div class="item-pricing">
-                        <span class="quantity">{{this.menge}}×</span>
-                        {{this.einzelpreis}},90 € = <strong>{{this.gesamt}},60 €</strong>
-                    </div>
-                </div>
+                <tr>
+                    <td class="text-center">{{@index}}</td>
+                    <td>
+                        <strong>{{this.bezeichnung}}</strong>
+                        {{#if this.allergene}}
+                        <div class="allergen-info">Allergene: {{join this.allergene ", "}}</div>
+                        {{/if}}
+                    </td>
+                    <td class="text-center">{{this.menge}}</td>
+                    <td class="text-right">{{this.einzelpreis}} €</td>
+                    <td class="text-center">{{this.steuersatz}}%</td>
+                    <td class="text-right"><strong>{{this.gesamt}} €</strong></td>
+                </tr>
                 {{/if}}
                 {{/each}}
-            </div>
-        </div>
+            </tbody>
+        </table>
         
         <!-- Summary -->
         <div class="summary">
-            <h3 style="color: #722F37; font-family: 'Playfair Display', serif; margin-bottom: 15px; text-align: center;">Rechnung</h3>
             <table class="summary-table">
                 <tr>
-                    <td>Speisen & alkoholfreie Getränke (10% USt):</td>
-                    <td style="text-align: right;">{{zusammenfassung.speisen_getraenke_10}},50 €</td>
+                    <td>Nettobetrag Lebensmittel/alkoholfreie Getränke (10% USt):</td>
+                    <td class="text-right">{{zusammenfassung.speisen_getraenke_10}} €</td>
                 </tr>
                 <tr>
-                    <td>Alkoholische Getränke & Service (20% USt):</td>
-                    <td style="text-align: right;">{{zusammenfassung.alkohol_service_20}},20 €</td>
+                    <td>Nettobetrag alkoholische Getränke/Service (20% USt):</td>
+                    <td class="text-right">{{zusammenfassung.alkohol_service_20}} €</td>
                 </tr>
-                <tr class="category-total">
+                <tr class="subtotal-row">
                     <td><strong>Summe Netto:</strong></td>
-                    <td style="text-align: right;"><strong>{{zusammenfassung.summe_netto}},70 €</strong></td>
+                    <td class="text-right"><strong>{{zusammenfassung.summe_netto}} €</strong></td>
                 </tr>
                 <tr>
-                    <td>zzgl. 10% USt:</td>
-                    <td style="text-align: right;">{{zusammenfassung.ust_10}},05 €</td>
+                    <td>zzgl. 10% Umsatzsteuer:</td>
+                    <td class="text-right">{{zusammenfassung.ust_10}} €</td>
                 </tr>
                 <tr>
-                    <td>zzgl. 20% USt:</td>
-                    <td style="text-align: right;">{{zusammenfassung.ust_20}},24 €</td>
+                    <td>zzgl. 20% Umsatzsteuer:</td>
+                    <td class="text-right">{{zusammenfassung.ust_20}} €</td>
                 </tr>
-                <tr class="final-total">
-                    <td><strong>RECHNUNGSBETRAG:</strong></td>
-                    <td style="text-align: right;"><strong>{{zusammenfassung.summe_brutto}},99 €</strong></td>
+                <tr>
+                    <td><strong>Summe Umsatzsteuer:</strong></td>
+                    <td class="text-right"><strong>{{zusammenfassung.summe_ust}} €</strong></td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>RECHNUNGSBETRAG (BRUTTO):</strong></td>
+                    <td class="text-right"><strong>{{zusammenfassung.summe_brutto}} €</strong></td>
                 </tr>
             </table>
-            <div class="tip-suggestion">💡 Trinkgeld-Empfehlung: {{zusammenfassung.trinkgeld_empfehlung}}</div>
         </div>
         
-        <!-- Business Meal Info -->
+        <!-- Business Meal Documentation -->
         <div class="business-meal">
-            <h4>📋 Bewirtungsbeleg-Information</h4>
-            <p><strong>Geschäftsanlass:</strong> {{bewirtungsbeleg.anlass}}</p>
-            <p><strong>Teilnehmer:</strong> {{bewirtungsbeleg.teilnehmer}}</p>
-            <p><strong>Geschäftszweck:</strong> {{bewirtungsbeleg.geschaeftszweck}}</p>
-            <p><strong>Steuerhinweis:</strong> {{bewirtungsbeleg.besteuerung}}</p>
+            <h4>Bewirtungsbeleg-Dokumentation</h4>
+            <div class="business-meal-content">
+                <p><strong>Geschäftsanlass:</strong> {{bewirtungsbeleg.anlass}}</p>
+                <p><strong>Teilnehmer:</strong> {{bewirtungsbeleg.teilnehmer}}</p>
+                <p><strong>Geschäftszweck:</strong> {{bewirtungsbeleg.geschaeftszweck}}</p>
+                <p><strong>Steuerlicher Hinweis:</strong> {{bewirtungsbeleg.besteuerung}}</p>
+                <p><strong>Datum/Uhrzeit:</strong> {{rechnung.bewirtungsdatum}} um {{rechnung.uhrzeit}}</p>
+                <p><strong>Bedienung:</strong> {{rechnung.kellner}} | <strong>Tisch:</strong> {{rechnung.tisch}}</p>
+            </div>
         </div>
         
-        <!-- Quality & Info Section -->
-        <div class="business-meal" style="background: #F0F8F0;">
-            <h4>🌿 Qualität & Service</h4>
-            <p><strong>Allergene:</strong> {{zusatzinfo.allergene_hinweis}}</p>
-            <p><strong>Qualität:</strong> {{zusatzinfo.qualitaet}}</p>
-            <p><strong>Hygiene:</strong> {{zusatzinfo.hygiene}}</p>
-            <p><strong>Zahlungsinformationen:</strong><br>
-            Bank: {{restaurant.bank}} | IBAN: {{restaurant.iban}}<br>
-            Verwendungszweck: {{rechnung.nummer}}
-            </p>
+        <!-- Quality & Compliance Information -->
+        <div class="business-meal">
+            <h4>Qualität und Compliance</h4>
+            <div class="business-meal-content">
+                <p><strong>Allergen-Information:</strong> {{zusatzinfo.allergene_hinweis}}</p>
+                <p><strong>Qualitätsstandards:</strong> {{zusatzinfo.qualitaet}}</p>
+                <p><strong>Hygiene-Zertifizierung:</strong> {{zusatzinfo.hygiene}}</p>
+                <p><strong>Branchenzugehörigkeit:</strong> {{zusatzinfo.wko}}</p>
+            </div>
         </div>
         
         <!-- Footer -->
         <div class="footer">
-            <div class="footer-highlight">
-                <strong>{{restaurant.name}}</strong> | {{restaurant.geschaeftsfuehrer}}<br>
-                UID: {{restaurant.uid}} | {{restaurant.firmenbuch}}<br>
+            <div class="footer-section">
+                <div class="footer-title">Zahlungsinformationen</div>
+                <div class="payment-info">
+                    <div class="payment-details">
+                        <strong>Bankverbindung:</strong><br>
+                        {{restaurant.bank}}<br>
+                        IBAN: {{restaurant.iban}}<br>
+                        BIC: {{restaurant.bic}}<br>
+                        <strong>Verwendungszweck:</strong> {{rechnung.nummer}}
+                    </div>
+                    <div class="terms">
+                        <strong>Zahlungskonditionen:</strong><br>
+                        Zahlungsziel: {{rechnung.zahlungsziel}}<br>
+                        Zahlungsart: {{zusammenfassung.zahlungsart}}<br>
+                        Bei Verzug werden Zinsen berechnet.<br>
+                        Erfüllungsort: {{restaurant.ort}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <div class="footer-title">Geschäftsinformationen</div>
+                {{restaurant.name}} | {{restaurant.geschaeftsfuehrer}}<br>
+                UID-Nr.: {{restaurant.uid}} | Firmenbuch: {{restaurant.firmenbuch}}<br>
+                Gastgewerbekonzession: {{restaurant.konzession}}<br>
+                Registrierkasse: {{restaurant.registrierkasse}}<br>
                 {{zusatzinfo.wko}}
             </div>
-            <p style="font-family: 'Dancing Script', cursive; font-size: 12pt; margin-top: 10px; color: #722F37;">
-                Vielen Dank für Ihren Besuch! Wir freuen uns auf ein Wiedersehen!
-            </p>
-            <p style="margin-top: 10px;">
-                🌟 Bewerten Sie uns auf Google & TripAdvisor • 📱 Folgen Sie uns auf Instagram<br>
-                Registrierkasse: {{restaurant.registrierkasse}} | Konzession: {{restaurant.konzession}}
-            </p>
+            
+            <div class="footer-section">
+                <div class="footer-title">Rechtliche Hinweise</div>
+                Alle Preise sind Endpreise inkl. gesetzlicher Umsatzsteuer.<br>
+                Diese Rechnung wurde maschinell erstellt und ist ohne Unterschrift gültig.<br>
+                Aufbewahrung gem. UStG §11: 7 Jahre | Bewirtungsbelege: 10 Jahre<br>
+                Gerichtsstand: {{restaurant.ort}} | Anwendbares Recht: Österreich
+            </div>
         </div>
     </div>
 </body>

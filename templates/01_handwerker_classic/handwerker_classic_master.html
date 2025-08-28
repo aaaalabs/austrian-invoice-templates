@@ -7,39 +7,56 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: Arial, sans-serif; 
+            font-family: Arial, Helvetica, sans-serif; 
             font-size: 11pt; 
             line-height: 1.4; 
-            color: #333; 
+            color: #000; 
             background: #fff;
         }
         .container { 
             width: 210mm; 
             min-height: 297mm; 
             margin: 0 auto; 
-            padding: 20mm; 
-            background-image: url('./media/watermark.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 300px;
-            background-opacity: 0.1;
+            padding: 20mm;
         }
         
-        /* Header */
-        .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; border-bottom: 2px solid #003366; padding-bottom: 15px; }
+        /* Header - Professional Conservative Design */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 25px; 
+            border-bottom: 2px solid #003366; 
+            padding-bottom: 15px; 
+        }
         .company-info { flex: 1; }
-        .company-name { font-size: 18pt; font-weight: bold; color: #003366; margin-bottom: 5px; }
-        .company-tagline { font-size: 10pt; color: #666; margin-bottom: 15px; }
-        .company-details { font-size: 10pt; line-height: 1.3; }
+        .company-name { 
+            font-size: 18pt; 
+            font-weight: bold; 
+            color: #003366; 
+            margin-bottom: 3px; 
+        }
+        .company-tagline { 
+            font-size: 11pt; 
+            color: #003366; 
+            font-weight: bold; 
+            margin-bottom: 12px; 
+        }
+        .company-details { 
+            font-size: 10pt; 
+            line-height: 1.3; 
+            color: #333;
+        }
         .logo-placeholder { 
             width: 150px; 
             height: 60px; 
-            border: 2px dashed #ccc; 
+            border: 1px solid #ccc; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            font-size: 10pt; 
+            font-size: 9pt; 
             color: #666;
+            background-color: #f9f9f9;
             background-image: url('./media/logo_rectangle.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -54,24 +71,49 @@
         .invoice-number { font-size: 16pt; font-weight: bold; color: #003366; margin-bottom: 10px; }
         .invoice-details { font-size: 10pt; line-height: 1.5; }
         
-        /* Items Table */
-        .items-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 10pt; }
+        /* Professional Items Table - Optimized for Electrical Contractors */
+        .items-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0; 
+            font-size: 10pt;
+            border: 2px solid #003366;
+        }
         .items-table th { 
             background: #003366; 
             color: white; 
-            padding: 8px; 
+            padding: 10px 8px; 
             text-align: left; 
             font-weight: bold;
+            border-right: 1px solid #004477;
         }
+        .items-table th:last-child { border-right: none; }
         .items-table td { 
-            padding: 6px 8px; 
+            padding: 8px; 
             border-bottom: 1px solid #ddd; 
+            border-right: 1px solid #eee;
             vertical-align: top;
         }
-        .items-table .amount { text-align: right; font-weight: bold; }
-        .category-material { background-color: #f0f8ff; }
-        .category-arbeit { background-color: #fff8f0; }
-        .category-fahrt { background-color: #f8fff0; }
+        .items-table td:last-child { border-right: none; }
+        .items-table .amount { 
+            text-align: right; 
+            font-weight: bold; 
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Category Styling - Conservative Professional */
+        .category-material { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #6c757d;
+        }
+        .category-arbeit { 
+            background-color: #f1f3f4; 
+            border-left: 4px solid #003366;
+        }
+        .category-fahrt { 
+            background-color: #f9f9f9; 
+            border-left: 4px solid #495057;
+        }
         
         /* Summary */
         .summary { margin-top: 20px; }
@@ -80,24 +122,79 @@
         .summary-table .total { font-weight: bold; background: #003366; color: white; }
         .summary-table .subtotal { background: #f5f5f5; font-weight: bold; }
         
-        /* Additional Info */
-        .additional-info { 
-            margin-top: 30px; 
-            padding: 15px; 
-            background: #f9f9f9; 
-            border-left: 4px solid #003366;
+        /* Handwerkerbonus Section - Professional 2025 */
+        .handwerkerbonus-section {
+            margin-top: 25px;
+            padding: 15px;
+            border: 2px solid #003366;
+            background: #f8f9fa;
             font-size: 10pt;
         }
-        .additional-info h4 { color: #003366; margin-bottom: 10px; }
-        
-        /* Footer */
-        .footer { 
-            margin-top: 40px; 
-            padding-top: 20px; 
-            border-top: 1px solid #ccc; 
-            font-size: 9pt; 
-            color: #666;
+        .handwerkerbonus-section h4 {
+            color: #003366;
+            font-size: 12pt;
+            margin-bottom: 10px;
             text-align: center;
+            border-bottom: 1px solid #003366;
+            padding-bottom: 5px;
+        }
+        .bonus-info {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #28a745;
+        }
+        .bonus-info p {
+            margin: 5px 0;
+        }
+        .bonus-disclaimer {
+            background: #e9ecef;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+        .bonus-disclaimer p {
+            font-size: 9pt;
+            line-height: 1.3;
+        }
+
+        /* Legal Information Section */
+        .legal-info {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .warranty-section, .payment-section {
+            flex: 1;
+            padding: 12px;
+            background: #f9f9f9;
+            border-left: 3px solid #003366;
+            font-size: 10pt;
+        }
+        .legal-info h4 {
+            color: #003366;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+        
+        /* Professional WKO Footer */
+        .footer { 
+            margin-top: 30px; 
+            padding-top: 15px; 
+            border-top: 2px solid #003366; 
+            font-size: 9pt; 
+            color: #333;
+            text-align: center;
+        }
+        .footer-line {
+            margin: 3px 0;
+            line-height: 1.2;
+        }
+        .footer-thanks {
+            margin-top: 10px;
+            font-style: italic;
+            color: #003366;
+            font-weight: bold;
         }
         
         /* Print styles */
@@ -208,24 +305,60 @@
             </table>
         </div>
         
-        <!-- Additional Info -->
-        <div class="additional-info">
-            <h4>Wichtige Hinweise:</h4>
-            <p><strong>Handwerkerbonus:</strong> {{zusatzinfo.handwerkerbonus}}</p>
-            <p><strong>Gewährleistung:</strong> {{zusatzinfo.gewaehrleistung}}</p>
+        <!-- Handwerkerbonus 2025 Section - Professional Layout -->
+        <div class="handwerkerbonus-section">
+            <h4>HANDWERKERBONUS 2025 - Steuerliche Absetzbarkeit</h4>
+            <div class="bonus-info">
+                <p><strong>Förderungsfähige Arbeitskosten (Netto):</strong> {{zusammenfassung.arbeit_netto}},00 €</p>
+                <p><strong>Fördersatz:</strong> 20% der Arbeitskosten (max. 1.500 € pro Person)</p>
+                <p><strong>Ihr Vorteil:</strong> {{zusammenfassung.handwerkerbonus_betrag}},00 € steuerliche Entlastung</p>
+            </div>
+            <div class="bonus-disclaimer">
+                <p><em>Hinweis: Gemäß § 35a EStG können die ausgewiesenen Arbeitskosten als Handwerkerleistungen steuerlich geltend gemacht werden. Material- und Fahrtkosten sind nicht förderfähig. Förderung nur für Arbeiten an privat genutzten Wohnräumen im Inland.</em></p>
+            </div>
+        </div>
+
+        <!-- Legal Information -->
+        <div class="legal-info">
+            <div class="warranty-section">
+                <h4>Gewährleistung</h4>
+                <p>Gemäß österreichischem Recht gewähren wir 2 Jahre Gewährleistung auf unsere Elektroinstallations-Leistungen (§ 924 ABGB). Bei Verbrauchsgeschäften gelten die Bestimmungen des Konsumentenschutzgesetzes.</p>
+            </div>
             
-            <h4 style="margin-top: 15px;">Zahlungsinformationen:</h4>
-            <p><strong>Bank:</strong> {{firma.bank}}<br>
-            <strong>IBAN:</strong> {{firma.iban}}<br>
-            <strong>BIC:</strong> {{firma.bic}}<br>
-            <strong>Verwendungszweck:</strong> {{rechnung.nummer}}</p>
+            <div class="payment-section">
+                <h4>Zahlungsinformationen</h4>
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="flex: 1;">
+                        <p><strong>Bank:</strong> {{firma.bank}}</p>
+                        <p><strong>IBAN:</strong> {{firma.iban}}</p>
+                        <p><strong>BIC:</strong> {{firma.bic}}</p>
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <p><strong>Verwendungszweck:</strong> {{rechnung.nummer}}</p>
+                        <p><strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}</p>
+                        <p><strong>Bei 14-Tage-Zahlung:</strong> 2% Skonto</p>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <!-- Footer -->
+        <!-- Professional WKO Tirol Footer -->
         <div class="footer">
-            <p><strong>{{firma.name}}</strong> | Geschäftsführer: {{firma.geschaeftsfuehrer}} | UID: {{firma.uid}} | {{firma.firmenbuch}} ({{firma.gericht}})</p>
-            <p>{{zusatzinfo.wko}}</p>
-            <p style="margin-top: 10px;">Vielen Dank für Ihr Vertrauen!</p>
+            <div class="footer-line">
+                <strong>{{firma.name}}</strong> | Geschäftsführer: {{firma.geschaeftsfuehrer}} | UID: {{firma.uid}}
+            </div>
+            <div class="footer-line">
+                {{firma.firmenbuch}} ({{firma.gericht}}) | Tel: {{firma.telefon}} | E-Mail: {{firma.email}}
+            </div>
+            <div class="footer-line">
+                <strong>{{zusatzinfo.wko}}</strong>
+            </div>
+            <div class="footer-line">
+                <strong>{{zusatzinfo.meisterbetrieb_status}}</strong>
+            </div>
+            <div class="footer-thanks">
+                Vielen Dank für Ihr Vertrauen in unsere Elektro-Fachkompetenz!
+            </div>
         </div>
     </div>
 </body>

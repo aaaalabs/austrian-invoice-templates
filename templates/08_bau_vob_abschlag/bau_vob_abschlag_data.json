@@ -158,16 +158,30 @@
     "sicherheitseinbehalt_gesamt": 33423.60
   },
   "zusammenfassung": {
-    "leistung_periode_netto": 278530.00,
-    "abzgl_sicherheitseinbehalt": 33423.60,
-    "zwischensumme": 245106.40,
-    "ust_20": 49021.28,
-    "abschlagssumme_brutto": 294127.68
+    "leistung_periode_netto": 465990.00,
+    "abzgl_sicherheitseinbehalt": 32619.30,
+    "zwischensumme": 433370.70,
+    "ust_20": 86674.14,
+    "abschlagssumme_brutto": 520044.84
   },
   "hinweise": {
-    "prueffrist": "Die Prüf- und Zahlungsfrist beträgt gemäß § 16 Abs 1 Z 1 VOB 21 Tage ab Rechnungseingang",
-    "vorbehalt": "Alle Maße und Mengen unter Vorbehalt der örtlichen Aufnahme",
-    "gewaehrleistung": "Gewährleistungsfrist 3 Jahre gemäß ÖNORM B 2110",
-    "sicherstellung": "Sicherheitseinbehalt kann durch Bankgarantie abgelöst werden"
+    "prueffrist": "Die Prüf- und Zahlungsfrist beträgt gemäß Punkt 16.3 ÖNORM B 2110: 30 Tage ab ordnungsgemäßem Rechnungseingang",
+    "vorbehalt": "Alle Maße und Mengen unter Vorbehalt der örtlichen Aufnahme gem. Punkt 15 ÖNORM B 2110",
+    "gewaehrleistung": "Gewährleistungsfrist 3 Jahre für Bauleistungen gemäß ÖNORM B 2110, Punkt 13",
+    "sicherstellung": "Sicherheitseinbehalt kann gemäß Punkt 17.4.3 ÖNORM B 2110 durch Bankgarantie ersetzt werden",
+    "aufrechnungsverbot": "Aufrechnungen sind nur mit anerkannten oder rechtskräftig festgestellten Forderungen zulässig (§ 1438 ABGB)",
+    "verzugszinsen": "Bei Zahlungsverzug werden Zinsen gemäß § 456 UGB (derzeit 9,2% p.a.) verrechnet"
+  },
+  "projekt_zusatzinfo": {
+    "bautechnik": "Massivbauweise mit Wärmedämmverbundsystem",
+    "energiestandard": "Passivhausstandard gem. OIB-Richtlinie 6",
+    "zertifizierung": "klimaaktiv Gold Standard angestrebt",
+    "besonderheiten": "Barrierefreie Ausführung gem. ÖNORM B 1600"
+  },
+  "rechtliche_grundlagen": {
+    "vertragsbasis": "ÖNORM B 2110:2023",
+    "gewerberechtigung": "Baumeister gem. § 94 Z 32 GewO",
+    "haftpflichtversicherung": "Baumeister-Haftpflicht € 7.000.000,--",
+    "aufsichtsbehoerde": "Bezirkshauptmannschaft Innsbruck"
   }
 }

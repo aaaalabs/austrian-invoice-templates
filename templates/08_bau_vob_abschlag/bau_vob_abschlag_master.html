@@ -12,10 +12,10 @@
         }
         
         body {
-            font-family: 'Arial', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 11px;
-            line-height: 1.4;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000;
             background: #fff;
         }
         
@@ -26,106 +26,102 @@
             min-height: 297mm;
         }
         
-        /* Header with construction styling */
+        /* Professional header */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 20px;
-            border-bottom: 4px solid #FF6600;
-            padding-bottom: 15px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
         }
         
-        .company-logo {
-            flex: 1;
+        .company-section {
+            flex: 2;
         }
         
         .company-name {
-            font-size: 24px;
+            font-size: 16px;
             font-weight: bold;
-            color: #2c3e50;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            color: #000;
+            margin-bottom: 3px;
         }
         
-        .company-tagline {
-            color: #FF6600;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .company-subtitle {
+            font-size: 10px;
+            color: #555;
+            margin-bottom: 8px;
         }
         
         .company-details {
-            font-size: 10px;
-            line-height: 1.3;
+            font-size: 9px;
+            line-height: 1.2;
         }
         
-        .invoice-type {
+        .invoice-section {
             text-align: right;
-            background: #FF6600;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            min-width: 200px;
+            border: 2px solid #000;
+            padding: 10px;
+            min-width: 180px;
         }
         
         .invoice-title {
-            font-size: 20px;
+            font-size: 14px;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         
         .invoice-number {
-            font-size: 16px;
-            margin-bottom: 5px;
+            font-size: 12px;
+            margin-bottom: 3px;
         }
         
         .invoice-date {
-            font-size: 12px;
+            font-size: 10px;
         }
         
         /* Project Information */
         .project-info {
-            background: #f8f9fa;
-            border: 2px solid #FF6600;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
+            border: 1px solid #000;
+            padding: 12px;
+            margin: 15px 0;
         }
         
         .project-title {
-            font-size: 16px;
+            font-size: 12px;
             font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            color: #000;
+            margin-bottom: 8px;
             text-transform: uppercase;
         }
         
         .project-details {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-            font-size: 10px;
+            gap: 12px;
+            font-size: 9px;
         }
         
         .project-detail-group h4 {
-            color: #FF6600;
+            color: #000;
             font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 11px;
+            margin-bottom: 3px;
+            font-size: 9px;
+            text-transform: uppercase;
         }
         
         /* Client Information */
         .client-info {
-            margin: 20px 0;
+            margin: 15px 0;
             display: flex;
             justify-content: space-between;
         }
         
         .client-section {
             flex: 1;
-            margin-right: 30px;
+            margin-right: 25px;
+            border: 1px solid #000;
+            padding: 8px;
         }
         
         .client-section:last-child {
@@ -133,110 +129,112 @@
         }
         
         .client-section h3 {
-            color: #2c3e50;
-            border-bottom: 2px solid #FF6600;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-            font-size: 12px;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
         
         /* Performance Overview */
         .performance-overview {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+            background: #f5f5f5;
+            border: 2px solid #000;
+            padding: 10px;
+            margin: 15px 0;
         }
         
         .performance-title {
-            font-size: 16px;
+            font-size: 11px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             text-align: center;
+            text-transform: uppercase;
         }
         
         .performance-metrics {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 8px;
             text-align: center;
         }
         
         .metric {
-            background: rgba(255, 102, 0, 0.2);
-            padding: 10px;
-            border-radius: 6px;
+            border: 1px solid #666;
+            padding: 6px;
         }
         
         .metric-label {
-            font-size: 9px;
-            margin-bottom: 5px;
-            opacity: 0.9;
+            font-size: 8px;
+            margin-bottom: 3px;
+            text-transform: uppercase;
         }
         
         .metric-value {
-            font-size: 14px;
+            font-size: 10px;
             font-weight: bold;
         }
         
         /* Services Table */
         .services-section {
-            margin: 25px 0;
+            margin: 20px 0;
         }
         
         .section-title {
-            background: #2c3e50;
+            background: #000;
             color: white;
-            padding: 10px 15px;
-            font-size: 14px;
+            padding: 8px 10px;
+            font-size: 11px;
             font-weight: bold;
             margin-bottom: 0;
+            text-transform: uppercase;
         }
         
         .services-table {
             width: 100%;
             border-collapse: collapse;
-            border: 2px solid #2c3e50;
+            border: 2px solid #000;
         }
         
         .services-table th {
-            background: #FF6600;
+            background: #666;
             color: white;
-            padding: 8px;
+            padding: 6px;
             text-align: left;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
+            text-transform: uppercase;
         }
         
         .services-table td {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-            font-size: 10px;
+            padding: 5px 6px;
+            border-bottom: 1px solid #000;
+            font-size: 9px;
+            vertical-align: top;
         }
         
-        .services-table tr:hover {
-            background: #f8f9fa;
+        .services-table tr:nth-child(even) {
+            background: #f9f9f9;
         }
         
         .amount {
             text-align: right;
             font-weight: bold;
+            font-family: monospace;
         }
         
         .progress-bar {
-            height: 20px;
-            background: #ecf0f1;
-            border-radius: 10px;
-            overflow: hidden;
+            height: 12px;
+            background: #fff;
+            border: 1px solid #000;
             position: relative;
         }
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #27ae60, #2ecc71);
-            border-radius: 10px;
-            transition: width 0.3s ease;
+            background: #333;
         }
         
         .progress-text {
@@ -244,17 +242,17 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 9px;
+            font-size: 7px;
             font-weight: bold;
-            color: #2c3e50;
+            color: #fff;
         }
         
         /* Summary Section */
         .summary-section {
-            margin: 25px 0;
+            margin: 20px 0;
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 15px;
         }
         
         .summary-left {
@@ -263,10 +261,9 @@
         
         .summary-right {
             flex: 1;
-            background: #f8f9fa;
-            border: 2px solid #FF6600;
-            border-radius: 8px;
-            padding: 15px;
+            background: #f5f5f5;
+            border: 2px solid #000;
+            padding: 10px;
         }
         
         .summary-table {
@@ -275,114 +272,119 @@
         }
         
         .summary-table td {
-            padding: 5px 10px;
-            font-size: 11px;
+            padding: 3px 8px;
+            font-size: 9px;
+            border-bottom: 1px solid #ccc;
         }
         
         .summary-table .label {
-            border-right: 2px solid #FF6600;
+            border-right: 1px solid #000;
             font-weight: bold;
         }
         
         .summary-table .amount {
             text-align: right;
             font-weight: bold;
+            font-family: monospace;
         }
         
         .summary-table .total {
-            border-top: 2px solid #FF6600;
-            font-size: 14px;
+            border-top: 2px solid #000;
+            font-size: 10px;
             font-weight: bold;
-            background: #FF6600;
+            background: #000;
             color: white;
         }
         
         /* Retentions Section */
         .retentions-section {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
+            background: #f5f5f5;
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px 0;
         }
         
         .retentions-title {
-            color: #856404;
+            color: #000;
             font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 12px;
+            margin-bottom: 6px;
+            font-size: 10px;
+            text-transform: uppercase;
         }
         
         .retentions-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            font-size: 10px;
+            gap: 8px;
+            font-size: 8px;
         }
         
         /* Previous Payments */
         .previous-payments {
-            background: #e8f5e8;
-            border: 1px solid #28a745;
-            border-radius: 6px;
-            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #000;
+            padding: 8px;
             margin: 10px 0;
         }
         
         .previous-payments h4 {
-            color: #155724;
-            font-size: 11px;
-            margin-bottom: 8px;
+            color: #000;
+            font-size: 9px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
         
         .payments-list {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
-            font-size: 9px;
+            gap: 4px;
+            font-size: 8px;
         }
         
         /* Legal Notes */
         .legal-notes {
-            background: #f8f9fa;
-            border-left: 4px solid #FF6600;
-            padding: 15px;
-            margin: 20px 0;
+            background: #f9f9f9;
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
         }
         
         .legal-notes h3 {
-            color: #2c3e50;
-            font-size: 12px;
-            margin-bottom: 10px;
+            color: #000;
+            font-size: 10px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
         
         .legal-notes ul {
             list-style: none;
-            font-size: 10px;
-            line-height: 1.5;
+            font-size: 8px;
+            line-height: 1.3;
         }
         
         .legal-notes li {
-            margin-bottom: 5px;
-            padding-left: 15px;
+            margin-bottom: 3px;
+            padding-left: 10px;
             position: relative;
         }
         
         .legal-notes li::before {
-            content: "⚠";
+            content: "•";
             position: absolute;
             left: 0;
-            color: #FF6600;
+            color: #000;
             font-weight: bold;
         }
         
         /* Footer */
         .footer {
-            border-top: 2px solid #2c3e50;
-            padding-top: 15px;
-            margin-top: 30px;
-            font-size: 9px;
-            color: #666;
+            border-top: 2px solid #000;
+            padding-top: 10px;
+            margin-top: 20px;
+            font-size: 8px;
+            color: #000;
             display: flex;
             justify-content: space-between;
         }
@@ -392,48 +394,59 @@
         }
         
         .footer h4 {
-            color: #2c3e50;
-            font-size: 10px;
-            margin-bottom: 5px;
+            color: #000;
+            font-size: 8px;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
         
         /* Print Styles */
         @media print {
-            body { font-size: 10px; }
+            body { font-size: 9px; }
             .container { padding: 10mm; }
             .page-break { page-break-before: always; }
         }
         
-        /* Construction-specific styling */
-        .construction-badge {
-            background: #FF6600;
+        /* Technical styling */
+        .compliance-badge {
+            background: #000;
             color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 8px;
+            padding: 2px 4px;
+            font-size: 7px;
             font-weight: bold;
             text-transform: uppercase;
         }
         
-        .vob-compliant {
-            color: #28a745;
+        .technical-note {
             font-weight: bold;
-            font-size: 9px;
+            font-size: 8px;
+            text-transform: uppercase;
         }
         
-        .attention-box {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 6px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 10px;
+        .notice-box {
+            background: #f5f5f5;
+            border: 1px solid #000;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 8px;
         }
         
-        .attention-box .icon {
-            color: #856404;
+        .notice-box .label {
             font-weight: bold;
-            margin-right: 5px;
+            margin-right: 4px;
+            text-transform: uppercase;
+        }
+        
+        /* Technical table styling */
+        .position-number {
+            font-family: monospace;
+            font-weight: bold;
+        }
+        
+        .quantity {
+            font-family: monospace;
+            text-align: right;
         }
     </style>
 </head>
@@ -441,9 +454,9 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div class="company-logo">
+            <div class="company-section">
                 <div class="company-name">{{firma.name}}</div>
-                <div class="company-tagline">{{firma.zusatz}}</div>
+                <div class="company-subtitle">{{firma.zusatz}}</div>
                 <div class="company-details">
                     {{firma.strasse}}<br>
                     {{firma.plz}} {{firma.ort}}, {{firma.land}}<br>
@@ -451,11 +464,11 @@
                     <strong>{{firma.konzession}}</strong>
                 </div>
             </div>
-            <div class="invoice-type">
+            <div class="invoice-section">
                 <div class="invoice-title">ABSCHLAGSRECHNUNG</div>
                 <div class="invoice-number">Nr. {{abschlagsrechnung.nummer}}</div>
                 <div class="invoice-date">{{abschlagsrechnung.datum}}</div>
-                <div class="construction-badge">VOB-KONFORM</div>
+                <div class="compliance-badge">ÖNORM B 2110</div>
             </div>
         </div>
 
@@ -479,7 +492,7 @@
                     <h4>AUFTRAGSWERT</h4>
                     Ursprünglich: € {{projekt.auftragssumme}}<br>
                     Inkl. Nachträge: € {{abrechnung_kumuliert.auftragssumme_gesamt}}<br>
-                    <span class="vob-compliant">✓ ÖNORM B 2110</span>
+                    <span class="technical-note">ÖNORM B 2110</span>
                 </div>
             </div>
         </div>
@@ -500,10 +513,11 @@
                 {{architekt.kontakt}}
             </div>
             <div class="client-section">
-                <h3>ABSCHLAG {{abschlagsrechnung.teilrechnung_nr}}</h3>
+                <h3>ABSCHLAG NR. {{abschlagsrechnung.teilrechnung_nr}}</h3>
                 Leistungsstand: <strong>{{abschlagsrechnung.leistungsstand_prozent}}%</strong><br>
                 Zahlungsziel: {{abschlagsrechnung.zahlungsziel_tage}} Tage<br>
-                Fällig am: {{abschlagsrechnung.zahlungsziel_datum}}
+                Fällig am: {{abschlagsrechnung.zahlungsziel_datum}}<br>
+                <div class="compliance-badge">{{abschlagsrechnung.prueffrist}}</div>
             </div>
         </div>
 
@@ -560,11 +574,11 @@
                 <tbody>
                     {{#each leistungen_aktuell}}
                     <tr>
-                        <td><strong>{{position}}</strong></td>
+                        <td class="position-number">{{position}}</td>
                         <td>{{beschreibung}}</td>
-                        <td class="amount">{{menge_gesamt}}</td>
+                        <td class="quantity">{{menge_gesamt}}</td>
                         <td>{{einheit}}</td>
-                        <td class="amount">{{menge_periode}}</td>
+                        <td class="quantity">{{menge_periode}}</td>
                         <td>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: {{prozent_fertig}}%"></div>
@@ -596,10 +610,10 @@
                 <tbody>
                     {{#each abrechnung_kumuliert.nachtraege_genehmigt}}
                     <tr>
-                        <td><strong>{{nr}}</strong></td>
+                        <td class="position-number">{{nr}}</td>
                         <td>{{beschreibung}}</td>
                         <td class="amount">€ {{betrag}}</td>
-                        <td><span class="construction-badge">GENEHMIGT</span></td>
+                        <td><span class="compliance-badge">GENEHMIGT</span></td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -629,8 +643,8 @@
                     </div>
                 </div>
 
-                <div class="attention-box">
-                    <span class="icon">⚠</span>
+                <div class="notice-box">
+                    <span class="label">HINWEIS:</span>
                     <strong>{{hinweise.prueffrist}}</strong>
                 </div>
             </div>
@@ -691,7 +705,7 @@
             <div class="footer-section">
                 <h4>Geschäftsführung</h4>
                 {{firma.geschaeftsfuehrer}}<br>
-                <span class="vob-compliant">Baumeister-Konzessionär</span>
+                <span class="technical-note">Baumeister-Konzessionär</span>
             </div>
         </div>
     </div>
