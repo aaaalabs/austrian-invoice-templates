@@ -20,9 +20,9 @@
         }
 
         .invoice-container {
-            max-width: 210mm;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 15mm;
+            padding: 20px;
             min-height: 297mm;
             background: white;
         }
@@ -314,12 +314,8 @@
             width: 120px;
             height: 120px;
             margin: 10px auto;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 9pt;
-            color: #666;
+            border: 1px solid #ddd;
+            display: block;
         }
 
         /* Legal Footer */
@@ -591,11 +587,7 @@
                     <p><em>Verzinsung: 0,125% p.a. (Basiszinssatz OeNB)</em></p>
                 </div>
                 <div class="qr-section">
-                    <div class="qr-code">
-                        EPC-QR Code<br>
-                        für SEPA-<br>
-                        Überweisung
-                    </div>
+                    <img src="media/qr.png" alt="EPC-QR Code für SEPA-Überweisung" class="qr-code" width="120" height="120">
                     <p style="font-size: 8pt;">QR-Code scannen für automatische Überweisung</p>
                 </div>
             </div>

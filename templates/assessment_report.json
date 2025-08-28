@@ -1,0 +1,127 @@
+{
+  "timestamp": "2025-08-28T08:27:10.707Z",
+  "summary": {
+    "total": 15,
+    "successful": 15,
+    "errors": 0,
+    "withIssues": 12
+  },
+  "results": [
+    {
+      "template": "02_solar_pv_modern/solar_pv_modern_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/solar_pv_modern_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "13_immobilienverwaltung/immobilienverwaltung_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/immobilienverwaltung_example.png",
+      "issues": [
+        "Broken image: media/logo_rectangle.png",
+        "QR code template missing QR code image",
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "14_energiegemeinschaft_neu/energiegemeinschaft_neu_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/energiegemeinschaft_neu_example.png",
+      "issues": [
+        "QR code template missing QR code image"
+      ]
+    },
+    {
+      "template": "06_beratung_premium/beratung_premium_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/beratung_premium_example.png",
+      "issues": []
+    },
+    {
+      "template": "11_rechtsanwalt_formal/rechtsanwalt_formal_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/rechtsanwalt_formal_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "07_tourismus_dreisprachig/tourismus_dreisprachig_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/tourismus_dreisprachig_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "08_bau_vob_abschlag/bau_vob_abschlag_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/bau_vob_abschlag_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "10_ecommerce_modern/ecommerce_modern_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/ecommerce_modern_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "01_handwerker_classic/handwerker_classic_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/handwerker_classic_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "03_it_professional/it_professional_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/it_professional_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "04_kleinunternehmer_minimal/kleinunternehmer_minimal_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/kleinunternehmer_minimal_example.png",
+      "issues": []
+    },
+    {
+      "template": "05_b2b_reverse_charge/b2b_reverse_charge_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/b2b_reverse_charge_example.png",
+      "issues": []
+    },
+    {
+      "template": "09_freelancer_creative/freelancer_creative_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/freelancer_creative_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "12_gastgewerbe_restaurant/gastgewerbe_restaurant_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/gastgewerbe_restaurant_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    },
+    {
+      "template": "15_startup_minimalist/startup_minimalist_example.html",
+      "status": "success",
+      "screenshotPath": "/Users/libra/GitHub/_quicks/_invoices/templates/screenshots/startup_minimalist_example.png",
+      "issues": [
+        "Content width (1200px) may cause print layout issues"
+      ]
+    }
+  ]
+}

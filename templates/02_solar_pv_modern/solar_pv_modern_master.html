@@ -22,7 +22,6 @@
             max-width: 800px;
             margin: 0 auto;
             background: white;
-            border: 1px solid #ddd;
         }
 
         /* Professional Header */
@@ -450,9 +449,7 @@
             <div class="qr-code-section">
                 <h4 style="color: #2C5F7A;">ZAHLUNGSINFORMATIONEN</h4>
                 <div style="margin: 15px 0;">
-                    <div style="width: 120px; height: 120px; border: 2px solid #2C5F7A; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
-                        SEPA<br>QR-Code<br><small>EPC-Standard</small>
-                    </div>
+                    <img src="media/qr.png" alt="EPC-QR Code für SEPA-Überweisung" style="width: 120px; height: 120px; border: 2px solid #2C5F7A; margin: 0 auto; display: block; background: #f9f9f9;">
                 </div>
                 <p><strong>IBAN:</strong> {{firma.iban}} | <strong>BIC:</strong> {{firma.bic}}</p>
                 <p><strong>Zahlungsziel:</strong> 14 Tage netto | <strong>Verwendungszweck:</strong> {{rechnung.nummer}}</p>
