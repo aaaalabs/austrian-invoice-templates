@@ -12,61 +12,71 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: #000;
             background: #fff;
             max-width: 21cm;
             margin: 0 auto;
             padding: 2cm;
+            font-size: 11pt;
         }
         
         .header {
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #2563eb;
+        }
+        
+        .company-section {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 3px solid #6C63FF;
+            margin-bottom: 2rem;
         }
         
         .company-info h1 {
-            font-size: 2rem;
-            color: #6C63FF;
+            font-size: 20pt;
+            color: #2563eb;
             margin-bottom: 0.25rem;
-            font-weight: 700;
+            font-weight: bold;
         }
         
         .company-info .tagline {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 1rem;
+            color: #555;
+            font-size: 11pt;
+            margin-bottom: 0.75rem;
+            font-weight: normal;
         }
         
         .company-info p {
-            color: #555;
-            margin-bottom: 0.25rem;
+            color: #000;
+            margin-bottom: 0.2rem;
+            font-size: 10pt;
         }
         
-        .invoice-number {
+        .invoice-header {
             text-align: right;
         }
         
-        .invoice-number h2 {
-            font-size: 2.5rem;
-            color: #6C63FF;
-            margin-bottom: 0.5rem;
+        .invoice-header h2 {
+            font-size: 24pt;
+            color: #2563eb;
+            margin-bottom: 0.25rem;
+            font-weight: bold;
         }
         
-        .invoice-number p {
-            color: #666;
-            font-size: 1rem;
+        .invoice-header .invoice-date {
+            color: #555;
+            font-size: 11pt;
+            margin-top: 0.5rem;
         }
         
         .addresses {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            gap: 3rem;
         }
         
         .address-block {
@@ -74,31 +84,43 @@
         }
         
         .address-block h3 {
-            color: #6C63FF;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            color: #000;
+            margin-bottom: 0.75rem;
+            font-size: 12pt;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.25rem;
         }
         
         .address-block p {
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
+            font-size: 10pt;
         }
         
-        .invoice-details {
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            background: #f8f9ff;
-            border-radius: 8px;
+        .invoice-subject {
+            margin-bottom: 2rem;
         }
         
-        .invoice-details h3 {
-            color: #6C63FF;
-            margin-bottom: 1rem;
+        .invoice-subject h3 {
+            color: #2563eb;
+            font-size: 13pt;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
         }
         
-        .details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .invoice-meta {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            font-size: 10pt;
+        }
+        
+        .invoice-meta div {
+            flex: 1;
+        }
+        
+        .invoice-meta strong {
+            color: #000;
         }
         
         .items-table {
@@ -108,114 +130,144 @@
         }
         
         .items-table th {
-            background: #6C63FF;
-            color: white;
-            padding: 1rem;
+            background: #f8f9fa;
+            color: #000;
+            padding: 0.75rem;
             text-align: left;
-            font-weight: 600;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            font-size: 11pt;
         }
         
         .items-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            font-size: 10pt;
+            vertical-align: top;
         }
         
         .items-table .amount {
             text-align: right;
-            font-weight: 600;
-            color: #333;
+            font-weight: bold;
+            white-space: nowrap;
         }
         
         .total-section {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: #f8f9ff;
-            border-radius: 8px;
             text-align: right;
+            margin-bottom: 2rem;
         }
         
         .total-amount {
-            font-size: 2rem;
-            color: #6C63FF;
-            font-weight: 700;
+            font-size: 18pt;
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .total-label {
+            font-size: 11pt;
+            color: #000;
             margin-bottom: 1rem;
         }
         
-        .tax-notice {
-            background: #fff4e5;
-            border: 2px solid #f0c674;
-            border-radius: 8px;
-            padding: 1.5rem;
+        .tax-exemption {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 1rem;
             margin-bottom: 2rem;
             text-align: center;
         }
         
-        .tax-notice h4 {
-            color: #c58500;
+        .tax-exemption h4 {
+            color: #000;
             margin-bottom: 0.5rem;
+            font-size: 12pt;
+            font-weight: bold;
         }
         
-        .payment-info {
-            background: #f0f8f0;
-            padding: 1.5rem;
-            border-radius: 8px;
+        .tax-exemption p {
+            font-size: 10pt;
+            color: #555;
+            margin-bottom: 0.25rem;
+        }
+        
+        .payment-section {
             margin-bottom: 2rem;
         }
         
-        .payment-info h3 {
-            color: #2d7d32;
+        .payment-section h3 {
+            color: #000;
             margin-bottom: 1rem;
+            font-size: 12pt;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.25rem;
         }
         
-        .payment-grid {
+        .payment-details {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 2rem;
+            font-size: 10pt;
         }
         
-        .personal-note {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: #fafafa;
-            border-radius: 8px;
-            border-left: 4px solid #6C63FF;
+        .payment-details div {
+            margin-bottom: 0.5rem;
         }
         
-        .personal-note p {
-            margin-bottom: 1rem;
-            font-style: italic;
+        .payment-details strong {
+            color: #000;
+            display: inline-block;
+            width: 80px;
         }
         
-        .signature {
+        .personal-message {
             margin-top: 2rem;
+            padding: 1rem;
+            background: #fafafa;
+            border-left: 3px solid #2563eb;
+        }
+        
+        .personal-message p {
+            margin-bottom: 0.75rem;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        
+        .signature-section {
+            margin-top: 1.5rem;
             text-align: right;
         }
         
-        .signature .name {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 1.5rem;
-            color: #6C63FF;
+        .signature-name {
+            font-size: 14pt;
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
         
         .footer {
             margin-top: 3rem;
             text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-            padding-top: 2rem;
+            font-size: 9pt;
+            color: #777;
+            padding-top: 1rem;
             border-top: 1px solid #eee;
         }
         
-        .social-link {
-            color: #6C63FF;
-            text-decoration: none;
+        .footer p {
+            margin-bottom: 0.25rem;
         }
         
         @media print {
             body {
-                padding: 1cm;
+                padding: 1.5cm;
+                font-size: 10pt;
             }
-            .personal-note {
+            .personal-message {
+                page-break-inside: avoid;
+            }
+            .tax-exemption {
                 page-break-inside: avoid;
             }
         }
@@ -223,45 +275,53 @@
         @media (max-width: 768px) {
             body {
                 padding: 1rem;
+                font-size: 12pt;
             }
             
-            .header {
+            .company-section {
                 flex-direction: column;
-                text-align: center;
             }
             
-            .invoice-number {
-                text-align: center;
+            .invoice-header {
+                text-align: left;
                 margin-top: 2rem;
             }
             
             .addresses {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 1.5rem;
             }
             
-            .details-grid,
-            .payment-grid {
+            .payment-details {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .invoice-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="company-info">
-            <h1>{{firma.name}}</h1>
-            <div class="tagline">{{firma.bezeichnung}}</div>
-            <p>{{firma.strasse}}</p>
-            <p>{{firma.plz}} {{firma.ort}}</p>
-            <p>Tel: {{firma.telefon}}</p>
-            <p>Email: {{firma.email}}</p>
-            <p>Web: {{firma.web}}</p>
-        </div>
-        <div class="invoice-number">
-            <h2>{{rechnung.nummer}}</h2>
-            <p>Rechnung</p>
-            <p>{{rechnung.datum}}</p>
+        <div class="company-section">
+            <div class="company-info">
+                <h1>{{firma.name}}</h1>
+                <div class="tagline">{{firma.bezeichnung}}</div>
+                <p>{{firma.strasse}}</p>
+                <p>{{firma.plz}} {{firma.ort}}, {{firma.land}}</p>
+                <p>Tel: {{firma.telefon}}</p>
+                <p>E-Mail: {{firma.email}}</p>
+                {{#if firma.web}}
+                <p>{{firma.web}}</p>
+                {{/if}}
+            </div>
+            <div class="invoice-header">
+                <h2>{{rechnung.nummer}}</h2>
+                <div class="invoice-date">{{rechnung.datum}}</div>
+            </div>
         </div>
     </div>
     
@@ -269,12 +329,14 @@
         <div class="address-block">
             <h3>Rechnungsempfänger</h3>
             <p><strong>{{kunde.firma}}</strong></p>
+            {{#if kunde.ansprechpartner}}
             <p>{{kunde.ansprechpartner}}</p>
+            {{/if}}
             <p>{{kunde.strasse}}</p>
             <p>{{kunde.plz}} {{kunde.ort}}</p>
         </div>
         <div class="address-block">
-            <h3>Leistungserbringer</h3>
+            <h3>Rechnungssteller</h3>
             <p><strong>{{firma.name}}</strong></p>
             <p>{{firma.strasse}}</p>
             <p>{{firma.plz}} {{firma.ort}}</p>
@@ -282,23 +344,29 @@
         </div>
     </div>
     
-    <div class="invoice-details">
+    <div class="invoice-subject">
         <h3>{{rechnung.betreff}}</h3>
-        <div class="details-grid">
-            <div>
-                <strong>Rechnungsdatum:</strong> {{rechnung.datum}}
-            </div>
-            <div>
-                <strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}
-            </div>
+    </div>
+    
+    <div class="invoice-meta">
+        <div>
+            <strong>Rechnungsdatum:</strong> {{rechnung.datum}}
         </div>
+        <div>
+            <strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}
+        </div>
+        {{#if rechnung.leistungsdatum}}
+        <div>
+            <strong>Leistungsdatum:</strong> {{rechnung.leistungsdatum}}
+        </div>
+        {{/if}}
     </div>
     
     <table class="items-table">
         <thead>
             <tr>
-                <th style="width: 70%">Leistungsbeschreibung</th>
-                <th style="width: 30%">Betrag</th>
+                <th style="width: 75%">Leistungsbeschreibung</th>
+                <th style="width: 25%">Betrag</th>
             </tr>
         </thead>
         <tbody>
@@ -313,42 +381,50 @@
     
     <div class="total-section">
         <div class="total-amount">€ {{zusammenfassung.gesamt}}</div>
-        <p><strong>Gesamtbetrag: {{zusammenfassung.zahlungsziel_text}}</strong></p>
+        <div class="total-label">Gesamtbetrag</div>
     </div>
     
-    <div class="tax-notice">
+    <div class="tax-exemption">
         <h4>Kleinunternehmerregelung</h4>
         <p>{{zusammenfassung.kleinunternehmer_hinweis}}</p>
+        {{#if zusammenfassung.schwellenwert_hinweis}}
+        <p>{{zusammenfassung.schwellenwert_hinweis}}</p>
+        {{/if}}
     </div>
     
-    <div class="payment-info">
+    <div class="payment-section">
         <h3>Zahlungsinformationen</h3>
-        <div class="payment-grid">
+        <div class="payment-details">
             <div>
                 <strong>Bank:</strong> {{firma.bank}}<br>
-                <strong>IBAN:</strong> {{firma.iban}}
+                <strong>IBAN:</strong> {{firma.iban}}<br>
+                {{#if firma.bic}}
+                <strong>BIC:</strong> {{firma.bic}}
+                {{/if}}
             </div>
             <div>
-                <strong>BIC:</strong> {{firma.bic}}<br>
-                <strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}
+                <strong>Fällig:</strong> {{rechnung.zahlungsziel}}<br>
+                <strong>Zahlungsziel:</strong> {{zusammenfassung.zahlungsziel_text}}
             </div>
         </div>
     </div>
     
-    <div class="personal-note">
+    {{#if persoenlich.dankesnachricht}}
+    <div class="personal-message">
         <p>{{persoenlich.dankesnachricht}}</p>
         {{#if persoenlich.ps}}
         <p>{{persoenlich.ps}}</p>
         {{/if}}
-        <div class="signature">
-            <div class="name">{{persoenlich.unterschrift}}</div>
+        <div class="signature-section">
+            <div class="signature-name">{{persoenlich.unterschrift}}</div>
         </div>
     </div>
+    {{/if}}
     
     <div class="footer">
-        <p>{{firma.name}} | {{firma.email}} | {{firma.web}}</p>
-        {{#if firma.instagram}}
-        <p>Folge mir auf Instagram: <a href="https://instagram.com/{{firma.instagram}}" class="social-link">{{firma.instagram}}</a></p>
+        <p>{{firma.name}} • {{firma.telefon}} • {{firma.email}}</p>
+        {{#if firma.web}}
+        <p>{{firma.web}}</p>
         {{/if}}
     </div>
 </body>

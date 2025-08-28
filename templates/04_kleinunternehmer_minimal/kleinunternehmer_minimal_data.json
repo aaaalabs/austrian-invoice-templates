@@ -1,63 +1,60 @@
 {
   "firma": {
-    "name": "Anna Kreativ",
-    "bezeichnung": "Grafikdesign & Illustration",
-    "strasse": "Künstlergasse 7",
-    "plz": "5020",
-    "ort": "Salzburg",
+    "name": "Barbara Mayer",
+    "bezeichnung": "Steuerberatung & Unternehmensberatung",
+    "strasse": "Maximilianstraße 12/2/5",
+    "plz": "6020",
+    "ort": "Innsbruck",
     "land": "Österreich",
-    "telefon": "+43 664 1234567",
-    "email": "hallo@anna-kreativ.at",
-    "web": "www.anna-kreativ.at",
-    "bank": "Salzburger Sparkasse",
-    "iban": "AT98 2040 4000 1234 5678",
-    "bic": "SBGSAT2SXXX",
-    "kleinunternehmer": true,
-    "instagram": "@annakreativ.design"
+    "telefon": "+43 512 567891",
+    "email": "office@mayer-steuerberatung.at",
+    "web": "www.mayer-steuerberatung.at",
+    "bank": "Tiroler Sparkasse",
+    "iban": "AT45 2050 3000 1234 5678",
+    "bic": "SPIHAT22XXX",
+    "kleinunternehmer": true
   },
   "kunde": {
-    "firma": "Café Zeitlos",
-    "ansprechpartner": "Hr. Michael Bauer",
-    "strasse": "Getreidegasse 15",
-    "plz": "5020",
-    "ort": "Salzburg"
+    "firma": "Tischlerei Holzwurm GmbH",
+    "ansprechpartner": "Herr Johann Huber",
+    "strasse": "Industriestraße 23",
+    "plz": "6020",
+    "ort": "Innsbruck"
   },
   "rechnung": {
-    "nummer": "2025-018",
+    "nummer": "2025-042",
     "datum": "28.08.2025",
+    "leistungsdatum": "August 2025",
     "zahlungsziel": "11.09.2025",
-    "betreff": "Logo-Design und Geschäftsausstattung"
+    "betreff": "Steuerberatung und Jahresabschluss 2024"
   },
   "positionen": [
     {
-      "beschreibung": "Logo-Design inkl. 3 Entwürfe und 2 Überarbeitungsrunden",
-      "betrag": 850.00
+      "beschreibung": "Laufende Buchhaltungsbetreuung August 2025 (20 Belege)",
+      "betrag": 180.00
     },
     {
-      "beschreibung": "Visitenkarten-Design (Vorder- und Rückseite)",
-      "betrag": 250.00
+      "beschreibung": "Umsatzsteuervoranmeldung August 2025 (UVA)",
+      "betrag": 45.00
     },
     {
-      "beschreibung": "Briefpapier und Kuvert-Design",
-      "betrag": 200.00
+      "beschreibung": "Steuerliche Beratung - Investitionsförderung Maschinen",
+      "betrag": 120.00
     },
     {
-      "beschreibung": "Social Media Template-Set (5 Vorlagen)",
-      "betrag": 300.00
-    },
-    {
-      "beschreibung": "Farbpalette und Schriftarten-Guide (PDF)",
-      "betrag": 150.00
+      "beschreibung": "Jahresabschluss 2024 - Vorbereitung und Abstimmung",
+      "betrag": 320.00
     }
   ],
   "zusammenfassung": {
-    "gesamt": 1750.00,
+    "gesamt": 665.00,
     "kleinunternehmer_hinweis": "Gemäß § 6 Abs. 1 Z 27 UStG enthält der Rechnungsbetrag keine Umsatzsteuer.",
+    "schwellenwert_hinweis": "Kleinunternehmerregelung - Jahresumsatz unter €55.000 (gültig ab 2025)",
     "zahlungsziel_text": "14 Tage netto"
   },
   "persoenlich": {
-    "dankesnachricht": "Vielen Dank für das Vertrauen in meine Arbeit! Es war mir eine Freude, die visuelle Identität für das Café Zeitlos zu gestalten.",
-    "unterschrift": "Anna",
-    "ps": "P.S. Gerne unterstütze ich Sie auch bei der Druckabwicklung - sprechen Sie mich einfach an!"
+    "dankesnachricht": "Vielen Dank für Ihr Vertrauen in meine steuerliche Beratung. Ich stehe Ihnen gerne auch weiterhin für alle steuerrechtlichen Fragen zur Verfügung.",
+    "unterschrift": "Barbara Mayer",
+    "ps": "Hinweis: Die Unterlagen für den Jahresabschluss 2024 erhalten Sie bis spätestens 15. September 2025."
   }
 }

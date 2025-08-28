@@ -283,42 +283,46 @@
                 <div>
                     <div class="shop-name">{{shop.name}}</div>
                     <div class="shop-claim">{{shop.claim}}</div>
-                    <div class="trustpilot">⭐ {{shop.trustpilot}}</div>
                 </div>
-                <div style="text-align: right; font-size: 0.85rem;">
+                <div class="company-details">
                     <div>{{shop.strasse}}</div>
-                    <div>{{shop.plz}} {{shop.ort}}</div>
-                    <div>{{shop.telefon}}</div>
-                    <div>{{shop.email}}</div>
+                    <div>{{shop.plz}} {{shop.ort}}, {{shop.land}}</div>
+                    <div>Tel: {{shop.telefon}}</div>
+                    <div>E-Mail: {{shop.email}}</div>
+                    <div>UID: {{shop.uid}}</div>
+                    <div>{{shop.firmenbuch}}</div>
                 </div>
             </div>
         </div>
         
-        <!-- Action Buttons -->
-        <div class="action-buttons">
-            <button class="btn btn-primary" onclick="window.print()">
-                🖨️ Drucken
-            </button>
-            <a href="#" class="btn btn-secondary">📄 PDF Download</a>
-            <a href="{{versand.tracking_url}}" class="btn btn-success">
-                📦 Sendung verfolgen
-            </a>
-        </div>
-        
-        <!-- Order Header -->
-        <div class="order-header">
-            <div class="order-number">
-                📋 Bestellung {{bestellung.bestellnummer}}
-            </div>
-            <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #92400e;">
-                <strong>Rechnungsnr:</strong> {{bestellung.rechnungsnummer}} | 
-                <strong>Datum:</strong> {{bestellung.rechnungsdatum}} | 
-                <strong>Status:</strong> {{bestellung.zahlungsstatus}}
-            </div>
-            <div class="tracking-info">
-                <strong>🚚 Lieferung:</strong> {{bestellung.versandart}} | 
-                <strong>Tracking:</strong> {{bestellung.tracking}} | 
-                <strong>Erwartet:</strong> {{bestellung.voraussichtliche_lieferung}}
+        <!-- Invoice Header -->
+        <div class="invoice-header">
+            <div class="invoice-title">RECHNUNG</div>
+            <div class="invoice-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Rechnungsnummer:</span>
+                    <span>{{bestellung.rechnungsnummer}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Rechnungsdatum:</span>
+                    <span>{{bestellung.rechnungsdatum}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Bestellnummer:</span>
+                    <span>{{bestellung.bestellnummer}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Bestelldatum:</span>
+                    <span>{{bestellung.bestelldatum}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Kundennummer:</span>
+                    <span>{{kunde.kundennummer}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Zahlungsstatus:</span>
+                    <span>{{bestellung.zahlungsstatus}}</span>
+                </div>
             </div>
         </div>
         
@@ -326,194 +330,180 @@
         <div class="customer-section">
             <div class="address-block">
                 <h3>Rechnungsadresse</h3>
-                <div>{{kunde.anrede}} {{kunde.vorname}} {{kunde.nachname}}</div>
-                <div>{{kunde.rechnungsadresse.strasse}}</div>
-                <div>{{kunde.rechnungsadresse.plz}} {{kunde.rechnungsadresse.ort}}</div>
-                <div>{{kunde.rechnungsadresse.land}}</div>
-                <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #64748b;">
-                    Kundennr: {{kunde.kundennummer}} | {{kunde.email}}
+                <div class="address-content">
+                    <div>{{kunde.anrede}} {{kunde.vorname}} {{kunde.nachname}}</div>
+                    <div>{{kunde.rechnungsadresse.strasse}}</div>
+                    <div>{{kunde.rechnungsadresse.plz}} {{kunde.rechnungsadresse.ort}}</div>
+                    <div>{{kunde.rechnungsadresse.land}}</div>
+                    <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;">
+                        E-Mail: {{kunde.email}}
+                    </div>
                 </div>
             </div>
             <div class="address-block">
                 <h3>Lieferadresse</h3>
-                <div>{{kunde.lieferadresse.empfaenger}}</div>
-                <div>{{kunde.lieferadresse.strasse}}</div>
-                <div>{{kunde.lieferadresse.plz}} {{kunde.lieferadresse.ort}}</div>
-                <div>{{kunde.lieferadresse.land}}</div>
+                <div class="address-content">
+                    <div>{{kunde.lieferadresse.empfaenger}}</div>
+                    <div>{{kunde.lieferadresse.strasse}}</div>
+                    <div>{{kunde.lieferadresse.plz}} {{kunde.lieferadresse.ort}}</div>
+                    <div>{{kunde.lieferadresse.land}}</div>
+                </div>
             </div>
         </div>
         
         <!-- Products -->
         <div class="products-section">
-            <h2 class="section-title">🛍️ Ihre Bestellung</h2>
-            {{#each artikel}}
-            <div class="product-item">
-                <div class="product-image">{{bild}}</div>
-                <div class="product-details">
-                    <h4>{{bezeichnung}}</h4>
-                    <div class="product-meta">
-                        <strong>Art.-Nr:</strong> {{artikelnummer}} | 
-                        <strong>EAN:</strong> {{ean}}
-                    </div>
-                    <div class="product-specs">
-                        {{#if farbe}}<span>Farbe: {{farbe}}</span>{{/if}}
-                        {{#if groesse}}<span>Größe: {{groesse}}</span>{{/if}}
-                        {{#if herkunft}}<span>{{herkunft}}</span>{{/if}}
-                    </div>
-                    {{#if lagerbestand}}<div class="stock-info">{{lagerbestand}}</div>{{/if}}
-                    <div class="sustainability-badge">♻️ Nachhaltig</div>
-                </div>
-                <div style="text-align: right; font-size: 0.9rem;">
-                    <div>Menge: {{menge}}</div>
-                    <div>Einzelpreis: €{{einzelpreis}}</div>
-                    {{#if rabatt_betrag}}<div style="color: #dc2626;">Rabatt: -€{{rabatt_betrag}}</div>{{/if}}
-                </div>
-                <div style="text-align: right; font-weight: bold; font-size: 1.1rem;">
-                    €{{zwischensumme}}
-                </div>
-            </div>
-            {{/each}}
+            <h2 class="section-title">Artikel / Leistungen</h2>
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th class="article-col">Art.-Nr.</th>
+                        <th>Bezeichnung</th>
+                        <th class="qty-col">Menge</th>
+                        <th class="price-col">Einzelpreis</th>
+                        <th class="price-col">Rabatt</th>
+                        <th class="price-col">MwSt.</th>
+                        <th class="total-col">Gesamt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each artikel}}
+                    <tr>
+                        <td>{{artikelnummer}}</td>
+                        <td>
+                            <div class="product-name">{{bezeichnung}}</div>
+                            <div class="product-details">
+                                {{#if ean}}EAN: {{ean}}{{/if}}
+                                {{#if farbe}} | Farbe: {{farbe}}{{/if}}
+                                {{#if groesse}} | Größe: {{groesse}}{{/if}}
+                                {{#if herkunft}}<br>{{herkunft}}{{/if}}
+                            </div>
+                        </td>
+                        <td class="qty-col">{{menge}}</td>
+                        <td class="price-col">€{{einzelpreis}}</td>
+                        <td class="price-col">{{#if rabatt_betrag}}-€{{rabatt_betrag}}{{else}}-{{/if}}</td>
+                        <td class="price-col">{{steuersatz}}%</td>
+                        <td class="total-col"><strong>€{{zwischensumme}}</strong></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
         
         <!-- Summary -->
         <div class="summary-section">
-            <h3 style="margin-bottom: 1rem;">💰 Zusammenfassung</h3>
-            <div class="summary-grid">
-                <div class="summary-row">
-                    <div class="summary-label">Warenwert:</div>
-                    <div class="summary-value">€{{zusammenfassung.warenwert}}</div>
-                </div>
+            <h3 class="summary-title">Rechnungssumme</h3>
+            <table class="summary-table">
+                <tr>
+                    <td class="summary-label">Warenwert:</td>
+                    <td class="summary-value">€{{zusammenfassung.warenwert}}</td>
+                </tr>
                 {{#if zusammenfassung.rabatte_gesamt}}
-                <div class="summary-row">
-                    <div class="summary-label" style="color: #dc2626;">Rabatte:</div>
-                    <div class="summary-value" style="color: #dc2626;">-€{{zusammenfassung.rabatte_gesamt}}</div>
-                </div>
+                <tr>
+                    <td class="summary-label">Rabatte gesamt:</td>
+                    <td class="summary-value">-€{{zusammenfassung.rabatte_gesamt}}</td>
+                </tr>
                 {{/if}}
-                <div class="summary-row">
-                    <div class="summary-label">Zwischensumme:</div>
-                    <div class="summary-value">€{{zusammenfassung.zwischensumme}}</div>
-                </div>
-                <div class="summary-row">
-                    <div class="summary-label">{{versand.bezeichnung}}:</div>
-                    <div class="summary-value">€{{versand.kosten}}</div>
-                </div>
-                <div class="summary-row">
-                    <div class="summary-label">Netto:</div>
-                    <div class="summary-value">€{{zusammenfassung.summe_netto}}</div>
-                </div>
-                <div class="summary-row">
-                    <div class="summary-label">MwSt. (20%):</div>
-                    <div class="summary-value">€{{zusammenfassung.ust_20_de}}</div>
-                </div>
-                <div class="summary-row total-row">
-                    <div class="summary-label">Gesamtbetrag:</div>
-                    <div class="summary-value">€{{zusammenfassung.summe_brutto}}</div>
-                </div>
-            </div>
-            
-            {{#if oss_hinweis}}
-            <div style="margin-top: 1.5rem; padding: 1rem; background: #fef3c7; border-radius: 6px; font-size: 0.9rem;">
-                <strong>🇪🇺 OSS-Hinweis:</strong> {{oss_hinweis.text}}<br>
-                {{oss_hinweis.registrierung}}
-            </div>
-            {{/if}}
+                <tr>
+                    <td class="summary-label">Zwischensumme:</td>
+                    <td class="summary-value">€{{zusammenfassung.zwischensumme}}</td>
+                </tr>
+                <tr>
+                    <td class="summary-label">{{versand.bezeichnung}}:</td>
+                    <td class="summary-value">€{{versand.kosten}}</td>
+                </tr>
+                <tr>
+                    <td class="summary-label">Netto-Betrag:</td>
+                    <td class="summary-value">€{{zusammenfassung.summe_netto}}</td>
+                </tr>
+                <tr>
+                    <td class="summary-label">zzgl. MwSt. (20%):</td>
+                    <td class="summary-value">€{{zusammenfassung.ust_20_de}}</td>
+                </tr>
+                <tr class="summary-total">
+                    <td class="summary-label">Rechnungsbetrag:</td>
+                    <td class="summary-value">€{{zusammenfassung.summe_brutto}}</td>
+                </tr>
+            </table>
         </div>
         
-        <!-- Sustainability -->
-        <div class="sustainability-section">
-            <h3>🌱 Nachhaltigkeit & Umwelt</h3>
-            <div class="sustainability-grid">
-                <div class="sustainability-item">
-                    <div class="sustainability-icon">🌍</div>
-                    <div><strong>CO₂-Fußabdruck</strong></div>
-                    <div>{{sustainability.co2_footprint}}</div>
-                </div>
-                <div class="sustainability-item">
-                    <div class="sustainability-icon">🌳</div>
-                    <div><strong>Kompensation</strong></div>
-                    <div>{{sustainability.kompensation}}</div>
-                </div>
-                <div class="sustainability-item">
-                    <div class="sustainability-icon">📦</div>
-                    <div><strong>Verpackung</strong></div>
-                    <div>{{sustainability.verpackung}}</div>
-                </div>
-                <div class="sustainability-item">
-                    <div class="sustainability-icon">🚚</div>
-                    <div><strong>Versand</strong></div>
-                    <div>{{sustainability.versand}}</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Return Section -->
-        <div class="return-section">
-            <div class="return-qr">{{retoure.label_qr}}</div>
-            <h3>↩️ Rückgabe & Retoure</h3>
-            <p><strong>{{retoure.frist}}</strong> - {{retoure.hinweis}}</p>
-            <p style="margin-top: 0.5rem;">
-                <strong>Online-Portal:</strong> <a href="{{retoure.portal_link}}" style="color: #1e40af;">{{retoure.portal_link}}</a>
-            </p>
-        </div>
-        
-        <!-- Cross-Selling -->
-        {{#if cross_selling}}
-        <div class="cross-sell-section">
-            <h3>💡 Das könnte Sie auch interessieren</h3>
-            <div class="cross-sell-grid">
-                {{#each cross_selling}}
-                <div class="cross-sell-item">
-                    <h4>{{bezeichnung}}</h4>
-                    <div class="cross-sell-price">€{{preis}}</div>
-                    <div class="cross-sell-discount">{{rabatt}}</div>
-                </div>
-                {{/each}}
+        <!-- OSS Information -->
+        {{#if oss_hinweis}}
+        <div class="oss-section">
+            <div class="oss-title">One-Stop-Shop (OSS) Verfahren</div>
+            <div class="oss-content">
+                {{oss_hinweis.text}}<br>
+                <strong>{{oss_hinweis.registrierung}}</strong>
             </div>
         </div>
         {{/if}}
         
-        <!-- Newsletter Banner -->
-        {{#unless kunde.newsletter}}
-        <div class="newsletter-banner">
-            <h3>📧 Newsletter abonnieren & 10% sparen!</h3>
-            <p>{{kundenservice.newsletter_hinweis}}</p>
-            <a href="#" class="newsletter-cta">Jetzt anmelden</a>
+        <!-- Shipping & Return Information -->
+        <div class="shipping-return-section">
+            <div class="info-block">
+                <h3>Versand & Lieferung</h3>
+                <div class="info-content">
+                    <div><strong>Versandart:</strong> {{bestellung.versandart}}</div>
+                    <div><strong>Tracking-Nr.:</strong> {{bestellung.tracking}}</div>
+                    <div><strong>Voraussichtl. Lieferung:</strong> {{bestellung.voraussichtliche_lieferung}}</div>
+                    {{#if versand.tracking_url}}
+                    <div style="margin-top: 0.5rem;">
+                        <strong>Sendungsverfolgung:</strong><br>
+                        {{versand.tracking_url}}
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="info-block">
+                <h3>Rückgabe & Widerruf</h3>
+                <div class="info-content">
+                    <div><strong>{{retoure.frist}}</strong></div>
+                    <div>{{retoure.hinweis}}</div>
+                    <div style="margin-top: 0.5rem;">
+                        <strong>Retoure-Portal:</strong><br>
+                        {{retoure.portal_link}}
+                    </div>
+                </div>
+            </div>
         </div>
-        {{/unless}}
         
         <!-- Footer -->
         <div class="footer">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>Kontakt & Service</h4>
-                    <p>📞 {{kundenservice.hotline}}</p>
-                    <p>🕐 {{kundenservice.zeiten}}</p>
-                    <p>💬 {{kundenservice.chat}}</p>
-                    <p>✉️ {{kundenservice.email}}</p>
+                    <h4>Kundendienst</h4>
+                    <div>Telefon: {{kundenservice.hotline}}</div>
+                    <div>Zeiten: {{kundenservice.zeiten}}</div>
+                    <div>E-Mail: {{kundenservice.email}}</div>
+                    {{#if kundenservice.chat}}
+                    <div>{{kundenservice.chat}}</div>
+                    {{/if}}
                 </div>
                 <div class="footer-section">
-                    <h4>Unternehmen</h4>
-                    <p>{{shop.name}}</p>
-                    <p>{{shop.strasse}}</p>
-                    <p>{{shop.plz}} {{shop.ort}}</p>
-                    <p>UID: {{shop.uid}}</p>
-                    <p>{{shop.firmenbuch}}</p>
+                    <h4>Zahlungsinformationen</h4>
+                    <div>{{shop.bank}}</div>
+                    <div>IBAN: {{shop.iban}}</div>
+                    <div>BIC: {{shop.bic}}</div>
+                    <div>Zahlungsziel: 14 Tage netto</div>
                 </div>
                 <div class="footer-section">
-                    <h4>Banking & Payment</h4>
-                    <p>{{shop.bank}}</p>
-                    <p>IBAN: {{shop.iban}}</p>
-                    <p>BIC: {{shop.bic}}</p>
-                    <p>OSS: {{shop.oss_nummer}}</p>
+                    <h4>Rechtliche Angaben</h4>
+                    <div>{{shop.name}}</div>
+                    <div>{{shop.strasse}}</div>
+                    <div>{{shop.plz}} {{shop.ort}}, {{shop.land}}</div>
+                    <div>UID: {{shop.uid}}</div>
+                    <div>{{shop.firmenbuch}}</div>
+                    {{#if shop.eori}}<div>EORI: {{shop.eori}}</div>{{/if}}
+                    {{#if shop.oss_nummer}}<div>OSS: {{shop.oss_nummer}}</div>{{/if}}
                 </div>
                 <div class="footer-section">
-                    <h4>Qualitätssiegel</h4>
+                    <h4>Zertifizierungen</h4>
                     {{#each shop.gütesiegel}}
-                    <p>✓ {{this}}</p>
+                    <div>{{this}}</div>
                     {{/each}}
-                    <p style="margin-top: 1rem;">
-                        <a href="#">{{kundenservice.bewertung}}</a>
-                    </p>
+                    {{#if shop.trustpilot}}
+                    <div style="margin-top: 0.5rem;">Trustpilot: {{shop.trustpilot}}</div>
+                    {{/if}}
                 </div>
             </div>
         </div>

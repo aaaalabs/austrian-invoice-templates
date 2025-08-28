@@ -1,181 +1,161 @@
 {
   "shop": {
-    "name": "AlpenStyle Online GmbH",
-    "claim": "Tiroler Qualität - Direkt zu Ihnen",
-    "strasse": "E-Commerce Park 10",
-    "plz": "6063",
-    "ort": "Rum bei Innsbruck",
+    "name": "Austrian Digital Commerce GmbH",
+    "claim": "Professionelle E-Commerce Lösungen seit 2015",
+    "strasse": "Gewerbepark Digital 15",
+    "plz": "1030",
+    "ort": "Wien",
     "land": "Österreich",
-    "telefon": "+43 512 987654",
-    "email": "service@alpenstyle.at",
-    "web": "www.alpenstyle.at",
-    "uid": "ATU74123698",
-    "eori": "ATEOS7412369800",
-    "oss_nummer": "EU372012345",
-    "firmenbuch": "FN 478965s",
-    "bank": "Erste Bank",
-    "iban": "AT55 2011 1234 5678 9012",
-    "bic": "GIBAATWWXXX",
-    "trustpilot": "4.8/5.0 (2,847 Bewertungen)",
-    "gütesiegel": ["Österreichisches E-Commerce Gütezeichen", "Trusted Shops"]
+    "telefon": "+43 1 234 5678",
+    "email": "buchhaltung@adc-commerce.at",
+    "web": "www.adc-commerce.at",
+    "uid": "ATU67891234",
+    "eori": "ATEOS6789123400",
+    "oss_nummer": "EU372067891",
+    "firmenbuch": "FN 456789w HG Wien",
+    "bank": "Raiffeisenlandesbank NÖ-Wien AG",
+    "iban": "AT32 3200 0000 0012 3456",
+    "bic": "RLNWATWW",
+    "trustpilot": "4.6/5.0 (1,543 Bewertungen)",
+    "gütesiegel": ["Österreichisches E-Commerce Gütezeichen", "Trusted Shops", "SSL-Zertifikat"]
   },
   "kunde": {
-    "kundennummer": "K-458796",
-    "anrede": "Frau",
-    "vorname": "Julia",
-    "nachname": "Bergmann",
-    "email": "julia.bergmann@email.de",
-    "telefon": "+49 170 1234567",
+    "kundennummer": "B2B-87345",
+    "anrede": "Herr",
+    "vorname": "Thomas",
+    "nachname": "Schneider",
+    "email": "einkauf@techsolutions-gmbh.de",
+    "telefon": "+49 89 12345678",
     "rechnungsadresse": {
-      "strasse": "Hauptstraße 42",
-      "plz": "80331",
+      "strasse": "TechSolutions GmbH, Industriestraße 25",
+      "plz": "80339",
       "ort": "München",
       "land": "Deutschland"
     },
     "lieferadresse": {
-      "empfaenger": "Julia Bergmann",
-      "strasse": "Hauptstraße 42",
-      "plz": "80331",
-      "ort": "München",
+      "empfaenger": "TechSolutions GmbH, Lager",
+      "strasse": "Logistikzentrum Nord, Tor 5",
+      "plz": "85386",
+      "ort": "Eching",
       "land": "Deutschland"
     },
     "newsletter": false,
     "kundenkonto": true
   },
   "bestellung": {
-    "bestellnummer": "AS-2025-98745",
-    "bestelldatum": "26.08.2025 14:23",
-    "rechnungsnummer": "RE-2025-45789",
-    "rechnungsdatum": "28.08.2025",
-    "zahlungsart": "PayPal",
+    "bestellnummer": "ADC-2025-18734",
+    "bestelldatum": "24.08.2025 09:15",
+    "rechnungsnummer": "RE-2025-08734",
+    "rechnungsdatum": "26.08.2025",
+    "zahlungsart": "Banküberweisung",
     "zahlungsstatus": "Bezahlt",
-    "versandart": "DHL Express",
-    "tracking": "12345678901234",
-    "voraussichtliche_lieferung": "30.08.2025"
+    "versandart": "DHL Business Paket",
+    "tracking": "00340434161381075847",
+    "voraussichtliche_lieferung": "28.08.2025"
   },
   "artikel": [
     {
-      "bild": "product_001_thumb.jpg",
-      "artikelnummer": "TRA-425",
-      "ean": "9001234567890",
-      "bezeichnung": "Tiroler Wanderrucksack 'Gipfelstürmer' 45L",
-      "farbe": "Alpingrün",
-      "groesse": "L",
-      "menge": 1,
-      "einzelpreis": 189.90,
-      "rabatt_prozent": 20,
-      "rabatt_betrag": 37.98,
-      "zwischensumme": 151.92,
-      "steuersatz": 20,
-      "lagerbestand": "Verfügbar",
-      "herkunft": "Handgefertigt in Tirol"
-    },
-    {
-      "bild": "product_002_thumb.jpg",
-      "artikelnummer": "JAC-782",
-      "ean": "9001234567891",
-      "bezeichnung": "Merino-Wolljacke 'Alpenwärme'",
-      "farbe": "Naturgrau",
-      "groesse": "M",
-      "menge": 1,
-      "einzelpreis": 129.00,
-      "rabatt_prozent": 0,
-      "rabatt_betrag": 0,
-      "zwischensumme": 129.00,
-      "steuersatz": 20,
-      "lagerbestand": "Nur noch 3 Stück",
-      "herkunft": "100% Tiroler Bergschaf-Wolle"
-    },
-    {
-      "bild": "product_003_thumb.jpg",
-      "artikelnummer": "SOC-234",
-      "ean": "9001234567892",
-      "bezeichnung": "Wandersocken 'Bergfex' 3er Pack",
-      "farbe": "Anthrazit",
-      "groesse": "39-42",
+      "bild": "server_rack.jpg",
+      "artikelnummer": "SRV-19U-001",
+      "ean": "4260123456789",
+      "bezeichnung": "19-Zoll Server-Rack 42HE",
+      "farbe": "RAL 7021 Schwarzgrau",
+      "groesse": "42HE",
       "menge": 2,
-      "einzelpreis": 24.90,
-      "rabatt_prozent": 0,
-      "rabatt_betrag": 0,
-      "zwischensumme": 49.80,
+      "einzelpreis": 849.00,
+      "rabatt_prozent": 5,
+      "rabatt_betrag": 42.45,
+      "zwischensumme": 1655.55,
       "steuersatz": 20,
       "lagerbestand": "Verfügbar",
-      "herkunft": "Produziert in Österreich"
+      "herkunft": "Made in Austria, CE-Kennzeichnung"
     },
     {
-      "bild": "gift_wrap.jpg",
-      "artikelnummer": "GIFT-01",
+      "bild": "network_switch.jpg",
+      "artikelnummer": "NET-SW48-GIG",
+      "ean": "4260123456790",
+      "bezeichnung": "Managed Gigabit Switch 48-Port",
+      "farbe": "Schwarz",
+      "groesse": "1HE",
+      "menge": 4,
+      "einzelpreis": 1299.00,
+      "rabatt_prozent": 10,
+      "rabatt_betrag": 519.60,
+      "zwischensumme": 4676.40,
+      "steuersatz": 20,
+      "lagerbestand": "Verfügbar",
+      "herkunft": "Enterprise-Grade, 3 Jahre Garantie"
+    },
+    {
+      "bild": "cable_management.jpg",
+      "artikelnummer": "CBL-MGT-001",
+      "ean": "4260123456791",
+      "bezeichnung": "Kabelmanagement-Set Professional",
+      "farbe": "Schwarz",
+      "groesse": "Standard",
+      "menge": 6,
+      "einzelpreis": 89.90,
+      "rabatt_prozent": 0,
+      "rabatt_betrag": 0,
+      "zwischensumme": 539.40,
+      "steuersatz": 20,
+      "lagerbestand": "Auf Lager",
+      "herkunft": "Feuerschutz-Zertifiziert"
+    },
+    {
+      "bild": "installation_service.jpg",
+      "artikelnummer": "SVC-INST-01",
       "ean": "",
-      "bezeichnung": "Geschenkverpackung Premium",
+      "bezeichnung": "Vor-Ort Installation & Konfiguration",
       "farbe": "",
       "groesse": "",
-      "menge": 1,
-      "einzelpreis": 4.90,
+      "menge": 8,
+      "einzelpreis": 125.00,
       "rabatt_prozent": 0,
       "rabatt_betrag": 0,
-      "zwischensumme": 4.90,
+      "zwischensumme": 1000.00,
       "steuersatz": 20,
       "lagerbestand": "",
-      "herkunft": "Recyceltes Papier"
+      "herkunft": "Zertifizierte Techniker"
     }
   ],
   "gutschein": {
-    "code": "SOMMER2025",
-    "beschreibung": "Sommeraktion -20% auf Wanderrucksäcke",
-    "wert": 37.98
+    "code": "B2B2025",
+    "beschreibung": "Geschäftskunden-Rabatt 5%",
+    "wert": 562.05
   },
   "versand": {
-    "bezeichnung": "DHL Express (1-2 Werktage)",
-    "kosten": 9.90,
+    "bezeichnung": "DHL Business Paket",
+    "kosten": 49.90,
     "steuersatz": 20,
-    "kostenlos_ab": 99.00,
-    "tracking_url": "https://www.dhl.de/track?trackingNumber=12345678901234"
+    "kostenlos_ab": 2500.00,
+    "tracking_url": "https://www.dhl.de/de/geschaeftskunden/paket/sendung-verfolgen.html?piececode=00340434161381075847"
   },
   "zusammenfassung": {
-    "warenwert": 373.70,
-    "rabatte_gesamt": 37.98,
-    "zwischensumme": 335.72,
-    "versandkosten": 9.90,
-    "summe_netto": 288.02,
-    "ust_20_de": 57.60,
-    "summe_brutto": 345.62
+    "warenwert": 8421.35,
+    "rabatte_gesamt": 562.05,
+    "zwischensumme": 7859.30,
+    "versandkosten": 49.90,
+    "summe_netto": 6591.00,
+    "ust_20_de": 1318.20,
+    "summe_brutto": 7909.20
   },
   "oss_hinweis": {
     "text": "Die Umsatzsteuer wird gemäß One-Stop-Shop-Verfahren (OSS) für Deutschland (20%) abgeführt.",
-    "registrierung": "OSS-Registrierungsnummer: EU372012345"
-  },
-  "sustainability": {
-    "co2_footprint": "2.3 kg CO₂",
-    "kompensation": "Klimaneutral durch Aufforstungsprojekt in Tirol",
-    "verpackung": "100% recyclebar, plastikfrei",
-    "versand": "DHL GoGreen klimaneutraler Versand"
+    "registrierung": "OSS-Registrierungsnummer: EU372067891"
   },
   "retoure": {
-    "frist": "30 Tage Rückgaberecht",
-    "portal_link": "https://www.alpenstyle.at/retoure",
-    "label_qr": "GENERATE_RETURN_QR_HERE",
-    "hinweis": "Einfache Rücksendung über unser Online-Portal. QR-Code scannen oder Link nutzen."
+    "frist": "14 Tage Widerrufsrecht",
+    "portal_link": "https://www.adc-commerce.at/b2b/rueckgabe",
+    "label_qr": "",
+    "hinweis": "Gewerbliche Rückgabe über unser B2B-Portal oder telefonische Abwicklung."
   },
-  "cross_selling": [
-    {
-      "artikelnummer": "CAP-567",
-      "bezeichnung": "Wanderhut 'Sonnenschutz'",
-      "preis": 39.90,
-      "rabatt": "Nur für Sie: -15% mit Code KUNDE15"
-    },
-    {
-      "artikelnummer": "FLA-890",
-      "bezeichnung": "Edelstahl-Trinkflasche 1L",
-      "preis": 29.90,
-      "rabatt": "Bundle-Preis: -10% bei Kombination"
-    }
-  ],
   "kundenservice": {
-    "hotline": "+43 512 987654",
-    "zeiten": "Mo-Fr 9-18 Uhr, Sa 9-14 Uhr",
-    "chat": "Live-Chat auf www.alpenstyle.at",
-    "email": "service@alpenstyle.at",
-    "bewertung": "Bewerten Sie uns auf Trustpilot!",
-    "newsletter_hinweis": "10% Rabatt bei Newsletter-Anmeldung auf Ihre nächste Bestellung"
+    "hotline": "+43 1 234 5679",
+    "zeiten": "Mo-Fr 8:00-17:00 Uhr",
+    "chat": "B2B Live-Support auf www.adc-commerce.at",
+    "email": "support@adc-commerce.at",
+    "bewertung": "Trustpilot Business Rating",
+    "newsletter_hinweis": ""
   }
 }
