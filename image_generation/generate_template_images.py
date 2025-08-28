@@ -79,7 +79,7 @@ class TemplateImageGenerator:
                 raise ValueError("OpenAI API key is required. Set OPENAI_API_KEY environment variable.")
             self.client = OpenAI(api_key=api_key)
         
-        self.base_path = Path(__file__).parent
+        self.base_path = Path(__file__).parent.parent  # Go up one level from image_generation/
         self.prompts_file = self.base_path / "TEMPLATEIMAGE_PROMPTS.md"
         self.templates_dir = self.base_path / "templates"
         
@@ -426,7 +426,7 @@ def main():
         report = generator.generate_summary_report()
         print(report)
         
-        # Save report to file
+        # Save report to file (in image_generation subfolder)
         report_file = Path(__file__).parent / f"image_generation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write(report)

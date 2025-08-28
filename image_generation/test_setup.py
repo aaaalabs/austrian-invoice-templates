@@ -58,17 +58,19 @@ def check_files():
     print("\n📁 Checking required files...")
     
     base_path = Path(__file__).parent
+    parent_path = base_path.parent
+    
     required_files = {
-        'TEMPLATEIMAGE_PROMPTS.md': 'Template image prompts',
-        'MEDIA_ASSETS_README.md': 'Media assets specifications',
-        'generate_template_images.py': 'Main generation script',
-        'requirements.txt': 'Dependencies list'
+        'TEMPLATEIMAGE_PROMPTS.md': ('Template image prompts', parent_path),
+        'MEDIA_ASSETS_README.md': ('Media assets specifications', parent_path),
+        'generate_template_images.py': ('Main generation script', base_path),
+        'requirements.txt': ('Dependencies list', base_path)
     }
     
     missing_files = []
     
-    for filename, description in required_files.items():
-        file_path = base_path / filename
+    for filename, (description, file_dir) in required_files.items():
+        file_path = file_dir / filename
         if file_path.exists():
             size = file_path.stat().st_size
             print(f"   ✅ {description}: {filename} ({size:,} bytes)")
@@ -127,7 +129,7 @@ def check_environment():
     """Check environment configuration"""
     print("🔐 Checking environment configuration...")
     
-    # Check for .env file
+    # Check for .env file (in image_generation folder)
     env_file = Path(__file__).parent / '.env'
     env_example = Path(__file__).parent / '.env.example'
     
@@ -168,7 +170,7 @@ def check_directory_structure():
     """Check templates directory structure"""
     print("\n📂 Checking directory structure...")
     
-    templates_dir = Path(__file__).parent / 'templates'
+    templates_dir = Path(__file__).parent.parent / 'templates'
     
     if not templates_dir.exists():
         print("   ℹ️  templates/ directory doesn't exist yet (will be created)")

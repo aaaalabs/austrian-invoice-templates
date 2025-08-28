@@ -30,7 +30,7 @@ Complete collection of 15 industry-specific Austrian invoice templates that comp
 - 🎨 **HTML Template** (`.html`) - Complete template with placeholder variables
 - 📊 **Sample Data** (`.json`) - Realistic industry-specific mock data
 - 🔄 **Creation Guide** (`.md`) - Instructions for generating new invoices
-- 🖼️ **Media Assets** (`/media/`) - Logo, icon, and watermark placeholders
+- 🖼️ **Media Assets** (`/media/`) - Professional logos, icons, and watermarks
 
 ## ⚖️ Legal Compliance
 
@@ -105,11 +105,31 @@ Use `MASTER_TEMPLATE_IMPROVEMENT_INSTRUCTIONS.md` for enhancing templates with:
 - **AI-Powered**: Easy generation via AI prompts
 - **Cost-Effective**: One-time purchase, unlimited use
 
+## 🖼️ Image Generation System
+
+The `/image_generation/` subfolder contains an automated system that generates professional media assets for all templates:
+
+- **45 Professional Images**: Logos, icons, and watermarks for all 15 templates
+- **OpenAI DALL-E Integration**: AI-generated images using detailed prompts
+- **Industry-Specific Branding**: Each template gets custom visual identity
+- **Print-Ready Output**: PNG with transparency, exact dimensions
+- **Cost**: ~$3.60 for all 45 images (~$0.08 each)
+
+```bash
+cd image_generation
+pip install -r requirements.txt
+python generate_template_images.py
+```
+
+See `image_generation/README.md` for detailed setup and usage instructions.
+
 ## 📄 Documentation
 
 - `CLAUDE.md` - Development guidelines and project context
 - `MASTER_TEMPLATE_IMPROVEMENT_INSTRUCTIONS.md` - Enhancement guidelines
 - `MEDIA_ASSETS_README.md` - Asset specifications and requirements
+- `TEMPLATEIMAGE_PROMPTS.md` - AI prompts for generating media assets
+- `image_generation/` - Automated image generation system
 
 ## 🇦🇹 Austrian Legal Context
 
