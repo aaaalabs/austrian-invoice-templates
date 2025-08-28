@@ -121,11 +121,11 @@
   },
   "zusatzinfo": {
     "projektmanager": "Thomas Seiger",
-    "entwicklungszeit": "2 Wochen (20 Stunden - alle vereinbarten August-Stunden)",
-    "technologie_stack": "Make.com No-Code Automation",
-    "erfolge": "Email-Draft-System funktionsfähig, erste Zeiteinsparungen messbar",
-    "naechste_schritte": "Optimierung basierend auf User-Feedback",
-    "compliance": ""
+    "entwicklungszeit": "2 Wochen (20 Stunden – alle vereinbarten August-Stunden)",
+    "technologie_stack": "Make.com + Claude API + Gmail Integration + Notion Database",
+    "wartung": "Erste Optimierungen bereits integriert",
+    "hosting": "EU-Server (Make.com Cloud) mit 99.9% Uptime SLA",
+    "compliance": "DSGVO-konform mit EU-Datenverarbeitung & 12-Monats-Retention"
   },
   "kontakt": {
     "rueckfragen": "Bei Rückfragen stehen wir selbstverständlich jederzeit gerne zur Verfügung.",

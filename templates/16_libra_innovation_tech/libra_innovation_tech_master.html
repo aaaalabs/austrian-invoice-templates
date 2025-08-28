@@ -280,12 +280,12 @@
             font-size: 12pt;
         }
 
-        /* Professional Payment Section */
+        /* Professional Payment Section - Apple Design Inspired */
         .payment-section {
             background: #f8fafc;
             border: 1px solid #EBDBC3;
-            border-radius: 8px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 32px;
             margin-bottom: 30px;
         }
 
@@ -293,54 +293,185 @@
             font-size: 12pt;
             font-weight: 600;
             color: #2c4657;
-            margin-bottom: 15px;
+            margin-bottom: 24px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .payment-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr auto;
-            gap: 20px;
-            align-items: start;
+        /* Stacked Layout for Better Hierarchy */
+        .payment-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
-        .qr-payment {
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border: 1px solid #e2e8f0;
+        /* Payment Amount Highlight - Most Important */
+        .payment-amount-card {
+            background: #2c4657;
+            color: white;
+            padding: 20px 24px;
             border-radius: 8px;
-        }
-
-        .qr-payment img {
-            width: 120px;
-            height: 120px;
+            text-align: center;
             margin-bottom: 8px;
         }
 
-        .qr-payment .qr-label {
-            font-size: 9pt;
-            color: #6b7280;
+        .payment-amount-label {
+            font-size: 11pt;
             font-weight: 500;
+            opacity: 0.8;
+            margin-bottom: 4px;
         }
 
-        .payment-details p {
+        .payment-amount-value {
+            font-size: 24pt;
+            font-weight: 700;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .payment-due-date {
+            font-size: 10pt;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Payment Details Grid - Secondary Priority */
+        .payment-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .payment-terms {
+            padding: 16px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .payment-terms h4 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #2c4657;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .payment-terms p {
             margin-bottom: 6px;
             font-size: 10pt;
+            line-height: 1.4;
         }
 
-        .payment-details strong {
+        .payment-terms strong {
             color: #2c4657;
             font-weight: 600;
         }
 
+        /* Bank Information Card - Scannable IBAN */
         .bank-info {
-            font-family: 'Courier New', monospace;
+            padding: 16px;
             background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .bank-info h4 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #2c4657;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .bank-name {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2c4657;
+            margin-bottom: 12px;
+        }
+
+        /* IBAN Display - Apple's Approach to Financial Data */
+        .bank-details {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+            font-size: 11pt;
+            line-height: 1.6;
+            background: #f9fafb;
             padding: 12px;
             border-radius: 6px;
             border: 1px solid #d1d5db;
+        }
+
+        .iban-display {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+            word-spacing: 2px;
+            /* Prevent breaking - critical for financial data */
+            white-space: nowrap;
+            overflow-x: auto;
+            padding: 2px 0;
+        }
+
+        .bic-display {
+            display: block;
+            color: #4b5563;
+            margin-top: 8px;
+        }
+
+        /* QR Payment Option - Convenience Layer */
+        .qr-payment-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .qr-payment-card {
+            text-align: center;
+            padding: 16px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            max-width: 180px;
+        }
+
+        .qr-payment-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 8px;
+        }
+
+        .qr-label {
+            font-size: 9pt;
+            color: #6b7280;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        /* Mobile-First Responsive Design */
+        @media (max-width: 768px) {
+            .payment-details-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .payment-amount-value {
+                font-size: 20pt;
+            }
+            
+            .iban-display {
+                font-size: 10pt;
+                /* Allow gentle wrapping on very small screens */
+                white-space: normal;
+                word-break: break-all;
+            }
         }
 
         /* Technical Project Information */
@@ -438,8 +569,20 @@
                 grid-template-columns: 1fr;
             }
             
-            .payment-grid {
+            .payment-details-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .payment-amount-value {
+                font-size: 20pt;
+            }
+            
+            .iban-display {
+                font-size: 10pt;
+                /* Allow gentle wrapping on very small screens */
+                white-space: normal;
+                word-break: break-all;
             }
             
             .project-details {
@@ -457,7 +600,7 @@
         <!-- Modern Professional Header -->
         <header class="header">
             <div class="company-branding">
-                <img src="media/icon_square.png" alt="{{firma.name}} Icon" class="company-logo">
+                <img src="./media/icon_square.png" alt="{{firma.name}} Icon" class="company-logo">
                 <div class="company-info">
                     <h1 class="company-name">{{firma.name}}</h1>
                     <div class="company-claim">{{firma.claim}}</div>
@@ -512,12 +655,12 @@
             <table class="services-table">
                 <thead>
                     <tr>
-                        <th style="width: 8%">Pos.</th>
-                        <th style="width: 45%">Beschreibung</th>
-                        <th style="width: 15%">Zeitraum</th>
+                        <th style="width: 6%">Pos.</th>
+                        <th style="width: 40%">Beschreibung</th>
+                        <th style="width: 14%">Zeitraum</th>
                         <th style="width: 12%">Abrechnung</th>
                         <th style="width: 8%">USt</th>
-                        <th style="width: 12%">Gesamt</th>
+                        <th style="width: 20%">Gesamt</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -577,20 +720,40 @@
         <!-- Professional Payment Section -->
         <section class="payment-section">
             <div class="payment-title">Zahlungsinformationen</div>
-            <div class="payment-grid">
-                <div class="payment-details">
-                    <p><strong>Zahlungsziel:</strong> {{zahlungsinfo.zahlungsziel}}</p>
-                    <p><strong>Fällig am:</strong> {{zahlungsinfo.faelligkeitsdatum}}</p>
-                    <p><strong>Verwendungszweck:</strong> {{zahlungsinfo.verwendungszweck}}</p>
+            
+            <div class="payment-container">
+                <!-- Primary: Amount & Due Date -->
+                <div class="payment-amount-card">
+                    <div class="payment-amount-label">Rechnungsbetrag</div>
+                    <div class="payment-amount-value">€ {{zusammenfassung.summe_brutto}}</div>
+                    <div class="payment-due-date">Fällig am {{zahlungsinfo.faelligkeitsdatum}}</div>
                 </div>
-                <div class="bank-info">
-                    <p><strong>{{zahlungsinfo.bank}}</strong></p>
-                    <p>IBAN: {{zahlungsinfo.iban}}</p>
-                    <p>BIC: {{zahlungsinfo.bic}}</p>
+
+                <!-- Secondary: Payment Terms & Bank Details -->
+                <div class="payment-details-grid">
+                    <div class="payment-terms">
+                        <h4>Zahlungsbedingungen</h4>
+                        <p><strong>Zahlungsziel:</strong> {{zahlungsinfo.zahlungsziel}}</p>
+                        <p><strong>Fälligkeitsdatum:</strong> {{zahlungsinfo.faelligkeitsdatum}}</p>
+                        <p><strong>Verwendungszweck:</strong> {{zahlungsinfo.verwendungszweck}}</p>
+                    </div>
+                    
+                    <div class="bank-info">
+                        <h4>Bankverbindung</h4>
+                        <div class="bank-name">{{zahlungsinfo.bank}}</div>
+                        <div class="bank-details">
+                            <span class="iban-display">IBAN: {{zahlungsinfo.iban}}</span>
+                            <span class="bic-display">BIC: {{zahlungsinfo.bic}}</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="qr-payment">
-                    <img src="../media/qr_payment.png" alt="EPC QR Code für Sofort-Überweisung">
-                    <div class="qr-label">QR Code scannen<br>für Sofort-Zahlung</div>
+
+                <!-- Tertiary: QR Payment Option -->
+                <div class="qr-payment-section">
+                    <div class="qr-payment-card">
+                        <img src="./media/qr_payment.png" alt="QR Code für Instant Payment">
+                        <div class="qr-label">QR-Code scannen<br>für Instant Payment</div>
+                    </div>
                 </div>
             </div>
         </section>
