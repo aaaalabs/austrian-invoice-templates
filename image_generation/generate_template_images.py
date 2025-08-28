@@ -26,6 +26,8 @@ import json
 import time
 import argparse
 import requests
+import base64
+from io import BytesIO
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
@@ -83,11 +85,52 @@ class TemplateImageGenerator:
         self.prompts_file = self.base_path / "TEMPLATEIMAGE_PROMPTS.md"
         self.templates_dir = self.base_path / "templates"
         
-        # Image type specifications
+        # Image type specifications optimized for OpenAI native aspect ratios
+        # Perfect 2:1 downscaling from generation to final sizes
         self.image_specs = {
-            'logo': {'dimensions': (150, 60), 'filename': 'logo_rectangle.png'},
-            'icon': {'dimensions': (64, 64), 'filename': 'icon_square.png'},
-            'watermark': {'dimensions': (300, 300), 'filename': 'watermark.png'}
+            'logo': {
+                'dimensions': (720, 480),  # 1.5:1 ratio matches OpenAI's landscape format
+                'filename': 'logo_rectangle.png',
+                'model': 'gpt-image-1',
+                'generation_size': '1536x1024',  # Native landscape - perfect 2:1 downscale
+                'quality': 'high',  # Best quality for business logos
+                'output_format': 'png'
+            },
+            'icon': {
+                'dimensions': (512, 512),  # 1:1 ratio matches OpenAI's square format
+                'filename': 'icon_square.png',
+                'model': 'gpt-image-1',
+                'generation_size': '1024x1024',  # Native square - perfect 2:1 downscale
+                'quality': 'high',  # High quality for scalable icons
+                'output_format': 'png'
+            },
+            'watermark': {
+                'dimensions': (480, 720),  # 0.67:1 ratio matches OpenAI's portrait format
+                'filename': 'watermark.png',
+                'model': 'gpt-image-1',
+                'generation_size': '1024x1536',  # Native portrait - perfect 2:1 downscale
+                'quality': 'medium',  # Sufficient quality for background elements
+                'output_format': 'png'
+            }
+        }
+        
+        # Template-specific file requirements based on actual HTML template usage
+        self.template_requirements = {
+            '01': ['logo'],           # handwerker_classic - only uses logo
+            '02': [],                 # solar_pv_modern - only uses qr.png (not generated)
+            '03': [],                 # it_professional - no media files used
+            '04': [],                 # kleinunternehmer_minimal - no media files used
+            '05': [],                 # b2b_reverse_charge - no media files used
+            '06': [],                 # beratung_premium - no media files used
+            '07': [],                 # tourismus_dreisprachig - no media files used
+            '08': [],                 # bau_vob_abschlag - no media files used
+            '09': [],                 # freelancer_creative - no media files used
+            '10': [],                 # ecommerce_modern - no media files used
+            '11': ['watermark'],      # rechtsanwalt_formal - only uses watermark
+            '12': ['logo'],           # gastgewerbe_restaurant - only uses logo
+            '13': ['logo'],           # immobilienverwaltung - uses logo + qr.png (not generated)
+            '14': [],                 # energiegemeinschaft_neu - only uses qr.png (not generated)
+            '15': []                  # startup_minimalist - no media files used
         }
         
         self.results: List[GenerationResult] = []
@@ -105,7 +148,7 @@ class TemplateImageGenerator:
         
         # Regex patterns for parsing
         template_pattern = r'## Template (\d+): (.+?) \((.+?)\)\n\n\*\*Mock Business Styleguide:\*\*\n- Company: (.+?)\n- Industry: (.+?)\n- Location: (.+?)\n'
-        prompt_pattern = r'### (Logo Rectangle|Icon Square|Watermark) \(\d+x\d+px\)\n```\n(.+?)\n```'
+        prompt_pattern = r'### (Logo Rectangle|Icon Square|Watermark) \(\d+x\d+px\)\s*\n```\n(.+?)\n```'
         
         # Find all templates
         template_matches = re.finditer(template_pattern, content, re.MULTILINE | re.DOTALL)
@@ -142,7 +185,13 @@ class TemplateImageGenerator:
                 if not image_type:
                     continue
                 
-                # Create output path
+                # Check if this template actually needs this image type
+                required_files = self.template_requirements.get(template_num, [])
+                if image_type not in required_files:
+                    print(f"   ℹ️  Skipping {image_type} for Template {template_num} - not used in HTML")
+                    continue
+                
+                # Create output path (generate to media folder, HTML templates will reference them)
                 template_dir = self.templates_dir / f"{template_num.zfill(2)}_{template_name.lower().replace(' ', '_').replace('-', '_')}"
                 media_dir = template_dir / "media"
                 output_path = media_dir / self.image_specs[image_type]['filename']
@@ -181,7 +230,7 @@ class TemplateImageGenerator:
         
         print(f"\n🎨 Generating {spec.image_type} for Template {spec.template_number}: {spec.template_name}")
         print(f"   Company: {spec.company_name}")
-        print(f"   Dimensions: {spec.dimensions[0]}x{spec.dimensions[1]}px")
+        print(f"   Output Dimensions: {spec.dimensions[0]}x{spec.dimensions[1]}px (4x final size)")
         
         if self.dry_run:
             print(f"   [DRY RUN] Would generate with prompt: {spec.prompt[:100]}...")
@@ -192,25 +241,43 @@ class TemplateImageGenerator:
             )
         
         try:
-            # Enhance prompt with technical specifications
-            enhanced_prompt = f"{spec.prompt}, exactly {spec.dimensions[0]}x{spec.dimensions[1]} pixels, high quality, professional design, transparent background, PNG format"
+            # Get model specifications for this image type
+            model_spec = self.image_specs[spec.image_type]
             
-            print(f"   API Call: Creating image...")
+            # Optimize prompts for native OpenAI aspect ratios
+            if spec.image_type == 'logo':
+                enhanced_prompt = f"{spec.prompt}. Professional business logo in horizontal banner format, company name and elements spread across full width, landscape orientation, bold readable text fills horizontal space, clean corporate design, white or transparent background, suitable for business documents"
+            elif spec.image_type == 'icon':
+                enhanced_prompt = f"{spec.prompt}. Professional business icon, perfect square centered composition, clean minimal design, transparent or white background, high-quality scalable icon suitable for professional use"
+            else:  # watermark
+                enhanced_prompt = f"{spec.prompt}. Elegant vertical watermark design, portrait orientation, subtle pattern with professional opacity, seamless background element, minimal visual impact while maintaining brand presence, suitable for document backgrounds"
             
+            print(f"   API Call: Creating image with {model_spec['model']}...")
+            
+            # Generate image using gpt-image-1 (latest OpenAI model)
+            # Note: gpt-image-1 always returns base64-encoded images
             response = self.client.images.generate(
-                model="dall-e-3",
+                model="gpt-image-1",
                 prompt=enhanced_prompt,
-                size="1024x1024",  # DALL-E 3 standard size, we'll resize
-                quality="hd",
-                n=1,
-                response_format="url"
+                size=model_spec['generation_size'],
+                quality=model_spec['quality'],
+                output_format=model_spec['output_format'],
+                n=1
             )
             
-            image_url = response.data[0].url
-            print(f"   ✅ Generated successfully: {image_url}")
-            
-            # Download and resize image
-            local_path = self.download_and_process_image(image_url, spec)
+            # gpt-image-1 returns base64-encoded images
+            if hasattr(response.data[0], 'b64_json'):
+                image_data = response.data[0].b64_json
+                print(f"   ✅ Generated successfully (base64 data)")
+                
+                # Process base64 image
+                local_path = self.process_base64_image(image_data, spec)
+                image_url = None  # No URL for base64 data
+            else:
+                # Fallback for URL-based responses
+                image_url = response.data[0].url
+                print(f"   ✅ Generated successfully: {image_url}")
+                local_path = self.download_and_process_image(image_url, spec)
             
             generation_time = time.time() - start_time
             
@@ -254,8 +321,10 @@ class TemplateImageGenerator:
             if img.mode != 'RGBA':
                 img = img.convert('RGBA')
             
-            # Resize to exact specifications
+            # Direct 2:1 downscaling - aspect ratios now perfectly match OpenAI's native formats
+            # 1536×1024 → 720×480, 1024×1024 → 512×512, 1024×1536 → 480×720
             resized_img = img.resize(spec.dimensions, Image.Resampling.LANCZOS)
+            print(f"   📐 Perfect 2:1 downscale: {img.size[0]}×{img.size[1]} → {spec.dimensions[0]}×{spec.dimensions[1]}")
             
             # For watermarks, ensure proper opacity
             if spec.image_type == 'watermark':
@@ -285,6 +354,80 @@ class TemplateImageGenerator:
                     watermark.putpixel((x, y), (r, g, b, new_alpha))
         
         return watermark
+    
+    def smart_resize_with_fill_ratio(self, img: Image.Image, target_dimensions: Tuple[int, int], fill_ratio: float = 0.9) -> Image.Image:
+        """Smart resize with configurable fill ratio to maximize space usage while maintaining aspect ratio"""
+        
+        target_width, target_height = target_dimensions
+        current_width, current_height = img.size
+        
+        # Calculate aspect ratios
+        target_ratio = target_width / target_height
+        current_ratio = current_width / current_height
+        
+        print(f"   🎨 Smart resizing: {current_width}x{current_height} → {target_width}x{target_height}")
+        print(f"   📏 Aspect ratios: source={current_ratio:.2f}, target={target_ratio:.2f}, fill_ratio={fill_ratio}")
+        
+        # Calculate available space considering fill ratio
+        available_width = int(target_width * fill_ratio)
+        available_height = int(target_height * fill_ratio)
+        
+        # Calculate scaling to fit within available bounds while maintaining aspect ratio
+        scale_by_width = available_width / current_width
+        scale_by_height = available_height / current_height
+        
+        # Use the smaller scale to ensure it fits within bounds
+        scale = min(scale_by_width, scale_by_height)
+        
+        # Calculate new dimensions
+        new_width = int(current_width * scale)
+        new_height = int(current_height * scale)
+        
+        # Create result image with target dimensions and transparent background
+        result = Image.new('RGBA', target_dimensions, (255, 255, 255, 0))
+        
+        # Calculate centering offsets
+        x_offset = (target_width - new_width) // 2
+        y_offset = (target_height - new_height) // 2
+        
+        # Resize the image maintaining aspect ratio
+        resized_img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        
+        # Paste the resized image onto the result canvas
+        result.paste(resized_img, (x_offset, y_offset))
+        
+        print(f"   ✂️  Optimized fit: {new_width}x{new_height} (scale={scale:.2f}, {(new_width*new_height)/(target_width*target_height)*100:.1f}% space used)")
+        
+        return result
+    
+    def process_base64_image(self, image_data: str, spec: ImageSpec) -> Path:
+        """Process base64-encoded image from gpt-image-1"""
+        
+        print(f"   📥 Processing base64 image data...")
+        
+        # Decode base64 image data
+        image_bytes = base64.b64decode(image_data)
+        
+        # Create Image from bytes
+        with Image.open(BytesIO(image_bytes)) as img:
+            # Ensure RGBA mode for transparency
+            if img.mode != 'RGBA':
+                img = img.convert('RGBA')
+            
+            # Direct 2:1 downscaling - aspect ratios now perfectly match OpenAI's native formats
+            # 1536×1024 → 720×480, 1024×1024 → 512×512, 1024×1536 → 480×720
+            resized_img = img.resize(spec.dimensions, Image.Resampling.LANCZOS)
+            print(f"   📐 Perfect 2:1 downscale: {img.size[0]}×{img.size[1]} → {spec.dimensions[0]}×{spec.dimensions[1]}")
+            
+            # For watermarks, ensure proper opacity
+            if spec.image_type == 'watermark':
+                resized_img = self.apply_watermark_opacity(resized_img)
+            
+            # Save final image
+            resized_img.save(spec.output_path, 'PNG', optimize=True)
+        
+        print(f"   💾 Saved to: {spec.output_path}")
+        return spec.output_path
     
     def generate_batch(self, specs: List[ImageSpec], delay: float = 2.0) -> List[GenerationResult]:
         """Generate images in batch with rate limiting"""

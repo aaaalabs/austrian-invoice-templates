@@ -1,0 +1,508 @@
+{
+  "summary": {
+    "total": 15,
+    "passed": 15,
+    "failed": 0,
+    "warnings": 15,
+    "startTime": "2025-08-28T10:25:00.603Z",
+    "endTime": "2025-08-28T10:25:11.250Z"
+  },
+  "tests": {
+    "02_solar_pv_modern": {
+      "templateId": "02_solar_pv_modern",
+      "templateName": "Solar PV Modern",
+      "hasQR": true,
+      "priority": "critical",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 800,
+          "hasHeader": true,
+          "hasContent": true,
+          "documentHeight": 3771,
+          "viewportWidth": 1200
+        },
+        "qrElements": 1,
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(51, 51, 51)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/02_solar_pv_modern_desktop.png"
+      ],
+      "duration": 871
+    },
+    "13_immobilienverwaltung": {
+      "templateId": "13_immobilienverwaltung",
+      "templateName": "Immobilienverwaltung",
+      "hasQR": true,
+      "priority": "critical",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 1,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 800,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 2309,
+          "viewportWidth": 1200
+        },
+        "qrElements": 1,
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(44, 62, 80)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/13_immobilienverwaltung_desktop.png"
+      ],
+      "duration": 665
+    },
+    "14_energiegemeinschaft_neu": {
+      "templateId": "14_energiegemeinschaft_neu",
+      "templateName": "Energiegemeinschaft Neu",
+      "hasQR": true,
+      "priority": "critical",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 1,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 760,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 1777,
+          "viewportWidth": 1200
+        },
+        "qrElements": 1,
+        "printCompatibility": {
+          "backgroundColor": "rgb(254, 254, 254)",
+          "color": "rgb(45, 55, 72)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/14_energiegemeinschaft_neu_desktop.png"
+      ],
+      "duration": 641
+    },
+    "06_beratung_premium": {
+      "templateId": "06_beratung_premium",
+      "templateName": "Beratung Premium",
+      "hasQR": false,
+      "priority": "high",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 643,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 4890,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(44, 44, 44)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/06_beratung_premium_desktop.png"
+      ],
+      "duration": 692
+    },
+    "11_rechtsanwalt_formal": {
+      "templateId": "11_rechtsanwalt_formal",
+      "templateName": "Rechtsanwalt Formal",
+      "hasQR": false,
+      "priority": "high",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "Logo 1: Display size 214x121px (expected 150x60px)",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 1,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": true,
+          "documentHeight": 2863,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/11_rechtsanwalt_formal_desktop.png"
+      ],
+      "duration": 638
+    },
+    "03_it_professional": {
+      "templateId": "03_it_professional",
+      "templateName": "IT Professional",
+      "hasQR": false,
+      "priority": "high",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "Logo 1: Display size 257x155px (expected 150x60px)",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 1,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 3307,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/03_it_professional_desktop.png"
+      ],
+      "duration": 668
+    },
+    "01_handwerker_classic": {
+      "templateId": "01_handwerker_classic",
+      "templateName": "Handwerker Classic",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "Logo 1: Missing background-size property for proper scaling",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 2,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 2077,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/01_handwerker_classic_desktop.png"
+      ],
+      "duration": 653
+    },
+    "04_kleinunternehmer_minimal": {
+      "templateId": "04_kleinunternehmer_minimal",
+      "templateName": "Kleinunternehmer Minimal",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 643,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 1682,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/04_kleinunternehmer_minimal_desktop.png"
+      ],
+      "duration": 635
+    },
+    "08_bau_vob_abschlag": {
+      "templateId": "08_bau_vob_abschlag",
+      "templateName": "Bau VOB Abschlag",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 1600,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/08_bau_vob_abschlag_desktop.png"
+      ],
+      "duration": 632
+    },
+    "12_gastgewerbe_restaurant": {
+      "templateId": "12_gastgewerbe_restaurant",
+      "templateName": "Gastgewerbe Restaurant",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "Logo 1: Display size 120x60px (expected 150x60px)",
+        "Logo 1: Missing background-size property for proper scaling",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 1,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 2065,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/12_gastgewerbe_restaurant_desktop.png"
+      ],
+      "duration": 644
+    },
+    "05_b2b_reverse_charge": {
+      "templateId": "05_b2b_reverse_charge",
+      "templateName": "B2B Reverse Charge",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 643,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 3077,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(51, 51, 51)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/05_b2b_reverse_charge_desktop.png"
+      ],
+      "duration": 681
+    },
+    "09_freelancer_creative": {
+      "templateId": "09_freelancer_creative",
+      "templateName": "Freelancer Creative",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": true,
+          "documentHeight": 5049,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/09_freelancer_creative_desktop.png"
+      ],
+      "duration": 679
+    },
+    "10_ecommerce_modern": {
+      "templateId": "10_ecommerce_modern",
+      "templateName": "E-Commerce Modern",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 2176,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/10_ecommerce_modern_desktop.png"
+      ],
+      "duration": 638
+    },
+    "15_startup_minimalist": {
+      "templateId": "15_startup_minimalist",
+      "templateName": "Startup Minimalist",
+      "hasQR": false,
+      "priority": "medium",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 800,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 2819,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(30, 41, 59)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/15_startup_minimalist_desktop.png"
+      ],
+      "duration": 656
+    },
+    "07_tourismus_dreisprachig": {
+      "templateId": "07_tourismus_dreisprachig",
+      "templateName": "Tourismus Dreisprachig",
+      "hasQR": false,
+      "priority": "low",
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "No logo elements found in template",
+        "Template contains colored backgrounds that may not print well"
+      ],
+      "metrics": {
+        "logoElements": 0,
+        "layout": {
+          "hasContainer": true,
+          "containerWidth": 794,
+          "hasHeader": true,
+          "hasContent": false,
+          "documentHeight": 2430,
+          "viewportWidth": 1200
+        },
+        "printCompatibility": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(44, 62, 80)",
+          "hasColoredBackgrounds": true
+        }
+      },
+      "screenshots": [
+        "/Users/libra/GitHub/_quicks/_invoices/screenshots/layout_integrity/07_tourismus_dreisprachig_desktop.png"
+      ],
+      "duration": 1056
+    }
+  },
+  "analysis": {
+    "criticalIssues": [],
+    "commonIssues": {
+      "No logo elements found in template": 9,
+      "Template contains colored backgrounds that may not print well": 15,
+      "Logo 1: Display size 214x121px (expected 150x60px)": 1,
+      "Logo 1: Display size 257x155px (expected 150x60px)": 1,
+      "Logo 1: Missing background-size property for proper scaling": 2,
+      "Logo 1: Display size 120x60px (expected 150x60px)": 1
+    },
+    "recommendations": [
+      "Address common issues affecting 2 or more templates"
+    ]
+  }
+}

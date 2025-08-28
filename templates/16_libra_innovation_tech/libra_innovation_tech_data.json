@@ -1,0 +1,106 @@
+{
+  "firma": {
+    "name": "Libra Innovation FlexCo",
+    "claim": "Automatisierung ohne IT-Abteilung",
+    "strasse": "Adamgasse 23",
+    "plz": "6020",
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "telefon": "+43 (0) 660 1238172",
+    "email": "contact@libralab.ai",
+    "web": "https://libralab.ai",
+    "uid": "ATU74236828",
+    "firmenbuch": "FN503145w",
+    "gericht": "Landesgericht Innsbruck",
+    "geschaeftsfuehrer": "Thomas Seiger",
+    "iban": "LT 7032 5006 27125 26400",
+    "bic": "REVOLT21",
+    "bank": "Revolut Bank",
+    "konzession": "Unternehmensberatung gemäß GewO",
+    "versicherung": "Berufshaftpflicht: Allianz, Police Nr. BH-2024-TI-8901"
+  },
+  "rechnung": {
+    "nummer": "A1043",
+    "datum": "21.05.2025",
+    "betreff": "Web Development Services - bürgerstrom.tirol Plattform",
+    "leistungszeitraum": "2025/04 - 2025/05",
+    "zahlungsfrist": "7 Tage netto",
+    "faelligkeitsdatum": "28.05.2025",
+    "ansprechpartner": "Thomas Seiger",
+    "projekt_referenz": "BS-Platform-2025-Q2"
+  },
+  "kunde": {
+    "name": "Mission-Solar GmbH",
+    "ansprechpartner": "Thomas Seiger",
+    "strasse": "Adamgasse 23",
+    "plz": "6020", 
+    "ort": "Innsbruck",
+    "land": "Österreich",
+    "email": "contact@mission-solar.at",
+    "uid": "ATU12345678"
+  },
+  "projekt": {
+    "name": "bürgerstrom.tirol Platform Relaunch",
+    "typ": "Full-Stack Web Development",
+    "technologien": ["React", "Node.js", "PostgreSQL", "TypeScript"],
+    "umfang": "Custom Code Development mit kompletter Backend-Integration",
+    "deliverables": ["Responsive Web Platform", "Admin Dashboard", "User Authentication", "Email System", "Database Integration"]
+  },
+  "positionen": [
+    {
+      "pos": 1,
+      "kategorie": "Platform Development",
+      "beschreibung": "Entwicklung der Website/Plattform bürgerstrom.tirol",
+      "details": "Custom Code Relaunch mit Kartenansicht, Datenbank, User Login, Email-Versand und Admin Dashboard",
+      "technische_specs": "React Frontend, Node.js Backend, PostgreSQL Datenbank, responsive Design",
+      "zeitraum": "18.4.-18.5.2025",
+      "stunden": "-",
+      "abrechnungsart": "Pauschal",
+      "einzelpreis": "-",
+      "gesamt": "3800.00",
+      "steuersatz": "20"
+    },
+    {
+      "pos": 2,
+      "kategorie": "Module Development", 
+      "beschreibung": "Entwicklung rechner.bürgerstrom.tirol",
+      "details": "Eigenständiges Zusatzmodul & Leadmagnet für die dynamische Berechnung von potenziellen Einsparungen von EEG Teilnehmern",
+      "technische_specs": "Vue.js Calculator, API Integration, responsive UI/UX Design",
+      "zeitraum": "18.4.-18.5.2025",
+      "stunden": "-",
+      "abrechnungsart": "Pauschal",
+      "einzelpreis": "-",
+      "gesamt": "1200.00",
+      "steuersatz": "20"
+    }
+  ],
+  "zusammenfassung": {
+    "summe_netto": "5000.00",
+    "ust_20": "1000.00",
+    "summe_brutto": "6000.00",
+    "waehrung": "EUR"
+  },
+  "zahlungsinfo": {
+    "zahlungsziel": "7 Tage netto",
+    "faelligkeitsdatum": "28.05.2025",
+    "iban": "LT 7032 5006 27125 26400",
+    "bic": "REVOLT21",
+    "bank": "Revolut Bank",
+    "verwendungszweck": "A1043 bürgerstrom.tirol"
+  },
+  "zusatzinfo": {
+    "projektmanager": "Thomas Seiger",
+    "entwicklungszeit": "4 Wochen",
+    "technologie_stack": "Modern JavaScript/TypeScript Full-Stack",
+    "wartung": "3 Monate kostenlose Bugfixes inklusive",
+    "hosting": "Deployment auf Vercel/EU-Server",
+    "compliance": "DSGVO-konforme Datenverarbeitung"
+  },
+  "kontakt": {
+    "rueckfragen": "Bei Rückfragen stehen wir selbstverständlich jederzeit gerne zur Verfügung.",
+    "ansprechpartner": "Thomas Seiger",
+    "direkt_telefon": "+43 (0) 660 1238172",
+    "direkt_email": "contact@libralab.ai",
+    "support_email": "support@libralab.ai"
+  }
+}

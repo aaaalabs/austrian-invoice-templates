@@ -1,0 +1,24 @@
+
+📄 Austrian Invoice Template A4 PDF Generation Report
+=================================================================
+
+📊 Summary Statistics:
+   Total templates: 1
+   ✅ Successful PDFs: 1
+   ❌ Failed: 0
+   🎯 Success rate: 100.0%
+   
+⏱️  Performance:
+   Total time: 1.0 seconds
+   Average per PDF: 1.0 seconds
+   
+📁 File Statistics:
+   Total PDF size: 405,187 bytes (0.4 MB)
+   Average PDF size: 405,187 bytes (396 KB)
+   
+📋 Generated A4 PDFs:
+   ✅ Template 01: Handwerker Classic (405,187 bytes)
+      📄 handwerker_classic_example.pdf
+
+🖨️  Print Quality: A4 format (210×297mm), 300 DPI, Austrian business margins
+🕐 Generated at: 2025-08-28 13:36:04

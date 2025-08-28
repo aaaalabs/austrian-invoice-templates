@@ -1,7 +1,7 @@
-# Austrian Invoice Template Image Generator Dependencies
+# Austrian Invoice Template Generator Dependencies
 # Install with: pip install -r requirements.txt
 
-# OpenAI API for DALL-E image generation
+# OpenAI API for gpt-image-1 image generation
 openai>=1.35.0
 
 # HTTP requests for image downloading
@@ -12,6 +12,9 @@ Pillow>=10.0.0
 
 # Environment variable management
 python-dotenv>=1.0.0
+
+# Browser automation for PDF generation
+playwright>=1.40.0
 
 # Optional: Progress bars and better CLI experience
 tqdm>=4.65.0

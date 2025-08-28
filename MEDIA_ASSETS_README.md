@@ -5,26 +5,29 @@ Each template folder contains a `/media/` subfolder with three placeholder image
 
 ## Required Files per Template
 
-### 1. `icon_square.png` (64x64px)
-- **Purpose**: Small square icon for headers, favicons, or compact branding
-- **Usage**: Used in mobile views, as favicon, or small brand elements
+### 1. `icon_square.png` (512x512px)
+- **Purpose**: High-resolution square icon for headers, favicons, or branding elements
+- **Usage**: Used in mobile views, as favicon, or brand elements (scalable down to any size)
 - **Format**: PNG with transparency support
-- **Size**: 64x64 pixels exactly
+- **Size**: 512x512 pixels (8x original specification for maximum quality)
 - **Style**: Should match the industry aesthetic of the template
+- **Quality**: High-resolution for crisp display at all sizes
 
-### 2. `logo_rectangle.png` (150x60px)
-- **Purpose**: Main company logo for invoice headers
-- **Usage**: Primary branding element in invoice header (top right position)
+### 2. `logo_rectangle.png` (720x480px)
+- **Purpose**: High-resolution main company logo for invoice headers
+- **Usage**: Primary branding element in invoice header (optimized 1.5:1 aspect ratio)
 - **Format**: PNG with transparency support
-- **Size**: 150x60 pixels exactly
-- **Style**: Professional, print-friendly, high contrast
+- **Size**: 720x480 pixels (optimized for OpenAI's native landscape format)
+- **Style**: Professional, print-friendly, high contrast, banner-style layout
+- **Quality**: High-resolution for professional business documents
 
-### 3. `watermark.png` (300x300px)
-- **Purpose**: Optional semi-transparent background watermark
-- **Usage**: Subtle branding element behind invoice content
-- **Format**: PNG with 10-20% opacity
-- **Size**: 300x300 pixels (scalable)
-- **Style**: Very subtle, should not interfere with text readability
+### 3. `watermark.png` (480x720px)
+- **Purpose**: High-resolution portrait watermark for background branding
+- **Usage**: Subtle vertical branding element behind invoice content
+- **Format**: PNG with 10-20% opacity and transparency support
+- **Size**: 480x720 pixels (portrait orientation, 0.67:1 aspect ratio)
+- **Style**: Very subtle, elegant vertical design, should not interfere with text readability
+- **Quality**: Medium-high resolution with proper opacity control
 
 ## Industry-Specific Styling Guidelines
 
@@ -55,16 +58,42 @@ Files must be named exactly as specified:
 - `watermark.png`
 
 ## Integration in HTML Templates
-Images are referenced in templates using relative paths:
+Images are referenced in templates using relative paths (with responsive scaling):
 ```html
-<!-- Logo in header -->
-<img src="./media/logo_rectangle.png" alt="Company Logo" width="150" height="60">
+<!-- Logo in header (high-res, scales down) -->
+<img src="./media/logo_rectangle.png" alt="Company Logo" width="180" height="120" style="max-width: 100%; height: auto;">
 
-<!-- Background watermark -->
+<!-- Background watermark (portrait orientation) -->
 background-image: url('./media/watermark.png');
+background-size: contain;
+background-repeat: no-repeat;
 
-<!-- Icon usage -->
-<img src="./media/icon_square.png" alt="Icon" width="32" height="32">
+<!-- Icon usage (high-res, scales down) -->
+<img src="./media/icon_square.png" alt="Icon" width="64" height="64" style="max-width: 100%; height: auto;">
+```
+
+### Responsive Scaling Examples
+```css
+/* Logo responsive scaling */
+.invoice-logo {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Icon scaling for different contexts */
+.header-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* Watermark background */
+.invoice-watermark {
+    background-image: url('./media/watermark.png');
+    background-size: 200px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+}
 ```
 
 ## Print Considerations

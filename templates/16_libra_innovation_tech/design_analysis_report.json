@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-08-28T11:23:20.946Z",
+  "dimensions": {
+    "header": {
+      "x": 220,
+      "y": 20,
+      "width": 760,
+      "height": 200.625
+    },
+    "logo": {
+      "x": 220,
+      "y": 76.3125,
+      "width": 150,
+      "height": 60
+    },
+    "invoiceBadge": {
+      "x": 779.34375,
+      "y": 20,
+      "width": 200.65625,
+      "height": 112
+    }
+  },
+  "styles": {
+    "header": {
+      "display": "flex",
+      "justifyContent": "space-between",
+      "alignItems": "flex-start",
+      "marginBottom": "40px",
+      "paddingBottom": "25px",
+      "borderBottom": "3px solid rgb(26, 54, 93)"
+    },
+    "logo": {
+      "width": "150px",
+      "height": "60px",
+      "objectFit": "contain"
+    }
+  },
+  "logoStatus": {
+    "complete": true,
+    "naturalWidth": 600,
+    "naturalHeight": 240,
+    "src": "file:///Users/libra/GitHub/_quicks/_invoices/templates/16_libra_innovation_tech/media/logo_rectangle.png"
+  },
+  "colorScheme": {
+    "detectedColors": [
+      "rgb(0, 0, 0)",
+      "rgb(31, 41, 55)",
+      "rgb(255, 255, 255)",
+      "rgb(31, 41, 55) rgb(31, 41, 55) rgb(26, 54, 93)",
+      "rgb(26, 54, 93)",
+      "rgb(37, 99, 235)",
+      "rgb(75, 85, 99)",
+      "rgb(248, 250, 252)",
+      "rgb(226, 232, 240)",
+      "rgb(31, 41, 55) rgb(31, 41, 55) rgb(31, 41, 55) rgb(37, 99, 235)",
+      "rgb(26, 54, 93) rgb(26, 54, 93) rgb(37, 99, 235)",
+      "rgb(128, 128, 128)",
+      "rgb(31, 41, 55) rgb(31, 41, 55) rgb(226, 232, 240)",
+      "rgb(107, 114, 128)",
+      "rgb(55, 65, 81)",
+      "rgb(55, 65, 81) rgb(55, 65, 81) rgb(241, 245, 249)",
+      "rgb(31, 41, 55) rgb(31, 41, 55) rgb(241, 245, 249)",
+      "rgb(209, 213, 219)",
+      "rgb(226, 232, 240) rgb(31, 41, 55) rgb(31, 41, 55)",
+      "rgb(241, 245, 249) rgb(107, 114, 128) rgb(107, 114, 128)"
+    ],
+    "primaryBlue": "#1a365d",
+    "secondaryBlue": "#2563eb",
+    "proposedAccent": "#EBDBC3"
+  },
+  "colorIntegrationOpportunities": [
+    "Info Card 1: Background could use warm accent",
+    "Info Card 2: Background could use warm accent",
+    "Project Banner: Left border or background gradient could include warm accent",
+    "Payment Section: Background could benefit from subtle warm tint",
+    "Footer Icons: Could alternate between blue and warm beige backgrounds"
+  ],
+  "designAnalysis": {
+    "logoPlacement": "Side-by-side with company info in flexbox layout",
+    "headerBalance": "Good balance between branding and invoice badge",
+    "professionalAppearance": "Modern, clean design suitable for enterprise clients",
+    "printReadiness": "Optimized for A4 printing with proper margins and contrast"
+  }
+}

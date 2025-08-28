@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechnung {{rechnung.nummer}} - {{firma.name}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #1f2937;
+            background: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Modern Header Design */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #2c4657;
+        }
+
+        .company-branding {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            margin-top: 2px;
+        }
+
+        .company-name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #2c4657;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-claim {
+            font-size: 12pt;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .company-details {
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #4b5563;
+        }
+
+        .invoice-badge {
+            background: #2c4657;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .invoice-title {
+            font-size: 18pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .invoice-number {
+            font-size: 14pt;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Modern Client Information Cards */
+        .client-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .info-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .info-card:nth-child(odd) {
+            background: #EBDBC3;
+        }
+
+        .info-card h3 {
+            color: #2c4657;
+            font-size: 12pt;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-card p {
+            margin-bottom: 4px;
+            font-size: 10pt;
+        }
+
+        .info-card .highlight {
+            font-weight: 600;
+            color: #2c4657;
+        }
+
+        /* Project Information Banner */
+        .project-banner {
+            background: #f8fafc;
+            border-left: 4px solid #EBDBC3;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .project-title {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #2c4657;
+            margin-bottom: 8px;
+        }
+
+        .project-details {
+            font-size: 10pt;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+
+        .tech-stack {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            color: #2563eb;
+        }
+
+        /* Enhanced Service Table */
+        .services-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #2c4657;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-table th {
+            background: #2c4657;
+            color: white;
+            font-weight: 600;
+            padding: 15px 12px;
+            text-align: left;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .services-table td {
+            padding: 15px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 10pt;
+            vertical-align: top;
+        }
+
+        .services-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .services-table .description {
+            max-width: 300px;
+        }
+
+        .services-table .description strong {
+            color: #2c4657;
+            font-weight: 600;
+        }
+
+        .service-details {
+            font-size: 9pt;
+            color: #6b7280;
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+
+        .tech-specs {
+            font-size: 9pt;
+            color: #2563eb;
+            margin-top: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+
+        /* Modern Summary Section */
+        .summary-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 35px;
+        }
+
+        .summary-table {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            min-width: 320px;
+        }
+
+        .summary-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 11pt;
+        }
+
+        .summary-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .summary-table .label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .summary-table .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+
+        .summary-table .total-row {
+            background: #2c4657;
+            color: white;
+            font-weight: 700;
+            font-size: 12pt;
+        }
+
+        /* Professional Payment Section */
+        .payment-section {
+            background: #f8fafc;
+            border: 1px solid #EBDBC3;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .payment-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #2c4657;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .payment-details p {
+            margin-bottom: 6px;
+            font-size: 10pt;
+        }
+
+        .payment-details strong {
+            color: #2c4657;
+            font-weight: 600;
+        }
+
+        .bank-info {
+            font-family: 'Courier New', monospace;
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+        }
+
+        /* Technical Project Information */
+        .project-info {
+            background: #EBDBC3;
+            border-left: 4px solid #2c4657;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .project-info h4 {
+            color: #2c4657;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 11pt;
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 10pt;
+        }
+
+        /* Professional Footer */
+        .footer {
+            margin-top: 40px;
+            padding: 25px 0;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+
+
+        .footer-section p {
+            font-size: 9pt;
+            color: #6b7280;
+            line-height: 1.3;
+        }
+
+        .legal-notice {
+            text-align: center;
+            font-size: 8pt;
+            color: #6b7280;
+            line-height: 1.4;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                margin: 0;
+                padding: 15mm;
+                font-size: 10pt;
+            }
+            
+            .invoice-badge {
+                background: #2c4657 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .summary-table .total-row {
+                background: #2c4657 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .services-table th {
+                background: #2c4657 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .client-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Modern Professional Header -->
+        <header class="header">
+            <div class="company-branding">
+                <img src="media/icon_square.png" alt="{{firma.name}} Icon" class="company-logo">
+                <div class="company-info">
+                    <h1 class="company-name">{{firma.name}}</h1>
+                    <div class="company-claim">{{firma.claim}}</div>
+                    <div class="company-details">
+                        {{firma.strasse}}, {{firma.plz}} {{firma.ort}}<br>
+                        Tel: {{firma.telefon}} | E-Mail: {{firma.email}}<br>
+                        Web: {{firma.web}}<br>
+                        UID: {{firma.uid}} | FB-Nr: {{firma.firmenbuch}}
+                    </div>
+                </div>
+            </div>
+            <div class="invoice-badge">
+                <div class="invoice-title">RECHNUNG</div>
+                <div class="invoice-number">Nr. {{rechnung.nummer}}</div>
+            </div>
+        </header>
+
+        <!-- Client Information Cards -->
+        <section class="client-section">
+            <div class="info-card">
+                <h3>Kunde</h3>
+                <p class="highlight">{{kunde.name}}</p>
+                <p>{{kunde.ansprechpartner}}</p>
+                <p>{{kunde.strasse}}</p>
+                <p>{{kunde.plz}} {{kunde.ort}}, {{kunde.land}}</p>
+                {{#if kunde.uid}}<p><strong>UID:</strong> {{kunde.uid}}</p>{{/if}}
+            </div>
+            <div class="info-card">
+                <h3>Rechnungsdetails</h3>
+                <p><strong>Rechnungsdatum:</strong> {{rechnung.datum}}</p>
+                <p><strong>Leistungszeitraum:</strong> {{rechnung.leistungszeitraum}}</p>
+                <p><strong>Zahlungsfrist:</strong> {{rechnung.zahlungsfrist}}</p>
+                <p><strong>Fälligkeitsdatum:</strong> {{rechnung.faelligkeitsdatum}}</p>
+                <p><strong>Ansprechpartner:</strong> {{rechnung.ansprechpartner}}</p>
+            </div>
+        </section>
+
+        <!-- Project Information Banner -->
+        <section class="project-banner">
+            <div class="project-title">{{projekt.name}}</div>
+            <div class="project-details">
+                {{projekt.umfang}} - {{projekt.typ}}
+            </div>
+            <div class="tech-stack">
+                Tech Stack: {{#each projekt.technologien}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+            </div>
+        </section>
+
+        <!-- Enhanced Services Table -->
+        <section class="services-section">
+            <h2 class="section-title">Erbrachte Leistungen</h2>
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th style="width: 8%">Pos.</th>
+                        <th style="width: 45%">Beschreibung</th>
+                        <th style="width: 15%">Zeitraum</th>
+                        <th style="width: 12%">Abrechnung</th>
+                        <th style="width: 8%">USt</th>
+                        <th style="width: 12%">Gesamt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each positionen}}
+                    <tr>
+                        <td class="amount">{{pos}}</td>
+                        <td class="description">
+                            <strong>{{beschreibung}}</strong>
+                            <div class="service-details">{{details}}</div>
+                            <div class="tech-specs">{{technische_specs}}</div>
+                        </td>
+                        <td style="text-align: center;">{{zeitraum}}</td>
+                        <td style="text-align: center;">{{abrechnungsart}}</td>
+                        <td class="amount">{{steuersatz}}%</td>
+                        <td class="amount">€ {{gesamt}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Modern Summary Section -->
+        <section class="summary-section">
+            <table class="summary-table">
+                <tr>
+                    <td class="label">Summe netto:</td>
+                    <td class="amount">€ {{zusammenfassung.summe_netto}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Umsatzsteuer 20%:</td>
+                    <td class="amount">€ {{zusammenfassung.ust_20}}</td>
+                </tr>
+                <tr class="total-row">
+                    <td class="label">Rechnungsbetrag:</td>
+                    <td class="amount">€ {{zusammenfassung.summe_brutto}}</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Technical Project Information -->
+        <section class="project-info">
+            <h4>Projekt- und Leistungsdetails</h4>
+            <div class="project-details">
+                <div>
+                    <strong>Projektmanager:</strong> {{zusatzinfo.projektmanager}}<br>
+                    <strong>Entwicklungszeit:</strong> {{zusatzinfo.entwicklungszeit}}<br>
+                    <strong>Wartung:</strong> {{zusatzinfo.wartung}}
+                </div>
+                <div>
+                    <strong>Hosting:</strong> {{zusatzinfo.hosting}}<br>
+                    <strong>Compliance:</strong> {{zusatzinfo.compliance}}<br>
+                    <strong>Technologie:</strong> {{zusatzinfo.technologie_stack}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Payment Section -->
+        <section class="payment-section">
+            <div class="payment-title">Zahlungsinformationen</div>
+            <div class="payment-grid">
+                <div class="payment-details">
+                    <p><strong>Zahlungsziel:</strong> {{zahlungsinfo.zahlungsziel}}</p>
+                    <p><strong>Fällig am:</strong> {{zahlungsinfo.faelligkeitsdatum}}</p>
+                    <p><strong>Verwendungszweck:</strong> {{zahlungsinfo.verwendungszweck}}</p>
+                </div>
+                <div class="bank-info">
+                    <p><strong>{{zahlungsinfo.bank}}</strong></p>
+                    <p>IBAN: {{zahlungsinfo.iban}}</p>
+                    <p>BIC: {{zahlungsinfo.bic}}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <p><strong>{{firma.name}}</strong><br>{{firma.strasse}}<br>{{firma.plz}} {{firma.ort}}</p>
+                </div>
+                <div class="footer-section">
+                    <p><strong>{{kontakt.ansprechpartner}}</strong><br>{{firma.telefon}}<br>{{firma.email}}</p>
+                </div>
+                <div class="footer-section">
+                    <p><strong>{{firma.bank}}</strong><br>{{firma.iban}}<br>BIC: {{firma.bic}}</p>
+                </div>
+                <div class="footer-section">
+                    <p><strong>UID:</strong> {{firma.uid}}<br><strong>FB-Nr:</strong> {{firma.firmenbuch}}<br>{{firma.gericht}}</p>
+                </div>
+            </div>
+            
+            <div class="legal-notice">
+                <p><strong>Rechtliche Hinweise:</strong> {{firma.konzession}} | {{firma.versicherung}}</p>
+                <p>{{kontakt.rueckfragen}}</p>
+                <p>Aufbewahrungspflicht: 7 Jahre nach Rechnungsstellung gemäß BAO. Diese Rechnung wurde elektronisch erstellt und ist ohne Unterschrift gültig.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
