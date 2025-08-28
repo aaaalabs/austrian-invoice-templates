@@ -1,191 +1,264 @@
 {
   "kanzlei": {
-    "name": "Dr. Maximilian Recht & Partner",
-    "zusatz": "Rechtsanwälte - Attorneys at Law",
-    "strasse": "Justizplatz 1",
+    "name": "Dr. Maximilian Recht & Partner Rechtsanwälte OG",
+    "zusatz": "Rechtsanwaltskanzlei • Rechtsberatung • Vertretung vor Gericht",
+    "strasse": "Justizpalast-Straße 11/Top 4",
     "plz": "1010",
     "ort": "Wien",
     "land": "Österreich",
-    "telefon": "+43 1 234 5678",
-    "fax": "+43 1 234 5679",
-    "email": "office@recht-partner.at",
-    "web": "www.recht-partner.at",
-    "uid": "ATU12345678",
-    "rak_nummer": "R 123456",
+    "telefon": "+43 1 534 52 0",
+    "fax": "+43 1 534 52 99",
+    "email": "office@rechtundpartner.at",
+    "web": "www.rechtundpartner.at",
+    "uid": "ATU67891234",
+    "rak_nummer": "A-1234/2020",
+    "gruendung": "1999",
+    "spezialisierung": "Wirtschaftsrecht, Zivilrecht, Arbeitsrecht",
     "treuhandkonto": {
       "bank": "BAWAG P.S.K.",
-      "iban": "AT12 1400 0123 4567 8901",
+      "iban": "AT94 1400 0358 1047 5821",
       "bic": "BAWAATWW",
-      "lautend": "RA Dr. Maximilian Recht - Anderkonto"
+      "lautend": "RA Dr. Maximilian Recht & Partner - Klienten-Treuhandkonto",
+      "zweck": "Ausschließlich für Mandantengelder gem. § 18 RAO"
     },
     "hauptkonto": {
-      "bank": "Erste Bank",
-      "iban": "AT65 2011 1234 5678 9012",
-      "bic": "GIBAATWWXXX"
+      "bank": "Erste Bank der oesterreichischen Sparkassen AG",
+      "iban": "AT48 2011 1823 4567 9012",
+      "bic": "GIBAATWWXXX",
+      "zweck": "Honorarzahlungen und Kanzleikosten"
     },
-    "haftpflicht": "HDI Versicherung AG, Pol.Nr. BH-2024-RA-4567"
+    "haftpflicht": "HDI Versicherung AG, Pol.Nr. BH-2025-RA-7891, Deckung: EUR 2.180.000,00"
   },
   "mandant": {
     "anrede": "Sehr geehrter Herr",
     "titel": "Mag.",
     "vorname": "Andreas",
-    "nachname": "Unternehmer",
-    "firma": "Unternehmer Holding GmbH",
-    "position": "Geschäftsführer",
-    "strasse": "Businesspark 100",
+    "nachname": "Industrieller",
+    "firma": "Alpine Industrie Holding GmbH",
+    "position": "Geschäftsführer und Alleingesellschafter",
+    "strasse": "Industriestraße 45-47",
     "plz": "4020",
     "ort": "Linz",
     "land": "Österreich",
-    "uid": "ATU98765432"
+    "uid": "ATU45678912",
+    "mandatsgruendung": "Vollmacht erteilt am 15.02.2024",
+    "beziehung": "Mandatsverhältnis seit 2019"
   },
   "honorarnote": {
     "nummer": "HN-2025-0789",
     "datum": "28.08.2025",
-    "aktenzeichen": "AZ 2024/1234-MR",
-    "leistungszeitraum": "01.03.2024 - 31.07.2025",
-    "zahlungsziel": "14 Tage",
+    "aktenzeichen": "1.234/2024-AI",
+    "leistungszeitraum": "März 2024 - Juli 2025",
+    "zahlungsziel": "14 Tage netto ab Rechnungsdatum",
     "faellig": "11.09.2025",
-    "betreff": "Rechtssache Unternehmer GmbH ./. Konkurrent AG"
+    "betreff": "Handelssache Alpine Industrie Holding GmbH ./. Konkurrenz Technologie AG",
+    "ratg_grundlage": "Gebühren nach RATG idF BGBl I 2023/45 (Valorisierung +20%)",
+    "ahk_anwendung": "Ergänzend Autonome Honorarkriterien der ÖRAK"
   },
   "verfahren": {
     "gericht": "Handelsgericht Wien",
-    "geschaeftszahl": "56 Cg 123/24",
-    "streitwert": 250000.00,
-    "verfahrensart": "Zivilprozess",
-    "erfolg": "Vollständiger Prozesserfolg - Urteil vom 15.07.2025"
+    "geschaeftszahl": "56 Cg 234/24x",
+    "streitwert": 287500.00,
+    "verfahrensart": "Zivilrechtliches Erkenntnisverfahren gem. §§ 226ff ZPO",
+    "verfahrensgegenstand": "Schadensersatz wegen unlauteren Wettbewerbs",
+    "klageart": "Leistungsklage auf Zahlung und Unterlassung",
+    "erfolg": "Vollständiger Prozesserfolg - Urteil vom 15.07.2025 rechtskräftig",
+    "instanzen": "Erste Instanz (HG Wien), keine Berufung",
+    "kostenentscheidung": "Kostenersatz zu 100% dem Kläger zugesprochen"
   },
   "leistungen": [
     {
-      "kategorie": "Gerichtliche Vertretung",
+      "kategorie": "Gerichtliche Vertretung nach RATG",
+      "rechtsgrundlage": "§§ 3-8 RATG iVm Anlage I (Tarifposten)",
       "positionen": [
         {
-          "tp": "TP 3A",
-          "beschreibung": "Klage",
-          "basis": 5817.00,
+          "tp": "TP 3A Z 1",
+          "beschreibung": "Einbringung der Klage (Leistungs- und Unterlassungsklage)",
+          "ratg_grundlage": "Streitwert EUR 287.500,00",
+          "basis": 6980.00,
           "einheitssatz": 1.2,
-          "betrag": 6980.40
+          "multiplikator_grund": "Komplexe Rechtslage UWG/Schadenersatz",
+          "betrag": 8376.00
         },
         {
-          "tp": "TP 3A",
-          "beschreibung": "Klagebeantwortung",
-          "basis": 5817.00,
+          "tp": "TP 3A Z 2",
+          "beschreibung": "Duplik zur Klagebeantwortung der Beklagten",
+          "ratg_grundlage": "50% der Klageschrift gem. RATG",
+          "basis": 3490.00,
           "einheitssatz": 1.2,
-          "betrag": 6980.40
+          "multiplikator_grund": "Umfangreiche Beweiswürdigung erforderlich",
+          "betrag": 4188.00
         },
         {
-          "tp": "TP 3A",
-          "beschreibung": "Vorbereitung Verhandlung (3 Verhandlungen)",
-          "basis": 2908.50,
-          "einheitssatz": 3.6,
-          "betrag": 10470.60
+          "tp": "TP 3A Z 3",
+          "beschreibung": "Vorbereitung zur Streitverhandlung (4 Verhandlungstermine)",
+          "ratg_grundlage": "Je Verhandlung 50% der Klageschrift",
+          "basis": 3490.00,
+          "einheitssatz": 4.8,
+          "multiplikator_grund": "Aufwendige Zeugen- und SV-Vorbereitung",
+          "betrag": 16752.00
         },
         {
-          "tp": "TP 3A",
-          "beschreibung": "Streitverhandlung (3 × 4 Stunden)",
-          "basis": 1745.10,
-          "einheitssatz": 14.4,
-          "betrag": 25129.44
+          "tp": "TP 3A Z 4",
+          "beschreibung": "Streitverhandlung vor dem Handelsgericht Wien (4 Termine à 3,5h)",
+          "ratg_grundlage": "Pro Stunde 25% der Klageschrift, 14 Stunden gesamt",
+          "basis": 1745.00,
+          "einheitssatz": 14.0,
+          "multiplikator_grund": "Komplexe Zeugeneinvernahmen und Beweiswürdigung",
+          "betrag": 24430.00
         }
       ]
     },
     {
-      "kategorie": "Außergerichtliche Vertretung",
+      "kategorie": "Außergerichtliche Vertretung nach AHK",
+      "rechtsgrundlage": "Autonome Honorarkriterien der ÖRAK, vereinbart am 15.02.2024",
       "positionen": [
         {
-          "tp": "Pauschale",
-          "beschreibung": "Vertragsgestaltung und Verhandlungen",
+          "tp": "AHK-Pauschale",
+          "beschreibung": "Vertragsverhandlungen und -gestaltung (Lizenzvertrag)",
+          "ahk_grundlage": "Pauschalhonorar gem. schriftlicher Honorarvereinbarung",
           "basis": 0,
           "einheitssatz": 0,
-          "betrag": 8500.00
+          "betrag": 12500.00
         },
         {
-          "tp": "TP 5",
-          "beschreibung": "Rechtsauskunft und Beratung",
-          "basis": 450.00,
-          "einheitssatz": 6,
-          "betrag": 2700.00
+          "tp": "TP 5 RATG",
+          "beschreibung": "Rechtsauskunft und laufende Beratung (18 Beratungseinheiten)",
+          "ratg_grundlage": "Pauschalansätze für Beratung gem. TP 5",
+          "basis": 540.00,
+          "einheitssatz": 6.0,
+          "multiplikator_grund": "Spezialisiertes Wirtschaftsrecht",
+          "betrag": 3240.00
         },
         {
-          "tp": "TP 7",
-          "beschreibung": "Teilnahme an Besprechungen (8 Stunden)",
-          "basis": 120.00,
-          "einheitssatz": 8,
-          "betrag": 960.00
+          "tp": "TP 7 RATG",
+          "beschreibung": "Teilnahme an Besprechungen und Verhandlungen (12 Stunden)",
+          "ratg_grundlage": "Stundengebühr nach TP 7, erhohter Satz",
+          "basis": 144.00,
+          "einheitssatz": 12.0,
+          "multiplikator_grund": "Internationale Verhandlungsführung (EN/DE)",
+          "betrag": 1728.00
         }
       ]
     },
     {
-      "kategorie": "Barauslagen",
+      "kategorie": "Barauslagen (ohne USt gem. § 12 Abs 1 Z 5 UStG)",
+      "rechtsgrundlage": "Durchlaufende Posten ohne Gewinnaufschlag",
       "positionen": [
         {
-          "beschreibung": "Gerichtsgebühren (Pauschalgebühr)",
-          "betrag": 5639.00
+          "beschreibung": "Gerichtsgebühren HG Wien (Pauschalgebühr gem. GGG)",
+          "beleg_nr": "ERV-2024-HG-567891",
+          "datum": "15.03.2024",
+          "betrag": 6890.00
         },
         {
-          "beschreibung": "Sachverständigengebühr Dr. Gutachter",
-          "betrag": 3500.00
+          "beschreibung": "Sachverständigengebühr Dr. Thomas Gutachter (Wirtschaftsprüfer)",
+          "beleg_nr": "SV-HG-Wien-2024-234",
+          "gerichtsbeschluss": "Bestellung durch HG Wien vom 22.04.2024",
+          "betrag": 4750.00
         },
         {
-          "beschreibung": "Zeugengebühren",
-          "betrag": 245.60
+          "beschreibung": "Zeugengebühren (3 Zeugen, je 2 Verhandlungstermine)",
+          "beleg_nr": "ZG-Auszahlung-456",
+          "betrag": 389.40
         },
         {
-          "beschreibung": "Beglaubigte Übersetzungen (EN-DE)",
-          "betrag": 780.00
+          "beschreibung": "Beglaubigte Übersetzungen (EN-DE) durch gerichtlich beeidete Dolmetscherin",
+          "beleg_nr": "ÜB-2024-789",
+          "umfang": "47 Seiten Vertragswerk",
+          "betrag": 1230.00
         },
         {
-          "beschreibung": "Grundbuchs- und Firmenbuchauszüge",
-          "betrag": 186.00
+          "beschreibung": "Firmenbuchauszüge und Registerauskünfte (7 Unternehmen)",
+          "beleg_nr": "FB-Abfrage-2024-234",
+          "betrag": 234.50
         },
         {
-          "beschreibung": "ERV-Gebühren",
-          "betrag": 48.50
+          "beschreibung": "ERV-Gebühren (Elektronischer Rechtsverkehr)",
+          "beleg_nr": "ERV-Sammelbeleg-2024",
+          "anzahl": "23 ERV-Eingaben",
+          "betrag": 115.00
         },
         {
-          "beschreibung": "Kopien (2.450 Seiten à € 0,50)",
-          "betrag": 1225.00
+          "beschreibung": "Vervielfältigungen und Kopien (3.890 Seiten à EUR 0,45)",
+          "beleg_nr": "Kopienabrechnug-2024-Q2",
+          "betrag": 1750.50
         },
         {
-          "beschreibung": "Porto und Zustellkosten",
-          "betrag": 89.30
+          "beschreibung": "Porto, Zustellkosten und Kurierdienste",
+          "beleg_nr": "Portoabrechnung-Q2-2024",
+          "betrag": 156.80
         }
       ]
     },
     {
-      "kategorie": "Reisekosten",
+      "kategorie": "Reisekosten nach RATG (§ 16 RATG)",
+      "rechtsgrundlage": "Amtliche Kilometerssätze und Tagesgebühren 2025",
       "positionen": [
         {
-          "beschreibung": "Fahrtkosten Wien-Linz (3 × 368 km à € 0,42)",
-          "betrag": 463.68
+          "beschreibung": "Fahrtkosten Wien-Linz-Wien (4 Fahrten à 368 km, EUR 0,42/km)",
+          "beleg_nr": "Fahrtenbuch-2024-Q2",
+          "kilometer_gesamt": 1472,
+          "betrag": 618.24
         },
         {
-          "beschreibung": "Tagesgebühren (3 Tage à € 35,10)",
-          "betrag": 105.30
+          "beschreibung": "Tagesgebühren Linz (4 Tage à EUR 41,20)",
+          "ratg_satz": "Erhöhter Satz für Landeshauptstadt",
+          "betrag": 164.80
+        },
+        {
+          "beschreibung": "Nächtigungskosten Hotel Courtyard Linz (3 Nächte)",
+          "beleg_nr": "Hotel-Rechnung-CLZ-2024-567",
+          "betrag": 387.60
         }
       ]
     }
   ],
   "zusammenfassung": {
-    "honorar_gerichtlich": 49560.84,
-    "honorar_aussergerichtlich": 12160.00,
-    "zwischensumme_honorar": 61720.84,
-    "barauslagen": 11713.40,
-    "reisekosten": 568.98,
-    "summe_netto": 74003.22,
-    "ust_20": 14800.64,
-    "summe_brutto": 88803.86,
-    "gegnerischer_kostenersatz": 45000.00,
-    "vom_mandanten_zu_tragen": 43803.86
+    "honorar_gerichtlich": 53746.00,
+    "honorar_aussergerichtlich": 17468.00,
+    "zwischensumme_honorar": 71214.00,
+    "barauslagen": 15516.20,
+    "reisekosten": 1170.64,
+    "summe_netto": 87900.84,
+    "ust_20_honorar": 14242.80,
+    "ust_hinweis_barauslagen": "Barauslagen sind gem. § 12 Abs 1 Z 5 UStG umsatzsteuerfrei",
+    "summe_brutto": 102143.64,
+    "gegnerischer_kostenersatz": 58000.00,
+    "kostenersatz_erhalten": "20.08.2025",
+    "vom_mandanten_zu_tragen": 44143.64
   },
   "kostenersatz": {
-    "hinweis": "Dem Mandanten wurde vom Gegner ein Kostenersatz in Höhe von EUR 45.000,00 zugesprochen. Dieser Betrag wurde bereits in Abzug gebracht.",
-    "zahlungseingang": "Der Kostenersatz wurde am 20.08.2025 auf unserem Treuhandkonto vereinnahmt."
+    "gerichtliche_zuerkennung": "Kostenersatz gem. §§ 40-55 ZPO zu 100% zugunsten des Klägers",
+    "zuerkannter_betrag": "EUR 58.000,00 (Honorar + Barauslagen anteilig)",
+    "hinweis": "Der zugesprochene Kostenersatz wurde bereits auf unserem Klienten-Treuhandkonto vereinnahmt und in der vorliegenden Honorarnote in Abzug gebracht.",
+    "zahlungseingang": "Kostenersatz-Eingang am 20.08.2025 auf Treuhandkonto (AT94 1400 0358 1047 5821)",
+    "saldierung": "Verrechnung erfolgt gem. § 18 Abs 4 RAO nach Mandantenzustimmung",
+    "restzahlung": "Verbleibt vom Mandanten zu tragen: EUR 44.143,64"
   },
   "hinweise": {
-    "faelligkeit": "Wir ersuchen um Überweisung des offenen Betrages binnen 14 Tagen auf unser Hauptkonto.",
-    "vorbehalt": "Diese Honorarnote wurde nach bestem Wissen erstellt. Ergänzungen bleiben vorbehalten.",
-    "verschwiegenheit": "Sämtliche Informationen unterliegen der anwaltlichen Verschwiegenheitspflicht.",
-    "verjaehrung": "Honoraransprüche verjähren nach § 1486 Z 1 ABGB binnen drei Jahren.",
-    "beschwerde": "Beschwerden können bei der Rechtsanwaltskammer Wien eingebracht werden."
+    "faelligkeit": "Der Rechnungsbetrag ist binnen 14 Tagen netto ab Rechnungsdatum zur Zahlung fällig. Zahlungen sind ausschließlich auf unser Hauptkonto zu leisten.",
+    "skonto": "Bei Zahlung binnen 7 Tagen gewähren wir 2% Skonto auf das Honorar (exkl. Barauslagen).",
+    "verzug": "Bei Zahlungsverzug berechnen wir Zinsen in Höhe von 9,2% p.a. über dem Basiszinssatz.",
+    "vorbehalt": "Diese Honorarnote wurde nach bestem Wissen und auf Grundlage der uns vorliegenden Unterlagen erstellt. Ergänzungen und Korrekturen bleiben ausdrücklich vorbehalten.",
+    "verschwiegenheit": "Alle Mandatsinformationen unterliegen gem. § 9 RAO der absoluten anwaltlichen Verschwiegenheitspflicht und dürfen nicht an Dritte weitergegeben werden.",
+    "verjaehrung": "Honoraransprüche von Rechtsanwälten verjähren gem. § 1486 Z 1 ABGB binnen drei Jahren ab Fälligkeit.",
+    "aufbewahrung": "Akten werden gem. § 11 RAO mindestens 7 Jahre aufbewahrt. Rückgabe von Originalurkunden gegen Empfangsbestätigung.",
+    "beschwerde": "Beschwerden über die Honorarverrechnung können binnen 6 Monaten bei der Rechtsanwaltskammer Wien (Dr.-Karl-Lueger-Ring 12, 1010 Wien) eingebracht werden.",
+    "datenschutz": "Die Verarbeitung Ihrer Daten erfolgt gem. DSGVO. Detaillierte Informationen finden Sie in unserer Datenschutzerklärung auf www.rechtundpartner.at/datenschutz"
+  },
+  "rechtliche_grundlagen": {
+    "ratg_fassung": "Rechtsanwaltstarifgesetz idF BGBl I 2023/45 (Valorisierung +20%)",
+    "ahk_fassung": "Autonome Honorarkriterien der ÖRAK, Stand: Jänner 2025",
+    "rao_paragraph": "Rechtsanwaltsordnung, insbesondere §§ 9, 11, 18 RAO",
+    "ustg_befreiung": "§ 12 Abs 1 Z 5 UStG (Barauslagen umsatzsteuerfrei)",
+    "zpo_kostenersatz": "§§ 40-55 ZPO (Kostenersatz im Zivilprozess)"
+  },
+  "qualitaetssicherung": {
+    "ersteller": "RA Dr. Maximilian Recht (Kanzleiinhaber)",
+    "kontrolle": "RA Mag. Elisabeth Justiz (Partnerin)",
+    "rechnungslegung_datum": "28.08.2025",
+    "interne_referenz": "HN-2025-0789/AI-Holding",
+    "mandats_controlling": "Zeit- und Leistungserfassung gem. Kanzlei-QM-System"
   }
 }

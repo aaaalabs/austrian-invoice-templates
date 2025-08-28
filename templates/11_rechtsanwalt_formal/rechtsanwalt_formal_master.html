@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honorarnote {{honorarnote.nummer}} - {{kanzlei.name}}</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Garamond:wght@300;400;600;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+        /* Professional fonts for legal documents - print-optimized */
+        body { font-family: 'Times New Roman', serif; }
+        .legal-title { font-family: 'Georgia', serif; }
         
         * {
             margin: 0;
@@ -15,51 +16,35 @@
         }
 
         body {
-            font-family: 'Garamond', serif;
-            font-size: 11pt;
-            line-height: 1.4;
-            color: #1a1a1a;
-            background: #fafafa;
+            font-family: 'Times New Roman', serif;
+            font-size: 10pt;
+            line-height: 1.3;
+            color: #000000;
+            background: #ffffff;
         }
 
         .invoice-container {
             max-width: 210mm;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
             position: relative;
-            overflow: hidden;
+            border: none;
         }
 
-        /* Pergament-Textur Background */
-        .invoice-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, transparent 0%, rgba(184, 134, 11, 0.02) 50%, transparent 100%),
-                radial-gradient(circle at 80% 20%, transparent 0%, rgba(0, 51, 102, 0.02) 50%, transparent 100%),
-                linear-gradient(45deg, transparent 49%, rgba(184, 134, 11, 0.01) 50%, transparent 51%);
-            z-index: 0;
-        }
+        /* Remove decorative backgrounds for professional legal documents */
 
         .content {
-            position: relative;
-            z-index: 1;
-            padding: 20mm;
+            padding: 25mm 20mm 20mm 20mm;
         }
 
-        /* Header Section */
+        /* Header Section - Professional Legal Standard */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 15mm;
-            padding-bottom: 5mm;
-            border-bottom: 2px solid #003366;
+            margin-bottom: 12mm;
+            padding-bottom: 3mm;
+            border-bottom: 1px solid #1a365d;
         }
 
         .logo-section {
@@ -67,20 +52,21 @@
         }
 
         .seal-placeholder {
-            width: 80px;
-            height: 80px;
-            border: 3px solid #B8860B;
+            width: 70px;
+            height: 70px;
+            border: 2px solid #1a365d;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
-            background: radial-gradient(circle, #B8860B 0%, #996f09 100%);
-            color: white;
-            font-family: 'Cinzel', serif;
+            margin-bottom: 8px;
+            background: #ffffff;
+            color: #1a365d;
+            font-family: 'Georgia', serif;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 8pt;
             text-align: center;
+            line-height: 1.1;
         }
 
         .kanzlei-info {
@@ -89,52 +75,56 @@
         }
 
         .kanzlei-name {
-            font-family: 'Cinzel', serif;
-            font-size: 20pt;
-            font-weight: 600;
-            color: #003366;
+            font-family: 'Georgia', serif;
+            font-size: 16pt;
+            font-weight: 700;
+            color: #1a365d;
             margin-bottom: 3px;
+            text-transform: none;
         }
 
         .kanzlei-zusatz {
-            font-size: 10pt;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 8px;
+            font-size: 9pt;
+            color: #333333;
+            font-style: normal;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
         .contact-info {
-            font-size: 9pt;
-            line-height: 1.3;
-            color: #333;
+            font-size: 8pt;
+            line-height: 1.2;
+            color: #000000;
         }
 
         .rak-info {
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid #ddd;
-            font-size: 8pt;
-            color: #666;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid #cccccc;
+            font-size: 7pt;
+            color: #333333;
+            font-weight: 600;
         }
 
-        /* Document Title */
+        /* Document Title - Legal Professional Standard */
         .document-title {
             text-align: center;
-            margin: 20mm 0 15mm 0;
+            margin: 15mm 0 12mm 0;
         }
 
         .document-title h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 24pt;
-            color: #003366;
-            margin-bottom: 5mm;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+            font-size: 18pt;
+            color: #1a365d;
+            margin-bottom: 4mm;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            font-weight: 700;
         }
 
         .document-subtitle {
-            font-size: 12pt;
-            color: #B8860B;
+            font-size: 11pt;
+            color: #b7941e;
             font-weight: 600;
         }
 
@@ -147,45 +137,46 @@
         }
 
         .mandant-info, .honorarnote-info {
-            background: rgba(248, 248, 248, 0.7);
-            padding: 12px;
-            border-left: 4px solid #B8860B;
+            background: #fafafa;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-left: 3px solid #b7941e;
         }
 
         .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 11pt;
-            font-weight: 600;
-            color: #003366;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+            font-size: 10pt;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 6px;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .info-line {
-            margin-bottom: 3px;
-            font-size: 10pt;
+            margin-bottom: 2px;
+            font-size: 9pt;
         }
 
         .info-label {
             display: inline-block;
-            width: 90px;
-            color: #666;
-            font-weight: 400;
+            width: 85px;
+            color: #333333;
+            font-weight: 500;
         }
 
         .info-value {
-            font-weight: 500;
-            color: #333;
+            font-weight: 400;
+            color: #000000;
         }
 
-        /* Verfahren Info */
+        /* Verfahren Info - Professional Legal Format */
         .verfahren-info {
-            background: rgba(0, 51, 102, 0.05);
-            border: 1px solid rgba(0, 51, 102, 0.2);
-            padding: 12px;
-            margin: 15mm 0;
-            border-radius: 3px;
+            background: #f8f9fa;
+            border: 1px solid #1a365d;
+            padding: 10px;
+            margin: 12mm 0;
+            border-radius: 0;
         }
 
         /* Services Table */
@@ -194,133 +185,137 @@
         }
 
         .category-header {
-            background: #003366;
+            background: #1a365d;
             color: white;
-            padding: 8px 12px;
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            font-size: 11pt;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 6px 10px;
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            font-size: 10pt;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .services-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10mm;
-            font-size: 9pt;
+            margin-bottom: 8mm;
+            font-size: 8pt;
         }
 
         .services-table th {
-            background: rgba(0, 51, 102, 0.1);
-            padding: 6px;
+            background: #f0f0f0;
+            padding: 4px;
             text-align: left;
-            font-weight: 600;
-            border: 1px solid #ddd;
-            font-size: 9pt;
+            font-weight: 700;
+            border: 1px solid #333333;
+            font-size: 8pt;
         }
 
         .services-table td {
-            padding: 6px;
-            border: 1px solid #ddd;
+            padding: 4px;
+            border: 1px solid #333333;
             vertical-align: top;
         }
 
         .services-table tbody tr:nth-child(even) {
-            background: rgba(248, 248, 248, 0.5);
+            background: #f8f8f8;
         }
 
         .services-table tbody tr:hover {
-            background: rgba(184, 134, 11, 0.05);
+            background: #f0f0f0;
         }
 
         .tp-column {
-            width: 60px;
+            width: 50px;
             text-align: center;
-            font-weight: 600;
-            color: #003366;
+            font-weight: 700;
+            color: #1a365d;
         }
 
         .amount-column {
-            width: 80px;
+            width: 70px;
             text-align: right;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .basis-column, .einheitssatz-column {
-            width: 70px;
+            width: 60px;
             text-align: right;
-            font-size: 8pt;
+            font-size: 7pt;
         }
 
-        /* Summary Section */
+        /* Summary Section - Legal Professional */
         .summary-section {
-            margin: 15mm 0;
-            background: rgba(0, 51, 102, 0.02);
-            border: 2px solid #003366;
-            padding: 15px;
+            margin: 12mm 0;
+            background: #ffffff;
+            border: 2px solid #1a365d;
+            padding: 12px;
         }
 
         .summary-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 9pt;
         }
 
         .summary-table td {
-            padding: 5px 10px;
-            font-size: 10pt;
+            padding: 4px 8px;
+            font-size: 9pt;
+            border-bottom: 1px solid #eeeeee;
         }
 
         .summary-label {
             text-align: left;
-            font-weight: 500;
-            color: #333;
+            font-weight: 600;
+            color: #000000;
         }
 
         .summary-amount {
             text-align: right;
-            font-weight: 600;
-            width: 100px;
+            font-weight: 700;
+            width: 90px;
         }
 
         .total-row {
-            border-top: 2px solid #003366;
-            font-size: 12pt;
+            border-top: 2px solid #1a365d;
+            font-size: 10pt;
             font-weight: 700;
         }
 
         .total-row .summary-label {
-            font-family: 'Cinzel', serif;
-            color: #003366;
-            text-transform: uppercase;
-        }
-
-        .total-row .summary-amount {
-            color: #B8860B;
-            font-size: 14pt;
-        }
-
-        .ersatz-row {
-            border-top: 1px dashed #666;
-            font-style: italic;
-            color: #666;
-        }
-
-        .final-amount-row {
-            background: rgba(184, 134, 11, 0.1);
-            border: 2px solid #B8860B;
-            font-size: 13pt;
+            font-family: 'Georgia', serif;
+            color: #1a365d;
+            text-transform: none;
             font-weight: 700;
         }
 
-        /* Kostenersatz Section */
+        .total-row .summary-amount {
+            color: #1a365d;
+            font-size: 11pt;
+        }
+
+        .ersatz-row {
+            border-top: 1px dashed #333333;
+            font-style: normal;
+            color: #333333;
+        }
+
+        .final-amount-row {
+            background: #f8f9fa;
+            border: 2px solid #b7941e;
+            font-size: 11pt;
+            font-weight: 700;
+        }
+
+        /* Kostenersatz Section - Professional */
         .kostenersatz-section {
-            background: rgba(184, 134, 11, 0.05);
-            border-left: 4px solid #B8860B;
-            padding: 12px;
-            margin: 10mm 0;
-            font-size: 9pt;
-            line-height: 1.4;
+            background: #fafafa;
+            border: 1px solid #b7941e;
+            border-left: 3px solid #b7941e;
+            padding: 10px;
+            margin: 8mm 0;
+            font-size: 8pt;
+            line-height: 1.3;
         }
 
         /* Banking Information */
@@ -332,37 +327,37 @@
         }
 
         .bank-details {
-            background: rgba(248, 248, 248, 0.8);
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            background: #fafafa;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 0;
         }
 
         .bank-title {
-            font-family: 'Cinzel', serif;
-            font-size: 10pt;
-            font-weight: 600;
-            color: #003366;
-            margin-bottom: 8px;
-            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+            font-size: 9pt;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 6px;
+            text-transform: none;
         }
 
         .bank-info-line {
-            font-size: 9pt;
+            font-size: 8pt;
             margin-bottom: 2px;
         }
 
         .iban {
             font-family: 'Courier New', monospace;
-            font-weight: 600;
-            color: #B8860B;
+            font-weight: 700;
+            color: #1a365d;
         }
 
-        /* Legal Notices */
+        /* Legal Notices - Austrian Law Compliance */
         .legal-notices {
-            margin-top: 15mm;
-            padding-top: 10mm;
-            border-top: 1px solid #ddd;
+            margin-top: 12mm;
+            padding-top: 8mm;
+            border-top: 1px solid #cccccc;
         }
 
         .notice-section {
@@ -370,60 +365,91 @@
         }
 
         .notice-title {
-            font-family: 'Cinzel', serif;
-            font-size: 10pt;
-            font-weight: 600;
-            color: #003366;
-            margin-bottom: 5px;
-            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+            font-size: 9pt;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 4px;
+            text-transform: none;
         }
 
         .notice-text {
-            font-size: 8pt;
-            line-height: 1.3;
-            color: #555;
+            font-size: 7pt;
+            line-height: 1.2;
+            color: #333333;
             text-align: justify;
         }
 
-        /* Footer */
+        /* Footer - Professional Legal */
         .footer {
-            margin-top: 15mm;
-            padding-top: 10mm;
-            border-top: 2px solid #003366;
+            margin-top: 12mm;
+            padding-top: 8mm;
+            border-top: 1px solid #1a365d;
             text-align: center;
-            color: #666;
-            font-size: 8pt;
+            color: #333333;
+            font-size: 7pt;
         }
 
         .haftpflicht-info {
-            margin-top: 5mm;
-            font-style: italic;
+            margin-top: 4mm;
+            font-style: normal;
+            font-weight: 500;
         }
 
-        /* Print Styles */
+        /* Print Styles - Optimized for Legal Documents */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
             body {
                 background: white;
+                color: black;
             }
             
             .invoice-container {
                 box-shadow: none;
                 max-width: none;
+                margin: 0;
             }
             
             .content {
-                padding: 15mm;
+                padding: 20mm 15mm;
+            }
+            
+            .services-table,
+            .summary-table {
+                border: 1px solid #000000;
+            }
+            
+            .services-table th,
+            .services-table td,
+            .summary-table td {
+                border: 1px solid #000000;
             }
         }
 
-        /* Utility Classes */
+        /* Utility Classes - Legal Professional */
         .text-center { text-align: center; }
         .text-right { text-align: right; }
-        .font-bold { font-weight: 600; }
-        .text-gold { color: #B8860B; }
-        .text-navy { color: #003366; }
-        .mb-2 { margin-bottom: 8px; }
-        .mb-4 { margin-bottom: 16px; }
+        .font-bold { font-weight: 700; }
+        .text-gold { color: #b7941e; }
+        .text-navy { color: #1a365d; }
+        .mb-2 { margin-bottom: 6px; }
+        .mb-4 { margin-bottom: 12px; }
+        
+        /* Additional Professional Classes */
+        .legal-emphasis {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        
+        .ratg-reference {
+            font-family: 'Courier New', monospace;
+            font-size: 7pt;
+            color: #1a365d;
+        }
     </style>
 </head>
 <body>
@@ -433,11 +459,12 @@
             <div class="header">
                 <div class="logo-section">
                     <div class="seal-placeholder">
-                        KANZLEI<br>SIEGEL
+                        RAK<br>SIEGEL
                     </div>
                     <div class="rak-info">
                         <div><strong>RAK-Nr.:</strong> {{kanzlei.rak_nummer}}</div>
                         <div><strong>UID:</strong> {{kanzlei.uid}}</div>
+                        <div><strong>Gründung:</strong> 1999</div>
                     </div>
                 </div>
                 <div class="kanzlei-info">
@@ -455,16 +482,17 @@
                 </div>
             </div>
 
-            <!-- Document Title -->
+            <!-- Document Title - Austrian Legal Standard -->
             <div class="document-title">
-                <h1>Honorarnote</h1>
+                <h1 class="legal-title">HONORARNOTE</h1>
                 <div class="document-subtitle">Nr. {{honorarnote.nummer}}</div>
+                <div style="font-size: 8pt; color: #666666; margin-top: 4mm;">nach Rechtsanwaltstarifgesetz (RATG) und Autonomen Honorarkriterien (AHK)</div>
             </div>
 
             <!-- Invoice Details Grid -->
             <div class="invoice-details">
                 <div class="mandant-info">
-                    <div class="section-title">Mandant</div>
+                    <div class="section-title">MANDANT</div>
                     <div class="info-line">
                         <span class="info-label">Name:</span>
                         <span class="info-value">{{mandant.anrede}} {{mandant.titel}} {{mandant.vorname}} {{mandant.nachname}}</span>
@@ -492,7 +520,7 @@
                 </div>
 
                 <div class="honorarnote-info">
-                    <div class="section-title">Honorarnote</div>
+                    <div class="section-title">HONORAR-DETAILS</div>
                     <div class="info-line">
                         <span class="info-label">Datum:</span>
                         <span class="info-value">{{honorarnote.datum}}</span>
@@ -516,9 +544,9 @@
                 </div>
             </div>
 
-            <!-- Verfahren Information -->
+            <!-- Verfahren Information - Austrian Court System -->
             <div class="verfahren-info">
-                <div class="section-title">Verfahrensinformationen</div>
+                <div class="section-title">VERFAHRENSINFORMATIONEN</div>
                 <div class="info-line">
                     <span class="info-label">Betreff:</span>
                     <span class="info-value font-bold">{{honorarnote.betreff}}</span>

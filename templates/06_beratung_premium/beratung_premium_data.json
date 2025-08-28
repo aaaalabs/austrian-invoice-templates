@@ -1,9 +1,9 @@
 {
   "firma": {
     "name": "Strategic Excellence Partners GmbH",
-    "claim": "Transforming Vision into Value",
-    "strasse": "Ringstraße 1",
-    "plz": "1010",
+    "claim": "Transforming Vision into Sustainable Value",
+    "strasse": "Mariahilfer Strasse 88/3/11",
+    "plz": "1070",
     "ort": "Wien",
     "land": "Österreich",
     "telefon": "+43 1 890 1234",
@@ -13,89 +13,90 @@
     "firmenbuch": "FN 123789x",
     "gericht": "Handelsgericht Wien",
     "geschaeftsfuehrer": "Mag. Dr. Andreas Berater, CMC",
-    "bank": "Bank Austria",
+    "bank": "Bank Austria UniCredit",
     "iban": "AT45 1200 0100 1234 5678",
     "bic": "BKAUATWW",
     "cmc_nummer": "CMC-AT-2020-4567",
-    "iso": "ISO 20700:2017 certified",
-    "versicherung": "Berufshaftpflicht: Zürich Versicherung, Pol.Nr. BH-2024-789456",
-    "wko": "Fachgruppe UBIT - Unternehmensberatung, Buchhaltung und IT"
+    "iso": "ISO 20700:2019 certified",
+    "versicherung": "Berufshaftpflichtversicherung: Zürich Versicherung AG, Police Nr. BH-2024-789456 (€ 2.000.000)",
+    "wko": "WKO Fachgruppe UBIT - Unternehmensberatung, Buchhaltung und IT, Mitglied seit 2018"
   },
   "kunde": {
     "firma": "Global Industries AG",
-    "vorstand": "Mag. Christina Vorstand",
-    "abteilung": "Executive Board",
+    "vorstand": "Dr. Christina Steiner, MBA",
+    "abteilung": "Chief Executive Officer",
     "strasse": "Industriezeile 500",
     "plz": "4020",
     "ort": "Linz",
     "land": "Österreich",
     "uid": "ATU58741236",
-    "rahmenvertrag": "RV-2024-0089 vom 15.01.2024"
+    "rahmenvertrag": "Master Service Agreement MSA-2024-0089 dated 15.01.2024"
   },
   "rechnung": {
     "nummer": "SEP-2025-00234",
     "datum": "28.08.2025",
     "leistungszeitraum": "01.07.2025 - 31.08.2025",
     "zahlungsziel": "27.09.2025",
-    "betreff": "Strategieprojekt 'Future Excellence 2030' - Phase 2",
-    "projektleiter": "Dr. Michael Senior Partner"
+    "betreff": "Digital Transformation Strategy Initiative 'Future Excellence 2030' - Implementation Phase 2",
+    "projektleiter": "Dr. Michael Stratege, Senior Partner"
   },
   "executive_summary": {
-    "projektziel": "Entwicklung und Implementierung einer digitalen Transformationsstrategie zur Steigerung der operativen Effizienz um 30% bis 2027",
+    "projektziel": "Development and implementation of a comprehensive digital transformation strategy to achieve 30% operational efficiency improvement and €12M cost reduction by 2027, while establishing sustainable competitive advantages in core markets.",
     "hauptergebnisse": [
-      "Digitalisierungs-Roadmap mit 47 priorisierten Initiativen",
-      "Organisationsdesign für agile Arbeitsweise",
-      "Change Management Konzept für 1.200 Mitarbeiter",
-      "Quick-Win Identifikation mit 2.3M€ Einsparpotential"
+      "Digital Transformation Roadmap with 47 prioritized initiatives across 5 business units",
+      "Organizational Design Framework enabling agile methodologies for 1,200+ employees",
+      "Change Management Strategy with structured 18-month implementation timeline",
+      "Quick-Win Initiative Portfolio delivering €2.3M immediate cost savings",
+      "Technology Architecture Blueprint supporting scalable growth to €500M revenue"
     ],
-    "value_delivered": "Prognostizierter ROI: 450% über 3 Jahre",
-    "next_steps": "Implementierungsbegleitung Phase 3 ab Oktober 2025"
+    "value_delivered": "Projected 3-Year ROI: 450% (€54M value creation)",
+    "next_steps": "Phase 3 Implementation Support commencing October 2025 with dedicated on-site presence"
   },
   "positionen": [
     {
-      "phase": "Analyse & Diagnose",
-      "beschreibung": "Ist-Analyse, Prozessaufnahme, Benchmarking",
-      "berater": "Senior Partner",
+      "phase": "Strategic Assessment & Current State Analysis",
+      "beschreibung": "Comprehensive business diagnostic including process analysis, technology audit, organizational maturity assessment, and competitive benchmarking against industry leaders",
+      "berater": "Senior Partner (McKinsey/Bain trained)",
       "tage": 8,
       "tagessatz": 2400.00,
       "gesamt": 19200.00
     },
     {
-      "phase": "Strategieentwicklung",
-      "beschreibung": "Strategieworkshops, Szenarioplanung, Roadmap-Entwicklung",
-      "berater": "Senior Partner",
+      "phase": "Digital Strategy Development & Roadmapping",
+      "beschreibung": "Executive strategy workshops, scenario planning, digital maturity assessment, technology selection framework, and detailed implementation roadmap with milestone definition",
+      "berater": "Senior Partner (Digital Strategy Specialist)",
       "tage": 12,
       "tagessatz": 2400.00,
       "gesamt": 28800.00
     },
     {
-      "phase": "Konzeption",
-      "beschreibung": "Detailkonzepte, Business Cases, Implementierungsplan",
-      "berater": "Principal Consultant",
+      "phase": "Solution Architecture & Business Case Development",
+      "beschreibung": "Detailed technical concepts, financial modeling, business case validation, risk assessment frameworks, and comprehensive implementation planning with resource allocation",
+      "berater": "Principal Consultant (15+ years experience)",
       "tage": 15,
       "tagessatz": 1800.00,
       "gesamt": 27000.00
     },
     {
-      "phase": "Change Management",
-      "beschreibung": "Stakeholder-Management, Kommunikationskonzept, Training-Design",
-      "berater": "Senior Consultant",
+      "phase": "Change Management & Organizational Design",
+      "beschreibung": "Stakeholder engagement strategy, communication framework design, training curriculum development, and organizational capability building for sustainable transformation",
+      "berater": "Senior Consultant (Change Management certified)",
       "tage": 10,
       "tagessatz": 1400.00,
       "gesamt": 14000.00
     },
     {
-      "phase": "Projektmanagement",
-      "beschreibung": "Projektleitung, Steering Committee, Dokumentation",
-      "berater": "Senior Consultant",
+      "phase": "Program Management & Governance Framework",
+      "beschreibung": "Project leadership, steering committee facilitation, progress reporting, risk mitigation, and comprehensive documentation of methodologies and best practices",
+      "berater": "Senior Consultant (PMP certified)",
       "tage": 8,
       "tagessatz": 1400.00,
       "gesamt": 11200.00
     },
     {
-      "phase": "Reisezeiten",
-      "beschreibung": "Reisezeiten Wien-Linz (50% des Tagessatzes)",
-      "berater": "Verschiedene",
+      "phase": "Travel Time & Remote Coordination",
+      "beschreibung": "Travel time Wien-Linz executive sessions, remote coordination activities, and preparation time for stakeholder meetings (charged at 50% standard rate)",
+      "berater": "Mixed Team (Various levels)",
       "tage": 6,
       "tagessatz": 900.00,
       "gesamt": 5400.00
@@ -103,52 +104,58 @@
   ],
   "spesen": [
     {
-      "beschreibung": "Bahnfahrten Wien-Linz Business Class",
+      "beschreibung": "Executive Business Class Rail Transport Wien-Linz ÖBB",
       "anzahl": 18,
       "einzelpreis": 78.00,
       "gesamt": 1404.00
     },
     {
-      "beschreibung": "Hotelübernachtungen Linz",
+      "beschreibung": "Premium Hotel Accommodation Linz (business-grade facilities)",
       "anzahl": 12,
       "einzelpreis": 145.00,
       "gesamt": 1740.00
     },
     {
-      "beschreibung": "Verpflegungspauschale",
+      "beschreibung": "Per Diem Allowance (Austrian Government Standard Rate)",
       "anzahl": 12,
       "einzelpreis": 26.40,
       "gesamt": 316.80
     },
     {
-      "beschreibung": "Workshopmaterialien und Catering",
+      "beschreibung": "Executive Workshop Materials, Facilitation Supplies & Catering",
       "anzahl": 1,
       "einzelpreis": 1250.00,
       "gesamt": 1250.00
+    },
+    {
+      "beschreibung": "Industry Research Subscriptions & Benchmark Data Access",
+      "anzahl": 1,
+      "einzelpreis": 850.00,
+      "gesamt": 850.00
     }
   ],
   "erfolgshonorar": {
     "vereinbart": true,
-    "beschreibung": "Erfolgshonorar bei Erreichung der Kosteneinsparung >2M€ im ersten Jahr",
+    "beschreibung": "Performance-based success fee contingent upon achievement of verified cost savings exceeding €2.0M within first 12 months of implementation, as measured by independent third-party audit",
     "prozentsatz": 5,
-    "maximalbetrag": 50000.00,
-    "faelligkeit": "Nach Nachweis Q2/2026",
-    "status": "Noch nicht fällig"
+    "maximalbetrag": 75000.00,
+    "faelligkeit": "Due upon independent verification Q2/2026",
+    "status": "Performance metrics tracking initiated - not yet due"
   },
   "zusammenfassung": {
     "beratungshonorare": 105600.00,
-    "spesen": 4710.80,
-    "zwischensumme": 110310.80,
+    "spesen": 5560.80,
+    "zwischensumme": 111160.80,
     "rabatt_prozent": 5,
-    "rabatt_betrag": 5515.54,
-    "summe_netto": 104795.26,
-    "ust_20": 20959.05,
-    "summe_brutto": 125754.31
+    "rabatt_betrag": 5558.04,
+    "summe_netto": 105602.76,
+    "ust_20": 21120.55,
+    "summe_brutto": 126723.31
   },
   "zusatzinfo": {
-    "vertraulichkeit": "Alle Projektergebnisse unterliegen strengster Vertraulichkeit gemäß NDA vom 10.01.2024",
-    "ip_rechte": "Sämtliche Verwertungsrechte an den Arbeitsergebnissen gehen nach vollständiger Zahlung an den Auftraggeber über",
-    "haftung": "Die Haftung ist auf die Höhe des Beratungshonorars beschränkt, soweit gesetzlich zulässig",
-    "referenzen": "Benchmark-Daten basieren auf unserer Studie 'Digital Excellence 2025' mit n=127 Unternehmen"
+    "vertraulichkeit": "All project deliverables, methodologies, and business intelligence are subject to strictest confidentiality per executed NDA-2024-089 dated 10.01.2024. DSGVO compliance verified.",
+    "ip_rechte": "All intellectual property rights, including methodologies, frameworks, and deliverable content, transfer to client upon complete payment fulfillment, subject to our standard template and methodology retention rights.",
+    "haftung": "Professional liability limitation applies as permitted under Austrian law (maximum liability capped at total engagement value). Coverage provided through Zürich Versicherung professional indemnity policy.",
+    "referenzen": "Benchmark data and industry comparisons based on proprietary research study 'Digital Excellence Index Austria 2025' (n=127 enterprises) and international best practice analysis across DACH region."
   }
 }
