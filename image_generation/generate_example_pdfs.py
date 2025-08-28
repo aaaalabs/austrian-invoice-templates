@@ -62,19 +62,20 @@ class TemplatePDFGenerator:
         self.templates_dir = self.base_path / "templates"
         self.results: List[PDFResult] = []
         
-        # A4 PDF settings optimized for Austrian business documents
+        # Optimized A4 PDF settings - Better page break control
         self.pdf_options = {
             'format': 'A4',
             'print_background': True,
             'margin': {
-                'top': '20mm',     # Austrian business standard
-                'right': '15mm',   # Slightly smaller for more content
-                'bottom': '20mm',
-                'left': '15mm'
+                'top': '15mm',     # Reduced margins for more content
+                'right': '10mm',   # Smaller margins to prevent breaks  
+                'bottom': '15mm',
+                'left': '10mm'
             },
             'prefer_css_page_size': True,
             'display_header_footer': False,
-            'scale': 1.0,  # 100% scale for accurate sizing
+            'scale': 0.85,  # Slightly smaller to fit more content and reduce breaks
+            'tagged': False,  # Disable accessibility features for better layout
         }
     
     def discover_templates(self) -> List[PDFSpec]:
@@ -165,8 +166,35 @@ class TemplatePDFGenerator:
             # Create new page
             page = await browser.new_page()
             
-            # Configure page for A4 printing
-            await page.set_viewport_size({'width': 1240, 'height': 1754})  # A4 at 150 DPI
+            # Configure page for optimal PDF generation
+            await page.set_viewport_size({'width': 1400, 'height': 2000})  # Larger viewport for better layout
+            
+            # Add CSS to prevent unwanted page breaks
+            await page.add_style_tag({
+                'content': '''
+                    @media print {
+                        * { 
+                            page-break-inside: avoid !important;
+                            break-inside: avoid !important;
+                        }
+                        .invoice-container, .template-container, .container {
+                            page-break-inside: avoid !important;
+                        }
+                        table { 
+                            page-break-inside: avoid !important;
+                            break-inside: avoid !important;
+                        }
+                        .section {
+                            page-break-inside: avoid !important;
+                            break-inside: avoid !important;
+                        }
+                        h1, h2, h3, h4, h5, h6 {
+                            page-break-after: avoid !important;
+                            break-after: avoid !important;
+                        }
+                    }
+                '''
+            })
             
             print(f"   🌐 Loading HTML file...")
             

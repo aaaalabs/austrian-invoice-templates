@@ -9,7 +9,7 @@
             /* Conservative Austrian Business Document Colors */
             --business-primary: rgb(51, 51, 51);       /* Professional Dark Gray */
             --business-secondary: rgb(102, 102, 102);  /* Medium Gray */
-            --business-accent: rgb(25, 60, 120);       /* Conservative Dark Blue */
+            --business-accent: rgb(51, 51, 51);        /* Conservative Dark Gray instead of blue */
             --business-background: rgb(248, 248, 248); /* Very Light Gray */
             --business-white: rgb(255, 255, 255);      /* Clean White */
             --business-border: rgb(204, 204, 204);     /* Light Border */
@@ -17,8 +17,9 @@
             --business-text-light: rgb(102, 102, 102); /* Light Text */
             --business-light-gray: rgb(242, 242, 242); /* Very Light Background */
             
-            /* Applied Colors */
-            --primary: var(--business-accent);
+            /* Applied Colors - Conservative Business Style */
+            --primary: rgb(51, 51, 51);           /* Dark gray primary */
+            --secondary: rgb(102, 102, 102);      /* Medium gray secondary */
             --background: var(--business-background);
             --text-primary: var(--business-text);
             --text-secondary: var(--business-text-light);
@@ -434,6 +435,147 @@
             color: var(--text-secondary);
             font-size: 0.8rem;
         }
+
+        /* Template Navigation Bar */
+        .template-navbar {
+            background: var(--business-white);
+            border: 1px solid var(--border);
+            margin: 2rem 1rem 0 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .navbar-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-right: 1rem;
+            white-space: nowrap;
+        }
+
+        .template-nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .nav-btn {
+            background: var(--business-background);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
+            color: var(--business-white);
+        }
+
+        .nav-btn.active {
+            background: var(--primary);
+            color: var(--business-white);
+            font-weight: 600;
+        }
+
+        .iframe-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: var(--business-background);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .control-btn:hover {
+            background: var(--primary);
+            color: var(--business-white);
+        }
+
+        /* Template Viewer */
+        .template-viewer {
+            background: var(--business-white);
+            border: 1px solid var(--border);
+            margin: 0 1rem 2rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .viewer-header {
+            background: var(--business-background);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .current-template-info {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .viewer-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .template-iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .template-nav-buttons {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .iframe-controls {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .template-iframe {
+                height: 600px;
+            }
+
+            .viewer-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
@@ -500,9 +642,9 @@
                         <a href="templates/01_handwerker_classic/handwerker_classic_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/01_handwerker_classic/handwerker_classic_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('01')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -534,9 +676,9 @@
                         <a href="templates/02_solar_pv_modern/solar_pv_modern_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/02_solar_pv_modern/solar_pv_modern_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('02')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -568,9 +710,9 @@
                         <a href="templates/03_it_professional/it_professional_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/03_it_professional/it_professional_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('03')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -602,9 +744,9 @@
                         <a href="templates/04_kleinunternehmer_minimal/kleinunternehmer_minimal_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/04_kleinunternehmer_minimal/kleinunternehmer_minimal_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('04')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -636,9 +778,9 @@
                         <a href="templates/05_b2b_reverse_charge/b2b_reverse_charge_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/05_b2b_reverse_charge/b2b_reverse_charge_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('05')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -670,9 +812,9 @@
                         <a href="templates/06_beratung_premium/beratung_premium_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/06_beratung_premium/beratung_premium_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('06')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -704,9 +846,9 @@
                         <a href="templates/07_tourismus_dreisprachig/tourismus_dreisprachig_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/07_tourismus_dreisprachig/tourismus_dreisprachig_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('07')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -738,9 +880,9 @@
                         <a href="templates/08_bau_vob_abschlag/bau_vob_abschlag_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/08_bau_vob_abschlag/bau_vob_abschlag_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('08')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -772,9 +914,9 @@
                         <a href="templates/09_freelancer_creative/freelancer_creative_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/09_freelancer_creative/freelancer_creative_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('09')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -806,9 +948,9 @@
                         <a href="templates/10_ecommerce_modern/ecommerce_modern_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/10_ecommerce_modern/ecommerce_modern_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('10')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -840,9 +982,9 @@
                         <a href="templates/11_rechtsanwalt_formal/rechtsanwalt_formal_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/11_rechtsanwalt_formal/rechtsanwalt_formal_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('11')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -874,9 +1016,9 @@
                         <a href="templates/12_gastgewerbe_restaurant/gastgewerbe_restaurant_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/12_gastgewerbe_restaurant/gastgewerbe_restaurant_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('12')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -908,9 +1050,9 @@
                         <a href="templates/13_immobilienverwaltung/immobilienverwaltung_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/13_immobilienverwaltung/immobilienverwaltung_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('13')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -942,9 +1084,9 @@
                         <a href="templates/14_energiegemeinschaft_neu/energiegemeinschaft_neu_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/14_energiegemeinschaft_neu/energiegemeinschaft_neu_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('14')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -976,9 +1118,9 @@
                         <a href="templates/15_startup_minimalist/startup_minimalist_example.html" class="btn btn-primary" target="_blank">
                             HTML ansehen
                         </a>
-                        <a href="templates/15_startup_minimalist/startup_minimalist_example.pdf" class="btn btn-secondary" target="_blank">
-                            PDF herunterladen
-                        </a>
+                        <button class="btn btn-secondary" onclick="loadTemplate('15')">
+                            Template laden
+                        </button>
                     </div>
                 </div>
             </div>
@@ -988,6 +1130,49 @@
             <h3>Media Assets & AI-Generierung</h3>
             <p>Alle Vorlagen können mit dem <code>/image_generation/</code> System professionelle Logos, Icons und Wasserzeichen generieren lassen. 
             Nutzen Sie OpenAI's gpt-image-1 für hochqualitative, branchen-spezifische Medien-Assets.</p>
+        </div>
+
+        <!-- Template Navigation Bar -->
+        <div class="template-navbar">
+            <div class="navbar-content">
+                <div class="navbar-title">Template Browser:</div>
+                <div class="template-nav-buttons">
+                    <button class="nav-btn" data-template="01" data-name="Handwerker Classic">01</button>
+                    <button class="nav-btn" data-template="02" data-name="Solar PV Modern">02</button>
+                    <button class="nav-btn" data-template="03" data-name="IT Professional">03</button>
+                    <button class="nav-btn" data-template="04" data-name="Kleinunternehmer">04</button>
+                    <button class="nav-btn" data-template="05" data-name="B2B Reverse Charge">05</button>
+                    <button class="nav-btn" data-template="06" data-name="Beratung Premium">06</button>
+                    <button class="nav-btn" data-template="07" data-name="Tourismus">07</button>
+                    <button class="nav-btn" data-template="08" data-name="Bau VOB">08</button>
+                    <button class="nav-btn" data-template="09" data-name="Freelancer Creative">09</button>
+                    <button class="nav-btn" data-template="10" data-name="E-Commerce">10</button>
+                    <button class="nav-btn" data-template="11" data-name="Rechtsanwalt">11</button>
+                    <button class="nav-btn" data-template="12" data-name="Restaurant">12</button>
+                    <button class="nav-btn" data-template="13" data-name="Immobilien">13</button>
+                    <button class="nav-btn" data-template="14" data-name="Energiegemeinschaft">14</button>
+                    <button class="nav-btn" data-template="15" data-name="Startup">15</button>
+                </div>
+                <div class="iframe-controls">
+                    <button class="control-btn" onclick="resetViewer()">Zurücksetzen</button>
+                    <button class="control-btn" onclick="toggleFullscreen()">Vollbild</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Viewer -->
+        <div class="template-viewer" id="templateViewer" style="display: none;">
+            <div class="viewer-header">
+                <div class="current-template-info">
+                    <strong id="currentTemplateName">Template auswählen</strong>
+                    <div id="currentTemplateDesc" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;"></div>
+                </div>
+                <div class="viewer-actions">
+                    <button class="control-btn" onclick="toggleFullscreen()">Vollbild</button>
+                    <button class="control-btn" onclick="closeViewer()">×</button>
+                </div>
+            </div>
+            <iframe id="templateIframe" class="template-iframe" src=""></iframe>
         </div>
 
         <div class="legal-disclaimer">
@@ -1083,24 +1268,114 @@
             });
         });
 
-        // Add click tracking (optional)
-        function trackClick(templateNumber, action) {
-            console.log(`Template ${templateNumber}: ${action} clicked`);
-            // Add analytics tracking here if needed
+        // Template Navigation System
+        const templateMappings = {
+            '01': {name: 'Handwerker Classic', folder: 'handwerker_classic', desc: 'Elektrotechnik & Traditionelles Handwerk'},
+            '02': {name: 'Solar PV Modern', folder: 'solar_pv_modern', desc: 'Photovoltaik & Erneuerbare Energien'},
+            '03': {name: 'IT Professional', folder: 'it_professional', desc: 'Software Development & IT Consulting'},
+            '04': {name: 'Kleinunternehmer', folder: 'kleinunternehmer_minimal', desc: 'Steuerberatung & Kleinbetriebe'},
+            '05': {name: 'B2B Reverse Charge', folder: 'b2b_reverse_charge', desc: 'Grenzüberschreitende EU-Geschäfte'},
+            '06': {name: 'Beratung Premium', folder: 'beratung_premium', desc: 'Management Consulting & Strategieberatung'},
+            '07': {name: 'Tourismus', folder: 'tourismus_dreisprachig', desc: 'Hotellerie & Tourismus (DE/EN/IT)'},
+            '08': {name: 'Bau VOB', folder: 'bau_vob_abschlag', desc: 'Baugewerbe & Teilrechnungen'},
+            '09': {name: 'Freelancer Creative', folder: 'freelancer_creative', desc: 'Brand Design & Visual Communication'},
+            '10': {name: 'E-Commerce', folder: 'ecommerce_modern', desc: 'Online-Handel & B2B E-Commerce'},
+            '11': {name: 'Rechtsanwalt', folder: 'rechtsanwalt_formal', desc: 'Anwaltskanzlei & Rechtsdienste'},
+            '12': {name: 'Restaurant', folder: 'gastgewerbe_restaurant', desc: 'Gehobene Gastronomie & Bewirtung'},
+            '13': {name: 'Immobilien', folder: 'immobilienverwaltung', desc: 'Hausverwaltung & WEG-Administration'},
+            '14': {name: 'Energiegemeinschaft', folder: 'energiegemeinschaft_neu', desc: 'Erneuerbare Energiegemeinschaft (EEG)'},
+            '15': {name: 'Startup', folder: 'startup_minimalist', desc: 'Tech Startups & Digital Services'}
+        };
+
+        let currentTemplate = null;
+
+        function loadTemplate(templateNumber) {
+            const template = templateMappings[templateNumber];
+            if (!template) return;
+
+            currentTemplate = templateNumber;
+            
+            // Update UI
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-template="${templateNumber}"]`).classList.add('active');
+            
+            // Update info
+            document.getElementById('currentTemplateName').textContent = `Template ${templateNumber}: ${template.name}`;
+            document.getElementById('currentTemplateDesc').textContent = template.desc;
+            
+            // Load in iframe
+            const iframe = document.getElementById('templateIframe');
+            iframe.src = `templates/${templateNumber}_${template.folder}/${template.folder}_example.html`;
+            
+            // Show viewer
+            document.getElementById('templateViewer').style.display = 'block';
+            
+            // Scroll to viewer
+            document.getElementById('templateViewer').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
         }
 
-        // Enhance buttons with tracking
+        // Removed PDF functionality due to formatting issues
+
+        function resetViewer() {
+            document.getElementById('templateIframe').src = '';
+            document.getElementById('templateViewer').style.display = 'none';
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            currentTemplate = null;
+        }
+
+        function closeViewer() {
+            resetViewer();
+        }
+
+        function toggleFullscreen() {
+            const iframe = document.getElementById('templateIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            }
+        }
+
+        // Initialize navigation
         document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    const card = this.closest('.template-card');
-                    const templateNumber = card.querySelector('.template-number').textContent;
-                    const action = this.textContent.includes('HTML') ? 'HTML' : 'PDF';
-                    trackClick(templateNumber, action);
+            // Add click handlers to navigation buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const templateNumber = this.dataset.template;
+                    loadTemplate(templateNumber);
                 });
             });
+
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!currentTemplate) return;
+                
+                let nextTemplate = null;
+                const current = parseInt(currentTemplate);
+                
+                if (e.key === 'ArrowLeft' && current > 1) {
+                    nextTemplate = String(current - 1).padStart(2, '0');
+                } else if (e.key === 'ArrowRight' && current < 15) {
+                    nextTemplate = String(current + 1).padStart(2, '0');
+                }
+                
+                if (nextTemplate && templateMappings[nextTemplate]) {
+                    loadTemplate(nextTemplate);
+                }
+            });
         });
+
+        // Legacy functions for compatibility
+        function trackClick(templateNumber, action) {
+            console.log(`Template ${templateNumber}: ${action} clicked`);
+        }
     </script>
 </body>
 </html>

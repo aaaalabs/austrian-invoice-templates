@@ -1,0 +1,54 @@
+
+📄 Austrian Invoice Template A4 PDF Generation Report
+=================================================================
+
+📊 Summary Statistics:
+   Total templates: 16
+   ✅ Successful PDFs: 16
+   ❌ Failed: 0
+   🎯 Success rate: 100.0%
+   
+⏱️  Performance:
+   Total time: 10.0 seconds
+   Average per PDF: 0.6 seconds
+   
+📁 File Statistics:
+   Total PDF size: 6,598,083 bytes (6.3 MB)
+   Average PDF size: 412,380 bytes (403 KB)
+   
+📋 Generated A4 PDFs:
+   ✅ Template 01: Handwerker Classic (405,187 bytes)
+      📄 handwerker_classic_example.pdf
+   ✅ Template 02: Solar Pv Modern (351,596 bytes)
+      📄 solar_pv_modern_example.pdf
+   ✅ Template 03: It Professional (536,773 bytes)
+      📄 it_professional_example.pdf
+   ✅ Template 04: Kleinunternehmer Minimal (208,941 bytes)
+      📄 kleinunternehmer_minimal_example.pdf
+   ✅ Template 05: B2B Reverse Charge (374,085 bytes)
+      📄 b2b_reverse_charge_example.pdf
+   ✅ Template 06: Beratung Premium (368,625 bytes)
+      📄 beratung_premium_example.pdf
+   ✅ Template 07: Tourismus Dreisprachig (354,102 bytes)
+      📄 tourismus_dreisprachig_example.pdf
+   ✅ Template 08: Bau Vob Abschlag (274,277 bytes)
+      📄 bau_vob_abschlag_example.pdf
+   ✅ Template 09: Freelancer Creative (544,805 bytes)
+      📄 freelancer_creative_example.pdf
+   ✅ Template 10: Ecommerce Modern (277,062 bytes)
+      📄 ecommerce_modern_example.pdf
+   ✅ Template 11: Rechtsanwalt Formal (554,670 bytes)
+      📄 rechtsanwalt_formal_example.pdf
+   ✅ Template 12: Gastgewerbe Restaurant (272,321 bytes)
+      📄 gastgewerbe_restaurant_example.pdf
+   ✅ Template 13: Immobilienverwaltung (606,163 bytes)
+      📄 immobilienverwaltung_example.pdf
+   ✅ Template 14: Energiegemeinschaft Neu (258,030 bytes)
+      📄 energiegemeinschaft_neu_example.pdf
+   ✅ Template 15: Startup Minimalist (608,422 bytes)
+      📄 startup_minimalist_example.pdf
+   ✅ Template 16: Libra Innovation Tech (603,024 bytes)
+      📄 libra_innovation_tech_example.pdf
+
+🖨️  Print Quality: A4 format (210×297mm), 300 DPI, Austrian business margins
+🕐 Generated at: 2025-08-28 17:48:47

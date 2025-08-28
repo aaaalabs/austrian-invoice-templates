@@ -54,10 +54,30 @@ The collection includes specialized templates for:
 ## Usage Guidelines
 
 ### Template Structure
-Each template follows a consistent three-part structure:
+Each template follows a consistent four-part structure:
 1. **Initial Master Template Prompt**: Complete setup instructions for AI systems
 2. **Master Template with Mock Data JSON**: Structured data examples
 3. **Fill-Up Prompt**: Instructions for generating new invoices with real data
+4. **Example Template**: Concrete implementation with mock company data
+
+### Media Asset Structure (CRITICAL)
+**Master Templates (.master.html):**
+- **Reference**: `placeholders/` folder for generic placeholder images
+- **Purpose**: Templates for AI-prompt-based generation with variable data
+- **Content**: Generic placeholders (logo_rectangle.png, icon_square.png, watermark.png)
+- **Usage**: For creating new templates with AI prompts
+
+**Example Templates (.example.html):**  
+- **Reference**: `media/` folder for AI-generated mock company assets
+- **Purpose**: Demonstrate real-world usage with specific mock company branding
+- **Content**: Company-specific logos, icons, watermarks generated for mock businesses
+- **Usage**: Show potential customers what their finished invoices could look like
+
+### Image Generation Workflow
+1. **Placeholders**: Generic images in `/placeholders/` for master templates
+2. **AI Generation**: Company-specific images generated to `/media/` folder
+3. **Example Implementation**: Example templates use generated `/media/` assets
+4. **Customer Usage**: Real customers replace placeholder data with their own
 
 ### Regional Considerations
 - **Tirol focus**: Multilingual requirements due to tourism and cross-border trade

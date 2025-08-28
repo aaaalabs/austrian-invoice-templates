@@ -128,38 +128,6 @@
             color: #2c4657;
         }
 
-        /* Project Information Banner */
-        .project-banner {
-            background: #f8fafc;
-            border-left: 4px solid #EBDBC3;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .project-title {
-            font-size: 14pt;
-            font-weight: 600;
-            color: #2c4657;
-            margin-bottom: 8px;
-        }
-
-        .project-details {
-            font-size: 10pt;
-            color: #4b5563;
-            line-height: 1.4;
-        }
-
-        .tech-stack {
-            margin-top: 10px;
-            padding: 8px 12px;
-            background: white;
-            border-radius: 6px;
-            font-family: 'Courier New', monospace;
-            font-size: 9pt;
-            color: #2c4657;
-        }
-
         /* Enhanced Service Table */
         .services-section {
             margin-bottom: 35px;
@@ -180,9 +148,7 @@
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
         }
 
         .services-table th {
@@ -248,7 +214,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
             min-width: 320px;
         }
 
@@ -280,7 +246,7 @@
             font-size: 12pt;
         }
 
-        /* Professional Payment Section - Apple Design Inspired */
+        /* Professional Payment Section - Compact Design */
         .payment-section {
             background: #f8fafc;
             border: 1px solid #EBDBC3;
@@ -372,205 +338,6 @@
             font-weight: 500;
         }
 
-        /* Stacked Layout for Better Hierarchy */
-        .payment-container {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        /* Payment Amount Highlight - Most Important */
-        .payment-amount-card {
-            background: #2c4657;
-            color: white;
-            padding: 20px 24px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .payment-amount-label {
-            font-size: 11pt;
-            font-weight: 500;
-            opacity: 0.8;
-            margin-bottom: 4px;
-        }
-
-        .payment-amount-value {
-            font-size: 24pt;
-            font-weight: 700;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .payment-due-date {
-            font-size: 10pt;
-            opacity: 0.9;
-            margin-top: 4px;
-        }
-
-        /* Payment Details Grid - Secondary Priority */
-        .payment-details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 16px;
-        }
-
-        .payment-terms {
-            padding: 16px;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-        }
-
-        .payment-terms h4 {
-            font-size: 10pt;
-            font-weight: 600;
-            color: #2c4657;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .payment-terms p {
-            margin-bottom: 6px;
-            font-size: 10pt;
-            line-height: 1.4;
-        }
-
-        .payment-terms strong {
-            color: #2c4657;
-            font-weight: 600;
-        }
-
-        /* Bank Information Card - Scannable IBAN */
-        .bank-info {
-            padding: 16px;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-        }
-
-        .bank-info h4 {
-            font-size: 10pt;
-            font-weight: 600;
-            color: #2c4657;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .bank-name {
-            font-size: 11pt;
-            font-weight: 600;
-            color: #2c4657;
-            margin-bottom: 12px;
-        }
-
-        /* IBAN Display - Apple's Approach to Financial Data */
-        .bank-details {
-            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
-            font-size: 11pt;
-            line-height: 1.6;
-            background: #f9fafb;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #d1d5db;
-        }
-
-        .iban-display {
-            display: block;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 4px;
-            letter-spacing: 0.5px;
-            word-spacing: 2px;
-            /* Prevent breaking - critical for financial data */
-            white-space: nowrap;
-            overflow-x: auto;
-            padding: 2px 0;
-        }
-
-        .bic-display {
-            display: block;
-            color: #4b5563;
-            margin-top: 8px;
-        }
-
-        /* QR Payment Option - Convenience Layer */
-        .qr-payment-section {
-            display: flex;
-            justify-content: center;
-            margin-top: 16px;
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .qr-payment-card {
-            text-align: center;
-            padding: 16px;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            max-width: 180px;
-        }
-
-        .qr-payment-card img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 8px;
-        }
-
-        .qr-label {
-            font-size: 9pt;
-            color: #6b7280;
-            font-weight: 500;
-            line-height: 1.3;
-        }
-
-        /* Mobile-First Responsive Design */
-        @media (max-width: 768px) {
-            .payment-details-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            
-            .payment-amount-value {
-                font-size: 20pt;
-            }
-            
-            .iban-display {
-                font-size: 10pt;
-                /* Allow gentle wrapping on very small screens */
-                white-space: normal;
-                word-break: break-all;
-            }
-        }
-
-        /* Technical Project Information */
-        .project-info {
-            background: #EBDBC3;
-            border-left: 4px solid #2c4657;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .project-info h4 {
-            color: #2c4657;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 11pt;
-        }
-
-        .project-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            font-size: 10pt;
-        }
-
         /* Professional Footer */
         .footer {
             margin-top: 40px;
@@ -588,7 +355,6 @@
         .footer-section {
             text-align: center;
         }
-
 
         .footer-section p {
             font-size: 9pt;
@@ -676,26 +442,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .payment-details-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            
-            .payment-amount-value {
-                font-size: 20pt;
-            }
-            
-            .iban-display {
-                font-size: 10pt;
-                /* Allow gentle wrapping on very small screens */
-                white-space: normal;
-                word-break: break-all;
-            }
-            
-            .project-details {
-                grid-template-columns: 1fr;
-            }
-            
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -713,7 +459,7 @@
                     <div class="company-claim">Automatisierung ohne IT-Abteilung</div>
                     <div class="company-details">
                         Adamgasse 23, 6020 Innsbruck<br>
-                        Tel: +43 (0) 660 1238172 | E-Mail: contact@libralab.ai<br>
+                        Tel: +43 (0) 660 1238172 | E-Mail: kontakt@libralab.ai<br>
                         Web: https://libralab.ai<br>
                         UID: ATU74236828 | FB-Nr: FN503145w
                     </div>
@@ -738,21 +484,10 @@
             <div class="info-card">
                 <h3>Rechnungsdetails</h3>
                 <p><strong>Rechnungsdatum:</strong> 28.08.2025</p>
-                <p><strong>Leistungszeitraum:</strong> 19.08.2025 - 28.08.2025</p>
-                <p><strong>Zahlungsfrist:</strong> sofort nach Erhalt</p>
-                <p><strong>Fälligkeitsdatum:</strong> bei Erhalt</p>
+                <p><strong>Leistungszeitraum:</strong> 18.08.2025 - 31.08.2025</p>
+                <p><strong>Zahlungsfrist:</strong> 7 Tage</p>
+                <p><strong>Fälligkeitsdatum:</strong> 04.09.2025</p>
                 <p><strong>Ansprechpartner:</strong> Thomas Seiger</p>
-            </div>
-        </section>
-
-        <!-- Project Information Banner -->
-        <section class="project-banner">
-            <div class="project-title">KI-Transformation & Email-Automatisierung</div>
-            <div class="project-details">
-                Email-Draft-System Setup, Prozessanalyse, Workflow-Entwicklung - Prozessdigitalisierung & Entwicklung
-            </div>
-            <div class="tech-stack">
-                Tech Stack: Make.com, Claude API, Notion, Gmail API
             </div>
         </section>
 
@@ -775,7 +510,7 @@
                         <td class="amount">1</td>
                         <td class="description">
                             <strong>KI-gestützte Prozessdigitalisierung</strong>
-                            <div class="service-details">Entwicklung Email-Draft-Automatisierung, Make.com Integration, Workflow-Design, Testing mit echten Kundendaten (20 von 20 vereinbarten August-Stunden)</div>
+                            <div class="service-details">Entwicklung Email-Draft-Automatisierung, Make.com Integration, Workflow-Design, Testing mit echten Kundendaten</div>
                             <div class="tech-specs">Make.com Szenarien, Claude API Integration, Gmail Automation</div>
                         </td>
                         <td style="text-align: center;">18.08.-31.08.2025</td>
@@ -845,23 +580,6 @@
             </table>
         </section>
 
-        <!-- Technical Project Information -->
-        <section class="project-info">
-            <h4>Projekt- und Leistungsdetails</h4>
-            <div class="project-details">
-                <div>
-                    <strong>Projektmanager:</strong> Thomas Seiger<br>
-                    <strong>Entwicklungszeit:</strong> 2 Wochen (20 Stunden – alle vereinbarten August-Stunden)<br>
-                    <strong>Wartung:</strong> Erste Optimierungen bereits integriert
-                </div>
-                <div>
-                    <strong>Hosting:</strong> EU-Server (Make.com Cloud) mit 99.9% Uptime SLA<br>
-                    <strong>Compliance:</strong> DSGVO-konform mit EU-Datenverarbeitung & 12-Monats-Retention<br>
-                    <strong>Technologie:</strong> Make.com + Claude API + Gmail Integration + Notion Database
-                </div>
-            </div>
-        </section>
-
         <!-- Professional Payment Section -->
         <section class="payment-section">
             <div class="payment-title">Zahlungsinformationen</div>
@@ -870,7 +588,7 @@
                 <!-- Compact: Payment Terms -->
                 <div class="payment-terms-compact">
                     <h4>Zahlungsbedingungen</h4>
-                    <p><strong>Zahlungsziel:</strong> sofort nach Erhalt | <strong>Fällig:</strong> bei Erhalt | <strong>Verwendungszweck:</strong> A1048 MS KI-Transformation</p>
+                    <p><strong>Zahlungsziel:</strong> 7 Tage | <strong>Fällig:</strong> 04.09.2025 | <strong>Verwendungszweck:</strong> A1048 MS KI-Transformation</p>
                 </div>
 
                 <!-- Bank & QR in one row -->
@@ -895,7 +613,7 @@
                     <p><strong>Libra Innovation FlexCo</strong><br>Adamgasse 23<br>6020 Innsbruck</p>
                 </div>
                 <div class="footer-section">
-                    <p><strong>Thomas Seiger</strong><br>+43 (0) 660 1238172<br>contact@libralab.ai</p>
+                    <p><strong>Thomas Seiger</strong><br>+43 (0) 660 1238172<br>kontakt@libralab.ai</p>
                 </div>
                 <div class="footer-section">
                     <p><strong>Revolut Bank</strong><br>LT 7032 5006 27125 26400<br>BIC: REVOLT21</p>
@@ -907,7 +625,7 @@
             
             <div class="legal-notice">
                 <p>Bei Rückfragen stehen wir selbstverständlich jederzeit gerne zur Verfügung.</p>
-                <p>Aufbewahrungspflicht: 7 Jahre nach Rechnungsstellung gemäß BAO. Diese Rechnung wurde elektronisch erstellt und ist ohne Unterschrift gültig.</p>
+                <p>Diese Rechnung wurde elektronisch erstellt und ist ohne Unterschrift gültig.</p>
             </div>
         </footer>
     </div>

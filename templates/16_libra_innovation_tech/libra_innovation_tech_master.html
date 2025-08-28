@@ -180,9 +180,7 @@
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
         }
 
         .services-table th {
@@ -248,7 +246,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
             min-width: 320px;
         }
 
@@ -807,24 +805,7 @@
             </table>
         </section>
 
-        <!-- Technical Project Information -->
-        <section class="project-info">
-            <h4>Projekt- und Leistungsdetails</h4>
-            <div class="project-details">
-                <div>
-                    <strong>Projektmanager:</strong> {{zusatzinfo.projektmanager}}<br>
-                    <strong>Entwicklungszeit:</strong> {{zusatzinfo.entwicklungszeit}}<br>
-                    <strong>Wartung:</strong> {{zusatzinfo.wartung}}
-                </div>
-                <div>
-                    <strong>Hosting:</strong> {{zusatzinfo.hosting}}<br>
-                    <strong>Compliance:</strong> {{zusatzinfo.compliance}}<br>
-                    <strong>Technologie:</strong> {{zusatzinfo.technologie_stack}}
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Payment Section -->
+<!-- Professional Payment Section -->
         <section class="payment-section">
             <div class="payment-title">Zahlungsinformationen</div>
             
@@ -869,7 +850,7 @@
             
             <div class="legal-notice">
                 <p>{{kontakt.rueckfragen}}</p>
-                <p>Aufbewahrungspflicht: 7 Jahre nach Rechnungsstellung gemäß BAO. Diese Rechnung wurde elektronisch erstellt und ist ohne Unterschrift gültig.</p>
+                <p>Diese Rechnung wurde elektronisch erstellt und ist ohne Unterschrift gültig.</p>
             </div>
         </footer>
     </div>
