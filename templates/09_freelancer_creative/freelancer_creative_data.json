@@ -45,150 +45,181 @@
   },
   "leistungen": [
     {
-      "phase": "Discovery & Strategy",
+      "phase": "Strategic Discovery & Brand Analysis",
       "items": [
         {
-          "beschreibung": "Brand Workshop & Stakeholder Interviews",
-          "einheit": "Pauschale",
-          "menge": 1,
-          "einzelpreis": 1200.00,
-          "gesamt": 1200.00
+          "beschreibung": "Brand-Workshop mit Stakeholder-Interviews (2 Termine)",
+          "einheit": "Tagespauschale",
+          "menge": 2,
+          "einzelpreis": 750.00,
+          "gesamt": 1500.00
         },
         {
-          "beschreibung": "Competitor Analysis & Mood Boarding",
+          "beschreibung": "Competitive Intelligence & Marktanalyse",
           "einheit": "Stunden",
-          "menge": 8,
-          "einzelpreis": 95.00,
-          "gesamt": 760.00
+          "menge": 12,
+          "einzelpreis": 120.00,
+          "gesamt": 1440.00
+        },
+        {
+          "beschreibung": "Brand Positioning & Messaging Framework",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 980.00,
+          "gesamt": 980.00
         }
       ]
     },
     {
-      "phase": "Design Development",
+      "phase": "Corporate Design Development",
       "items": [
         {
-          "beschreibung": "Logo Design - 3 Konzepte + 2 Überarbeitungsrunden",
+          "beschreibung": "Logo-Entwicklung - 4 Designkonzepte inkl. 3 Überarbeitungsrunden",
           "einheit": "Pauschale",
           "menge": 1,
-          "einzelpreis": 2400.00,
-          "gesamt": 2400.00
+          "einzelpreis": 2800.00,
+          "gesamt": 2800.00
         },
         {
-          "beschreibung": "Color Palette & Typography System",
+          "beschreibung": "Corporate Color System & Farbkodierung",
           "einheit": "Pauschale",
           "menge": 1,
-          "einzelpreis": 800.00,
-          "gesamt": 800.00
+          "einzelpreis": 650.00,
+          "gesamt": 650.00
         },
         {
-          "beschreibung": "Brand Pattern & Graphic Elements",
+          "beschreibung": "Typografie-System & Font-Pairing",
           "einheit": "Pauschale",
-          "menge": 1,
-          "einzelpreis": 600.00,
-          "gesamt": 600.00
-        }
-      ]
-    },
-    {
-      "phase": "Application Design",
-      "items": [
-        {
-          "beschreibung": "Business Cards & Stationery",
-          "einheit": "Set",
           "menge": 1,
           "einzelpreis": 450.00,
           "gesamt": 450.00
         },
         {
-          "beschreibung": "Social Media Templates (12 Designs)",
+          "beschreibung": "Bildsprache-Konzept & Icon-Set (24 Piktogramme)",
           "einheit": "Pauschale",
           "menge": 1,
-          "einzelpreis": 960.00,
-          "gesamt": 960.00
-        },
-        {
-          "beschreibung": "Website UI Kit (Desktop + Mobile)",
-          "einheit": "Pauschale",
-          "menge": 1,
-          "einzelpreis": 1800.00,
-          "gesamt": 1800.00
-        },
-        {
-          "beschreibung": "Presentation Template (20 Slides)",
-          "einheit": "Pauschale",
-          "menge": 1,
-          "einzelpreis": 650.00,
-          "gesamt": 650.00
+          "einzelpreis": 890.00,
+          "gesamt": 890.00
         }
       ]
     },
     {
-      "phase": "Brand Guidelines",
+      "phase": "Corporate Identity Implementation",
       "items": [
         {
-          "beschreibung": "Brand Manual (40 Pages PDF)",
+          "beschreibung": "Geschäftsausstattung (Visitenkarten, Briefpapier, Kuverts)",
+          "einheit": "Set",
+          "menge": 1,
+          "einzelpreis": 580.00,
+          "gesamt": 580.00
+        },
+        {
+          "beschreibung": "PowerPoint Master-Template (30 Folien-Layouts)",
           "einheit": "Pauschale",
           "menge": 1,
-          "einzelpreis": 1200.00,
-          "gesamt": 1200.00
+          "einzelpreis": 780.00,
+          "gesamt": 780.00
+        },
+        {
+          "beschreibung": "Website Design-System (Desktop, Tablet, Mobile)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 1950.00,
+          "gesamt": 1950.00
+        },
+        {
+          "beschreibung": "Fahrzeugbeschriftung & Signage-Konzept",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 680.00,
+          "gesamt": 680.00
+        },
+        {
+          "beschreibung": "Werbeträger-Templates (Flyer, Broschüren, Banner)",
+          "einheit": "Set",
+          "menge": 1,
+          "einzelpreis": 850.00,
+          "gesamt": 850.00
         }
       ]
     },
     {
-      "phase": "Extras",
+      "phase": "Brand Guidelines & Dokumentation",
       "items": [
         {
-          "beschreibung": "Rush Delivery Surcharge (2 weeks faster)",
+          "beschreibung": "Corporate Design Manual (60 Seiten, DE/EN)",
           "einheit": "Pauschale",
           "menge": 1,
-          "einzelpreis": 500.00,
-          "gesamt": 500.00
+          "einzelpreis": 1680.00,
+          "gesamt": 1680.00
         },
         {
-          "beschreibung": "Extended Usage Rights (Unlimited, All Media)",
+          "beschreibung": "Digital Brand Assets Library (ZIP-Archiv)",
           "einheit": "Pauschale",
           "menge": 1,
-          "einzelpreis": 800.00,
-          "gesamt": 800.00
+          "einzelpreis": 320.00,
+          "gesamt": 320.00
+        }
+      ]
+    },
+    {
+      "phase": "Projektmanagement & Zusatzleistungen",
+      "items": [
+        {
+          "beschreibung": "Projektkoordination & Client Management",
+          "einheit": "Stunden",
+          "menge": 18,
+          "einzelpreis": 95.00,
+          "gesamt": 1710.00
+        },
+        {
+          "beschreibung": "Express-Bearbeitung (30% Zeitreduktion)",
+          "einheit": "Pauschale",
+          "menge": 1,
+          "einzelpreis": 890.00,
+          "gesamt": 890.00
         }
       ]
     }
   ],
   "zusammenfassung": {
-    "subtotal_discovery": 1960.00,
-    "subtotal_design": 3800.00,
-    "subtotal_application": 3860.00,
-    "subtotal_guidelines": 1200.00,
-    "subtotal_extras": 1300.00,
-    "rabatt_beschreibung": "Early Bird Discount 10%",
-    "rabatt_prozent": 10,
-    "rabatt_betrag": 1212.00,
-    "summe_netto": 10908.00,
-    "ust_20": 2181.60,
-    "summe_brutto": 13089.60
+    "subtotal_discovery": 3920.00,
+    "subtotal_design": 4790.00,
+    "subtotal_application": 4840.00,
+    "subtotal_guidelines": 2000.00,
+    "subtotal_extras": 2600.00,
+    "rabatt_beschreibung": "Projekt-Pauschalrabatt",
+    "rabatt_prozent": 8,
+    "rabatt_betrag": 1452.00,
+    "summe_netto": 16698.00,
+    "ust_20": 3339.60,
+    "summe_brutto": 20037.60
   },
   "nutzungsrechte": {
-    "umfang": "Exklusive, unbeschränkte Nutzungsrechte für alle Medien und Länder",
-    "dauer": "Zeitlich unbegrenzt",
-    "bearbeitung": "Bearbeitungsrecht eingeschlossen",
-    "weitergabe": "Weitergabe an Tochtergesellschaften erlaubt",
-    "archivierung": "Ursprungsdateien verbleiben bei Studio Kreativkopf für Portfolio"
+    "umfang": "Exklusive Nutzung für Corporate Identity im Geschäftszweck der TechnoLogistics Solutions GmbH",
+    "dauer": "Zeitlich unbegrenzt für definierte Nutzungsbereiche",
+    "bearbeitung": "Bearbeitungen nur in Absprache mit Brandwerk Studio",
+    "weitergabe": "Weitergabe an Tochter- und Partnerunternehmen unter gleichen Bedingungen",
+    "archivierung": "Alle Arbeitsdateien und Originalentwürfe verbleiben bei Brandwerk Studio für Portfolio-Zwecke"
   },
   "lieferung": {
-    "methode": "WeTransfer Link + Google Drive Backup",
+    "methode": "Secure FTP Server + Backup via OneDrive Business",
     "dateien": [
-      "Logo (AI, EPS, SVG, PNG, JPG)",
-      "Brand Guidelines (PDF, 40 Seiten)",
-      "Social Media Templates (PSD, Canva)",
-      "UI Kit (Figma, Sketch)",
-      "Presentation (PPTX, KEY, Google Slides)",
-      "Font Files (OTF, TTF, WOFF2)"
+      "Logo-Dateien (AI, EPS, SVG, PNG-HiRes, PNG-Web)",
+      "Corporate Design Manual (PDF, 60 Seiten, DE/EN)",
+      "PowerPoint Master-Templates (PPTX, POTX)",
+      "Website Design-System (Figma, Adobe XD)",
+      "Geschäftsausstattung Print-Ready (PDF, INDD)",
+      "Icon-Set (AI, SVG, PNG 32-256px)",
+      "Corporate Fonts (OTF, TTF mit Lizenz)",
+      "Farb-Profile (ASE, ACO für Adobe CC)",
+      "Brand Asset Library (organisierte Ordnerstruktur)"
     ],
-    "link": "https://we.tl/t-aBcDeF1234",
-    "passwort": "StartUp2025!"
+    "link": "https://secure.brandwerk-studio.at/projects/TLS-CI-2025",
+    "passwort": "TLS#Brand2025!"
   },
   "testimonial": {
-    "quote": "Lisa hat unsere Vision perfekt in ein visuelles Konzept übersetzt. Absolut empfehlenswert!",
-    "author": "Sarah Chen, CEO TechStart (vorheriges Projekt)"
+    "quote": "Brandwerk Studio hat unsere Corporate Identity strategisch durchdacht und visuell überzeugend umgesetzt. Die Zusammenarbeit war professionell und zielführend.",
+    "author": "DI Alexandra Weiss, Marketing Director bei InnoTech Solutions GmbH"
   }
 }
