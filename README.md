@@ -110,16 +110,24 @@ Use `MASTER_TEMPLATE_IMPROVEMENT_INSTRUCTIONS.md` for enhancing templates with:
 The `/image_generation/` subfolder contains an automated system that generates professional media assets for all templates:
 
 - **45 Professional Images**: Logos, icons, and watermarks for all 15 templates
-- **OpenAI DALL-E Integration**: AI-generated images using detailed prompts
+- **OpenAI gpt-image-1 Integration**: Latest AI model for high-quality image generation
 - **Industry-Specific Branding**: Each template gets custom visual identity
 - **Print-Ready Output**: PNG with transparency, exact dimensions
+- **Gallery Thumbnails**: Header-focused screenshots (1720×650px) for template preview
 - **Cost**: ~$3.60 for all 45 images (~$0.08 each)
 
 ```bash
 cd image_generation
 pip install -r requirements.txt
-python generate_template_images.py
+python generate_template_images.py    # Generate logos/icons
+python generate_thumbnails.py         # Generate gallery thumbnails
 ```
+
+### Thumbnail Optimization
+- **Header-Focused**: Captures invoice headers and branding elements
+- **Optimal Aspect Ratio**: 1720×650px perfect for horizontal gallery display  
+- **Content-Dense**: Removes white space margins for maximum information visibility
+- **Professional Quality**: High-DPI screenshots with consistent cropping
 
 See `image_generation/README.md` for detailed setup and usage instructions.
 

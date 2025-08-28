@@ -47,12 +47,19 @@ class ThumbnailGenerator:
         # Ensure screenshots directory exists
         self.screenshots_dir.mkdir(exist_ok=True)
         
-        # Professional thumbnail settings
+        # Professional thumbnail settings optimized for header focus
         self.thumbnail_settings = {
             'viewport': {'width': 1920, 'height': 1080},  # Professional desktop resolution
             'thumbnail_size': (800, 600),                 # Gallery thumbnail size
             'quality': 90,                                # High quality
-            'crop_from_top': True                         # Preserve headers
+            'crop_from_top': True,                        # Preserve headers
+            'header_focus_height': 650,                   # Focus on top 650px (header + first items)
+            'content_crop': {
+                'left': 100,   # Remove left margin
+                'top': 0,      # Start from very top
+                'right': 100,  # Remove right margin
+                'bottom': 430  # Focus on header area (1080 - 650 = 430)
+            }
         }
     
     def discover_templates(self) -> List[ThumbnailSpec]:
@@ -103,6 +110,7 @@ class ThumbnailGenerator:
         print(f"\n📸 Generating thumbnail for Template {spec.template_number}: {spec.template_name}")
         print(f"   HTML: {spec.html_path.name}")
         print(f"   Output: {spec.thumbnail_path.name}")
+        print(f"   Crop: {self.thumbnail_settings['viewport']['width'] - self.thumbnail_settings['content_crop']['left'] - self.thumbnail_settings['content_crop']['right']}x{self.thumbnail_settings['header_focus_height']}px (header-focused)")
         
         try:
             # Create new page with professional settings
@@ -115,13 +123,23 @@ class ThumbnailGenerator:
             file_url = f"file://{spec.html_path.absolute()}"
             await page.goto(file_url, wait_until='networkidle', timeout=30000)
             
-            print(f"   📷 Capturing professional screenshot...")
+            # Ensure we're scrolled to the very top
+            await page.evaluate('window.scrollTo(0, 0)')
             
-            # Take professional screenshot (PNG doesn't support quality parameter)
+            print(f"   📷 Capturing header-focused screenshot...")
+            
+            # Take cropped screenshot focusing on invoice header and content
+            crop_settings = self.thumbnail_settings['content_crop']
             screenshot_buffer = await page.screenshot(
                 path=spec.thumbnail_path,
                 full_page=False,  # Capture viewport only for consistent sizing
-                type='png'        # High quality PNG format
+                type='png',       # High quality PNG format
+                clip={
+                    'x': crop_settings['left'],
+                    'y': crop_settings['top'], 
+                    'width': self.thumbnail_settings['viewport']['width'] - crop_settings['left'] - crop_settings['right'],
+                    'height': self.thumbnail_settings['header_focus_height']
+                }
             )
             
             print(f"   ✅ Thumbnail saved: {spec.thumbnail_path}")

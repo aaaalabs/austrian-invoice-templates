@@ -137,9 +137,9 @@
 
         .template-thumbnail {
             width: 100%;
-            height: 240px;
+            height: 260px;                      /* Optimized for header-focused content */
             object-fit: cover;
-            object-position: top;               /* Load from top-to-bottom to preserve header */
+            object-position: center;            /* Center the header-focused content */
             border-bottom: 1px solid var(--border);
             cursor: pointer;
             transition: opacity 0.2s ease;     /* Banking: Subtle image transitions */
@@ -610,8 +610,36 @@
 
     <main class="container">
         <div class="legal-note banking-accent">
-            <h3>Rechtliche Compliance</h3>
-            <p>Alle Vorlagen entsprechen dem österreichischen Umsatzsteuergesetz (UStG §11) und enthalten die neun Pflichtangaben für rechtskonforme Rechnungsstellung.</p>
+            <h3>Template-Grundlage</h3>
+            <p>Alle Vorlagen wurden nach den Anforderungen des österreichischen Umsatzsteuergesetzes (UStG §11, Stand August 2025) erstellt und enthalten die relevanten Pflichtangaben als Ausgangsbasis für Ihre Rechnungsstellung.</p>
+        </div>
+
+        <div class="legal-note" style="background: white; border: 1px solid var(--border);">
+            <h3 style="color: var(--primary);">Wie funktionieren die Template-Dateien?</h3>
+            <div style="text-align: left;">
+                <p><strong>Jedes Template enthält 2 wichtige Dateien:</strong></p>
+                
+                <div style="margin: 1rem 0;">
+                    <strong style="color: var(--primary);">📝 _master.html</strong> - Die Vorlage für Claude Code<br>
+                    <small>Enthält Platzhalter wie {{firma.name}} die Claude mit Ihren Daten ausfüllt</small>
+                </div>
+                
+                <div style="margin: 1rem 0;">
+                    <strong style="color: var(--primary);">📊 _data.json</strong> - Beispiel-Firmendaten<br>
+                    <small>Zeigt Ihnen welche Informationen Sie für Claude vorbereiten sollten</small>
+                </div>
+                
+                
+                <div style="margin: 1rem 0; opacity: 0.7;">
+                    <strong style="color: var(--primary);">🖥️ _example.html</strong> - Bonus: Fertige Beispiel-Rechnung<br>
+                    <small>Zeigt wie das Endresultat aussieht - mit professionellem Design und Mock-Firmendaten</small>
+                </div>
+
+                <div style="background: #f8fafc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px; border: 1px solid var(--border);">
+                    <strong>Empfehlung:</strong> Beginnen Sie mit der <strong>_master.html</strong> Datei und dem <strong>Claude Code DIY Tutorial</strong> - 
+                    das ist der einfachste Weg zu Ihrer ersten professionellen Rechnung!
+                </div>
+            </div>
         </div>
 
         <div class="templates-grid">
@@ -1124,6 +1152,40 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Claude Code DIY Anleitung -->
+            <div class="template-card" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 2px solid var(--primary);">
+                <div style="height: 240px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700;">
+                    AI
+                </div>
+                <div class="template-content">
+                    <div class="template-header">
+                        <div>
+                            <h3 class="template-title" style="color: var(--primary);">Claude Code DIY Anleitung</h3>
+                            <p class="template-industry">Schritt-für-Schritt Tutorial</p>
+                        </div>
+                        <span class="template-number" style="background: var(--primary);">DIY</span>
+                    </div>
+                    <p class="template-description">
+                        <strong>Komplette Anleitung:</strong> Wie Sie diese Templates mit Claude Code für Ihr Unternehmen anpassen. 
+                        Von der Installation bis zur fertigen, professionellen Rechnung in 10 Minuten.
+                    </p>
+                    <div class="template-features">
+                        <span class="feature-tag">Claude Code</span>
+                        <span class="feature-tag">AI-Anpassung</span>
+                        <span class="feature-tag">10 Min Setup</span>
+                        <span class="feature-tag">Do-It-Yourself</span>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="loadDIYTutorial()" style="background: var(--primary);">
+                            Anleitung starten
+                        </button>
+                        <a href="https://libralab.ai/?utm_source=invoice_templates" class="btn btn-secondary" target="_blank" style="color: var(--primary); border-color: var(--primary);">
+                            Service anfragen
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="legal-note banking-accent">
@@ -1238,7 +1300,17 @@
         }
 
         function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const existingInstructions = document.getElementById('diyInstructions');
+            
+            // Clean up
+            if (existingInstructions) {
+                existingInstructions.remove();
+            }
+            modalImg.style.display = 'block';  // Show image again for next use
+            
+            modal.style.display = 'none';
         }
 
         // Close modal when clicking outside
@@ -1343,6 +1415,33 @@
             }
         }
 
+        function loadDIYTutorial() {
+            // Load DIY tutorial in the iframe viewer
+            currentTemplate = 'DIY';
+            
+            // Update UI - clear active states on template buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Update info
+            document.getElementById('currentTemplateName').textContent = 'Claude Code DIY Tutorial';
+            document.getElementById('currentTemplateDesc').textContent = 'Schritt-für-Schritt Anleitung für die Template-Anpassung';
+            
+            // Load tutorial in iframe
+            const iframe = document.getElementById('templateIframe');
+            iframe.src = 'claude_code_diy_tutorial.html';
+            
+            // Show viewer
+            document.getElementById('templateViewer').style.display = 'block';
+            
+            // Scroll to viewer
+            document.getElementById('templateViewer').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
         // Initialize navigation
         document.addEventListener('DOMContentLoaded', function() {
             // Add click handlers to navigation buttons
@@ -1371,6 +1470,97 @@
                 }
             });
         });
+
+        // DIY Instructions Modal System
+        function showDIYInstructions() {
+            const modal = document.getElementById('imageModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalTitle.textContent = 'Claude Code DIY Anleitung';
+            
+            // Replace image with DIY instructions
+            modalImg.style.display = 'none';
+            
+            // Create instructions content
+            const instructionsDiv = document.createElement('div');
+            instructionsDiv.id = 'diyInstructions';
+            instructionsDiv.style.padding = '2rem';
+            instructionsDiv.style.fontFamily = 'Arial, Helvetica, sans-serif';
+            instructionsDiv.style.lineHeight = '1.6';
+            instructionsDiv.innerHTML = `
+                <h2 style="color: var(--primary); margin-bottom: 1.5rem;">Claude Code DIY Tutorial</h2>
+                
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0;">Schritt 1: Claude Code Setup (2 Minuten)</h3>
+                <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Gehen Sie zu <strong><a href="https://claude.ai/code" target="_blank" style="color: var(--primary);">claude.ai/code</a></strong></li>
+                    <li>Melden Sie sich mit Ihrem Anthropic-Account an</li>
+                    <li>Öffnen Sie ein neues Projekt oder einen neuen Chat</li>
+                </ol>
+                
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0;">Schritt 2: Template Download (1 Minute)</h3>
+                <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Wählen Sie die passende Branche aus den 15 Templates</li>
+                    <li>Klicken Sie "HTML ansehen" für Ihr gewähltes Template</li>
+                    <li>Speichern Sie die HTML-Datei lokal ab</li>
+                </ol>
+                
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0;">Schritt 3: AI-Anpassung mit Claude (5 Minuten)</h3>
+                <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Prompt:</strong> "Bitte passe diese österreichische Rechnungsvorlage für mein Unternehmen an:"</li>
+                    <li><strong>Firmen-Info eingeben:</strong> Name, Adresse, UID, Bankdaten, etc.</li>
+                    <li><strong>Rechnung-Details:</strong> Ihre aktuellen Leistungen und Preise</li>
+                    <li><strong>Claude generiert:</strong> Personalisierte HTML-Rechnung</li>
+                </ol>
+                
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0;">Schritt 4: Rechnung verwenden (2 Minuten)</h3>
+                <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>HTML-Code kopieren und als .html-Datei speichern</li>
+                    <li>Im Browser öffnen und als PDF drucken/speichern</li>
+                    <li>Professionelle, UStG §11 konforme Rechnung versenden</li>
+                </ol>
+                
+                <div style="background: #f8fafc; border: 2px solid var(--primary); padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">✅ Vorteile des DIY-Ansatzes:</h4>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>100% UStG §11 konform</strong> - Rechtlich abgesichert</li>
+                        <li><strong>Banking-Grade Design</strong> - Professionelle Präsentation</li>
+                        <li><strong>AI-powered</strong> - Schnelle Anpassung mit Claude</li>
+                        <li><strong>Kostenfrei</strong> - Nur Claude Code Account nötig</li>
+                        <li><strong>Vollständige Kontrolle</strong> - Alle Daten bleiben bei Ihnen</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #fef7cd; border: 2px solid #f59e0b; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+                    <h4 style="color: #d97706; margin-bottom: 1rem;">🚀 Brauchen Sie professionelle Unterstützung?</h4>
+                    <p>Libra Innovation FlexCo bietet vollständige Template-Anpassung, Logo-Generierung und Automatisierungslösungen:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem;">
+                        <li><strong>Template Personalization:</strong> €497 pro Vorlage</li>
+                        <li><strong>Professional Package:</strong> €2.997 (3 Templates + Branding)</li>
+                        <li><strong>Enterprise Automation:</strong> €9.997+ (Custom System)</li>
+                    </ul>
+                    <p style="text-align: center; margin-top: 1.5rem;">
+                        <strong>Kontakt:</strong> 
+                        <a href="mailto:kontakt@libralab.ai" style="color: #d97706;">kontakt@libralab.ai</a> | 
+                        <a href="https://libralab.ai/?utm_source=diy_instructions" target="_blank" style="color: #d97706;">libralab.ai</a>
+                    </p>
+                </div>
+                
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    <em>Diese Anleitung macht Sie in 10 Minuten zum österreichischen Rechnungsprofi!</em>
+                </p>
+            `;
+            
+            // Insert instructions after modal image
+            const modalContent = modal.querySelector('.modal-content');
+            const existingInstructions = document.getElementById('diyInstructions');
+            if (existingInstructions) {
+                existingInstructions.remove();
+            }
+            modalContent.appendChild(instructionsDiv);
+            
+            modal.style.display = 'block';
+        }
 
         // Legacy functions for compatibility
         function trackClick(templateNumber, action) {

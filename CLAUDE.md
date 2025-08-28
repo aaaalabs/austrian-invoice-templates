@@ -77,7 +77,16 @@ Each template follows a consistent four-part structure:
 1. **Placeholders**: Generic images in `/placeholders/` for master templates
 2. **AI Generation**: Company-specific images generated to `/media/` folder
 3. **Example Implementation**: Example templates use generated `/media/` assets
-4. **Customer Usage**: Real customers replace placeholder data with their own
+4. **Thumbnail Generation**: Header-focused screenshots (1720×650px) for gallery display
+5. **Customer Usage**: Real customers replace placeholder data with their own
+
+### Thumbnail Optimization System
+- **Script**: `image_generation/generate_thumbnails.py` - Professional thumbnail generator
+- **Dimensions**: 1720×650px (optimized aspect ratio for horizontal gallery display)
+- **Focus**: Header-focused cropping shows company branding and invoice details
+- **Quality**: High-DPI screenshots with intelligent content cropping
+- **Coverage**: Top 650px of invoice (headers + first line items) without white space
+- **Usage**: Generates gallery thumbnails for all 15 templates automatically
 
 ### Regional Considerations
 - **Tirol focus**: Multilingual requirements due to tourism and cross-border trade
