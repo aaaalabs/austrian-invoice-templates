@@ -150,17 +150,20 @@
     "uebergangsregelung_hinweis": "Bei Vertragsabschluss vor 7. März 2025 und Lieferung bis 31.12.2025 wäre 0% USt anwendbar"
   },
   "foerderung": {
-    "bundesfoerderung": "EAG-Investitionszuschuss beantragt: ca. 2.850 €",
-    "landesfoerderung": "Land Tirol Solarbonus: ca. 1.500 €",
-    "gemeindefoerderung": "Gemeinde Lans PV-Förderung: 500 €",
-    "gesamt_foerderung": 4850.00,
-    "investition_nach_foerderung": 20750.00
+    "bundesfoerderung": "EAG-Investitionszuschuss: € 2.000 (160 €/kWp × 12,5 kWp)",
+    "landesfoerderung": "Land Tirol Förderung: € 1.250 (100 €/kWp × 12,5 kWp)",
+    "gemeindefoerderung": "Gemeinde Lans PV-Förderung: € 625 (50 €/kWp × 12,5 kWp)",
+    "gesamt_foerderung": 3875.00,
+    "investition_nach_foerderung": 26974.60,
+    "hinweis": "Förderungen reduzieren die Bemessungsgrundlage für steuerliche Abschreibung gem. EStG"
   },
   "zusatzinfo": {
-    "garantie": "25 Jahre Leistungsgarantie auf Module, 10 Jahre auf Wechselrichter, 10 Jahre auf KJUUBE Speicher",
-    "wartung": "Jährliche Wartung empfohlen - Servicevertrag auf Anfrage",
-    "versicherung": "PV-Versicherungsschutz über Tiroler Versicherung vermittelbar",
-    "qr_payment": "GENERATE_EPC_QR_CODE_HERE",
-    "umwelt": "Ihre Anlage spart jährlich 5,5 Tonnen CO2 - das entspricht 275 Bäumen!"
+    "garantie": "25 Jahre Leistungsgarantie Module (min. 80% nach 25 J.), 10 Jahre Produktgarantie Wechselrichter, 10 Jahre BYD Speicher",
+    "wartung": "Empfohlene Wartung: Jährliche Sichtprüfung, alle 5 Jahre elektrische Prüfung gem. ÖVE/ÖNORM EN 62446",
+    "versicherung": "Photovoltaik-Versicherung über Helvetia/Wiener Städtische - Deckung: Hagel, Sturm, Diebstahl, Ertragsausfall",
+    "qr_payment": "SEPA_EPC_QR_CODE_IBAN_AT485700000002345678_BIC_HYPTAT22_BETRAG_22849.60_VERWENDUNG_RE-2025-00247",
+    "baeume_equivalent": 275,
+    "strompreis_ersparnis_jahr": "€ 5.225 bei 0,38 €/kWh Strompreis",
+    "lebenszykluskosten": "Gesamtersparnis über 25 Jahre: ca. € 130.625 (inflationsbereinigt)"
   }
 }
