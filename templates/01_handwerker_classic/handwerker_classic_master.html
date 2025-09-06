@@ -197,10 +197,100 @@
             font-weight: bold;
         }
         
-        /* Print styles */
+        /* Professional Print Styles - A4 Optimization */
         @media print {
-            .container { margin: 0; padding: 15mm; }
-            body { print-color-adjust: exact; }
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
+            body { 
+                background: white; 
+                font-size: 10pt;
+                line-height: 1.3;
+                print-color-adjust: exact;
+            }
+            
+            .container { 
+                max-width: none; 
+                margin: 0; 
+                padding: 0;
+            }
+            
+            /* Critical Sections - Never Break */
+            .header,
+            .invoice-info,
+            .customer-info,
+            .invoice-meta,
+            .summary,
+            .handwerkerbonus-section,
+            .legal-info,
+            .footer {
+                break-inside: avoid;
+            }
+            
+            /* Keep headers with content */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Table Optimization */
+            .items-table {
+                break-inside: auto;
+                margin-bottom: 1rem;
+            }
+            
+            .items-table thead {
+                display: table-header-group;
+            }
+            
+            .items-table tr {
+                break-inside: avoid;
+            }
+            
+            .items-table th, .items-table td {
+                padding: 0.5rem 0.3rem;
+                font-size: 9pt;
+            }
+            
+            .summary-table tr {
+                break-inside: avoid;
+            }
+            
+            /* Prevent orphans and widows */
+            p, li, div {
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Compact spacing for print */
+            .header {
+                margin-bottom: 1rem;
+            }
+            
+            .invoice-info {
+                margin-bottom: 1.5rem;
+            }
+            
+            .legal-info {
+                margin-top: 1rem;
+            }
+            
+            /* B&W optimization for professional printing */
+            .items-table th {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
+                color: #000 !important;
+            }
+            
+            .summary-table .total {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 2px solid #000 !important;
+            }
         }
     </style>
 </head>

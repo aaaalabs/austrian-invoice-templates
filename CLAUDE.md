@@ -121,9 +121,120 @@ Each template package contains:
 - **Template improvements**: Use `MASTER_TEMPLATE_IMPROVEMENT_INSTRUCTIONS.md` for professional enhancement
 - **Industry research**: Web research for professional invoice standards per industry  
 - **Legal compliance**: Updates to Austrian tax rates, regulations, UStG requirements
-- **Print optimization**: Ensure professional A4 printing without decorative elements
+- **Print optimization**: Ensure professional A4 printing with proper page break control (see Print Optimization section)
 - **Business credibility**: Professional presentation suitable for real business use
 - **AI prompt enhancement**: Improve prompts for better template generation quality
+
+## Print Optimization & Page Break Control (CRITICAL)
+
+### Professional Page Layout Management
+Invoices must maintain professional appearance across page breaks. Tables should never be cut mid-row, headers shouldn't be orphaned, and critical sections must stay together.
+
+### CSS Page Break Properties
+
+#### Modern CSS Properties (Preferred):
+- `break-before: auto | avoid | page | left | right` - Controls breaks before element
+- `break-after: auto | avoid | page | left | right` - Controls breaks after element  
+- `break-inside: auto | avoid` - Controls breaks within element
+- `orphans: 3` - Minimum lines at bottom of page
+- `widows: 3` - Minimum lines at top of page
+
+#### Legacy Properties (Fallback Support):
+- `page-break-before: auto | always | avoid | left | right`
+- `page-break-after: auto | always | avoid | left | right`
+- `page-break-inside: auto | avoid`
+
+### Invoice-Specific Print Rules
+
+#### Essential @media print Styles:
+```css
+@media print {
+    /* Prevent table row splitting */
+    table { break-inside: avoid; }
+    tr { break-inside: avoid; }
+    
+    /* Keep headers with content */
+    h1, h2, h3, h4 { 
+        break-after: avoid;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Protect critical sections */
+    .invoice-header,
+    .invoice-table,
+    .summary-section,
+    .payment-info,
+    .legal-footer {
+        break-inside: avoid;
+    }
+    
+    /* Force new page for major sections */
+    .new-page { break-before: page; }
+    
+    /* Prevent single lines */
+    p, li { 
+        orphans: 2;
+        widows: 2;
+    }
+    
+    /* A4 page dimensions */
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+}
+```
+
+### Table Optimization Strategies
+
+#### Multi-Page Table Handling:
+1. **Small Tables (<15 rows)**: Use `break-inside: avoid` to keep entire table together
+2. **Large Tables (>15 rows)**: Allow breaks but protect:
+   - Header rows with `thead { display: table-header-group; }`
+   - Footer rows with `tfoot { display: table-footer-group; }`
+   - Individual rows with `tr { break-inside: avoid; }`
+
+#### Phase-Based Invoices:
+```css
+.phase-section {
+    break-inside: avoid;  /* Keep each phase together */
+    margin-bottom: 2rem;  /* Visual separation */
+}
+
+/* If phase too large, allow break after header */
+.phase-header { break-after: avoid; }
+.phase-items { break-before: auto; }
+```
+
+### Document Structure Best Practices
+
+#### Single-Page Invoices:
+- Container with `min-height: 29.7cm` (A4 height)
+- All sections with `break-inside: avoid`
+- Compact spacing for maximum content
+
+#### Multi-Page Invoices:
+1. **Page 1**: Header, client info, overview
+2. **Page 2+**: Detailed line items (tables)
+3. **Last Page**: Summary, payment, legal footer
+
+#### Critical Section Grouping:
+- Invoice number + date (always together)
+- Client address block (never split)
+- Table headers + first 3 rows minimum
+- Subtotal + tax + total (atomic unit)
+- Payment details + QR code (keep paired)
+
+### Implementation Checklist
+- [ ] Add `@media print` section to all templates
+- [ ] Test with 1, 5, 20, and 50 line items
+- [ ] Verify no table rows split across pages
+- [ ] Ensure headers not orphaned at page bottom
+- [ ] Check footer appears complete on last page
+- [ ] Validate A4 dimensions (210mm × 297mm)
+- [ ] Test in Chrome, Firefox, Safari print preview
+- [ ] Export to PDF and verify layout integrity
 
 ## Austrian Business Context
 
@@ -138,7 +249,7 @@ Understanding Austrian business culture is crucial:
 
 ### Product Quality Standards
 - **Professional Grade**: Templates indistinguishable from established business invoices
-- **Print Ready**: Perfect A4 formatting for direct PDF conversion and printing
+- **Print Ready**: Perfect A4 formatting with intelligent page breaks for professional PDF output
 - **Legal Compliance**: 100% Austrian UStG §11 compliance across all templates
 - **Industry Expertise**: Deep understanding of each industry's specific requirements
 - **Business Credibility**: Suitable for enterprise and government submissions
@@ -151,7 +262,7 @@ Understanding Austrian business culture is crucial:
 
 ### Quality Assurance
 - **Professional Standards**: Each template must pass professional business review
-- **Print Testing**: All templates verified for black/white A4 printing
+- **Print Testing**: All templates verified for A4 printing with proper page break handling
 - **Legal Validation**: Austrian tax law compliance verified per template
 - **User Testing**: Templates tested with real business scenarios and data
 
@@ -162,4 +273,4 @@ Understanding Austrian business culture is crucial:
 - **Kleinunternehmer disclaimer**: Must include "Umsatzsteuerfrei aufgrund der Kleinunternehmerregelung"
 - **22-year retention**: Real estate transactions require extended document archival
 - **Professional liability**: Templates must meet professional standards for business use
-- **Print optimization**: All templates must work without color for cost-effective printing
+- **Print optimization**: All templates must work without color and handle page breaks professionally

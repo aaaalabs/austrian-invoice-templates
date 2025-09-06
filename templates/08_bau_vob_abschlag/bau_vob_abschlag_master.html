@@ -401,11 +401,118 @@
             font-weight: bold;
         }
         
-        /* Print Styles */
+        /* Professional Print Styles - A4 Optimization */
         @media print {
-            body { font-size: 9px; }
-            .container { padding: 10mm; }
-            .page-break { page-break-before: always; }
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
+            body { 
+                background: white; 
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+            
+            .container { 
+                max-width: none; 
+                margin: 0; 
+                padding: 0;
+            }
+            
+            /* Critical Sections - Never Break */
+            .header,
+            .project-info,
+            .invoice-info,
+            .customer-info,
+            .summary-section,
+            .retentions-section,
+            .vob-info,
+            .footer {
+                break-inside: avoid;
+            }
+            
+            /* Keep headers with content */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Table Optimization */
+            .positions-table {
+                break-inside: auto;
+                margin-bottom: 1rem;
+            }
+            
+            .positions-table thead {
+                display: table-header-group;
+            }
+            
+            .positions-table tr {
+                break-inside: avoid;
+            }
+            
+            .positions-table th, .positions-table td {
+                padding: 0.5rem 0.3rem;
+                font-size: 9pt;
+            }
+            
+            .summary-table tr {
+                break-inside: avoid;
+            }
+            
+            /* Page breaks for multi-page invoices */
+            .page-break { 
+                page-break-before: always; 
+            }
+            
+            /* Prevent orphans and widows */
+            p, li, div {
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Compact spacing for print */
+            .header {
+                margin-bottom: 1rem;
+            }
+            
+            .project-info {
+                margin-bottom: 1.5rem;
+            }
+            
+            .invoice-info {
+                margin-bottom: 1.5rem;
+            }
+            
+            .summary-section {
+                margin: 1rem 0;
+            }
+            
+            .footer {
+                margin-top: 1rem;
+            }
+            
+            /* B&W optimization for professional printing */
+            .positions-table th {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
+                color: #000 !important;
+            }
+            
+            .summary-table .total {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 2px solid #000 !important;
+            }
+            
+            .vob-badge, .compliance-badge {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+            }
         }
         
         /* Technical styling */
