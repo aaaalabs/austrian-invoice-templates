@@ -868,6 +868,85 @@
                 margin: 0.5mm 0;
             }
             
+            /* PAYMENT SECTION - Professional Layout & Page Break Control */
+            .payment-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                background: white !important;
+                border: 1px solid #000 !important;
+                padding: 8mm;
+                margin-bottom: 10mm;
+                clear: both;
+                /* Ensure it starts on new page if space is limited */
+                break-before: auto;
+                page-break-before: auto;
+            }
+            
+            .payment-section h2 {
+                font-size: 12pt;
+                color: black !important;
+                margin-bottom: 6mm;
+                border-bottom: 1px solid #000;
+                padding-bottom: 2mm;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+            
+            .payment-methods {
+                display: block;
+                width: 100%;
+            }
+            
+            .payment-method {
+                width: 32%;
+                float: left;
+                margin-right: 2%;
+                margin-bottom: 0;
+                padding: 4mm;
+                background: #f8f8f8 !important;
+                border: 1px solid #ddd;
+                box-sizing: border-box;
+                break-inside: avoid;
+            }
+            
+            .payment-method:last-child {
+                margin-right: 0;
+            }
+            
+            .payment-title {
+                font-weight: bold;
+                color: black !important;
+                font-size: 9pt;
+                margin-bottom: 2mm;
+                text-transform: uppercase;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 1mm;
+            }
+            
+            .iban-display {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                color: black !important;
+                background: #f0f0f0 !important;
+                padding: 0.5mm 1mm;
+                margin: 1mm 0;
+                border: 1px solid #ddd;
+                display: inline-block;
+            }
+            
+            .payment-method small {
+                font-size: 7pt;
+                color: #666 !important;
+                font-style: italic;
+            }
+            
+            /* Clear floats after payment methods */
+            .payment-section::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
             /* TYPOGRAPHY HIERARCHY */
             h1, h2, h3, h4 {
                 break-after: avoid;
