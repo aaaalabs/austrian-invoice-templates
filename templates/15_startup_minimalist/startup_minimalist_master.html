@@ -457,88 +457,291 @@
         }
 
         /* PRINT STYLES */
+        /* PROFESSIONAL PRINT OPTIMIZATION */
         @media print {
-            /* A4 Page Setup */
+            /* A4 Page Setup with optimized margins */
             @page {
                 size: A4;
-                margin: 15mm;
+                margin: 12mm 15mm 15mm 15mm; /* top, right, bottom, left */
             }
             
             body {
-                background: white;
+                margin: 0;
+                padding: 0;
                 font-size: 10pt;
                 line-height: 1.3;
+                background: white;
+                color: black;
+                -webkit-print-color-adjust: exact;
             }
             
             .invoice-container {
-                padding: 24px 0;
                 max-width: none;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background: white;
             }
             
-            /* Table Optimization - CRITICAL UPDATE */
-            table {
-                break-inside: auto; /* Allow breaks for long tables */
+            /* Header optimization */
+            .header {
+                margin-bottom: 12mm;
+                padding-bottom: 8mm;
+                border-bottom: 1px solid #000 !important;
+                break-after: avoid;
+                page-break-after: avoid;
             }
             
-            thead {
-                display: table-header-group; /* Repeat header on each page */
+            .company-info h1 {
+                font-size: 18pt;
+                color: black !important;
+                margin-bottom: 2mm;
             }
             
-            tr {
-                break-inside: avoid; /* Never split table rows */
+            .company-tagline {
+                font-size: 9pt;
+                color: black !important;
+                margin-bottom: 6mm;
             }
             
-            th, td {
-                padding: 0.5rem 0.3rem; /* Compact for print */
+            .company-contact,
+            .company-legal {
+                font-size: 8pt;
+                color: black !important;
+            }
+            
+            .invoice-meta {
+                min-width: auto;
+            }
+            
+            .invoice-title {
+                font-size: 12pt;
+                color: black !important;
+                margin-bottom: 4mm;
+            }
+            
+            .invoice-number {
+                font-size: 14pt;
+                color: black !important;
+                margin-bottom: 3mm;
+            }
+            
+            .invoice-dates {
+                font-size: 9pt;
+                color: black !important;
+            }
+            
+            /* Section titles */
+            .section-title {
+                font-size: 12pt;
+                color: black !important;
+                margin-bottom: 6mm;
+                margin-top: 8mm;
+                border-bottom: 1px solid #000 !important;
+                padding-bottom: 2mm;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+            
+            /* Services table optimization */
+            .services-table {
+                border: 1px solid #000 !important;
+                border-radius: 0 !important;
+                background: white !important;
+                break-inside: auto;
+                margin-bottom: 10mm;
+            }
+            
+            .services-table thead {
+                display: table-header-group; /* Repeat on each page */
+            }
+            
+            .services-table thead th {
+                background: white !important;
+                color: black !important;
+                border-bottom: 2px solid #000 !important;
+                border-right: 1px solid #000 !important;
+                padding: 3mm 2mm;
+                font-size: 8pt;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            
+            .services-table thead th:last-child {
+                border-right: none;
+            }
+            
+            .services-table tbody tr {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                background: white !important;
+            }
+            
+            .services-table tbody tr:nth-child(even) {
+                background: white !important; /* Remove alternating colors */
+            }
+            
+            .services-table tbody td {
+                padding: 2.5mm 2mm;
+                border-bottom: 1px solid #ccc !important;
+                border-right: 1px solid #ccc !important;
+                font-size: 9pt;
+                color: black !important;
+            }
+            
+            .services-table tbody td:last-child {
+                border-right: none;
+            }
+            
+            .services-table tbody tr:last-child td {
+                border-bottom: 1px solid #000 !important;
+            }
+            
+            .service-main {
+                color: black !important;
+                font-weight: 600;
+                margin-bottom: 1mm;
+            }
+            
+            .service-details {
+                color: #666 !important;
+                font-size: 8pt;
+            }
+            
+            .quantity {
+                text-align: center;
+                color: black !important;
+            }
+            
+            .price, .tax-rate, .amount {
+                text-align: right;
+                color: black !important;
+                font-weight: 500;
+            }
+            
+            /* Totals section optimization */
+            .totals-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 10mm;
+                justify-content: flex-end;
+            }
+            
+            .totals-card {
+                background: white !important;
+                border: 1px solid #000 !important;
+                border-radius: 0 !important;
+                padding: 6mm;
+                min-width: 60mm;
+            }
+            
+            .totals-table tbody td {
+                padding: 1.5mm 0;
+                color: black !important;
                 font-size: 9pt;
             }
             
-            /* Header-Content binding */
-            h1, h2, h3, h4 {
-                break-after: avoid;
-                orphans: 3;
-                widows: 3;
+            .total-label {
+                font-weight: normal;
             }
             
-            /* Prevent orphans and widows */
-            p, li, div {
-                orphans: 2;
-                widows: 2;
+            .total-amount {
+                text-align: right;
+                font-weight: 500;
             }
             
-            /* Compact spacing for print */
-            .section {
-                margin: 1rem 0;
+            .totals-table .final-total td {
+                border-top: 2px solid #000 !important;
+                padding-top: 3mm;
+                font-weight: bold;
+                font-size: 10pt;
             }
             
-            /* B&W optimization */
-            th {
-                background: #f0f0f0 !important;
+            .discount-row td {
+                color: black !important;
+            }
+            
+            /* Payment section optimization */
+            .payment-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 10mm;
+            }
+            
+            .payment-card {
+                background: white !important;
                 border: 1px solid #000 !important;
+                border-radius: 0 !important;
+                padding: 6mm;
+            }
+            
+            .payment-title {
+                color: black !important;
+                font-size: 10pt;
+                margin-bottom: 4mm;
+            }
+            
+            .bank-details {
+                font-size: 9pt;
+                color: black !important;
+            }
+            
+            .bank-details strong {
+                color: black !important;
+            }
+            
+            .payment-note {
+                font-size: 8pt;
+                color: #666 !important;
+                margin-top: 3mm;
+            }
+            
+            /* Footer optimization */
+            .footer {
+                border-top: 1px solid #000 !important;
+                padding-top: 8mm;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .legal-section {
+                margin-bottom: 6mm;
+            }
+            
+            .legal-notes {
+                font-size: 8pt;
+                color: black !important;
+            }
+            
+            .legal-notes ul {
+                margin-left: 4mm;
+            }
+            
+            .legal-notes li {
+                margin-bottom: 1mm;
+                color: black !important;
+            }
+            
+            .company-footer {
+                border-top: 1px solid #ccc !important;
+                padding-top: 6mm;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 8pt;
+                color: black !important;
+            }
+            
+            .company-registration,
+            .digital-signature {
+                color: black !important;
+            }
+            
+            .digital-signature {
+                text-align: right;
+                max-width: 45%;
             }
             
             /* Template-specific sections */
-            .header {
-                margin-bottom: 40px;
-                padding-bottom: 16px;
-            }
-            
-            .services-table {
-                break-inside: avoid;
-            }
-            
-            .totals-section {
-                break-inside: avoid;
-            }
-            
-            .payment-section {
-                break-inside: avoid;
-            }
-            
-            .footer {
-                break-inside: avoid;
-            }
-            
             .tech-stack {
                 break-inside: avoid;
             }
@@ -546,10 +749,21 @@
             .github-integration {
                 break-inside: avoid;
             }
-
-            /* Hide tech note on print */
+            
+            /* Hide non-essential elements */
             .tech-note {
                 display: none;
+            }
+            
+            /* Compact spacing for print efficiency */
+            .services-section {
+                margin-bottom: 8mm;
+            }
+            
+            /* Ensure proper text rendering */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
 
