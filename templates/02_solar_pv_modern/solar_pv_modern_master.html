@@ -255,13 +255,82 @@
 
         /* Print Styles */
         @media print {
-            body { background: white; }
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
+            body { 
+                background: white; 
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+            
             .invoice-container { 
                 box-shadow: none; 
                 margin: 0;
                 max-width: none;
             }
-            .footer { page-break-inside: avoid; }
+            
+            /* Table Optimization - CRITICAL UPDATE */
+            table {
+                break-inside: auto; /* Allow breaks for long tables */
+            }
+            
+            thead {
+                display: table-header-group; /* Repeat header on each page */
+            }
+            
+            tr {
+                break-inside: avoid; /* Never split table rows */
+            }
+            
+            th, td {
+                padding: 0.5rem 0.3rem; /* Compact for print */
+                font-size: 9pt;
+            }
+            
+            /* Header-Content binding */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Prevent orphans and widows */
+            p, li, div {
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Compact spacing for print */
+            .section {
+                margin: 1rem 0;
+            }
+            
+            /* B&W optimization */
+            .positions-table th {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
+            }
+            
+            /* Template-specific sections */
+            .technical-specs {
+                break-inside: avoid;
+            }
+            
+            .energy-calculation {
+                break-inside: avoid;
+            }
+            
+            .footer { 
+                break-inside: avoid; 
+            }
+            
+            .environmental-impact {
+                break-inside: avoid;
+            }
         }
 
         /* Responsive */
