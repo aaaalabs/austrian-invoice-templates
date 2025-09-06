@@ -454,23 +454,29 @@
         
         /* Professional Print Styles - A4 Optimization */
         @media print {
-            /* A4 Page Setup */
+            /* A4 Page Setup - Zero margins to avoid browser conflict */
             @page {
                 size: A4;
-                margin: 15mm;
+                margin: 0;
             }
             
             body { 
                 background: white; 
+                color: black;
                 font-size: 10pt;
                 line-height: 1.3;
+                margin: 0;
+                padding: 0;
             }
             
             .invoice-container { 
                 max-width: none; 
                 margin: 0; 
-                padding: 0;
+                padding: 15mm;
                 box-shadow: none;
+                min-height: auto;
+                width: 100%;
+                box-sizing: border-box;
             }
             
             /* Critical Sections - Never Break */
@@ -478,36 +484,41 @@
             .invoice-info-section,
             .customer-section,
             .stay-summary,
-            .services-section .section-title,
+            .services-section,
             .summary-section,
             .totals-section,
+            .payment-info,
             .footer {
                 break-inside: avoid;
+                page-break-inside: avoid;
             }
             
             /* Keep headers with content */
             h1, h2, h3, h4 {
                 break-after: avoid;
+                page-break-after: avoid;
                 orphans: 3;
                 widows: 3;
             }
             
             /* Table Optimization */
             .services-table {
-                break-inside: auto;
+                break-inside: auto; /* Allow breaks for long tables */
                 margin-bottom: 1rem;
             }
             
             .services-table thead {
-                display: table-header-group;
+                display: table-header-group; /* Repeat header on each page */
             }
             
             .services-table tr {
-                break-inside: avoid;
+                break-inside: avoid; /* Never split table rows */
+                page-break-inside: avoid;
             }
             
-            .services-table th, .services-table td {
-                padding: 0.5rem 0.3rem;
+            .services-table th,
+            .services-table td {
+                padding: 0.5rem 0.3rem; /* Compact for print */
                 font-size: 9pt;
             }
             
@@ -515,9 +526,37 @@
                 break-inside: avoid;
             }
             
-            /* Hide interactive elements */
-            .lang-btn {
-                display: none;
+            /* Section spacing optimization */
+            .header {
+                margin-bottom: 1.5rem;
+            }
+            
+            .invoice-info-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .customer-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .stay-summary {
+                margin-bottom: 1.5rem;
+            }
+            
+            .services-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .summary-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .totals-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .payment-info {
+                margin-bottom: 1rem;
             }
             
             /* Prevent orphans and widows */
@@ -526,46 +565,68 @@
                 widows: 2;
             }
             
-            /* Compact spacing for print */
+            /* B&W optimization for tourism */
             .header {
-                margin-bottom: 1rem;
+                background: #f0f0f0 !important;
+                border-bottom: 2px solid #000 !important;
             }
             
-            .invoice-info-section {
-                margin-bottom: 1.5rem;
+            .hotel-name {
+                color: #000 !important;
+            }
+            
+            .hotel-classification {
+                color: #000 !important;
+            }
+            
+            .language-switch {
+                display: none !important; /* Hide language buttons in print */
             }
             
             .stay-summary {
-                margin: 1rem 0;
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
             }
             
-            .services-section {
-                margin: 1rem 0;
-            }
-            
-            .footer {
-                margin-top: 1rem;
-            }
-            
-            /* B&W optimization for professional printing */
             .services-table th {
                 background: #f0f0f0 !important;
                 border: 1px solid #000 !important;
-                color: #000 !important;
             }
             
-            .services-table tbody tr:hover {
-                background: transparent;
-            }
-            
-            .services-table tbody tr:nth-child(even) {
-                background: #f8f9fa !important;
-            }
-            
-            .total-row {
+            .totals-section {
                 background: #f0f0f0 !important;
-                color: #000 !important;
-                border: 2px solid #000 !important;
+                border: 1px solid #000 !important;
+            }
+            
+            /* Professional typography for print */
+            .hotel-name { font-size: 18pt; }
+            .hotel-classification { font-size: 14pt; }
+            h2 { font-size: 14pt; }
+            h3 { font-size: 12pt; }
+            
+            /* Compact footer */
+            .footer {
+                break-inside: avoid;
+                margin-top: 1rem;
+                background: #f0f0f0 !important;
+            }
+            
+            /* Hide non-essential elements */
+            .no-print {
+                display: none;
+            }
+            
+            /* Tourism-specific optimizations */
+            .guest-info {
+                break-inside: avoid;
+            }
+            
+            .room-details {
+                break-inside: avoid;
+            }
+            
+            .tax-breakdown {
+                break-inside: avoid;
             }
         }
         

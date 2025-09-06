@@ -117,10 +117,13 @@
         
         .invoice-meta div {
             flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .invoice-meta strong {
             color: #000;
+            margin-bottom: 0.25rem;
         }
         
         .items-table {
@@ -407,14 +410,17 @@
     
     <div class="invoice-meta">
         <div>
-            <strong>Rechnungsdatum:</strong> {{rechnung.datum}}
+            <strong>Rechnungsdatum:</strong>
+            <span>{{rechnung.datum}}</span>
         </div>
         <div>
-            <strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}
+            <strong>Zahlungsziel:</strong>
+            <span>{{rechnung.zahlungsziel}}</span>
         </div>
         {{#if rechnung.leistungsdatum}}
         <div>
-            <strong>Leistungsdatum:</strong> {{rechnung.leistungsdatum}}
+            <strong>Leistungsdatum:</strong>
+            <span>{{rechnung.leistungsdatum}}</span>
         </div>
         {{/if}}
     </div>

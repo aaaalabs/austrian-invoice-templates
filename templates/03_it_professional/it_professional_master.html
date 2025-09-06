@@ -480,15 +480,74 @@
 
         /* Print Optimizations */
         @media print {
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
             body {
                 background: white;
                 color: black;
+                font-size: 10pt;
+                line-height: 1.3;
             }
             
             .container {
                 box-shadow: none;
                 margin: 0;
-                padding: 15mm;
+                padding: 0;
+                max-width: none;
+                min-height: auto;
+            }
+            
+            /* Critical Sections - Never Break */
+            .header,
+            .invoice-meta,
+            .client-info,
+            .positions-section,
+            .total-section,
+            .compliance-section,
+            .footer {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            /* Force page break before technical info */
+            .technical-info {
+                break-before: page;
+                page-break-before: always;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            /* Keep headers with content */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                page-break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Table Optimization */
+            .positions-table {
+                break-inside: auto; /* Allow breaks for long tables */
+                margin-bottom: 1rem;
+            }
+            
+            .positions-table thead {
+                display: table-header-group; /* Repeat header on each page */
+            }
+            
+            .positions-table tr {
+                break-inside: avoid; /* Never split table rows */
+                page-break-inside: avoid;
+            }
+            
+            .positions-table th,
+            .positions-table td {
+                padding: 0.5rem 0.3rem; /* Compact for print */
+                font-size: 9pt;
             }
             
             .positions-table th {
@@ -496,6 +555,24 @@
                 color: white !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                border: 1px solid #000 !important;
+            }
+            
+            /* Section spacing optimization */
+            .header {
+                margin-bottom: 1.5rem;
+            }
+            
+            .invoice-meta {
+                margin-bottom: 1.5rem;
+            }
+            
+            .client-info {
+                margin-bottom: 1.5rem;
+            }
+            
+            .positions-section {
+                margin-bottom: 1.5rem;
             }
             
             .total-section {
@@ -503,16 +580,50 @@
                 color: white !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                break-inside: avoid;
+                margin-bottom: 1.5rem;
             }
             
+            .compliance-section {
+                margin-bottom: 1rem;
+            }
+            
+            /* Prevent orphans and widows */
+            p, li, div {
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* B&W optimization alternatives */
+            .code-text {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
+            }
+            
+            /* Professional typography for print */
+            h1 { font-size: 18pt; }
+            h2 { font-size: 14pt; color: #000 !important; }
+            
+            /* Company tagline */
+            .company-tagline {
+                color: #000 !important;
+            }
+            
+            /* Compact footer */
+            .footer {
+                break-inside: avoid;
+                margin-top: 1rem;
+            }
+            
+            /* Hide non-essential elements */
+            .no-print {
+                display: none;
+            }
+            
+            /* Ensure print color accuracy */
             * {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-            }
-            
-            @page {
-                size: A4;
-                margin: 15mm;
             }
         }
 
@@ -747,9 +858,12 @@
                 </div>
                 <div class="payment-method">
                     <div class="payment-title">Zahlungskonditionen</div>
-                    <strong>Zahlungsziel:</strong> {{rechnung.zahlungsziel}}<br>
-                    <strong>Skonto:</strong> 2% bei Zahlung binnen 10 Tagen<br>
-                    <strong>Verzugszinsen:</strong> 9,2% p.a.
+                    <strong>Zahlungsziel:</strong><br>
+                    {{rechnung.zahlungsziel}}<br><br>
+                    <strong>Skonto:</strong><br>
+                    2% bei Zahlung binnen 10 Tagen<br><br>
+                    <strong>Verzugszinsen:</strong><br>
+                    9,2% p.a.
                 </div>
             </div>
         </section>

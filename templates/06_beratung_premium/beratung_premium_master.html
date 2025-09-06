@@ -475,15 +475,40 @@
             }
             
             body {
-                padding: 1cm;
                 background: white;
+                color: black;
                 font-size: 10pt;
                 line-height: 1.3;
+                padding: 0;
+                max-width: none;
             }
             
-            /* Table Optimization - CRITICAL UPDATE */
+            /* Critical Sections - Never Break */
+            .executive-header,
+            .executive-summary,
+            .project-overview,
+            .client-info,
+            .deliverables-section,
+            .summary-section,
+            .payment-section,
+            .legal-section,
+            .footer {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            /* Keep headers with content */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                page-break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Table Optimization */
             table {
                 break-inside: auto; /* Allow breaks for long tables */
+                margin-bottom: 1rem;
             }
             
             thead {
@@ -492,6 +517,7 @@
             
             tr {
                 break-inside: avoid; /* Never split table rows */
+                page-break-inside: avoid;
             }
             
             th, td {
@@ -499,11 +525,33 @@
                 font-size: 9pt;
             }
             
-            /* Header-Content binding */
-            h1, h2, h3, h4 {
-                break-after: avoid;
-                orphans: 3;
-                widows: 3;
+            /* Section spacing optimization */
+            .executive-header {
+                margin-bottom: 1.5rem;
+            }
+            
+            .executive-summary {
+                margin-bottom: 1.5rem;
+            }
+            
+            .project-overview {
+                margin-bottom: 1.5rem;
+            }
+            
+            .deliverables-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .summary-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .payment-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .legal-section {
+                margin-bottom: 1rem;
             }
             
             /* Prevent orphans and widows */
@@ -512,28 +560,54 @@
                 widows: 2;
             }
             
-            /* Compact spacing for print */
-            .section {
-                margin: 1rem 0;
-            }
-            
             /* B&W optimization */
-            th {
+            .executive-summary {
                 background: #f0f0f0 !important;
                 border: 1px solid #000 !important;
             }
             
-            /* Template-specific sections */
-            .executive-summary {
-                break-inside: avoid;
+            .value-delivered {
+                background: #2c2c2c !important;
+                color: white !important;
+                border: 2px solid #000 !important;
             }
             
-            .summary-section {
-                break-inside: avoid;
+            .value-delivered .roi-number {
+                color: #ffdd44 !important;
             }
             
-            .roi-box {
+            /* Professional typography for print */
+            h1 { font-size: 18pt; }
+            h2 { font-size: 14pt; }
+            h3 { font-size: 12pt; }
+            
+            .company-branding h1 {
+                font-size: 20pt;
+            }
+            
+            .invoice-number {
+                font-size: 16pt;
+            }
+            
+            /* Compact footer */
+            .footer {
                 break-inside: avoid;
+                margin-top: 1rem;
+            }
+            
+            /* Hide non-essential elements */
+            .no-print {
+                display: none;
+            }
+            
+            /* Ensure tables and content stay together */
+            .deliverables-table {
+                break-inside: auto;
+            }
+            
+            .deliverables-table th {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
             }
         }
         
