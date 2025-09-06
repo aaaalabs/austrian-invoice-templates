@@ -479,113 +479,402 @@
         }
 
         /* Print Optimizations */
+        /* ULTRATHINK PROFESSIONAL PRINT OPTIMIZATION */
         @media print {
-            /* A4 Page Setup */
+            /* A4 Page Setup - Optimized margins for maximum content */
             @page {
                 size: A4;
-                margin: 15mm;
+                margin: 12mm 15mm 15mm 15mm; /* top, right, bottom, left */
             }
             
             body {
+                margin: 0;
+                padding: 0;
                 background: white;
                 color: black;
                 font-size: 10pt;
                 line-height: 1.3;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             
             .container {
-                box-shadow: none;
+                max-width: none;
+                width: 100%;
                 margin: 0;
                 padding: 0;
-                max-width: none;
+                box-shadow: none;
                 min-height: auto;
+                background: white;
             }
             
-            /* Critical Sections - Never Break */
-            .header,
-            .invoice-meta,
-            .client-info,
-            .positions-section,
-            .total-section,
-            .compliance-section,
-            .footer {
+            /* HEADER SECTION - Professional Layout */
+            .header {
+                width: 100%;
+                margin-bottom: 10mm;
+                padding-bottom: 6mm;
+                border-bottom: 2px solid #000 !important;
+                break-after: avoid;
+                page-break-after: avoid;
+                display: block; /* Override table display for consistent width */
+            }
+            
+            .company-info {
+                width: 100%;
+                display: block;
+            }
+            
+            .company-info h1 {
+                font-size: 16pt;
+                color: black !important;
+                margin-bottom: 2mm;
+                line-height: 1.2;
+            }
+            
+            .company-tagline {
+                font-size: 10pt;
+                color: black !important;
+                margin-bottom: 4mm;
+                font-style: italic;
+            }
+            
+            .company-details {
+                font-size: 9pt;
+                color: black !important;
+                line-height: 1.4;
+            }
+            
+            .invoice-logo {
+                display: none; /* Simplify for print */
+            }
+            
+            /* INVOICE META - Consistent Width & Professional Spacing */
+            .invoice-meta {
+                width: 100%;
+                margin-bottom: 12mm;
+                display: block; /* Override table display */
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
             
-            /* Force page break before technical info */
+            .client-info, .invoice-info {
+                width: 48%;
+                float: left;
+                background: white !important;
+                border: 1px solid #000 !important;
+                padding: 6mm;
+                margin-bottom: 0;
+                box-sizing: border-box;
+                display: block;
+                vertical-align: top;
+            }
+            
+            .client-info {
+                margin-right: 4%;
+            }
+            
+            .invoice-info {
+                float: right;
+            }
+            
+            /* Clear floats after meta section */
+            .invoice-meta::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            .client-info h2, .invoice-info h2 {
+                font-size: 11pt;
+                color: black !important;
+                margin-bottom: 3mm;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 1mm;
+            }
+            
+            .invoice-number {
+                font-family: 'Courier New', monospace;
+                font-size: 12pt;
+                font-weight: bold;
+                color: black !important;
+                background: #f0f0f0 !important;
+                padding: 1mm 2mm;
+                margin-bottom: 2mm;
+                display: inline-block;
+            }
+            
+            /* SERVICE POSITIONS TABLE - Advanced Optimization */
+            .positions-section {
+                margin-bottom: 10mm;
+                clear: both;
+            }
+            
+            .positions-section h2 {
+                font-size: 12pt;
+                color: black !important;
+                margin-bottom: 6mm;
+                margin-top: 5mm;
+                border-bottom: 1px solid #000;
+                padding-bottom: 2mm;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+            
+            .positions-table {
+                width: 100%;
+                border-collapse: collapse;
+                border: 1px solid #000 !important;
+                background: white !important;
+                break-inside: auto;
+                margin-bottom: 8mm;
+                font-size: 8pt;
+            }
+            
+            .positions-table thead {
+                display: table-header-group;
+            }
+            
+            .positions-table thead th {
+                background: white !important;
+                color: black !important;
+                border: 1px solid #000 !important;
+                padding: 2mm 1.5mm;
+                font-size: 7pt;
+                font-weight: bold;
+                text-align: center;
+                vertical-align: middle;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            
+            .positions-table tbody tr {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                border-bottom: 1px solid #ccc !important;
+            }
+            
+            .positions-table tbody td {
+                border: 1px solid #ccc !important;
+                padding: 2mm 1.5mm;
+                font-size: 8pt;
+                color: black !important;
+                vertical-align: top;
+                line-height: 1.2;
+            }
+            
+            /* Specific column optimizations */
+            .phase-cell {
+                font-weight: bold;
+                color: black !important;
+                font-size: 8pt;
+                margin-bottom: 1mm;
+            }
+            
+            .ticket-ref {
+                font-size: 6pt !important;
+                color: #666 !important;
+                text-decoration: none !important;
+                display: block;
+                margin: 0.5mm 0;
+            }
+            
+            .tech-tags {
+                margin-top: 1mm;
+            }
+            
+            .tech-tag {
+                font-size: 6pt !important;
+                background: #f0f0f0 !important;
+                color: black !important;
+                border: 1px solid #ccc !important;
+                padding: 0.5mm 1mm;
+                margin: 0.5mm 0.5mm 0.5mm 0;
+                border-radius: 0;
+                display: inline-block;
+            }
+            
+            /* Monetary values alignment */
+            .positions-table td:nth-child(4), /* Hours */
+            .positions-table td:nth-child(5), /* Rate */
+            .positions-table td:nth-child(8)  /* Total */ {
+                text-align: right;
+                font-family: 'Courier New', monospace;
+                font-weight: 500;
+            }
+            
+            /* TOTALS SECTION - Professional Summary */
+            .summary-section {
+                width: 100%;
+                margin-bottom: 10mm;
+                clear: both;
+            }
+            
+            .hours-breakdown, .total-section {
+                width: 48%;
+                float: left;
+                background: white !important;
+                border: 1px solid #000 !important;
+                margin-bottom: 0;
+                box-sizing: border-box;
+            }
+            
+            .hours-breakdown {
+                margin-right: 4%;
+                padding: 6mm;
+            }
+            
+            .total-section {
+                float: right;
+                background: #f0f0f0 !important;
+                color: black !important;
+                padding: 6mm;
+            }
+            
+            .hours-breakdown h3, .total-section h3 {
+                font-size: 10pt;
+                color: black !important;
+                margin-bottom: 3mm;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 1mm;
+            }
+            
+            .summary-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1mm;
+                font-size: 9pt;
+                color: black !important;
+            }
+            
+            .total-amount {
+                font-family: 'Courier New', monospace;
+                font-weight: bold;
+                font-size: 12pt;
+                color: black !important;
+                text-align: right;
+                border-top: 2px solid #000;
+                padding-top: 2mm;
+                margin-top: 3mm;
+            }
+            
+            /* Clear floats after summary */
+            .summary-section::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            /* TECHNICAL INFO - Compact Professional Layout */
             .technical-info {
                 break-before: page;
                 page-break-before: always;
                 break-inside: avoid;
                 page-break-inside: avoid;
+                background: white !important;
+                border: 1px solid #000 !important;
+                padding: 8mm;
+                margin-bottom: 10mm;
             }
             
-            /* Keep headers with content */
+            .technical-info h2 {
+                font-size: 12pt;
+                color: black !important;
+                margin-bottom: 6mm;
+                border-bottom: 1px solid #000;
+                padding-bottom: 2mm;
+            }
+            
+            .info-grid {
+                display: block;
+                width: 100%;
+            }
+            
+            .info-item {
+                margin-bottom: 4mm;
+                break-inside: avoid;
+                padding: 3mm;
+                background: #f8f8f8 !important;
+                border: 1px solid #ddd;
+            }
+            
+            .info-item strong {
+                font-size: 9pt;
+                color: black !important;
+                display: block;
+                margin-bottom: 1mm;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 0.5mm;
+            }
+            
+            /* COMPLIANCE SECTION - Professional Legal Text */
+            .compliance-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 8mm;
+                background: white !important;
+                border: 1px solid #000 !important;
+                padding: 6mm;
+            }
+            
+            .compliance-section h2 {
+                font-size: 11pt;
+                color: black !important;
+                margin-bottom: 4mm;
+                border-bottom: 1px solid #000;
+                padding-bottom: 1mm;
+            }
+            
+            .compliance-section ul {
+                margin-left: 5mm;
+            }
+            
+            .compliance-section li {
+                margin-bottom: 1mm;
+                font-size: 8pt;
+                color: black !important;
+                line-height: 1.3;
+            }
+            
+            /* FOOTER - Minimal Professional */
+            .footer {
+                border-top: 2px solid #000 !important;
+                padding-top: 6mm;
+                margin-top: 8mm;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                font-size: 8pt;
+                color: black !important;
+                text-align: center;
+            }
+            
+            /* BADGES & SPECIAL ELEMENTS */
+            .sla-badge, .remote-badge {
+                background: #f0f0f0 !important;
+                color: black !important;
+                border: 1px solid #ccc !important;
+                padding: 0.5mm 1mm;
+                font-size: 6pt;
+                border-radius: 0;
+            }
+            
+            .code-text {
+                font-family: 'Courier New', monospace !important;
+                font-size: 7pt !important;
+                background: #f0f0f0 !important;
+                color: black !important;
+                padding: 0.5mm 1mm;
+                border: 1px solid #ddd;
+                display: inline-block;
+                margin: 0.5mm 0;
+            }
+            
+            /* TYPOGRAPHY HIERARCHY */
             h1, h2, h3, h4 {
                 break-after: avoid;
                 page-break-after: avoid;
                 orphans: 3;
                 widows: 3;
-            }
-            
-            /* Table Optimization */
-            .positions-table {
-                break-inside: auto; /* Allow breaks for long tables */
-                margin-bottom: 1rem;
-            }
-            
-            .positions-table thead {
-                display: table-header-group; /* Repeat header on each page */
-            }
-            
-            .positions-table tr {
-                break-inside: avoid; /* Never split table rows */
-                page-break-inside: avoid;
-            }
-            
-            .positions-table th,
-            .positions-table td {
-                padding: 0.5rem 0.3rem; /* Compact for print */
-                font-size: 9pt;
-            }
-            
-            .positions-table th {
-                background: #2c3e50 !important;
-                color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                border: 1px solid #000 !important;
-            }
-            
-            /* Section spacing optimization */
-            .header {
-                margin-bottom: 1.5rem;
-            }
-            
-            .invoice-meta {
-                margin-bottom: 1.5rem;
-            }
-            
-            .client-info {
-                margin-bottom: 1.5rem;
-            }
-            
-            .positions-section {
-                margin-bottom: 1.5rem;
-            }
-            
-            .total-section {
-                background: #2c3e50 !important;
-                color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                break-inside: avoid;
-                margin-bottom: 1.5rem;
-            }
-            
-            .compliance-section {
-                margin-bottom: 1rem;
+                color: black !important;
             }
             
             /* Prevent orphans and widows */
@@ -594,33 +883,12 @@
                 widows: 2;
             }
             
-            /* B&W optimization alternatives */
-            .code-text {
-                background: #f0f0f0 !important;
-                border: 1px solid #000 !important;
-            }
-            
-            /* Professional typography for print */
-            h1 { font-size: 18pt; }
-            h2 { font-size: 14pt; color: #000 !important; }
-            
-            /* Company tagline */
-            .company-tagline {
-                color: #000 !important;
-            }
-            
-            /* Compact footer */
-            .footer {
-                break-inside: avoid;
-                margin-top: 1rem;
-            }
-            
-            /* Hide non-essential elements */
+            /* HIDE NON-ESSENTIAL PRINT ELEMENTS */
             .no-print {
                 display: none;
             }
             
-            /* Ensure print color accuracy */
+            /* ENSURE CONSISTENT RENDERING */
             * {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
