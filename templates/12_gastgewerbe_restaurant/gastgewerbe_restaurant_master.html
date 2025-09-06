@@ -208,9 +208,121 @@
         
         /* Print styles */
         @media print {
-            .container { margin: 0; padding: 15mm; }
-            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .logo-area { border: 1px solid #000; }
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
+            body { 
+                background: white; 
+                font-size: 10pt;
+                line-height: 1.3;
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            
+            .container { 
+                max-width: none; 
+                margin: 0; 
+                padding: 0;
+            }
+            
+            /* Critical Sections - Never Break */
+            .header,
+            .invoice-section,
+            .customer-section,
+            .summary-section,
+            .business-meal,
+            .footer {
+                break-inside: avoid;
+            }
+            
+            /* Keep headers with content */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Table Optimization */
+            .service-table {
+                break-inside: auto;
+                margin-bottom: 1rem;
+            }
+            
+            thead {
+                display: table-header-group;
+            }
+            
+            tr {
+                break-inside: avoid;
+            }
+            
+            .service-table th, 
+            .service-table td {
+                padding: 0.5rem 0.3rem;
+                font-size: 9pt;
+            }
+            
+            /* Restaurant-specific sections protection */
+            .service-category-header {
+                break-inside: avoid;
+                break-after: avoid;
+            }
+            
+            .allergen-info {
+                break-inside: avoid;
+            }
+            
+            .payment-terms {
+                break-inside: avoid;
+            }
+            
+            .business-meal-content {
+                break-inside: avoid;
+            }
+            
+            /* Prevent orphans and widows */
+            p, li, div {
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Compact spacing for print */
+            .invoice-section,
+            .summary,
+            .business-meal,
+            .footer-section {
+                margin: 1rem 0;
+            }
+            
+            /* B&W optimization */
+            .service-table th {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
+            }
+            
+            .service-category-header {
+                background: #f0f0f0 !important;
+            }
+            
+            .logo-area { 
+                border: 1px solid #000; 
+            }
+            
+            /* Restaurant-specific elements */
+            .restaurant-legal {
+                break-inside: avoid;
+            }
+            
+            .customer-details {
+                break-inside: avoid;
+            }
+            
+            .invoice-meta {
+                break-inside: avoid;
+            }
         }
     </style>
 </head>

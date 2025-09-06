@@ -398,35 +398,126 @@
 
         /* Print Styles - Optimized for Legal Documents */
         @media print {
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 15mm;
             }
             
-            body {
-                background: white;
+            body { 
+                background: white; 
+                font-size: 10pt;
+                line-height: 1.3;
                 color: black;
             }
             
-            .invoice-container {
+            .invoice-container { 
+                max-width: none; 
+                margin: 0; 
+                padding: 0;
                 box-shadow: none;
-                max-width: none;
-                margin: 0;
             }
             
             .content {
-                padding: 20mm 15mm;
+                padding: 0;
             }
             
+            /* Critical Legal Sections - Never Break */
+            .header,
+            .document-title,
+            .verfahren-info,
+            .legal-notices,
+            .kostenersatz-section,
+            .summary-section,
+            .footer {
+                break-inside: avoid;
+            }
+            
+            /* Keep headers with content */
+            h1, h2, h3, h4 {
+                break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            .section-title,
+            .notice-title,
+            .kanzlei-name,
+            .document-title h1 {
+                break-after: avoid;
+            }
+            
+            /* Table Optimization */
             .services-table,
             .summary-table {
+                break-inside: auto;
+                margin-bottom: 1rem;
                 border: 1px solid #000000;
+            }
+            
+            thead {
+                display: table-header-group;
+            }
+            
+            tr {
+                break-inside: avoid;
             }
             
             .services-table th,
             .services-table td,
             .summary-table td {
+                padding: 0.5rem 0.3rem;
+                font-size: 9pt;
                 border: 1px solid #000000;
+            }
+            
+            /* Legal-specific section protection */
+            .category-header {
+                break-inside: avoid;
+                break-after: avoid;
+            }
+            
+            .ratg-info {
+                break-inside: avoid;
+            }
+            
+            .case-details {
+                break-inside: avoid;
+            }
+            
+            /* Prevent orphans and widows */
+            p, li, div {
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Compact spacing for print */
+            .invoice-details,
+            .services-section,
+            .banking-info,
+            .legal-notices {
+                margin: 1rem 0;
+            }
+            
+            /* B&W optimization */
+            .services-table th,
+            .category-header {
+                background: #f0f0f0 !important;
+                border: 1px solid #000 !important;
+            }
+            
+            /* Legal document specific adjustments */
+            .rak-info {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .notice-section {
+                break-inside: avoid;
+            }
+            
+            .ratg-reference {
+                break-inside: avoid;
             }
         }
 
